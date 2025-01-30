@@ -1,0 +1,9 @@
+/.idea
+/Data
+/Experimentation/Java/.idea
+/Experimentation/Java/*.iml
+/Experimentation/Java/resources/Data
+/Experimentation/Java/target
+/Experimentation/Java/temp.csv
+/Experimentation/Java/temp.xml
+/Experimentation/Java/test.csv
