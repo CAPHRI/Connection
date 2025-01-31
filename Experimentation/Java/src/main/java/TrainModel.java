@@ -1,5 +1,6 @@
 import bayes.Node;
 import bayes.results.CleanResult;
+import bayes.results.CombinedResult;
 import bayes.util.BifMapper;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.BayesNet;
@@ -18,8 +19,9 @@ import static bayes.weka.WekaUtil.readData;
 
 public class TrainModel {
 
-    public static CleanResult trainModel(String arff, String target, List<Node> nodes, List<String> toBeKept,
-                                         boolean initNaive, int parents)
+    public static CombinedResult trainModel(String arff, String target, List<String> attributesOfInterest,
+                                            List<Node> nodes, List<String> toBeKept,
+                                            boolean initNaive, int parents)
             throws Exception {
         Instances data = readData(target, arff);
 
@@ -36,14 +38,27 @@ public class TrainModel {
 
         fNet.buildClassifier(data);
 
-        CleanResult res = new CleanResult();
-        Evaluation eval = new Evaluation(data);
 
-        eval.crossValidateModel(fNet, data, 10, new Random(1));
-        res.setConfusionMatrix(eval.toMatrixString());
+        return validate(attributesOfInterest, fNet, data);
+    }
+
+    private static CombinedResult validate(List<String> attributesOfInterest, FilteredClassifier fNet, Instances data)
+            throws Exception {
+
+        CombinedResult res = new CombinedResult();
+
+        for (String att : attributesOfInterest) {
+            Evaluation eval = new Evaluation(data);
+            data.setClassIndex(data.attribute(att).index());
+            eval.crossValidateModel(fNet, data, 10, new Random(1));
+            CleanResult r = new CleanResult();
+            r.setAuc(eval.weightedAreaUnderROC());
+            r.setConfusionMatrix(eval.toMatrixString());
+            r.setDetails(eval.toClassDetailsString());
+            res.getResults().put(att, r);
+
+        }
         res.setGraph(fNet.graph());
-        res.setDetails(eval.toClassDetailsString());
-        res.setAuc(eval.weightedAreaUnderROC());
 
         return res;
     }

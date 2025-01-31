@@ -2,19 +2,11 @@ package bayes.results;
 
 import org.apache.commons.collections.map.HashedMap;
 
-import java.util.List;
 import java.util.Map;
-
-import static bayes.util.BifMapper.fromWekaBif;
-import static bayes.util.BifMapper.toOpenMarkovBif;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CleanResult {
-    private List<DatasetPredictions> predictions;
-    private int maxParents;
-    private boolean naiveBayes;
-    private boolean dag;
-
-    private String graph;
     private String details;
     private String confusionMatrix;
 
@@ -29,38 +21,6 @@ public class CleanResult {
     }
 
     private Map<String, Validation> validations = new HashedMap();
-
-    public int getMaxParents() {
-        return maxParents;
-    }
-
-    public void setMaxParents(int maxParents) {
-        this.maxParents = maxParents;
-    }
-
-    public boolean isNaiveBayes() {
-        return naiveBayes;
-    }
-
-    public void setNaiveBayes(boolean naiveBayes) {
-        this.naiveBayes = naiveBayes;
-    }
-
-    public boolean isDag() {
-        return dag;
-    }
-
-    public void setDag(boolean dag) {
-        this.dag = dag;
-    }
-
-    public String getGraph() {
-        return graph;
-    }
-
-    public void setGraph(String graph) {
-        this.graph = graph;
-    }
 
     public String getDetails() {
         return details;
@@ -80,15 +40,49 @@ public class CleanResult {
 
     @Override
     public String toString() {
-        String s = "Max parents: " + maxParents + " initNaive: " + naiveBayes + " DAG: " + dag;
+        String s = "";
         s += "\n" + details;
-        s += "ConfusionMatrix \n";
+        s += "\n";
         s += confusionMatrix;
         s += "\n\n";
 
-        if (graph != null && graph.length() > 0) {
-            s += "\n\n\n\n\n";
-            s += toOpenMarkovBif(fromWekaBif(graph));
+        return s;
+    }
+
+    public String toCSV() {
+        String s = "";
+
+        s = replaceSingleSpaces(details);
+        while (s.contains("  ")) {
+            s = s.replace("  ", " ");
+        }
+        s = s.replace(" ", ";");
+        s = s.replace("%", " ");
+
+        s += "\n";
+        String b = replaceSingleSpaces(confusionMatrix);
+        while (b.contains("  ")) {
+            b = b.replace("  ", " ");
+        }
+        b = b.replace(" ", ";");
+        b = b.replace("%", " ");
+        s += b;
+        s += "\n\n";
+
+        return s;
+    }
+
+    private String replaceSingleSpaces(String s) {
+        boolean done = false;
+        while (!done) {
+            Pattern p = Pattern.compile("\\S\s\\S");
+            Matcher m = p.matcher(s);
+            if (m.find()) {
+                int index = m.start() + 1;
+                s = s.substring(0, index) + "%" + s.substring(index + 1, s.length() - 1);
+            } else {
+                done = true;
+            }
         }
         return s;
     }

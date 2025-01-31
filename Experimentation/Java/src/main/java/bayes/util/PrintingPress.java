@@ -62,4 +62,13 @@ public final class PrintingPress {
         }
     }
 
+    public static void prettyPrintResultCSV(String s, String path) {
+        File csvOutputFile = new File(path);
+        try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
+            pw.print(s);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
