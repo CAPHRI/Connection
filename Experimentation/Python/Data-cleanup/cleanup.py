@@ -2,10 +2,12 @@ import pandas
 import openpyxl
 import pyreadstat
 
-data = pandas.read_csv("resources/Dataset_BL1_en_FU1_sociaal_netwerk_beprepared_GECCO_geanonimiseerd.csv", delimiter=";")
+data = pandas.read_csv("resources/Dataset_BL1_en_FU1_sociaal_netwerk_beprepared_GECCO_geanonimiseerd_no_dates.csv", delimiter=";")
 
 # Replace -99
 data = data.replace(-99, "?")
+data = data.replace(-99.0, "?")
+data = data.replace("-99", "?")
 
 # Replace NA
 data = data.replace(pandas.NA, "?")
@@ -43,5 +45,5 @@ data = data.applymap(round_close_to_zero)
 data = data.applymap(lambda x: str(int(float(x))) if str(x).replace('.', '', 1).replace('-', '', 1).isdigit() else str(x))
 
 # Save as proper csv file
-data.to_csv("resources/BL1_FU1.csv",index=False, sep="," )
+data.to_csv("resources/clean/BL1_FU1.csv",index=False, sep="," )
 
