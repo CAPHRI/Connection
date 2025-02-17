@@ -10,6 +10,20 @@ import static util.FilterAttributes.generateSmallSet;
 
 class TrainModelTest {
 
+    @Test
+    public void test() throws Exception {
+        List<String> attributesOfInterest = new ArrayList<>();
+        attributesOfInterest.add("network_size_care");
+
+        CombinedResult res =
+                TrainModel.trainModel("resources/Data/BL1_FU1.csv", "network_size", attributesOfInterest,
+                        null, null, true, 5);
+
+        printBIF(res.printGraph(), "resources/results/test.pgmx");
+
+        System.out.println(res);
+    }
+
 
     @Test
     public void trainmodelTest() throws Exception {
