@@ -7,9 +7,7 @@ import java.util.List;
 
 import static bayes.util.PrintingPress.prettyPrintResultCSV;
 import static bayes.util.PrintingPress.printBIF;
-import static bayes.weka.WekaUtil.readData;
 import static util.FilterAttributes.generateSmallSet;
-import static util.WekaUtil.discretizePredefined;
 
 class TrainModelTest {
 

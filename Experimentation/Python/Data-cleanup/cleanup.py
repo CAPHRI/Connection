@@ -2,7 +2,7 @@ import pandas
 import openpyxl
 import pyreadstat
 
-data = pandas.read_csv("resources/Dataset_BL1_en_FU1_sociaal_netwerk_beprepared_GECCO_geanonimiseerd_no_dates.csv", delimiter=";")
+data = pandas.read_csv("resources/BL1_en_FU1__GECCO_no_dates.csv", delimiter=";")
 
 # Replace -99
 data = data.replace(-99, "?")
@@ -18,6 +18,11 @@ data = data.replace(" ", "?")
 
 # Replace empty string
 data = data.replace("", "?")
+
+
+# Remove every column that contains the word "datum" in its name. Not interested in those
+data = data.loc[:, ~data.columns.str.contains("datum", case=False)]
+
 
 # Remove columns that still contain spaces in their values. These are open text fields and not interesting
 # for modeling purposes
@@ -41,9 +46,8 @@ def round_close_to_zero(x):
 data = data.applymap(round_close_to_zero)
 
 # Convert everything to string and remove decimals from numbers
-# If some numbers have decimals and some don'tthis may result in weird things
-data = data.applymap(lambda x: str(int(float(x))) if str(x).replace('.', '', 1).replace('-', '', 1).isdigit() else str(x))
-
+# If some numbers have decimals and some don't this may result in weird things
+data = data.applymap(lambda x: str(int(float(x))) if isinstance(x, (int, float, str)) and str(x).replace('.', '', 1).replace('-', '', 1).isdigit() else str(x))
 # Save as proper csv file
 data.to_csv("resources/clean/BL1_FU1.csv",index=False, sep="," )
 

@@ -1,8 +1,0 @@
-- remove "Trauma_Open" --> Open text veld, dus vreemde tekens
-- Remove "Open737" --> Open text veld, dus vreemde tekens
-- Replace "," "."
-- Replace ";" ","
-- Replace "'" ""
-- Replace "NULL" "?"
-- Replace "-99" "?"
-- Replace ", " ",?"
