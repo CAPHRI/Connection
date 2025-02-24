@@ -10,3 +10,4 @@
 /Experimentation/Python/Data-cleanup/resources/*.sav
 /Experimentation/Java/resources/Data/*.csv
 /Experimentation/Python/Data-cleanup/resources/clean/*.csv
+/Experimentation/Python/Data-cleanup/__pycache__

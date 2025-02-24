@@ -4,30 +4,34 @@ import pyreadstat
 
 data = pandas.read_csv("resources/BL1_en_FU1__GECCO_no_dates.csv", delimiter=";")
 
-# Replace -99
-data = data.replace(-99, "?")
-data = data.replace(-99.0, "?")
-data = data.replace("-99", "?")
+def handleMissing(data):
+    # Replace -99
+    data = data.replace(-99, "?")
+    data = data.replace(-99.0, "?")
+    data = data.replace("-99", "?")
 
-# Replace NA
-data = data.replace(pandas.NA, "?")
+    # Replace NA
+    data = data.replace(pandas.NA, "?")
 
-# Replace space
-# Sidenote; how did spaces end up in this dataset?
-data = data.replace(" ", "?")
+    # Replace space
+    # Sidenote; how did spaces end up in this dataset?
+    data = data.replace(" ", "?")
 
-# Replace empty string
-data = data.replace("", "?")
+    # Replace empty string
+    data = data.replace("", "?")
+    return data
 
+def removeDates(data):
+    # Remove every column that contains the word "datum" in its name. Not interested in those
+    data = data.loc[:, ~data.columns.str.contains("datum", case=False)]
+    return data
 
-# Remove every column that contains the word "datum" in its name. Not interested in those
-data = data.loc[:, ~data.columns.str.contains("datum", case=False)]
-
-
-# Remove columns that still contain spaces in their values. These are open text fields and not interesting
-# for modeling purposes
-columns_with_space = [col for col in data.columns if data[col].astype(str).str.contains(' ').any()]
-data = data.drop(columns=columns_with_space)
+def removeOpenFields(data):
+    # Remove columns that still contain spaces in their values. These are open text fields and not interesting
+    # for modeling purposes
+    columns_with_space = [col for col in data.columns if data[col].astype(str).str.contains(' ').any()]
+    data = data.drop(columns=columns_with_space)
+    return data
 
 # Function to round numbers close to zero while ignoring non-numeric values
 def round_close_to_zero(x):
@@ -41,13 +45,18 @@ def round_close_to_zero(x):
             print(x + 'error')
         return x  # If conversion fails (e.g., for strings), return original value
 
-# Set values close to 0 to zero.
-# SPSS for some reason has a couple of zeroes with trailing decimals (10+) that aren't rounded
-data = data.applymap(round_close_to_zero)
+def removeSmallNumbers(data):
+    # Set values close to 0 to zero.
+    # SPSS for some reason has a couple of zeroes with trailing decimals (10+) that aren't rounded
+    data = data.applymap(round_close_to_zero)
+    return data
 
-# Convert everything to string and remove decimals from numbers
-# If some numbers have decimals and some don't this may result in weird things
-data = data.applymap(lambda x: str(int(float(x))) if isinstance(x, (int, float, str)) and str(x).replace('.', '', 1).replace('-', '', 1).isdigit() else str(x))
-# Save as proper csv file
-data.to_csv("resources/clean/BL1_FU1.csv",index=False, sep="," )
+def convertToString(data):
+    # Convert everything to string and remove decimals from numbers
+    # If some numbers have decimals and some don't this may result in weird things
+    data = data.applymap(lambda x: str(int(float(x))) if isinstance(x, (int, float, str)) and str(x).replace('.', '', 1).replace('-', '', 1).isdigit() else str(x))
+    return data
+
+
+
 
