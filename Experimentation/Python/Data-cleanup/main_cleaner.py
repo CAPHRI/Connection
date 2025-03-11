@@ -16,7 +16,10 @@ data = cleanup.removeSmallNumbers(data)
 data = cleanup.convertToString(data)
 
 # Save cleaned file
-data.to_csv("resources/clean/BL1_FU1.csv",index=False, sep="," )
+data.to_csv("resources/clean/BL1_FU1_GECCO_clean.csv",index=False, sep="," )
+
+# Merge infectious diseases into more mangeable groups
+# data = mergeAttributes.mergeInfectiousDisease(data)
 
 # Remove attributes based on patterns
 toBeRemoved = selectAttributes.selectPatternsToBeRemoved();
@@ -26,8 +29,76 @@ data = preprocessing.removeAttributesRegExp(data, toBeRemoved)
 toBeRemoved = selectAttributes.selectAttributesToBeRemoved()
 data = preprocessing.removeAttributes(data, toBeRemoved)
 
+# select a subset of the radius measures (e.g. bibliotheekaantalbinnenXkm)
+# Opties zijn closest, middle, furthest, en "dichstbijzijnde"
+toBeRemoved = selectAttributes.selectRadiusAttributes('dichstbijzijnde', data)
+data = preprocessing.removeAttributesRegExp(data, toBeRemoved)
+
 # Merge binary attributes that could be turned into a single attribute
 data = mergeAttributes.merge(data)
+
+# Turn aandoening into 2 binary attributes indicating if the individual has any aandoening
+# Then drop aandoeningen
+data = mergeAttributes.mergeAandoening(data)
+data = mergeAttributes.mergeF1Aandoening(data)
+data = preprocessing.removeAttributesRegExp(data, ["AANDOENING_"])
+
+# clean up de geslacht variables
+data = selectAttributes.selectGeslacht(data)
+
+# select walkability radius gs17_a_density
+data = selectAttributes.selectWalkability(data, "gs17_a_density", "1000")
+# select walkability radius gs17_density
+data = selectAttributes.selectWalkability(data, "gs17_density", "1000")
+# select walkability radius pd19_density
+data = selectAttributes.selectWalkability(data, "pd19_density", "1000")
+# select walkability radius pt18_density
+data = selectAttributes.selectWalkability(data, "pt18_density", "1000")
+# select walkability radius rs17_density
+data = selectAttributes.selectWalkability(data, "rs17_density", "1000")
+# select walkability radius sc19_density
+data = selectAttributes.selectWalkability(data, "sc19_density", "1000")
+# select walkability radius sw19_density
+data = selectAttributes.selectWalkability(data, "sw19_density", "1000")
+# select walkability radius WI7c_1719_
+data = selectAttributes.selectWalkability(data, "WI7c_1719_", "1000")
+# select greenspace radius
+data = selectAttributes.selectGreenspace(data, "all", "1000");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "emotional_support_total");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "emotional_support_talk_about_my_health");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "emotional_support_decisions");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "difficult_relationship");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "good_relationship");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "informational_support");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "no_support");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "practical_support");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "support_do_fun_things");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "support_give_care");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "support_receive_care");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "very_difficult_relationship");
+# select support levels
+data = selectAttributes.selectSupportLevels(data, ["incl_care"], "very_good_relationship");
+
+# turn binary attributes into true/false (and missing, so technically ternary)
+data = preprocessing.turnTernary(data)
+# Delete any surviving attribute that only has 1 value cuz that's just useless junk
+data = cleanup.deleteSingleValueAttribute(data)
+
+f1hulpbijhuishouden = [col for col in data.columns if ("F1_HULP_BIJ_VERZORGING_VERPLEGING_OF_HUISHOUDEN_A" in col)]
+data = mergeAttributes.mergeBinary(f1hulpbijhuishouden, "F1_HulpBijHuishouden", data)
+
 print(data.shape)
 
 # Save as proper csv file

@@ -34,4 +34,30 @@ def merge(data):
     binary_cols = ['F1_AFDELING_ZIEKENHUIS_A1', 'F1_AFDELING_ZIEKENHUIS_A2', 'F1_AFDELING_ZIEKENHUIS_A3', 'F1_AFDELING_ZIEKENHUIS_A4', 'F1_AFDELING_ZIEKENHUIS_A5', 'F1_AFDELING_ZIEKENHUIS_A6', 'F1_AFDELING_ZIEKENHUIS_A7']  # Explicitly define the columns to merge
     data = mergeBinary(binary_cols, "afdeling_ziekenhuis", data)
     data = data.drop(columns=binary_cols)
+
+    #  Merge woonsituatie into 1 attribute
+    binary_cols = ['WOONSITUATIE_A1', 'WOONSITUATIE_A2', 'WOONSITUATIE_A3',
+                   'WOONSITUATIE_A4', 'WOONSITUATIE_A5', 'WOONSITUATIE_A6']  # Explicitly define the columns to merge
+    data = mergeBinary(binary_cols, "woonsituatie", data)
+    data = data.drop(columns=binary_cols)
+
+    #  Merge f1 woonsituatie into 1 attribute
+    binary_cols = ['F1_WOONSITUATIE_A1', 'F1_WOONSITUATIE_A2', 'F1_WOONSITUATIE_A3',
+                   'F1_WOONSITUATIE_A4', 'F1_WOONSITUATIE_A5', 'F1_WOONSITUATIE_A6']  # Explicitly define the columns to merge
+    data = mergeBinary(binary_cols, "F1_woonsituatie", data)
+    data = data.drop(columns=binary_cols)
+    return data
+
+def mergeInfectiousDisease(data):
+    data['URI'] = data['KLACHTEN_TWEE_MAANDEN_2']=='1' | data['KLACHTEN_TWEE_MAANDEN_3']=='1'
+    return data
+
+def mergeAandoening(data):
+    aandoening_cols = [col for col in data.columns if (("AANDOENING" in col) and not ("_AANDOENING" in col))]
+    data["has_aandoening"] = data[aandoening_cols].eq(1).any(axis=1)
+    return data
+
+def mergeF1Aandoening(data):
+    aandoening_cols = [col for col in data.columns if ("F1_AANDOENING" in col)]
+    data["has_F1_aandoening"] = data[aandoening_cols].eq(1).any(axis=1)
     return data
