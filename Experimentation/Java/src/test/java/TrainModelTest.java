@@ -17,7 +17,7 @@ class TrainModelTest {
         attributesOfInterest.add("network_size_care");
 
         CombinedResult res =
-                TrainModel.trainModel("resources/Data/Prime_2_test.arff", "network_size_care", attributesOfInterest,
+                TrainModel.trainModel("resources/Data/BL1_FU1_cleaned.csv", "network_size_care", attributesOfInterest,
                         null, null, true, 5);
 
         printBIF(res.printGraph(), "resources/results/test.pgmx");

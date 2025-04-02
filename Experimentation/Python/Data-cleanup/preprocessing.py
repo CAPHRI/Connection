@@ -19,13 +19,11 @@ def turnTernary(data):
 
 # Function to convert values
 def ternary_convert(value):
-    if value == 1:
+    # Why check for both 1 and '1', because python can't grasp typing.
+    if value == 1 or value == '1':
         return True
-    elif value == 0:
+    elif value == 0 or value == '0':
         return False
     elif value == "?":
         return "?"
     return value  # Keep other values unchanged
-
-
-

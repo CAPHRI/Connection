@@ -9,6 +9,37 @@ def selectPatternsToBeRemoved():
     toBeRemoved.append("AANTAL_DAGEN")
     toBeRemoved.append("AANTAL_WEKEN")
     toBeRemoved.append("AANTAL_UREN")
+    toBeRemoved.append("LIGGEN_TIJD")
+    toBeRemoved.append("F1_LICHAMELIJK")
+    toBeRemoved.append("LICHTHOOFDIGHEID")
+    toBeRemoved.append("NACHTEN_IN_ZIEKENHUIS")
+    toBeRemoved.append("POSITIEVE_GEZONDHEID")
+    toBeRemoved.append("PRODUCTIVITEIT")
+    toBeRemoved.append("RECHTOPSTAAN")
+    toBeRemoved.append("ROL_PRAATGROEP")
+    toBeRemoved.append("WAZIG_ZIEN_OF_KOKERZICHT_NA_STAAN")
+    toBeRemoved.append("LYING")
+    toBeRemoved.append("V37")
+    toBeRemoved.append("SNELLE_HARTSLAG_NA_STAAN")
+    # Remove sociale_steun, individual questions could be interesting, but not all at once
+    # is there no mean score for this?
+    toBeRemoved.append("SOCIALE_STEUN")
+    # Remove stress, individual questions could be interesting, but not all at once
+    # is there no mean score for this?
+    toBeRemoved.append("F1_STRESS")
+    # Remove F1_TOEGANG_TOT_GEZONDHEIDSINFORMATIE, individual questions could be interesting, but not all at once
+    # is there no mean score for this?
+    toBeRemoved.append("F1_TOEGANG_TOT_GEZONDHEIDSINFORMATIE_")
+    # Remove F1_VERMOEIDHEID, individual questions could be interesting, but not all at once
+    # is there no mean score for this?
+    toBeRemoved.append("F1_VERMOEIDHEID_")
+    toBeRemoved.append("TRAUMA")
+    # Remove geboorteland, there are a number of achtergrond attributes
+    toBeRemoved.append("GEBOORTELAND")
+    toBeRemoved.append("F1_UREN")
+    toBeRemoved.append("TOESTEMMING_ANDER_ONDERZOEK")
+    toBeRemoved.append("MATE")
+    toBeRemoved.append("MATIGE_ACTIVITEIT_TIJD")
     # Remove everything that contains "bewustzijn", attributes regarding awareness that they had covid or not
     toBeRemoved.append("bewustzijn")
     # Remove everything that contains "ANDERE_VOLWASSENE_ZELFDE_EMAIL"
@@ -145,10 +176,8 @@ def selectPatternsToBeRemoved():
     toBeRemoved.append("strain")
     # Remove everything that contains "welke_clubs", might be interesting in the future, but let's start with just club membership in general
     toBeRemoved.append("welke_clubs")
-    # Remove everything that contains "wandelen_tijd"
-    toBeRemoved.append("wandelen_tijd")
-    # Remove everything that contains "wandelen_gezelschap"
-    toBeRemoved.append("wandelen_gezelschap")
+    # Remove everything that contains "wandelen"
+    toBeRemoved.append("wandelen")
     # Remove everything that contains "vac1_dat_dich"
     toBeRemoved.append("dat_dich")
     # Remove everything that contains "r.1", this appears to be a set of copied attributes
@@ -212,6 +241,28 @@ def selectAttributesToBeRemoved():
     toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_3')
     # Remove F1_GEZONDHEID_INFORMATIE_4,  we hebben een mean score
     toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_4')
+    # Remove JUISTE_ZORG_KRIJGEN_1,  we hebben een mean score
+    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_1')
+    # Remove F1_JUISTE_ZORG_KRIJGEN_2,  we hebben een mean score
+    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_2')
+    # Remove F1_JUISTE_ZORG_KRIJGEN_3,  we hebben een mean score
+    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_3')
+    # Remove F1_JUISTE_ZORG_KRIJGEN_4,  we hebben een mean score
+    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_4')
+    # Remove F1_JUISTE_ZORG_KRIJGEN_5,  we hebben een mean score
+    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_5')
+    # Remove F1_JUISTE_ZORG_KRIJGEN_6,  we hebben een mean score
+    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_6')
+    # Remove F1_STEUN_VAN_OMGEVING_1,  we hebben een mean score
+    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_1')
+    # Remove F1_STEUN_VAN_OMGEVING_2,  we hebben een mean score
+    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_2')
+    # Remove F1_STEUN_VAN_OMGEVING_3,  we hebben een mean score
+    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_3')
+    # Remove F1_STEUN_VAN_OMGEVING_4,  we hebben een mean score
+    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_4')
+    # Remove F1_STEUN_VAN_OMGEVING_5,  we hebben een mean score
+    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_5')
     # Remove F1_EERSTE_BOOSTER_MERK
     toBeRemoved.append('F1_EERSTE_BOOSTER_MERK')
     # Remove F1_GEZONDHEID_NU_CBS
@@ -232,6 +283,8 @@ def selectAttributesToBeRemoved():
     toBeRemoved.append('GESLACHT_JUIST')
     # Remove geslacht_leeftijd_juist
     toBeRemoved.append('geslacht_leeftijd_juist')
+    # Remove F1_WERK_AFWEZIG
+    toBeRemoved.append('F1_WERK_AFWEZIG')
     # Remove geslacht_totaal_iedereen
     toBeRemoved.append('geslacht_totaal_iedereen')
     # Remove GEWICHT, we have bmi

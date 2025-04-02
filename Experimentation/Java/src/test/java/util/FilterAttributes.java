@@ -7,6 +7,7 @@ import java.util.List;
 
 public class FilterAttributes {
 
+
     public static List<String> generateSmallSet() {
         List<String> toBeKept = new ArrayList<>();
         toBeKept.add("age");

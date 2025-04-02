@@ -12,6 +12,7 @@ data = cleanup.handleMissing(data)
 data = cleanup.removeDates(data)
 data = cleanup.removeOpenFields(data)
 data = cleanup.removeSmallNumbers(data)
+data = cleanup.cleanDots(data)
 
 data = cleanup.convertToString(data)
 
@@ -91,13 +92,25 @@ data = selectAttributes.selectSupportLevels(data, ["incl_care"], "very_difficult
 # select support levels
 data = selectAttributes.selectSupportLevels(data, ["incl_care"], "very_good_relationship");
 
-# turn binary attributes into true/false (and missing, so technically ternary)
-data = preprocessing.turnTernary(data)
 # Delete any surviving attribute that only has 1 value cuz that's just useless junk
 data = cleanup.deleteSingleValueAttribute(data)
 
 f1hulpbijhuishouden = [col for col in data.columns if ("F1_HULP_BIJ_VERZORGING_VERPLEGING_OF_HUISHOUDEN_A" in col)]
 data = mergeAttributes.mergeBinary(f1hulpbijhuishouden, "F1_HulpBijHuishouden", data)
+data = data.drop(columns=f1hulpbijhuishouden)
+
+F1_STEUN_NETWERK = [col for col in data.columns if ("F1_STEUN_NETWERK" in col)]
+data = mergeAttributes.mergeBinary(F1_STEUN_NETWERK, "F1_STEUN_NETWERK", data)
+data = data.drop(columns=F1_STEUN_NETWERK)
+
+# For the sake of simplication for sunbelt
+# Remove follow up if needed
+data = preprocessing.removeAttributesRegExp(data, ["F1"])
+# Remove pc6 if needed
+data = preprocessing.removeAttributesRegExp(data, ["pc6"])
+
+# turn binary attributes into true/false (and missing, so technically ternary)
+data = preprocessing.turnTernary(data)
 
 print(data.shape)
 

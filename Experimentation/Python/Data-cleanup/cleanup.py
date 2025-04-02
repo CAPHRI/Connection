@@ -41,7 +41,7 @@ def round_close_to_zero(x):
         # Make sure to change comma's into dots cuz python can't handle that
         num = float(str(x).replace(",", "."))
         # Try to cast the value to float
-        return 0 if abs(num) < 0.00001 else num  # Replace small values with 0
+        return 0 if abs(num) < 0.0001 else num  # Replace small values with 0
     except (ValueError, TypeError):
         if (x == '1,5E-19'):
             print(x + 'error')
@@ -62,10 +62,14 @@ def convertToString(data):
 def deleteSingleValueAttribute(data):
     delete = []
     for col in data.columns:
+        # Only one unique value
         if len(set(data[col].unique())) <= 1:
             delete.append(col)
+        # Technically 2 unique values, but 1 option is "missing"
+        elif len(set(data[col].unique())) == 2 and {"?"}.issubset(set(data[col].unique())):
+            delete.append(col)
+
     return removeAttributes(data, delete)
 
-
-
-
+def cleanDots(data):
+    return data.replace('.', '?')
