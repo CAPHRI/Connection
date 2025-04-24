@@ -13,15 +13,17 @@ data = cleanup.removeDates(data)
 data = cleanup.removeOpenFields(data)
 data = cleanup.removeSmallNumbers(data)
 data = cleanup.cleanDots(data)
+data = mergeAttributes.mergeNeareness(data)
+data = mergeAttributes.mergeGoodVeryGoodRelationship(data)
 
 data = cleanup.convertToString(data)
 
 # Save cleaned file
 data.to_csv("resources/clean/BL1_FU1_GECCO_clean.csv",index=False, sep="," )
 
+
 # Merge infectious diseases into more mangeable groups
 # data = mergeAttributes.mergeInfectiousDisease(data)
-
 # Remove attributes based on patterns
 toBeRemoved = selectAttributes.selectPatternsToBeRemoved();
 data = preprocessing.removeAttributesRegExp(data, toBeRemoved)
@@ -29,6 +31,7 @@ data = preprocessing.removeAttributesRegExp(data, toBeRemoved)
 # Remove attributes based on specific names
 toBeRemoved = selectAttributes.selectAttributesToBeRemoved()
 data = preprocessing.removeAttributes(data, toBeRemoved)
+
 
 # select a subset of the radius measures (e.g. bibliotheekaantalbinnenXkm)
 # Opties zijn closest, middle, furthest, en "dichstbijzijnde"
@@ -48,23 +51,23 @@ data = preprocessing.removeAttributesRegExp(data, ["AANDOENING_"])
 data = selectAttributes.selectGeslacht(data)
 
 # select walkability radius gs17_a_density
-data = selectAttributes.selectWalkability(data, "gs17_a_density", "1000")
+data = selectAttributes.selectWalkability(data, "gs17_a_density", "500")
 # select walkability radius gs17_density
-data = selectAttributes.selectWalkability(data, "gs17_density", "1000")
+data = selectAttributes.selectWalkability(data, "gs17_density", "500")
 # select walkability radius pd19_density
-data = selectAttributes.selectWalkability(data, "pd19_density", "1000")
+data = selectAttributes.selectWalkability(data, "pd19_density", "500")
 # select walkability radius pt18_density
-data = selectAttributes.selectWalkability(data, "pt18_density", "1000")
+data = selectAttributes.selectWalkability(data, "pt18_density", "500")
 # select walkability radius rs17_density
-data = selectAttributes.selectWalkability(data, "rs17_density", "1000")
+data = selectAttributes.selectWalkability(data, "rs17_density", "500")
 # select walkability radius sc19_density
-data = selectAttributes.selectWalkability(data, "sc19_density", "1000")
+data = selectAttributes.selectWalkability(data, "sc19_density", "500")
 # select walkability radius sw19_density
-data = selectAttributes.selectWalkability(data, "sw19_density", "1000")
+data = selectAttributes.selectWalkability(data, "sw19_density", "500")
 # select walkability radius WI7c_1719_
-data = selectAttributes.selectWalkability(data, "WI7c_1719_", "1000")
+data = selectAttributes.selectWalkability(data, "WI7c_1719_", "500")
 # select greenspace radius
-data = selectAttributes.selectGreenspace(data, "all", "1000");
+data = selectAttributes.selectGreenspace(data, "all", "500");
 # select support levels
 data = selectAttributes.selectSupportLevels(data, ["incl_care"], "emotional_support_total");
 # select support levels
@@ -111,6 +114,10 @@ data = preprocessing.removeAttributesRegExp(data, ["pc6"])
 
 # turn binary attributes into true/false (and missing, so technically ternary)
 data = preprocessing.turnTernary(data)
+data = preprocessing.discretizeNetworkSize(data)
+
+data = preprocessing.opleidingsNiveauMinimize(data)
+
 
 print(data.shape)
 

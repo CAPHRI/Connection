@@ -8,8 +8,11 @@ import weka.classifiers.bayes.net.search.fixed.FromFile;
 import weka.classifiers.bayes.net.search.local.K2;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Instances;
+import weka.core.converters.ArffSaver;
+import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 
+import java.io.File;
 import java.util.List;
 import java.util.Random;
 
@@ -32,7 +35,13 @@ public class TrainModel {
         if (toBeKept != null) {
             Remove filter = (Remove) createFilter(data, toBeKept);
             fNet.setFilter(filter);
+            Instances filteredData = Filter.useFilter(data, filter);
+            ArffSaver s = new ArffSaver();
+            s.setInstances(filteredData);
+            s.setFile(new File("Test.arff"));
+            s.writeBatch();
         }
+
 
         fNet.setClassifier(network);
 

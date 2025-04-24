@@ -281,12 +281,12 @@ def selectAttributesToBeRemoved():
     toBeRemoved.append('GESLACHT')
     # Remove GESLACHT_JUIST
     toBeRemoved.append('GESLACHT_JUIST')
+    # Remove geslacht_totaal_iedereen
+    toBeRemoved.append('geslacht_totaal_iedereen')
     # Remove geslacht_leeftijd_juist
     toBeRemoved.append('geslacht_leeftijd_juist')
     # Remove F1_WERK_AFWEZIG
     toBeRemoved.append('F1_WERK_AFWEZIG')
-    # Remove geslacht_totaal_iedereen
-    toBeRemoved.append('geslacht_totaal_iedereen')
     # Remove GEWICHT, we have bmi
     toBeRemoved.append('GEWICHT')
     # Remove GROEP
@@ -377,7 +377,7 @@ def selectRadiusAttributes(areaOfInterest, data):
     return toBeRemoved
 
 def selectGeslacht(data):
-    geslacht_cols = [col for col in data.columns if (("geslacht" in col) and not("geslacht_totaal_iedereen" in col))]
+    geslacht_cols = [col for col in data.columns if (("geslacht" in col) and not("geslacht_totaal" in col))]
     return preprocessing.removeAttributes(data, geslacht_cols)
 
 def selectWalkability(data, variant, radius):

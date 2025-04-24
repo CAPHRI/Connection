@@ -4,6 +4,7 @@ import weka.core.Instances;
 import weka.core.converters.CSVLoader;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
+import weka.gui.knowledgeflow.steps.SubstringLabelerStepEditorDialog;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,7 +35,11 @@ public class WekaUtil {
         Remove removeFilter = new Remove();
         int[] indices = new int[toBeKept.size()];
         for (int i = 0; i < toBeKept.size(); i++) {
-            indices[i] = data.attribute(toBeKept.get(i)).index();
+            try{
+            indices[i] = data.attribute(toBeKept.get(i)).index();}
+            catch(Exception e){
+                throw e;
+            }
         }
         removeFilter.setAttributeIndicesArray(indices);
         removeFilter.setInvertSelection(true);

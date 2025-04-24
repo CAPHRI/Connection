@@ -11,3 +11,5 @@
 /Experimentation/Java/resources/Data/*.csv
 /Experimentation/Python/Data-cleanup/resources/clean/*.csv
 /Experimentation/Python/Data-cleanup/__pycache__
+/Experimentation/Python/Data-cleanup/resources/clean
+/Experimentation/Java/Test.arff

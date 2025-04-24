@@ -54,10 +54,10 @@ def removeSmallNumbers(data):
     return data
 
 def convertToString(data):
-    # Convert everything to string and remove decimals from numbers
-    # If some numbers have decimals and some don't this may result in weird things
-    data = data.applymap(lambda x: str(int(float(x))) if isinstance(x, (int, float, str)) and str(x).replace('.', '', 1).replace('-', '', 1).isdigit() else str(x))
-    return data
+    # Convert everything to string and remove trailing dots
+    data = data.astype(str)
+    return data.astype(str).applymap(lambda x: x[:-1] if x.endswith('.') else x)
+
 
 def deleteSingleValueAttribute(data):
     delete = []

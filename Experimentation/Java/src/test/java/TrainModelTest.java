@@ -7,6 +7,7 @@ import java.util.List;
 
 import static bayes.util.PrintingPress.prettyPrintResultCSV;
 import static bayes.util.PrintingPress.printBIF;
+import static util.FilterAttributes.generateFirstModel;
 import static util.FilterAttributes.generateSmallSet;
 
 class TrainModelTest {
@@ -61,6 +62,18 @@ class TrainModelTest {
                         null, null, true, 5);
 
         printBIF(res.printGraph(), "resources/results/big_test.pgmx");
+        System.out.println(res);
+    }
+
+    @Test
+    public void trainFirstModelTest() throws Exception {
+        List<String> attributesOfInterest = new ArrayList<>();
+        attributesOfInterest.add("network_size_care");
+        CombinedResult res =
+                TrainModel.trainModel("resources/Data/BL1_FU1_cleaned.csv", "network_size_care", attributesOfInterest,
+                        null, generateFirstModel(), true, 5);
+
+        printBIF(res.printGraph(), "resources/results/first_test.pgmx");
         System.out.println(res);
     }
 }

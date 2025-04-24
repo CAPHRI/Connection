@@ -13,17 +13,54 @@ def removeAttributes(data, attributes):
 
 def turnTernary(data):
     for col in data.columns:
-        if set(data[col].unique()).issubset({"0", "1", "?"}):
+        # check both {0,1,?} and {0.0,1.0,?} because python randomly adds 0's
+        if set(data[col].unique()).issubset({"0", "1", "?"}) or set(data[col].unique()).issubset({"0.0", "1.0", "?"}):
             data[col] = data[col].map(ternary_convert)
     return data
 
 # Function to convert values
 def ternary_convert(value):
-    # Why check for both 1 and '1', because python can't grasp typing.
-    if value == 1 or value == '1':
+    # Why check for both 1 and '1' and '1.0', because python can't do typing consistently
+    # and randomly adds zeroes.
+    if value == 1 or value == '1' or value =='1.0':
         return True
-    elif value == 0 or value == '0':
+    elif value == 0 or value == '0' or value =='0.0':
         return False
     elif value == "?":
         return "?"
     return value  # Keep other values unchanged
+
+def discretizeNetworkSize(data):
+    data["network_size_care"] = data["network_size_care"].map(discretize_network_size)
+    return data
+
+# Function to discretize network size values
+def discretize_network_size(value):
+    if value == "?":
+        return value
+    elif float(value) <= 4:
+        return "<4"
+    elif float(value) <=8:
+        return "5-8"
+    elif float(value) <=12:
+        return "9-12"
+    else:
+        return ">12"
+
+def opleidingsNiveauMinimize(data):
+    # data["OPLEIDINGSNIVEAU"] = data["network_size_care"].map(discretize_network_size)
+    print(data["OPLEIDINGSNIVEAU"].unique())
+    return data
+
+# Function to discretize network size values
+def opleidingsniveauFix(value):
+    if value == "?":
+        return value
+    elif float(value) <= 4:
+        return "<4"
+    elif float(value) <=8:
+        return "5-8"
+    elif float(value) <=12:
+        return "9-12"
+    else:
+        return ">12"
