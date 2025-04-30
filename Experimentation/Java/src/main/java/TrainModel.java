@@ -41,8 +41,6 @@ public class TrainModel {
             s.setFile(new File("Test.arff"));
             s.writeBatch();
         }
-
-
         fNet.setClassifier(network);
 
         fNet.buildClassifier(data);
@@ -57,8 +55,9 @@ public class TrainModel {
         CombinedResult res = new CombinedResult();
 
         for (String att : attributesOfInterest) {
-            Evaluation eval = new Evaluation(data);
             data.setClassIndex(data.attribute(att).index());
+            Evaluation eval = new Evaluation(data);
+            fNet.buildClassifier(data);
             eval.crossValidateModel(fNet, data, 10, new Random(1));
             CleanResult r = new CleanResult();
             r.setAuc(eval.weightedAreaUnderROC());

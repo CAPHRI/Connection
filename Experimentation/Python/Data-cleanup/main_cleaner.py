@@ -1,6 +1,7 @@
 import pandas
 
 import cleanup
+import discretize
 import mergeAttributes
 import preprocessing
 import selectAttributes
@@ -8,11 +9,9 @@ import selectAttributes
 # Clean up nonsense
 data = pandas.read_csv("resources/BL1_en_FU1__GECCO_no_dates.csv", delimiter=";")
 print(data.shape)
-data = cleanup.handleMissing(data)
-data = cleanup.removeDates(data)
-data = cleanup.removeOpenFields(data)
-data = cleanup.removeSmallNumbers(data)
-data = cleanup.cleanDots(data)
+
+data = cleanup.clean(data)
+
 data = mergeAttributes.mergeNeareness(data)
 data = mergeAttributes.mergeGoodVeryGoodRelationship(data)
 
@@ -114,9 +113,8 @@ data = preprocessing.removeAttributesRegExp(data, ["pc6"])
 
 # turn binary attributes into true/false (and missing, so technically ternary)
 data = preprocessing.turnTernary(data)
-data = preprocessing.discretizeNetworkSize(data)
 
-data = preprocessing.opleidingsNiveauMinimize(data)
+data = discretize.discretize(data)
 
 
 print(data.shape)

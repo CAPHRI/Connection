@@ -4,7 +4,14 @@ import pyreadstat
 
 from preprocessing import removeAttributes
 
-data = pandas.read_csv("resources/BL1_en_FU1__GECCO_no_dates.csv", delimiter=";")
+def clean(data):
+    data = handleMissing(data)
+    data = removeDates(data)
+    data = removeOpenFields(data)
+    data = removeSmallNumbers(data)
+    data = cleanDots(data)
+    return data
+
 
 def handleMissing(data):
     # Replace -99

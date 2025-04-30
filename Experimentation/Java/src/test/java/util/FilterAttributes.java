@@ -44,7 +44,7 @@ public class FilterAttributes {
         toBeKept.add("physical_phone_internet_video_call_contact");
         toBeKept.add("practical_support_incl_care");
         toBeKept.add("RELATIE");
-        toBeKept.add("Restaurantdichtsbijzijnde");
+        toBeKept.add("Restaurantdichtstbijzijnde");
         toBeKept.add("same_age");
         toBeKept.add("same_sex");
         toBeKept.add("Supermarktdichtstbijzijnde");

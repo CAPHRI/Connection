@@ -30,37 +30,4 @@ def ternary_convert(value):
         return "?"
     return value  # Keep other values unchanged
 
-def discretizeNetworkSize(data):
-    data["network_size_care"] = data["network_size_care"].map(discretize_network_size)
-    return data
 
-# Function to discretize network size values
-def discretize_network_size(value):
-    if value == "?":
-        return value
-    elif float(value) <= 4:
-        return "<4"
-    elif float(value) <=8:
-        return "5-8"
-    elif float(value) <=12:
-        return "9-12"
-    else:
-        return ">12"
-
-def opleidingsNiveauMinimize(data):
-    # data["OPLEIDINGSNIVEAU"] = data["network_size_care"].map(discretize_network_size)
-    print(data["OPLEIDINGSNIVEAU"].unique())
-    return data
-
-# Function to discretize network size values
-def opleidingsniveauFix(value):
-    if value == "?":
-        return value
-    elif float(value) <= 4:
-        return "<4"
-    elif float(value) <=8:
-        return "5-8"
-    elif float(value) <=12:
-        return "9-12"
-    else:
-        return ">12"

@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import weka.core.Instances;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static bayes.util.PrintingPress.prettyPrintResultCSV;
@@ -69,9 +70,11 @@ class TrainModelTest {
     public void trainFirstModelTest() throws Exception {
         List<String> attributesOfInterest = new ArrayList<>();
         attributesOfInterest.add("network_size_care");
+        attributesOfInterest.add("nearness_less_than_15_min");
+        attributesOfInterest.add("friends");
         CombinedResult res =
                 TrainModel.trainModel("resources/Data/BL1_FU1_cleaned.csv", "network_size_care", attributesOfInterest,
-                        null, generateFirstModel(), true, 5);
+                        null, generateFirstModel(), false, 5);
 
         printBIF(res.printGraph(), "resources/results/first_test.pgmx");
         System.out.println(res);
