@@ -16,6 +16,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Random;
 
+import static bayes.util.BifMapper.fromWekaBif;
 import static bayes.util.PrintingPress.printBIF;
 import static bayes.weka.WekaUtil.createFilter;
 import static bayes.weka.WekaUtil.readData;
@@ -38,7 +39,7 @@ public class TrainModel {
             Instances filteredData = Filter.useFilter(data, filter);
             ArffSaver s = new ArffSaver();
             s.setInstances(filteredData);
-            s.setFile(new File("Test.arff"));
+            s.setFile(new File("resources/results/data.arff"));
             s.writeBatch();
         }
         fNet.setClassifier(network);
@@ -55,7 +56,12 @@ public class TrainModel {
         CombinedResult res = new CombinedResult();
 
         for (String att : attributesOfInterest) {
-            data.setClassIndex(data.attribute(att).index());
+            try {
+                data.setClassIndex(data.attribute(att).index());
+            }catch(Exception e){
+                System.out.println(att);
+                throw e;
+            }
             Evaluation eval = new Evaluation(data);
             fNet.buildClassifier(data);
             eval.crossValidateModel(fNet, data, 10, new Random(1));
@@ -67,6 +73,7 @@ public class TrainModel {
 
         }
         res.setGraph(fNet.graph());
+        res.setDiggity(fromWekaBif(fNet.graph()));
 
         return res;
     }

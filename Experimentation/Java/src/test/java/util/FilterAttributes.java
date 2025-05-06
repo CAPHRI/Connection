@@ -26,6 +26,8 @@ public class FilterAttributes {
         toBeKept.add("GEZONDHEID_NU_CBS");
         toBeKept.add("good_plus_relationship_total_incl_care");
         toBeKept.add("Greenspace.r500m_all");
+        toBeKept.add("Greenspace.r1000m_all");
+        toBeKept.add("Greenspace.r1500m_all");
         toBeKept.add("Huisartspraktijkdichtstbijzijnde");
         toBeKept.add("Huishoudgrootte");
         toBeKept.add("Huurcoporatie");
@@ -54,8 +56,15 @@ public class FilterAttributes {
         toBeKept.add("Treinstationdichtstbijzijnde");
         toBeKept.add("urbanization_cat");
         toBeKept.add("Walkability.WI7c_1719_500z");
-        toBeKept.add("WERKSITUATIE_REFINED");
+        toBeKept.add("WERKSITUATIE");
         toBeKept.add("Westersemigratieachtergrond");
+
+        toBeKept.add("C_PHQ9_TOTAL");
+        toBeKept.add("emotional_loneliness");
+        toBeKept.add("loneliness");
+        toBeKept.add("mental_health_conditions");
+        toBeKept.add("PHQ9_TOTAL");
+        toBeKept.add("social_loneliness");
         return toBeKept;
     }
 

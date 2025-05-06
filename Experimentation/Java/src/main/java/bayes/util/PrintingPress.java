@@ -1,6 +1,7 @@
 package bayes.util;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -17,6 +18,17 @@ import java.util.stream.Collectors;
 public final class PrintingPress {
 
     private PrintingPress() {
+    }
+
+    public static void printDiggity(String diggity, String path){
+        File bifFile = new File(path);
+        List<String> data = Arrays.stream(diggity.split("\n")).collect(Collectors.toList());
+        try (PrintWriter pw = new PrintWriter(bifFile)) {
+            data.stream()
+                    .forEach(pw::println);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void printBIF(String bif, String path) {

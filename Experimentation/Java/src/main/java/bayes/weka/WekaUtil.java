@@ -38,6 +38,7 @@ public class WekaUtil {
             try{
             indices[i] = data.attribute(toBeKept.get(i)).index();}
             catch(Exception e){
+                System.out.println(toBeKept.get(i));
                 throw e;
             }
         }

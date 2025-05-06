@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static bayes.util.PrintingPress.prettyPrintResultCSV;
-import static bayes.util.PrintingPress.printBIF;
+import static bayes.util.PrintingPress.*;
 import static util.FilterAttributes.generateFirstModel;
 import static util.FilterAttributes.generateSmallSet;
 
@@ -71,12 +70,25 @@ class TrainModelTest {
         List<String> attributesOfInterest = new ArrayList<>();
         attributesOfInterest.add("network_size_care");
         attributesOfInterest.add("nearness_less_than_15_min");
+        attributesOfInterest.add("acquaintances");
+        attributesOfInterest.add("caregivers");
+        attributesOfInterest.add("diversity_type_N");
+        attributesOfInterest.add("emotional_support_decisions_incl_care");
+        attributesOfInterest.add("emotional_support_talk_about_my_health_incl_care");
+//        attributesOfInterest.add("good_plus_relationship_total_incl_care");
+        attributesOfInterest.add("informational_support_incl_care");
+        attributesOfInterest.add("physical_contact");
+        attributesOfInterest.add("support_do_fun_things_incl_care");
+        attributesOfInterest.add("support_give_care_incl_care");
+        attributesOfInterest.add("support_receive_care_incl_care");
+        attributesOfInterest.add("social_loneliness");
         attributesOfInterest.add("friends");
         CombinedResult res =
                 TrainModel.trainModel("resources/Data/BL1_FU1_cleaned.csv", "network_size_care", attributesOfInterest,
                         null, generateFirstModel(), false, 5);
 
         printBIF(res.printGraph(), "resources/results/first_test.pgmx");
+        printDiggity(res.getDiggity(), "resources/results/first_test_diggity.txt");
         System.out.println(res);
     }
 }

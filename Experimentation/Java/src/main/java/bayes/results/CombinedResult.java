@@ -1,7 +1,9 @@
 package bayes.results;
 
+import bayes.Node;
 import org.apache.commons.collections.map.HashedMap;
 
+import java.util.List;
 import java.util.Map;
 
 import static bayes.util.BifMapper.fromWekaBif;
@@ -13,6 +15,24 @@ public class CombinedResult {
     private boolean naiveBayes;
     private boolean dag;
     private int maxParents;
+    private String diggity;
+
+    public String getDiggity() {
+        return diggity;
+    }
+
+    public void setDiggity(List<Node> nodes) {
+        diggity = "dag{";
+        for(Node n: nodes){
+            diggity += n.getName() +"\n";
+        }
+        for(Node n: nodes){
+            for(String p : n.getParents()) {
+                diggity += p + " -> " + n.getName() +"\n" ;
+            }
+        }
+        diggity+="}";
+    }
 
     public boolean isNaiveBayes() {
         return naiveBayes;

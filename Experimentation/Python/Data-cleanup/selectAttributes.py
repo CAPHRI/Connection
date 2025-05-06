@@ -331,7 +331,7 @@ def selectAttributesToBeRemoved():
     # Remove werksector
     toBeRemoved.append('werksector')
     # Remove WERKSITUATIE
-    toBeRemoved.append('WERKSITUATIE')
+    toBeRemoved.append('WERKSITUATIE_REFINED')
     # Remove ZUURSTOF
     toBeRemoved.append('ZUURSTOF')
     return toBeRemoved

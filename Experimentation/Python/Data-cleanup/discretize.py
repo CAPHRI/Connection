@@ -27,7 +27,6 @@ def discretize(data):
     data = discretizeNietwestersemigratieachtergrond(data)
     data = discretizePhysical_contact(data)
     data = discretizePhone_internet_video_call_contact(data)
-    print(data["phone_internet_video_call_contact"].unique())
     data = discretizePhysical_phone_internet_video_call_contact(data)
     data = discretizePractical_support_incl_care(data)
     data = discretizeDichstbijzijnde(data, "Restaurant")
@@ -42,9 +41,33 @@ def discretize(data):
     data = discretizeDichstbijzijnde(data, "Musea")
     data = discretizeFamily_members(data)
     data = quarterize(data, "Walkability.sw19_density_500r")
-
+    data = discretizeWerksituatie(data);
+    data = discretizeDiversity_type_N(data)
+    data = discretizeLID_CLUBS(data)
+    data = discretizeUrbanization_cat(data)
+    data = discretizeRELATIE(data)
+    data = discretizeOPLEIDINGSNIVEAU(data)
     return data
 
+def discretizeDiversity_type_N(data):
+    data["diversity_type_N"] = data["diversity_type_N"].map(
+        discretize_diversity_type_N)
+    return data
+
+
+def discretize_diversity_type_N(value):
+    if value == "?":
+        return value
+    elif float(value) == 0:
+        return "no family, but friends or acquaintances"
+    elif float(value) == 1:
+        return "only family, no friends or acquaintances"
+    elif float(value) == 2:
+        return "family and friends, but no acquaintances"
+    elif float(value) == 3:
+        return "family and friends, and acquaintances or other"
+    elif float(value) == 4:
+        return "family and acquaintances, but no friends"
 
 def quarterize(data, column):
     Q1 = None
@@ -75,6 +98,19 @@ def quarters(value, Q1, Q2, Q3):
     else:
         return ">"+Q3
 
+def discretizeWerksituatie(data):
+    data["WERKSITUATIE"] = data["WERKSITUATIE"].map(
+        discretize_Werksituatie)
+    return data
+
+
+def discretize_Werksituatie(value):
+    if value == "?":
+        return value
+    elif float(value) == 1:
+        return "True"
+    else:
+        return "False"
 
 def discretizeWestersemigratieachtergrond(data):
     data["Westersemigratieachtergrond"] = data["Westersemigratieachtergrond"].map(
@@ -290,17 +326,16 @@ def discretize_OPLEIDINGSNIVEAU(value):
     # 7=-Hoger    algemeen    voortgezet    onderwijs / voorbereidend    wetenschappelijk    onderwijs(bv.HAVO, VWO, Atheneum, Gymnasium, HBS)
     # 8=-Hogere    beroepsopleiding(bv.HBO, HTS, HEAO, HBO - V, PABO)
     # 9=-Wetenschappelijk    onderwijs(universiteit)    of    hoger
-
     if value == "?":
         return value
-    elif float(value) <= 0:
-        return "0"
-    elif float(value) <= 10:
-        return "ten"
-    elif float(value) <= 30:
-        return "20-30"
+    elif float(value) == 1:
+        return "Ik volg momenteel een opleiding"
+    elif float(value) <= 5:
+        return "Onderwijsniveau 1"
+    elif float(value) <= 7:
+        return "Onderwijsniveau 2"
     else:
-        return ">30"
+        return "Onderwijsniveau 3"
 
 
 def discretizeNietwestersemigratieachtergrond(data):
@@ -412,10 +447,10 @@ def discretizeLID_CLUBS(data):
 def discretize_LID_CLUBS(value):
     if value == "?":
         return value
-    elif float(value) < 4:
-        return "klasse 3"
+    elif float(value) ==1:
+        return "True"
     else:
-        return "klasse 4"
+        return "False"
 
 
 def discretizeLBM(data):
