@@ -1,4 +1,5 @@
 import bayes.Node;
+import bayes.results.BestWorstResult;
 import bayes.results.CleanResult;
 import bayes.results.CombinedResult;
 import bayes.util.BifMapper;
@@ -16,6 +17,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -49,12 +51,62 @@ public class TrainModel {
         fNet.setClassifier(network);
         try {
             fNet.buildClassifier(data);
-        }catch(Exception e){
+        } catch (Exception e) {
             throw e;
         }
 
 
         return validate(attributesOfInterest, fNet, data);
+    }
+
+    public static BestWorstResult trainModelWithFeatureSelection(String arff, String target, List<String> attributesOfInterest,
+                                                                 List<Node> nodes, List<String> toBeKept,
+                                                                 boolean initNaive, int parents)
+            throws Exception {
+        List<List<String>> featureSelection = makeCombinations(toBeKept, attributesOfInterest);
+        double best = 0;
+        CombinedResult bestRes = null;
+        double worst = 1.1;
+        CombinedResult worstRes = null;
+        for (List<String> list : featureSelection) {
+            CombinedResult res = trainModel(arff, target, attributesOfInterest, nodes, list, initNaive, parents);
+            double score = 0;
+            for (CleanResult x : res.getResults().values()) {
+                score += x.getAuc();
+            }
+            score /= res.getResults().values().size();
+            System.out.println("Attribute size: " + list.size() + " Current score: " + score);
+            if (score > best) {
+                System.out.println("Previous best: " + best + " new best: " +score);
+                best = score;
+                bestRes = res;
+            }
+            if (score < worst) {
+                System.out.println("Previous worst: " + worst + " new worst: " +score);
+                worst = score;
+                worstRes = res;
+            }
+        }
+        BestWorstResult res = new BestWorstResult(bestRes, worstRes);
+        return res;
+    }
+
+    private static List<List<String>> makeCombinations(List<String> attributes, List<String> attributesOfInterest) {
+
+        List<List<String>> lists = new ArrayList<>();
+        attributes.removeAll(attributesOfInterest);
+        for (int i = 0; i < attributes.size(); i++) {
+            for (List<String> temp : lists) {
+                temp.add(attributes.get(i));
+            }
+            List<String> list = new ArrayList<>();
+            list.add(attributes.get(i));
+            list.addAll(attributesOfInterest);
+            lists.add(list);
+        }
+        lists.add(attributesOfInterest);
+        return lists;
+
     }
 
     private static Instances getInstances(String arff, String target) throws IOException {
@@ -82,7 +134,7 @@ public class TrainModel {
         for (String att : attributesOfInterest) {
             try {
                 data.setClassIndex(data.attribute(att).index());
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println(att);
                 throw e;
             }

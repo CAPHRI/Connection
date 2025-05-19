@@ -1,3 +1,4 @@
+import bayes.results.BestWorstResult;
 import bayes.results.CombinedResult;
 import org.junit.jupiter.api.Test;
 import weka.core.Instances;
@@ -92,6 +93,42 @@ class TrainModelTest {
         printBIF(res.printGraph(), "resources/results/first_test.pgmx");
         printDiggity(res.getDiggity(), "resources/results/first_test_diggity.txt");
         System.out.println(res);
+    }
+
+    @Test
+    public void trainFirstModelFeautureSelectionTest() throws Exception {
+        List<String> attributesOfInterest = new ArrayList<>();
+        attributesOfInterest.add("network_size_care");
+        attributesOfInterest.add("nearness_less_than_15_min");
+        attributesOfInterest.add("acquaintances");
+        attributesOfInterest.add("caregivers");
+        attributesOfInterest.add("diversity_type_N");
+        attributesOfInterest.add("emotional_support_decisions_incl_care");
+        attributesOfInterest.add("emotional_support_talk_about_my_health_incl_care");
+        attributesOfInterest.add("good_plus_relationship_total_incl_care");
+        attributesOfInterest.add("informational_support_incl_care");
+        attributesOfInterest.add("physical_contact");
+        attributesOfInterest.add("support_do_fun_things_incl_care");
+        attributesOfInterest.add("support_give_care_incl_care");
+        attributesOfInterest.add("support_receive_care_incl_care");
+        attributesOfInterest.add("social_loneliness");
+        attributesOfInterest.add("emotional_loneliness");
+        attributesOfInterest.add("lonelinessBinary");
+        attributesOfInterest.add("friends");
+
+        int parents = 3;
+        BestWorstResult res =
+                TrainModel.trainModelWithFeatureSelection("resources/Data/BL1_FU1_cleaned.csv", "network_size_care", attributesOfInterest,
+                        null, generateFirstModel(), false, parents);
+
+        printBIF(res.getBest().printGraph(), "resources/results/bestFeature"+ parents +".pgmx");
+        printDiggity(res.getBest().getDiggity(), "resources/results/bestDiggity"+ parents +".txt");
+        System.out.println("Best \n");
+        System.out.println(res.getBest());
+        printBIF(res.getWorst().printGraph(), "resources/results/worstFeature"+ parents +".pgmx");
+        printDiggity(res.getWorst().getDiggity(), "resources/results/worstDiggity"+ parents +".txt");
+        System.out.println("Worst \n");
+        System.out.println(res.getWorst());
     }
 
     @Test
