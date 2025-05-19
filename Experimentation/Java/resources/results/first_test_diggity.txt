@@ -14,9 +14,7 @@ family_members
 friends
 GEZONDHEID_NU_CBS
 good_plus_relationship_total_incl_care
-Greenspace.r500m_all
 Greenspace.r1000m_all
-Greenspace.r1500m_all
 Huisartspraktijkdichtstbijzijnde
 Huishoudgrootte
 Huurcoporatie
@@ -49,9 +47,8 @@ WERKSITUATIE
 Westersemigratieachtergrond
 C_PHQ9_TOTAL
 emotional_loneliness
-loneliness
+lonelinessBinary
 mental_health_conditions
-PHQ9_TOTAL
 social_loneliness
 friends -> acquaintances
 friends -> age
@@ -79,53 +76,49 @@ friends -> family_members
 caregivers -> GEZONDHEID_NU_CBS
 acquaintances -> GEZONDHEID_NU_CBS
 emotional_support_decisions_incl_care -> good_plus_relationship_total_incl_care
-acquaintances -> good_plus_relationship_total_incl_care
 family_members -> good_plus_relationship_total_incl_care
-friends -> good_plus_relationship_total_incl_care
 diversity_type_N -> good_plus_relationship_total_incl_care
 Bioscoopdichtstbijzijnde -> Greenspace.r1000m_all
 Bibliotheekdichtstbijzijnde -> Greenspace.r1000m_all
-Bioscoopdichtstbijzijnde -> Greenspace.r1500m_all
-Greenspace.r1000m_all -> Greenspace.r1500m_all
-Bibliotheekdichtstbijzijnde -> Greenspace.r1500m_all
-Cafedichtstbijzijnde -> Greenspace.r1500m_all
+Cafedichtstbijzijnde -> Greenspace.r1000m_all
+Greenspace.r1000m_all -> Huisartspraktijkdichtstbijzijnde
 Cafedichtstbijzijnde -> Huisartspraktijkdichtstbijzijnde
 Bibliotheekdichtstbijzijnde -> Huisartspraktijkdichtstbijzijnde
-Greenspace.r1500m_all -> Huisartspraktijkdichtstbijzijnde
-Bioscoopdichtstbijzijnde -> Huisartspraktijkdichtstbijzijnde
-Bioscoopdichtstbijzijnde -> Huishoudgrootte
 Greenspace.r1000m_all -> Huishoudgrootte
+Bioscoopdichtstbijzijnde -> Huishoudgrootte
 Cafedichtstbijzijnde -> Huishoudgrootte
-Greenspace.r1500m_all -> Huishoudgrootte
-Huisartspraktijkdichtstbijzijnde -> Huishoudgrootte
 Huishoudgrootte -> Huurcoporatie
-Greenspace.r1000m_all -> Huurcoporatie
-Greenspace.r1500m_all -> Huurcoporatie
+Bioscoopdichtstbijzijnde -> Huurcoporatie
+Bibliotheekdichtstbijzijnde -> Huurcoporatie
 emotional_support_decisions_incl_care -> informational_support_incl_care
-good_plus_relationship_total_incl_care -> informational_support_incl_care
 emotional_support_talk_about_my_health_incl_care -> informational_support_incl_care
+good_plus_relationship_total_incl_care -> informational_support_incl_care
+Greenspace.r1000m_all -> lbm
 Huishoudgrootte -> lbm
-Huisartspraktijkdichtstbijzijnde -> lbm
-Greenspace.r1500m_all -> lbm
+Bibliotheekdichtstbijzijnde -> lbm
 Bioscoopdichtstbijzijnde -> lbm
-Huurcoporatie -> lbm
+Huisartspraktijkdichtstbijzijnde -> lbm
 acquaintances -> LID_CLUBS
 lbm -> LID_CLUBS
 age -> nearness_house
 family_members -> nearness_house
 Huishoudgrootte -> nearness_house
 good_plus_relationship_total_incl_care -> nearness_less_than_15_min
+friends -> nearness_less_than_15_min
+family_members -> nearness_less_than_15_min
 good_plus_relationship_total_incl_care -> nearness_walking_distance
-nearness_less_than_15_min -> nearness_walking_distance
+acquaintances -> nearness_walking_distance
+friends -> nearness_walking_distance
 lbm -> Nederlandseachtergond
-Huishoudgrootte -> Nederlandseachtergond
-Greenspace.r1500m_all -> Nederlandseachtergond
-Huurcoporatie -> Nederlandseachtergond
 Greenspace.r1000m_all -> Nederlandseachtergond
+Huishoudgrootte -> Nederlandseachtergond
+Huurcoporatie -> Nederlandseachtergond
+Cafedichtstbijzijnde -> Nederlandseachtergond
 good_plus_relationship_total_incl_care -> network_size_care
-difficult_relationship_total_incl_care -> network_size_care
+emotional_support_decisions_incl_care -> network_size_care
+acquaintances -> network_size_care
 family_members -> network_size_care
-diversity_type_N -> network_size_care
+friends -> network_size_care
 Nederlandseachtergond -> Nietwestersemigratieachtergrond
 Huurcoporatie -> Nietwestersemigratieachtergrond
 age -> OPLEIDINGSNIVEAU
@@ -137,6 +130,7 @@ nearness_house -> physical_contact
 phone_internet_video_call_contact -> physical_contact
 physical_contact -> physical_phone_internet_video_call_contact
 network_size_care -> physical_phone_internet_video_call_contact
+good_plus_relationship_total_incl_care -> physical_phone_internet_video_call_contact
 emotional_support_talk_about_my_health_incl_care -> practical_support_incl_care
 family_members -> practical_support_incl_care
 nearness_house -> RELATIE
@@ -144,18 +138,19 @@ age -> RELATIE
 Huisartspraktijkdichtstbijzijnde -> Restaurantdichtstbijzijnde
 Bibliotheekdichtstbijzijnde -> Restaurantdichtstbijzijnde
 Cafedichtstbijzijnde -> Restaurantdichtstbijzijnde
-Greenspace.r1500m_all -> Restaurantdichtstbijzijnde
+Greenspace.r1000m_all -> Restaurantdichtstbijzijnde
 Bioscoopdichtstbijzijnde -> Restaurantdichtstbijzijnde
 network_size_care -> same_age
 friends -> same_age
-network_size_care -> same_sex
+diversity_type_N -> same_age
+good_plus_relationship_total_incl_care -> same_sex
 diversity_type_N -> same_sex
 family_members -> same_sex
+Greenspace.r1000m_all -> Supermarktdichtstbijzijnde
 Huisartspraktijkdichtstbijzijnde -> Supermarktdichtstbijzijnde
 Bibliotheekdichtstbijzijnde -> Supermarktdichtstbijzijnde
 Restaurantdichtstbijzijnde -> Supermarktdichtstbijzijnde
 Cafedichtstbijzijnde -> Supermarktdichtstbijzijnde
-lbm -> Supermarktdichtstbijzijnde
 network_size_care -> support_do_fun_things_incl_care
 emotional_support_talk_about_my_health_incl_care -> support_do_fun_things_incl_care
 caregivers -> support_do_fun_things_incl_care
@@ -168,32 +163,33 @@ Bibliotheekdichtstbijzijnde -> Treinstationdichtstbijzijnde
 Greenspace.r1000m_all -> Treinstationdichtstbijzijnde
 Restaurantdichtstbijzijnde -> Treinstationdichtstbijzijnde
 Huisartspraktijkdichtstbijzijnde -> Treinstationdichtstbijzijnde
+Greenspace.r1000m_all -> urbanization_cat
 Nederlandseachtergond -> urbanization_cat
-Supermarktdichtstbijzijnde -> urbanization_cat
-Greenspace.r1500m_all -> urbanization_cat
 Bibliotheekdichtstbijzijnde -> urbanization_cat
+Restaurantdichtstbijzijnde -> urbanization_cat
 Treinstationdichtstbijzijnde -> urbanization_cat
 urbanization_cat -> Walkability.WI7c_1719_500z
-Supermarktdichtstbijzijnde -> Walkability.WI7c_1719_500z
-Greenspace.r1500m_all -> Walkability.WI7c_1719_500z
-Bibliotheekdichtstbijzijnde -> Walkability.WI7c_1719_500z
+Greenspace.r1000m_all -> Walkability.WI7c_1719_500z
 Treinstationdichtstbijzijnde -> Walkability.WI7c_1719_500z
+Bibliotheekdichtstbijzijnde -> Walkability.WI7c_1719_500z
+Supermarktdichtstbijzijnde -> Walkability.WI7c_1719_500z
 age -> WERKSITUATIE
 GEZONDHEID_NU_CBS -> WERKSITUATIE
 OPLEIDINGSNIVEAU -> WERKSITUATIE
 Nederlandseachtergond -> Westersemigratieachtergrond
 Nietwestersemigratieachtergrond -> Westersemigratieachtergrond
+GEZONDHEID_NU_CBS -> C_PHQ9_TOTAL
+age -> C_PHQ9_TOTAL
+C_PHQ9_TOTAL -> emotional_loneliness
 RELATIE -> emotional_loneliness
-GEZONDHEID_NU_CBS -> emotional_loneliness
 density -> emotional_loneliness
-difficult_relationship_total_incl_care -> emotional_loneliness
-emotional_loneliness -> loneliness
-good_plus_relationship_total_incl_care -> loneliness
-density -> loneliness
-GEZONDHEID_NU_CBS -> mental_health_conditions
-emotional_loneliness -> mental_health_conditions
+emotional_loneliness -> lonelinessBinary
+support_do_fun_things_incl_care -> lonelinessBinary
+density -> lonelinessBinary
+C_PHQ9_TOTAL -> mental_health_conditions
 caregivers -> mental_health_conditions
-loneliness -> social_loneliness
-emotional_loneliness -> social_loneliness
+lonelinessBinary -> social_loneliness
 friends -> social_loneliness
+emotional_loneliness -> social_loneliness
+density -> social_loneliness
 }

@@ -66,7 +66,7 @@ data = selectAttributes.selectWalkability(data, "sw19_density", "500")
 # select walkability radius WI7c_1719_
 data = selectAttributes.selectWalkability(data, "WI7c_1719_", "500")
 # select greenspace radius
-# data = selectAttributes.selectGreenspace(data, "all", "500");
+data = selectAttributes.selectGreenspace(data, "all", "1000");
 # select support levels
 data = selectAttributes.selectSupportLevels(data, ["incl_care"], "emotional_support_total");
 # select support levels

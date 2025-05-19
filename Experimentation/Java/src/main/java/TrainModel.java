@@ -12,12 +12,16 @@ import weka.core.converters.ArffSaver;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
 import static bayes.util.BifMapper.fromWekaBif;
 import static bayes.util.PrintingPress.printBIF;
+import static bayes.util.PrintingPress.sortArrf;
 import static bayes.weka.WekaUtil.createFilter;
 import static bayes.weka.WekaUtil.readData;
 
@@ -27,7 +31,7 @@ public class TrainModel {
                                             List<Node> nodes, List<String> toBeKept,
                                             boolean initNaive, int parents)
             throws Exception {
-        Instances data = readData(target, arff);
+        Instances data = getInstances(arff, target);
 
 
         BayesNet network = createBayesNet(initNaive, parents, nodes);
@@ -43,11 +47,31 @@ public class TrainModel {
             s.writeBatch();
         }
         fNet.setClassifier(network);
-
-        fNet.buildClassifier(data);
+        try {
+            fNet.buildClassifier(data);
+        }catch(Exception e){
+            throw e;
+        }
 
 
         return validate(attributesOfInterest, fNet, data);
+    }
+
+    private static Instances getInstances(String arff, String target) throws IOException {
+        Instances data = readData(target, arff);
+        ArffSaver s = new ArffSaver();
+//        s.setInstances(data);
+//        s.setFile(new File("resources/results/temp.arff"));
+//        s.writeBatch();
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter("resources/results/temp.arff"));
+        writer.write(data.toString());
+        writer.flush();
+        writer.close();
+
+        sortArrf("resources/results/temp.arff");
+        data = readData(target, "resources/results/temp.arff");
+        return data;
     }
 
     private static CombinedResult validate(List<String> attributesOfInterest, FilteredClassifier fNet, Instances data)

@@ -1,0 +1,4 @@
+dag{lonelinessBinary
+social_loneliness
+lonelinessBinary -> social_loneliness
+}

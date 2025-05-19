@@ -47,7 +47,167 @@ def discretize(data):
     data = discretizeUrbanization_cat(data)
     data = discretizeRELATIE(data)
     data = discretizeOPLEIDINGSNIVEAU(data)
+    data = discretizeGood_plus_relationship_total_incl_care(data)
+    data = discretizeGreenspace(data)
+    data = discretizeC_PHQ9_TOTAL(data)
+    data = discretizePHQ9_TOTAL(data)
+    data = discretizeLonelinessBinary(data)
+    data = discretizeLoneliness(data)
+    data = discretizeSame_sex(data)
+    data = discretizeSame_age(data)
+    print(data['same_age'])
+    print(data['same_sex'])
     return data
+
+def discretizeSame_age  (data):
+    data["same_age"] = data["same_age"].map(
+        discretize_same_age)
+    return data
+
+
+def discretize_same_age(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "0"
+    elif float(value) <= 2:
+        return "1-2"
+    elif float(value) <= 5:
+        return "3-5"
+    else:
+        return ">5"
+
+def discretizeSame_sex  (data):
+    data["same_sex"] = data["same_sex"].map(
+        discretize_same_sex)
+    return data
+
+
+def discretize_same_sex(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "0"
+    elif float(value) <= 2:
+        return "1-2"
+    elif float(value) <= 5:
+        return "3-5"
+    else:
+        return ">5"
+
+def discretizeLonelinessBinary  (data):
+    data["lonelinessBinary"] = data["loneliness"].map(
+        discretize_LonelinessBinary)
+    return data
+
+
+def discretize_LonelinessBinary(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "not lonely"
+    else:
+        return "lonely"
+
+def discretizeLoneliness  (data):
+    data["loneliness"] = data["loneliness"].map(
+        discretize_Loneliness)
+    return data
+
+
+def discretize_Loneliness(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "not lonely"
+    elif float(value) <= 1:
+        return "Moderately lonely"
+    else:
+        return "(extremely) severly lonely"
+
+def discretizePHQ9_TOTAL  (data):
+    data["PHQ9_TOTAL"] = data["PHQ9_TOTAL"].map(
+        discretize_PHQ9_TOTAL)
+    return data
+
+def discretizeC_PHQ9_TOTAL  (data):
+    data["C_PHQ9_TOTAL"] = data["C_PHQ9_TOTAL"].map(
+        discretize_C_PHQ9_TOTAL)
+    return data
+
+
+def discretize_C_PHQ9_TOTAL(value):
+    if value == "?":
+        return value
+    elif float(value) <= 1:
+        return "Geen tot minimale depressie"
+    elif float(value) <= 2:
+        return "Milde depressie"
+    elif float(value) <= 3:
+        return "Matige depressie"
+    elif float(value) <= 4:
+        return "Matig ernstige depressie"
+    else:
+        return "Ernstige depressie"
+
+def discretizePHQ9_TOTAL  (data):
+    data["PHQ9_TOTAL"] = data["PHQ9_TOTAL"].map(
+        discretize_PHQ9_TOTAL)
+    return data
+
+
+def discretize_PHQ9_TOTAL(value):
+    if value == "?":
+        return value
+    elif float(value) <= 4:
+        return "Geen tot minimale depressie"
+    elif float(value) <= 9:
+        return "Milde depressie"
+    elif float(value) <= 14:
+        return "Matige depressie"
+    elif float(value) <= 19:
+        return "Matig ernstige depressie"
+    else:
+        return "Ernstige depressie"
+
+def discretizeGreenspace (data):
+    selected = [col for col in data.columns if ("Greenspace" in col)]
+    data[selected[0]] = data[selected[0]].map(
+        discretize_Greenspace)
+    return data
+
+
+def discretize_Greenspace(value):
+    if value == "?":
+        return value
+    elif float(value) <= 50:
+        return "<=50"
+    elif float(value) <= 60:
+        return "51-60"
+    elif float(value) <= 70:
+        return "61-70"
+    elif float(value) <= 80:
+        return "71-80"
+    else:
+        return ">80"
+
+def discretizeGood_plus_relationship_total_incl_care (data):
+    data["good_plus_relationship_total_incl_care"] = data["good_plus_relationship_total_incl_care"].map(
+        discretize_Good_plus_relationship_total_incl_care)
+    return data
+
+
+def discretize_Good_plus_relationship_total_incl_care(value):
+    if value == "?":
+        return value
+    elif float(value) == 0:
+        return "0"
+    elif float(value) <= 2:
+        return "1-2"
+    elif float(value) <= 4:
+        return "3-4"
+    else:
+        return ">5"
 
 def discretizeDiversity_type_N(data):
     data["diversity_type_N"] = data["diversity_type_N"].map(
