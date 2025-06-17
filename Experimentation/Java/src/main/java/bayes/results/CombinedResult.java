@@ -79,6 +79,14 @@ public class CombinedResult {
         return toOpenMarkovBif(fromWekaBif(graph));
     }
 
+    public double getAverageAUC(){
+        double d = 0;
+        for(CleanResult res: results.values()){
+            d += res.getAuc();
+        }
+        return d /= results.size();
+    }
+
     @Override
     public String toString() {
         String s = "Max parents: " + maxParents + " initNaive: " + naiveBayes + " DAG: " + dag;

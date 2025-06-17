@@ -3,15 +3,54 @@ import bayes.results.CombinedResult;
 import org.junit.jupiter.api.Test;
 import weka.core.Instances;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static bayes.util.PrintingPress.*;
-import static util.FilterAttributes.generateFirstModel;
-import static util.FilterAttributes.generateSmallSet;
+import static util.FilterAttributes.*;
 
 class TrainModelTest {
+
+    @Test
+    public void trainSunbeltModelFeautureSelectionAndWorstTest() throws Exception {
+        boolean withoutSize = true;
+        List<String> attributesOfInterest = new ArrayList<>();
+        attributesOfInterest.add("acquaintances");
+        attributesOfInterest.add("caregivers");
+        attributesOfInterest.add("emotional_support_decisions_incl_care");
+        attributesOfInterest.add("emotional_support_talk_about_my_health_incl_care");
+        attributesOfInterest.add("good_plus_relationship_total_incl_care");
+        attributesOfInterest.add("informational_support_incl_care");
+        attributesOfInterest.add("physical_contact");
+        attributesOfInterest.add("support_do_fun_things_incl_care");
+        attributesOfInterest.add("social_loneliness");
+        attributesOfInterest.add("emotional_loneliness");
+        attributesOfInterest.add("lonelinessBinary");
+
+       List<String> selectedNodes =  generateSunbeltModel();
+       if(withoutSize) {
+           selectedNodes.remove("network_size_care");
+       }
+
+        int parents = 3;
+        Map<Double, CombinedResult> res =
+                TrainModel.trainModelWithFeatureSelection("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
+                        null, generateSunbeltModel(), false, parents);
+
+        List<Double> keys = new ArrayList<Double>(res.keySet());
+        Collections.sort(keys);
+
+        for(int i =0; i < keys.size(); i++) {
+            String path = "resources/results/Sunbelt/";
+            if(withoutSize){
+                path+="/noSize/";
+            }
+            System.out.println(keys.get(i));
+            printBIF(res.get(keys.get(i)).printGraph(), path+"bestFeature" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+ ".pgmx");
+            printDiggity(res.get(keys.get(i)).getDiggity(), path+"bestDiggity" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
+            System.out.println("Best \n");
+            System.out.println(res.get(keys.get(i)));
+        }
+    }
 
     @Test
     public void trainmodelTest() throws Exception {
@@ -96,7 +135,45 @@ class TrainModelTest {
     }
 
     @Test
-    public void trainFirstModelFeautureSelectionTest() throws Exception {
+    public void trainFirstModelFeautureSelectionAndWorstTest() throws Exception {
+        List<String> attributesOfInterest = new ArrayList<>();
+//        attributesOfInterest.add("network_size_care");
+//        attributesOfInterest.add("nearness_less_than_15_min");
+//        attributesOfInterest.add("acquaintances");
+//        attributesOfInterest.add("caregivers");
+//        attributesOfInterest.add("diversity_type_N");
+//        attributesOfInterest.add("emotional_support_decisions_incl_care");
+//        attributesOfInterest.add("emotional_support_talk_about_my_health_incl_care");
+//        attributesOfInterest.add("good_plus_relationship_total_incl_care");
+//        attributesOfInterest.add("informational_support_incl_care");
+//        attributesOfInterest.add("physical_contact");
+//        attributesOfInterest.add("support_do_fun_things_incl_care");
+//        attributesOfInterest.add("support_give_care_incl_care");
+//        attributesOfInterest.add("support_receive_care_incl_care");
+//        attributesOfInterest.add("social_loneliness");
+//        attributesOfInterest.add("emotional_loneliness");
+        attributesOfInterest.add("lonelinessBinary");
+//        attributesOfInterest.add("friends");
+
+        int parents = 3;
+        Map<Double, CombinedResult> res =
+                TrainModel.trainModelWithFeatureSelection("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
+                        null, generateFirstModel(), false, parents);
+
+        List<Double> keys = new ArrayList<Double>(res.keySet());
+        Collections.sort(keys);
+
+        for(int i =0; i < keys.size(); i++) {
+            System.out.println(keys.get(i));
+            printBIF(res.get(keys.get(i)).printGraph(), "resources/results/bestFeature" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+ ".pgmx");
+            printDiggity(res.get(keys.get(i)).getDiggity(), "resources/results/bestDiggity" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
+            System.out.println("Best \n");
+            System.out.println(res.get(keys.get(i)));
+        }
+    }
+
+    @Test
+    public void trainFirstModelFeautureSelectionOnlyBestAndWorstTest() throws Exception {
         List<String> attributesOfInterest = new ArrayList<>();
         attributesOfInterest.add("network_size_care");
         attributesOfInterest.add("nearness_less_than_15_min");
@@ -117,18 +194,39 @@ class TrainModelTest {
         attributesOfInterest.add("friends");
 
         int parents = 3;
-        BestWorstResult res =
+        Map<Double, CombinedResult> res =
                 TrainModel.trainModelWithFeatureSelection("resources/Data/BL1_FU1_cleaned.csv", "network_size_care", attributesOfInterest,
                         null, generateFirstModel(), false, parents);
-
-        printBIF(res.getBest().printGraph(), "resources/results/bestFeature"+ parents +".pgmx");
-        printDiggity(res.getBest().getDiggity(), "resources/results/bestDiggity"+ parents +".txt");
+        double min = getMin(res.keySet());
+        double max = getMax(res.keySet());
+        printBIF(res.get(max).printGraph(), "resources/results/bestFeature"+ parents +".pgmx");
+        printDiggity(res.get(max).getDiggity(), "resources/results/bestDiggity"+ parents +".txt");
         System.out.println("Best \n");
-        System.out.println(res.getBest());
-        printBIF(res.getWorst().printGraph(), "resources/results/worstFeature"+ parents +".pgmx");
-        printDiggity(res.getWorst().getDiggity(), "resources/results/worstDiggity"+ parents +".txt");
+        System.out.println(res.get(max));
+        printBIF(res.get(min).printGraph(), "resources/results/worstFeature"+ parents +".pgmx");
+        printDiggity(res.get(min).getDiggity(), "resources/results/worstDiggity"+ parents +".txt");
         System.out.println("Worst \n");
-        System.out.println(res.getWorst());
+        System.out.println(res.get(min));
+    }
+
+    private static double getMax(Set<Double> doubles) {
+        double max = doubles.iterator().next();
+        for(Double d: doubles){
+            if(d > max){
+                max = d;
+            }
+        }
+        return max;
+    }
+
+    private static double getMin(Set<Double> doubles) {
+        double min = doubles.iterator().next();
+        for(Double d: doubles){
+            if(d < min){
+                min = d;
+            }
+        }
+        return min;
     }
 
     @Test

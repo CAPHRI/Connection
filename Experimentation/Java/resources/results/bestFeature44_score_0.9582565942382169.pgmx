@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <DecisionCriteria>
+      <Criterion name="---" unit="---"/>
+    </DecisionCriteria>
+    <Properties/>
+    <Variables>
+      <Variable name="C_PHQ9_TOTAL" role="chance" type="finiteStates">
+        <States>
+          <State name="Geen tot minimale depressie"/>
+          <State name="Milde depressie"/>
+          <State name="Matige depressie"/>
+          <State name="Matig ernstige depressie"/>
+          <State name="Ernstige depressie"/>
+        </States>
+      </Variable>
+      <Variable name="lonelinessBinary" role="chance" type="finiteStates">
+        <States>
+          <State name="not lonely"/>
+          <State name="lonely"/>
+        </States>
+      </Variable>
+      <Variable name="emotional_loneliness" role="chance" type="finiteStates">
+        <States>
+          <State name="False"/>
+          <State name="True"/>
+        </States>
+      </Variable>
+      <Variable name="mental_health_conditions" role="chance" type="finiteStates">
+        <States>
+          <State name="False"/>
+          <State name="True"/>
+        </States>
+      </Variable>
+      <Variable name="social_loneliness" role="chance" type="finiteStates">
+        <States>
+          <State name="False"/>
+          <State name="True"/>
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="C_PHQ9_TOTAL"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="emotional_loneliness"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="C_PHQ9_TOTAL"/>
+        <Variable name="emotional_loneliness"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="C_PHQ9_TOTAL"/>
+        <Variable name="mental_health_conditions"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_loneliness"/>
+        <Variable name="mental_health_conditions"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="social_loneliness"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_loneliness"/>
+        <Variable name="social_loneliness"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="C_PHQ9_TOTAL"/>
+        <Variable name="social_loneliness"/>
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="C_PHQ9_TOTAL"/>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.8120847338388181 0.14249980458063002 0.036035331822090205 0.006956929570859064 0.0024232001876025953 0.5112167582825732 0.2845045312732135 0.12553855296389838 0.056009508245431584 0.022730649234883375</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.6553084648493543 0.3446915351506456</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="emotional_loneliness"/>
+          <Variable name="lonelinessBinary"/>
+          <Variable name="C_PHQ9_TOTAL"/>
+        </Variables>
+        <Values>0.9999037536092397 9.624639076034648E-5 0.9994517543859649 5.482456140350877E-4 0.9978354978354979 0.0021645021645021645 0.9888888888888889 0.011111111111111112 0.96875 0.03125 0.5522951772225451 0.447704822777455 0.3126304801670146 0.6873695198329853 0.20685579196217493 0.793144208037825 0.11904761904761904 0.8809523809523809 0.09740259740259741 0.9025974025974026</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="mental_health_conditions"/>
+          <Variable name="C_PHQ9_TOTAL"/>
+          <Variable name="emotional_loneliness"/>
+        </Variables>
+        <Values>0.9816924328722538 0.018307567127746133 0.9539559014267186 0.046044098573281456 0.9194880264244426 0.0805119735755574 0.8490136570561456 0.15098634294385432 0.8160377358490566 0.18396226415094338 0.7604166666666666 0.23958333333333334 0.6044776119402985 0.39552238805970147 0.6017964071856288 0.39820359281437123 0.3695652173913043 0.6304347826086957 0.4642857142857143 0.5357142857142857</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="social_loneliness"/>
+          <Variable name="lonelinessBinary"/>
+          <Variable name="emotional_loneliness"/>
+          <Variable name="C_PHQ9_TOTAL"/>
+        </Variables>
+        <Values>0.9999037536092397 9.624639076034648E-5 0.9994517543859649 5.482456140350877E-4 0.9978354978354979 0.0021645021645021645 0.9888888888888889 0.011111111111111112 0.96875 0.03125 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.20977917981072555 0.7902208201892744 0.28833333333333333 0.7116666666666667 0.26704545454545453 0.7329545454545454 0.32608695652173914 0.6739130434782609 0.3125 0.6875 0.5778210116731517 0.42217898832684825 0.44385432473444614 0.5561456752655539 0.37648809523809523 0.6235119047619048 0.344311377245509 0.655688622754491 0.2785714285714286 0.7214285714285714</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0"/>
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0"/>
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost"/>
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

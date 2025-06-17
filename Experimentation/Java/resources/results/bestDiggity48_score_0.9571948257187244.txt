@@ -1,0 +1,73 @@
+dag{network_size_care
+lonelinessBinary
+Nietwestersemigratieachtergrond
+OPLEIDINGSNIVEAU
+phone_internet_video_call_contact
+physical_contact
+physical_phone_internet_video_call_contact
+practical_support_incl_care
+RELATIE
+Restaurantdichtstbijzijnde
+same_age
+same_sex
+Supermarktdichtstbijzijnde
+support_do_fun_things_incl_care
+support_give_care_incl_care
+support_receive_care_incl_care
+Treinstationdichtstbijzijnde
+urbanization_cat
+Walkability.WI7c_1719_500z
+WERKSITUATIE
+Westersemigratieachtergrond
+C_PHQ9_TOTAL
+emotional_loneliness
+mental_health_conditions
+social_loneliness
+lonelinessBinary -> network_size_care
+network_size_care -> OPLEIDINGSNIVEAU
+network_size_care -> phone_internet_video_call_contact
+network_size_care -> physical_contact
+phone_internet_video_call_contact -> physical_contact
+physical_contact -> physical_phone_internet_video_call_contact
+network_size_care -> physical_phone_internet_video_call_contact
+network_size_care -> practical_support_incl_care
+lonelinessBinary -> RELATIE
+physical_contact -> RELATIE
+OPLEIDINGSNIVEAU -> RELATIE
+RELATIE -> Restaurantdichtstbijzijnde
+network_size_care -> same_age
+RELATIE -> same_age
+network_size_care -> same_sex
+same_age -> same_sex
+Restaurantdichtstbijzijnde -> Supermarktdichtstbijzijnde
+Nietwestersemigratieachtergrond -> Supermarktdichtstbijzijnde
+network_size_care -> support_do_fun_things_incl_care
+practical_support_incl_care -> support_do_fun_things_incl_care
+same_age -> support_do_fun_things_incl_care
+network_size_care -> support_give_care_incl_care
+network_size_care -> support_receive_care_incl_care
+practical_support_incl_care -> support_receive_care_incl_care
+Restaurantdichtstbijzijnde -> Treinstationdichtstbijzijnde
+Supermarktdichtstbijzijnde -> Treinstationdichtstbijzijnde
+Supermarktdichtstbijzijnde -> urbanization_cat
+Treinstationdichtstbijzijnde -> urbanization_cat
+Restaurantdichtstbijzijnde -> urbanization_cat
+urbanization_cat -> Walkability.WI7c_1719_500z
+Supermarktdichtstbijzijnde -> Walkability.WI7c_1719_500z
+Treinstationdichtstbijzijnde -> Walkability.WI7c_1719_500z
+OPLEIDINGSNIVEAU -> WERKSITUATIE
+support_receive_care_incl_care -> WERKSITUATIE
+RELATIE -> WERKSITUATIE
+Nietwestersemigratieachtergrond -> Westersemigratieachtergrond
+Walkability.WI7c_1719_500z -> Westersemigratieachtergrond
+lonelinessBinary -> C_PHQ9_TOTAL
+support_receive_care_incl_care -> C_PHQ9_TOTAL
+lonelinessBinary -> emotional_loneliness
+C_PHQ9_TOTAL -> emotional_loneliness
+RELATIE -> emotional_loneliness
+C_PHQ9_TOTAL -> mental_health_conditions
+emotional_loneliness -> mental_health_conditions
+lonelinessBinary -> social_loneliness
+support_do_fun_things_incl_care -> social_loneliness
+emotional_loneliness -> social_loneliness
+}

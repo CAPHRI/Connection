@@ -1,0 +1,11 @@
+dag{emotional_loneliness
+lonelinessBinary
+mental_health_conditions
+social_loneliness
+lonelinessBinary -> emotional_loneliness
+emotional_loneliness -> mental_health_conditions
+lonelinessBinary -> mental_health_conditions
+lonelinessBinary -> social_loneliness
+emotional_loneliness -> social_loneliness
+mental_health_conditions -> social_loneliness
+}

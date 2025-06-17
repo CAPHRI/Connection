@@ -1,0 +1,17 @@
+dag{WERKSITUATIE
+lonelinessBinary
+Westersemigratieachtergrond
+C_PHQ9_TOTAL
+emotional_loneliness
+mental_health_conditions
+social_loneliness
+lonelinessBinary -> WERKSITUATIE
+lonelinessBinary -> C_PHQ9_TOTAL
+lonelinessBinary -> emotional_loneliness
+C_PHQ9_TOTAL -> emotional_loneliness
+C_PHQ9_TOTAL -> mental_health_conditions
+emotional_loneliness -> mental_health_conditions
+lonelinessBinary -> social_loneliness
+emotional_loneliness -> social_loneliness
+C_PHQ9_TOTAL -> social_loneliness
+}

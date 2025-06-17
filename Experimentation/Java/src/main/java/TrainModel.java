@@ -17,13 +17,12 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import static bayes.util.BifMapper.fromWekaBif;
 import static bayes.util.PrintingPress.printBIF;
 import static bayes.util.PrintingPress.sortArrf;
+import static bayes.util.SelectPopulation.testSubPopulation;
 import static bayes.weka.WekaUtil.createFilter;
 import static bayes.weka.WekaUtil.readData;
 
@@ -59,15 +58,12 @@ public class TrainModel {
         return validate(attributesOfInterest, fNet, data);
     }
 
-    public static BestWorstResult trainModelWithFeatureSelection(String arff, String target, List<String> attributesOfInterest,
-                                                                 List<Node> nodes, List<String> toBeKept,
-                                                                 boolean initNaive, int parents)
+    public static Map<Double, CombinedResult> trainModelWithFeatureSelection(String arff, String target, List<String> attributesOfInterest,
+                                                                             List<Node> nodes, List<String> toBeKept,
+                                                                             boolean initNaive, int parents)
             throws Exception {
         List<List<String>> featureSelection = makeCombinations(toBeKept, attributesOfInterest);
-        double best = 0;
-        CombinedResult bestRes = null;
-        double worst = 1.1;
-        CombinedResult worstRes = null;
+        Map<Double, CombinedResult> all = new HashMap<>();
         for (List<String> list : featureSelection) {
             CombinedResult res = trainModel(arff, target, attributesOfInterest, nodes, list, initNaive, parents);
             double score = 0;
@@ -75,20 +71,10 @@ public class TrainModel {
                 score += x.getAuc();
             }
             score /= res.getResults().values().size();
-            System.out.println("Attribute size: " + list.size() + " Current score: " + score);
-            if (score > best) {
-                System.out.println("Previous best: " + best + " new best: " +score);
-                best = score;
-                bestRes = res;
-            }
-            if (score < worst) {
-                System.out.println("Previous worst: " + worst + " new worst: " +score);
-                worst = score;
-                worstRes = res;
-            }
+            all.put(score, res);
         }
-        BestWorstResult res = new BestWorstResult(bestRes, worstRes);
-        return res;
+        return all;
+
     }
 
     private static List<List<String>> makeCombinations(List<String> attributes, List<String> attributesOfInterest) {
@@ -145,7 +131,11 @@ public class TrainModel {
             r.setAuc(eval.weightedAreaUnderROC());
             r.setConfusionMatrix(eval.toMatrixString());
             r.setDetails(eval.toClassDetailsString());
+
+            testSubPopulation(data, fNet);
+
             res.getResults().put(att, r);
+
 
         }
         res.setGraph(fNet.graph());

@@ -1,0 +1,150 @@
+dag{diversity_type_N
+lonelinessBinary
+emotional_support_decisions_incl_care
+emotional_support_talk_about_my_health_incl_care
+extra_members
+family_members
+friends
+GEZONDHEID_NU_CBS
+good_plus_relationship_total_incl_care
+Greenspace.r1000m_all
+Huisartspraktijkdichtstbijzijnde
+Huishoudgrootte
+Huurcoporatie
+informational_support_incl_care
+lbm
+LID_CLUBS
+nearness_house
+nearness_less_than_15_min
+nearness_walking_distance
+Nederlandseachtergond
+network_size_care
+Nietwestersemigratieachtergrond
+OPLEIDINGSNIVEAU
+phone_internet_video_call_contact
+physical_contact
+physical_phone_internet_video_call_contact
+practical_support_incl_care
+RELATIE
+Restaurantdichtstbijzijnde
+same_age
+same_sex
+Supermarktdichtstbijzijnde
+support_do_fun_things_incl_care
+support_give_care_incl_care
+support_receive_care_incl_care
+Treinstationdichtstbijzijnde
+urbanization_cat
+Walkability.WI7c_1719_500z
+WERKSITUATIE
+Westersemigratieachtergrond
+C_PHQ9_TOTAL
+emotional_loneliness
+mental_health_conditions
+social_loneliness
+lonelinessBinary -> diversity_type_N
+diversity_type_N -> emotional_support_decisions_incl_care
+lonelinessBinary -> emotional_support_decisions_incl_care
+emotional_support_decisions_incl_care -> emotional_support_talk_about_my_health_incl_care
+diversity_type_N -> emotional_support_talk_about_my_health_incl_care
+diversity_type_N -> extra_members
+emotional_support_decisions_incl_care -> extra_members
+emotional_support_decisions_incl_care -> family_members
+diversity_type_N -> family_members
+extra_members -> family_members
+diversity_type_N -> friends
+emotional_support_decisions_incl_care -> friends
+family_members -> friends
+lonelinessBinary -> GEZONDHEID_NU_CBS
+emotional_support_decisions_incl_care -> good_plus_relationship_total_incl_care
+family_members -> good_plus_relationship_total_incl_care
+diversity_type_N -> good_plus_relationship_total_incl_care
+lonelinessBinary -> Greenspace.r1000m_all
+Greenspace.r1000m_all -> Huisartspraktijkdichtstbijzijnde
+Greenspace.r1000m_all -> Huishoudgrootte
+lonelinessBinary -> Huishoudgrootte
+Huishoudgrootte -> Huurcoporatie
+Huisartspraktijkdichtstbijzijnde -> Huurcoporatie
+emotional_support_decisions_incl_care -> informational_support_incl_care
+emotional_support_talk_about_my_health_incl_care -> informational_support_incl_care
+good_plus_relationship_total_incl_care -> informational_support_incl_care
+Greenspace.r1000m_all -> lbm
+Huishoudgrootte -> lbm
+Huisartspraktijkdichtstbijzijnde -> lbm
+friends -> LID_CLUBS
+lbm -> LID_CLUBS
+family_members -> nearness_house
+Huishoudgrootte -> nearness_house
+lonelinessBinary -> nearness_house
+good_plus_relationship_total_incl_care -> nearness_less_than_15_min
+friends -> nearness_less_than_15_min
+family_members -> nearness_less_than_15_min
+good_plus_relationship_total_incl_care -> nearness_walking_distance
+friends -> nearness_walking_distance
+family_members -> nearness_walking_distance
+lbm -> Nederlandseachtergond
+Greenspace.r1000m_all -> Nederlandseachtergond
+Huishoudgrootte -> Nederlandseachtergond
+good_plus_relationship_total_incl_care -> network_size_care
+emotional_support_decisions_incl_care -> network_size_care
+family_members -> network_size_care
+Nederlandseachtergond -> Nietwestersemigratieachtergrond
+Huurcoporatie -> Nietwestersemigratieachtergrond
+emotional_support_decisions_incl_care -> OPLEIDINGSNIVEAU
+GEZONDHEID_NU_CBS -> OPLEIDINGSNIVEAU
+network_size_care -> phone_internet_video_call_contact
+network_size_care -> physical_contact
+nearness_house -> physical_contact
+phone_internet_video_call_contact -> physical_contact
+physical_contact -> physical_phone_internet_video_call_contact
+network_size_care -> physical_phone_internet_video_call_contact
+good_plus_relationship_total_incl_care -> physical_phone_internet_video_call_contact
+emotional_support_talk_about_my_health_incl_care -> practical_support_incl_care
+family_members -> practical_support_incl_care
+nearness_house -> RELATIE
+OPLEIDINGSNIVEAU -> RELATIE
+lonelinessBinary -> RELATIE
+Huisartspraktijkdichtstbijzijnde -> Restaurantdichtstbijzijnde
+Greenspace.r1000m_all -> Restaurantdichtstbijzijnde
+Huishoudgrootte -> Restaurantdichtstbijzijnde
+network_size_care -> same_age
+friends -> same_age
+diversity_type_N -> same_age
+good_plus_relationship_total_incl_care -> same_sex
+diversity_type_N -> same_sex
+family_members -> same_sex
+Greenspace.r1000m_all -> Supermarktdichtstbijzijnde
+Huisartspraktijkdichtstbijzijnde -> Supermarktdichtstbijzijnde
+Restaurantdichtstbijzijnde -> Supermarktdichtstbijzijnde
+network_size_care -> support_do_fun_things_incl_care
+emotional_support_talk_about_my_health_incl_care -> support_do_fun_things_incl_care
+emotional_support_decisions_incl_care -> support_do_fun_things_incl_care
+family_members -> support_give_care_incl_care
+nearness_house -> support_give_care_incl_care
+emotional_support_talk_about_my_health_incl_care -> support_receive_care_incl_care
+GEZONDHEID_NU_CBS -> support_receive_care_incl_care
+Greenspace.r1000m_all -> Treinstationdichtstbijzijnde
+Restaurantdichtstbijzijnde -> Treinstationdichtstbijzijnde
+Huisartspraktijkdichtstbijzijnde -> Treinstationdichtstbijzijnde
+Greenspace.r1000m_all -> urbanization_cat
+Nederlandseachtergond -> urbanization_cat
+Restaurantdichtstbijzijnde -> urbanization_cat
+urbanization_cat -> Walkability.WI7c_1719_500z
+Greenspace.r1000m_all -> Walkability.WI7c_1719_500z
+Treinstationdichtstbijzijnde -> Walkability.WI7c_1719_500z
+OPLEIDINGSNIVEAU -> WERKSITUATIE
+nearness_house -> WERKSITUATIE
+GEZONDHEID_NU_CBS -> WERKSITUATIE
+Nederlandseachtergond -> Westersemigratieachtergrond
+Nietwestersemigratieachtergrond -> Westersemigratieachtergrond
+GEZONDHEID_NU_CBS -> C_PHQ9_TOTAL
+lonelinessBinary -> C_PHQ9_TOTAL
+lonelinessBinary -> emotional_loneliness
+C_PHQ9_TOTAL -> emotional_loneliness
+RELATIE -> emotional_loneliness
+C_PHQ9_TOTAL -> mental_health_conditions
+emotional_loneliness -> mental_health_conditions
+lonelinessBinary -> social_loneliness
+friends -> social_loneliness
+emotional_loneliness -> social_loneliness
+}

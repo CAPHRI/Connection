@@ -1,0 +1,27 @@
+dag{support_receive_care_incl_care
+lonelinessBinary
+Treinstationdichtstbijzijnde
+urbanization_cat
+Walkability.WI7c_1719_500z
+WERKSITUATIE
+Westersemigratieachtergrond
+C_PHQ9_TOTAL
+emotional_loneliness
+mental_health_conditions
+social_loneliness
+Treinstationdichtstbijzijnde -> urbanization_cat
+urbanization_cat -> Walkability.WI7c_1719_500z
+Treinstationdichtstbijzijnde -> Walkability.WI7c_1719_500z
+support_receive_care_incl_care -> WERKSITUATIE
+lonelinessBinary -> WERKSITUATIE
+Walkability.WI7c_1719_500z -> Westersemigratieachtergrond
+lonelinessBinary -> C_PHQ9_TOTAL
+support_receive_care_incl_care -> C_PHQ9_TOTAL
+lonelinessBinary -> emotional_loneliness
+C_PHQ9_TOTAL -> emotional_loneliness
+C_PHQ9_TOTAL -> mental_health_conditions
+emotional_loneliness -> mental_health_conditions
+lonelinessBinary -> social_loneliness
+emotional_loneliness -> social_loneliness
+C_PHQ9_TOTAL -> social_loneliness
+}

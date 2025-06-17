@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <DecisionCriteria>
+      <Criterion name="---" unit="---"/>
+    </DecisionCriteria>
+    <Properties/>
+    <Variables>
+      <Variable name="mental_health_conditions" role="chance" type="finiteStates">
+        <States>
+          <State name="False"/>
+          <State name="True"/>
+        </States>
+      </Variable>
+      <Variable name="lonelinessBinary" role="chance" type="finiteStates">
+        <States>
+          <State name="not lonely"/>
+          <State name="lonely"/>
+        </States>
+      </Variable>
+      <Variable name="social_loneliness" role="chance" type="finiteStates">
+        <States>
+          <State name="False"/>
+          <State name="True"/>
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="mental_health_conditions"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="social_loneliness"/>
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="mental_health_conditions"/>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.9642689601250978 0.03573103987490227 0.8821343638525565 0.11786563614744353</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.6553084648493543 0.3446915351506456</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="social_loneliness"/>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.9999218139171228 7.818608287724784E-5 0.37351367419738407 0.626486325802616</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0"/>
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0"/>
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost"/>
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

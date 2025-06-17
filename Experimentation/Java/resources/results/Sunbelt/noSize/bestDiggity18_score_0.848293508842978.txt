@@ -1,0 +1,72 @@
+dag{OPLEIDINGSNIVEAU
+acquaintances
+caregivers
+emotional_support_decisions_incl_care
+emotional_support_talk_about_my_health_incl_care
+good_plus_relationship_total_incl_care
+informational_support_incl_care
+physical_contact
+support_do_fun_things_incl_care
+social_loneliness
+emotional_loneliness
+lonelinessBinary
+phone_internet_video_call_contact
+practical_support_incl_care
+RELATIE
+Restaurantdichtstbijzijnde
+same_sex
+Supermarktdichtstbijzijnde
+Treinstationdichtstbijzijnde
+urbanization_cat
+Walkability.WI7c_1719_500z
+C_PHQ9_TOTAL
+lonelinessBinary -> OPLEIDINGSNIVEAU
+OPLEIDINGSNIVEAU -> acquaintances
+lonelinessBinary -> acquaintances
+acquaintances -> caregivers
+OPLEIDINGSNIVEAU -> caregivers
+acquaintances -> emotional_support_decisions_incl_care
+lonelinessBinary -> emotional_support_decisions_incl_care
+OPLEIDINGSNIVEAU -> emotional_support_decisions_incl_care
+emotional_support_decisions_incl_care -> emotional_support_talk_about_my_health_incl_care
+caregivers -> emotional_support_talk_about_my_health_incl_care
+emotional_support_decisions_incl_care -> good_plus_relationship_total_incl_care
+acquaintances -> good_plus_relationship_total_incl_care
+emotional_support_decisions_incl_care -> informational_support_incl_care
+emotional_support_talk_about_my_health_incl_care -> informational_support_incl_care
+good_plus_relationship_total_incl_care -> informational_support_incl_care
+good_plus_relationship_total_incl_care -> physical_contact
+acquaintances -> physical_contact
+emotional_support_decisions_incl_care -> physical_contact
+emotional_support_decisions_incl_care -> support_do_fun_things_incl_care
+good_plus_relationship_total_incl_care -> support_do_fun_things_incl_care
+emotional_support_talk_about_my_health_incl_care -> support_do_fun_things_incl_care
+lonelinessBinary -> social_loneliness
+support_do_fun_things_incl_care -> social_loneliness
+lonelinessBinary -> emotional_loneliness
+social_loneliness -> emotional_loneliness
+emotional_support_decisions_incl_care -> phone_internet_video_call_contact
+physical_contact -> phone_internet_video_call_contact
+emotional_support_talk_about_my_health_incl_care -> practical_support_incl_care
+informational_support_incl_care -> practical_support_incl_care
+good_plus_relationship_total_incl_care -> practical_support_incl_care
+emotional_loneliness -> RELATIE
+physical_contact -> RELATIE
+OPLEIDINGSNIVEAU -> RELATIE
+RELATIE -> Restaurantdichtstbijzijnde
+good_plus_relationship_total_incl_care -> same_sex
+physical_contact -> same_sex
+Restaurantdichtstbijzijnde -> Supermarktdichtstbijzijnde
+RELATIE -> Supermarktdichtstbijzijnde
+Restaurantdichtstbijzijnde -> Treinstationdichtstbijzijnde
+Supermarktdichtstbijzijnde -> Treinstationdichtstbijzijnde
+Supermarktdichtstbijzijnde -> urbanization_cat
+Treinstationdichtstbijzijnde -> urbanization_cat
+Restaurantdichtstbijzijnde -> urbanization_cat
+urbanization_cat -> Walkability.WI7c_1719_500z
+Supermarktdichtstbijzijnde -> Walkability.WI7c_1719_500z
+Treinstationdichtstbijzijnde -> Walkability.WI7c_1719_500z
+emotional_loneliness -> C_PHQ9_TOTAL
+caregivers -> C_PHQ9_TOTAL
+lonelinessBinary -> C_PHQ9_TOTAL
+}
