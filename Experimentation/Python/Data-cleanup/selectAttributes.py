@@ -207,7 +207,7 @@ def selectAttributesToBeRemoved():
     toBeRemoved.append('BMI')
     # Remove booster variants, we have booster
     toBeRemoved.append('boostervaccinatie_recoded')
-    toBeRemoved.append( 'boostervaccinatie')
+    toBeRemoved.append('boostervaccinatie')
     toBeRemoved.append('booster_wil_niet_zeggen')
     # Remove check_vac_soort
     toBeRemoved.append('check_vac_soort')
@@ -336,6 +336,7 @@ def selectAttributesToBeRemoved():
     toBeRemoved.append('ZUURSTOF')
     return toBeRemoved
 
+
 def selectRadiusAttributes(areaOfInterest, data):
     if areaOfInterest == 'dichstbijzijnde':
         return ['aantalbinnen']
@@ -362,7 +363,7 @@ def selectRadiusAttributes(areaOfInterest, data):
     for key, values in grouped_data.items():
         values.sort()  # Sort by numeric distance
         middle_index = len(values) // 2
-        largest_index = len(values)-1# Find middle index
+        largest_index = len(values) - 1  # Find middle index
 
         if areaOfInterest == 'closests':
             toBeRemoved.append(values[middle_index][1])
@@ -376,22 +377,39 @@ def selectRadiusAttributes(areaOfInterest, data):
 
     return toBeRemoved
 
+
 def selectGeslacht(data):
-    geslacht_cols = [col for col in data.columns if (("geslacht" in col) and not("geslacht_totaal" in col))]
+    geslacht_cols = [col for col in data.columns if (("geslacht" in col) and not ("geslacht_totaal" in col))]
+
+    data["geslacht_totaal"] = data["geslacht_totaal"].map(mapGeslacht)
     return preprocessing.removeAttributes(data, geslacht_cols)
+
+
+def mapGeslacht(value):
+    if value == "?":
+        return value
+    elif float(value) == 1:
+        return "Man"
+    elif float(value) == 2:
+        return "Vrouw"
+    else:
+        return "Wil ik niet zeggen"
+
 
 def selectWalkability(data, variant, radius):
     # possible radiusses:
     # 150, 250, 350, 500, 750, 1000, 1650, 2000, 3000
-    selected = [col for col in data.columns if (("Walkability."+variant in col) and not(radius in col))]
+    selected = [col for col in data.columns if (("Walkability." + variant in col) and not (radius in col))]
     return preprocessing.removeAttributes(data, selected)
+
 
 def selectGreenspace(data, variant, radius):
     # possible radiusses:
     # 500, 1000, 1500
     # variants: all or high
-    selected = [col for col in data.columns if (("Greenspace" in col) and (not(radius + "m_"+variant in col)))]
+    selected = [col for col in data.columns if (("Greenspace" in col) and (not (radius + "m_" + variant in col)))]
     return preprocessing.removeAttributes(data, selected)
+
 
 def selectSupportLevels(data, include, supporttype):
     # possible supprots:

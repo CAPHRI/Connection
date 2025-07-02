@@ -1,19 +1,49 @@
-package bayes.weka;
+package weka;
 
+import weka.classifiers.AbstractClassifier;
+import weka.classifiers.Evaluation;
+import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Instances;
+import weka.core.converters.ArffSaver;
 import weka.core.converters.CSVLoader;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
-import weka.gui.knowledgeflow.steps.SubstringLabelerStepEditorDialog;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 
 
 public class WekaUtil {
+    private static int TEN = 10;
+
+    public static FilteredClassifier createFilteredClassifier(AbstractClassifier classifier, Instances data, List<String> toBeKept) throws Exception {
+        FilteredClassifier filtered = new FilteredClassifier();
+        if (toBeKept != null) {
+            Remove filter = (Remove) createFilter(data, toBeKept);
+            filtered.setFilter(filter);
+            Instances filteredData = Filter.useFilter(data, filter);
+            ArffSaver s = new ArffSaver();
+            s.setInstances(filteredData);
+            s.setFile(new File("resources/results/data.arff"));
+            s.writeBatch();
+        }
+        filtered.setClassifier(classifier);
+        return filtered;
+    }
+
+    public static Evaluation crossValidate(Instances data, AbstractClassifier classifier) throws Exception {
+        Evaluation eval = new Evaluation(data);
+        classifier.buildClassifier(data);
+        eval.crossValidateModel(classifier, data, TEN, new Random(1));
+        eval.predictions();
+
+        return eval;
+    }
+
     public static Instances filterData(Instances data, List<String> toBeKept) throws Exception {
         if (toBeKept == null || toBeKept.size() == 0) {
             //empty list implies keep everything
@@ -65,15 +95,5 @@ public class WekaUtil {
             }
         }
         return data;
-    }
-
-    public static Instances load200Clean() throws IOException {
-        String path = "CSV-files/clean_200.csv";
-        return readData("lc", path);
-    }
-
-    public static Instances load200Discrete() throws IOException {
-        String path = "CSV-files/discretized_200.csv";
-        return readData("lc", path);
     }
 }

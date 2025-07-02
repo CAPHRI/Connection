@@ -22,6 +22,7 @@ public class FilterAttributes {
         toBeKept.add("family_members");
         toBeKept.add("friends");
         toBeKept.add("GEZONDHEID_NU_CBS");
+        toBeKept.add("geslacht_totaal");
         toBeKept.add("good_plus_relationship_total_incl_care");
         toBeKept.add("Greenspace.r1000m_all");
         toBeKept.add("Huisartspraktijkdichtstbijzijnde");

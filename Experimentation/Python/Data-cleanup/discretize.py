@@ -55,9 +55,8 @@ def discretize(data):
     data = discretizeLoneliness(data)
     data = discretizeSame_sex(data)
     data = discretizeSame_age(data)
-    print(data['same_age'])
-    print(data['same_sex'])
     return data
+
 
 def discretizeSame_age  (data):
     data["same_age"] = data["same_age"].map(

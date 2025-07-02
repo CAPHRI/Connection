@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <DecisionCriteria>
+      <Criterion name="---" unit="---"/>
+    </DecisionCriteria>
+    <Properties/>
+    <Variables>
+      <Variable name="family_members" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+          <State name="3-4"/>
+          <State name="5-6"/>
+          <State name="&gt;7"/>
+        </States>
+      </Variable>
+      <Variable name="acquaintances" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+          <State name="3-4"/>
+          <State name="&gt;4"/>
+        </States>
+      </Variable>
+      <Variable name="caregivers" role="chance" type="finiteStates">
+        <States>
+          <State name="&gt;1"/>
+          <State name="one"/>
+          <State name="zero"/>
+        </States>
+      </Variable>
+      <Variable name="emotional_support_decisions_incl_care" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+          <State name="3-5"/>
+          <State name="6-9"/>
+          <State name="&gt;9"/>
+        </States>
+      </Variable>
+      <Variable name="emotional_support_talk_about_my_health_incl_care" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+          <State name="3-5"/>
+          <State name="6-9"/>
+          <State name="&gt;9"/>
+        </States>
+      </Variable>
+      <Variable name="good_plus_relationship_total_incl_care" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+          <State name="3-4"/>
+          <State name="&gt;5"/>
+        </States>
+      </Variable>
+      <Variable name="informational_support_incl_care" role="chance" type="finiteStates">
+        <States>
+          <State name="1-2"/>
+          <State name="3-5"/>
+          <State name="6-9"/>
+          <State name="&gt;9"/>
+          <State name="zero"/>
+        </States>
+      </Variable>
+      <Variable name="physical_contact" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="4-6"/>
+          <State name="7-10"/>
+          <State name="&gt;10"/>
+          <State name="one"/>
+          <State name="three"/>
+          <State name="two"/>
+        </States>
+      </Variable>
+      <Variable name="support_do_fun_things_incl_care" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+          <State name="3-5"/>
+          <State name="6-9"/>
+          <State name="&gt;9"/>
+        </States>
+      </Variable>
+      <Variable name="social_loneliness" role="chance" type="finiteStates">
+        <States>
+          <State name="False"/>
+          <State name="True"/>
+        </States>
+      </Variable>
+      <Variable name="emotional_loneliness" role="chance" type="finiteStates">
+        <States>
+          <State name="False"/>
+          <State name="True"/>
+        </States>
+      </Variable>
+      <Variable name="lonelinessBinary" role="chance" type="finiteStates">
+        <States>
+          <State name="not lonely"/>
+          <State name="lonely"/>
+        </States>
+      </Variable>
+      <Variable name="friends" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+          <State name="3-4"/>
+          <State name="&gt;4"/>
+        </States>
+      </Variable>
+      <Variable name="GEZONDHEID_NU_CBS" role="chance" type="finiteStates">
+        <States>
+          <State name="five"/>
+          <State name="four"/>
+          <State name="one"/>
+          <State name="three"/>
+          <State name="two"/>
+        </States>
+      </Variable>
+      <Variable name="geslacht_totaal" role="chance" type="finiteStates">
+        <States>
+          <State name="Man"/>
+          <State name="Vrouw"/>
+        </States>
+      </Variable>
+      <Variable name="Greenspace.r1000m_all" role="chance" type="finiteStates">
+        <States>
+          <State name="51-60"/>
+          <State name="61-70"/>
+          <State name="71-80"/>
+          <State name="&lt;=50"/>
+          <State name="&gt;80"/>
+        </States>
+      </Variable>
+      <Variable name="Huisartspraktijkdichtstbijzijnde" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="0-1"/>
+          <State name="&gt;1"/>
+        </States>
+      </Variable>
+      <Variable name="Huishoudgrootte" role="chance" type="finiteStates">
+        <States>
+          <State name="1"/>
+          <State name="2"/>
+          <State name="&gt;2"/>
+        </States>
+      </Variable>
+      <Variable name="Huurcoporatie" role="chance" type="finiteStates">
+        <States>
+          <State name="0-10"/>
+          <State name="10-20"/>
+          <State name="20-40"/>
+          <State name="&gt;40"/>
+        </States>
+      </Variable>
+      <Variable name="lbm" role="chance" type="finiteStates">
+        <States>
+          <State name="klasse 4"/>
+          <State name="klasse 3"/>
+        </States>
+      </Variable>
+      <Variable name="LID_CLUBS" role="chance" type="finiteStates">
+        <States>
+          <State name="False"/>
+          <State name="True"/>
+        </States>
+      </Variable>
+      <Variable name="Nederlandseachtergond" role="chance" type="finiteStates">
+        <States>
+          <State name="0-50"/>
+          <State name="eighty"/>
+          <State name="hundred"/>
+          <State name="ninety"/>
+          <State name="seventy"/>
+          <State name="sixty"/>
+        </States>
+      </Variable>
+      <Variable name="network_size_care" role="chance" type="finiteStates">
+        <States>
+          <State name="1-2"/>
+          <State name="13-20"/>
+          <State name="3-5"/>
+          <State name="6-8"/>
+          <State name="9-12"/>
+          <State name="&gt;21"/>
+        </States>
+      </Variable>
+      <Variable name="OPLEIDINGSNIVEAU" role="chance" type="finiteStates">
+        <States>
+          <State name="Onderwijsniveau 3"/>
+          <State name="Onderwijsniveau 2"/>
+          <State name="Onderwijsniveau 1"/>
+          <State name="Ik volg momenteel een opleiding"/>
+        </States>
+      </Variable>
+      <Variable name="phone_internet_video_call_contact" role="chance" type="finiteStates">
+        <States>
+          <State name="&gt;2"/>
+          <State name="one"/>
+          <State name="two"/>
+          <State name="zero"/>
+        </States>
+      </Variable>
+      <Variable name="practical_support_incl_care" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+          <State name="3-5"/>
+          <State name="6-9"/>
+          <State name="&gt;9"/>
+        </States>
+      </Variable>
+      <Variable name="RELATIE" role="chance" type="finiteStates">
+        <States>
+          <State name="false"/>
+          <State name="true"/>
+        </States>
+      </Variable>
+      <Variable name="Restaurantdichtstbijzijnde" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="0-1"/>
+          <State name="&gt;1"/>
+        </States>
+      </Variable>
+      <Variable name="same_sex" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="1-2"/>
+        </States>
+      </Variable>
+      <Variable name="Supermarktdichtstbijzijnde" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="0-1"/>
+          <State name="&gt;1"/>
+        </States>
+      </Variable>
+      <Variable name="Treinstationdichtstbijzijnde" role="chance" type="finiteStates">
+        <States>
+          <State name="0"/>
+          <State name="0-1"/>
+          <State name="&gt;1"/>
+        </States>
+      </Variable>
+      <Variable name="urbanization_cat" role="chance" type="finiteStates">
+        <States>
+          <State name="four"/>
+          <State name="one"/>
+          <State name="three"/>
+          <State name="two"/>
+        </States>
+      </Variable>
+      <Variable name="Walkability.WI7c_1719_500z" role="chance" type="finiteStates">
+        <States>
+          <State name="20.2060604-28.6620007"/>
+          <State name="28.6620007-36.9880104"/>
+          <State name="&lt;=20.2060604"/>
+          <State name="&gt;36.9880104"/>
+        </States>
+      </Variable>
+      <Variable name="C_PHQ9_TOTAL" role="chance" type="finiteStates">
+        <States>
+          <State name="Geen tot minimale depressie"/>
+          <State name="Milde depressie"/>
+          <State name="Matige depressie"/>
+          <State name="Matig ernstige depressie"/>
+          <State name="Ernstige depressie"/>
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="family_members"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="family_members"/>
+        <Variable name="acquaintances"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="acquaintances"/>
+        <Variable name="caregivers"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="caregivers"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="family_members"/>
+        <Variable name="emotional_support_decisions_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="acquaintances"/>
+        <Variable name="emotional_support_decisions_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_decisions_incl_care"/>
+        <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="caregivers"/>
+        <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_decisions_incl_care"/>
+        <Variable name="good_plus_relationship_total_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="family_members"/>
+        <Variable name="good_plus_relationship_total_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="acquaintances"/>
+        <Variable name="good_plus_relationship_total_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_decisions_incl_care"/>
+        <Variable name="informational_support_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+        <Variable name="informational_support_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="good_plus_relationship_total_incl_care"/>
+        <Variable name="informational_support_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="good_plus_relationship_total_incl_care"/>
+        <Variable name="physical_contact"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="family_members"/>
+        <Variable name="physical_contact"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="acquaintances"/>
+        <Variable name="physical_contact"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_decisions_incl_care"/>
+        <Variable name="support_do_fun_things_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="good_plus_relationship_total_incl_care"/>
+        <Variable name="support_do_fun_things_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+        <Variable name="support_do_fun_things_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="social_loneliness"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="support_do_fun_things_incl_care"/>
+        <Variable name="social_loneliness"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="emotional_loneliness"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="social_loneliness"/>
+        <Variable name="emotional_loneliness"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="support_do_fun_things_incl_care"/>
+        <Variable name="friends"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="good_plus_relationship_total_incl_care"/>
+        <Variable name="friends"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="family_members"/>
+        <Variable name="friends"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="caregivers"/>
+        <Variable name="GEZONDHEID_NU_CBS"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="GEZONDHEID_NU_CBS"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_decisions_incl_care"/>
+        <Variable name="geslacht_totaal"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="friends"/>
+        <Variable name="geslacht_totaal"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_loneliness"/>
+        <Variable name="Greenspace.r1000m_all"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="Huishoudgrootte"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lonelinessBinary"/>
+        <Variable name="Huishoudgrootte"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huishoudgrootte"/>
+        <Variable name="Huurcoporatie"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+        <Variable name="Huurcoporatie"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="lbm"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huishoudgrootte"/>
+        <Variable name="lbm"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+        <Variable name="lbm"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="acquaintances"/>
+        <Variable name="LID_CLUBS"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="geslacht_totaal"/>
+        <Variable name="LID_CLUBS"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="social_loneliness"/>
+        <Variable name="LID_CLUBS"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="lbm"/>
+        <Variable name="Nederlandseachtergond"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="Nederlandseachtergond"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huishoudgrootte"/>
+        <Variable name="Nederlandseachtergond"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="good_plus_relationship_total_incl_care"/>
+        <Variable name="network_size_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="support_do_fun_things_incl_care"/>
+        <Variable name="network_size_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="acquaintances"/>
+        <Variable name="network_size_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_decisions_incl_care"/>
+        <Variable name="OPLEIDINGSNIVEAU"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="GEZONDHEID_NU_CBS"/>
+        <Variable name="OPLEIDINGSNIVEAU"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="network_size_care"/>
+        <Variable name="phone_internet_video_call_contact"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="physical_contact"/>
+        <Variable name="phone_internet_video_call_contact"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+        <Variable name="practical_support_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="family_members"/>
+        <Variable name="practical_support_incl_care"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_loneliness"/>
+        <Variable name="RELATIE"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huishoudgrootte"/>
+        <Variable name="RELATIE"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="OPLEIDINGSNIVEAU"/>
+        <Variable name="RELATIE"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+        <Variable name="Restaurantdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="Restaurantdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huishoudgrootte"/>
+        <Variable name="Restaurantdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="good_plus_relationship_total_incl_care"/>
+        <Variable name="same_sex"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="friends"/>
+        <Variable name="same_sex"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="family_members"/>
+        <Variable name="same_sex"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="Supermarktdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+        <Variable name="Supermarktdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Restaurantdichtstbijzijnde"/>
+        <Variable name="Supermarktdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="Treinstationdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Restaurantdichtstbijzijnde"/>
+        <Variable name="Treinstationdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+        <Variable name="Treinstationdichtstbijzijnde"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="urbanization_cat"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Nederlandseachtergond"/>
+        <Variable name="urbanization_cat"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Restaurantdichtstbijzijnde"/>
+        <Variable name="urbanization_cat"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="urbanization_cat"/>
+        <Variable name="Walkability.WI7c_1719_500z"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Greenspace.r1000m_all"/>
+        <Variable name="Walkability.WI7c_1719_500z"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="Treinstationdichtstbijzijnde"/>
+        <Variable name="Walkability.WI7c_1719_500z"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="GEZONDHEID_NU_CBS"/>
+        <Variable name="C_PHQ9_TOTAL"/>
+      </Link>
+      <Link directed="true">
+        <Variable name="emotional_loneliness"/>
+        <Variable name="C_PHQ9_TOTAL"/>
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="family_members"/>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.023372156648166966 0.21081841632142578 0.3390135230204018 0.21535214570468225 0.21144375830532322 0.06938047838359827 0.3222403803298173 0.34185113653246174 0.16297726935076512 0.1035507354033576</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="acquaintances"/>
+          <Variable name="family_members"/>
+        </Variables>
+        <Values>0.8346354166666666 0.10286458333333333 0.032552083333333336 0.029947916666666668 0.5076006573541495 0.3625718981101068 0.0910024650780608 0.038824979457682825 0.40768072289156626 0.3329819277108434 0.17545180722891565 0.08388554216867469 0.32355993772703684 0.31473793461338867 0.20420342501297353 0.15749870264660093 0.25528789659224443 0.2153349001175088 0.21768507638072856 0.3116921269095182</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="caregivers"/>
+          <Variable name="acquaintances"/>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.06339381003201708 0.10352187833511206 0.8330843116328709 0.08397416179637035 0.14057213165179944 0.7754537065518302 0.08352258390108504 0.26974514256876103 0.646732273530154 0.14271701814615007 0.2976949485041687 0.5595880333496812 0.11633986928104575 0.19738562091503267 0.6862745098039216 0.17185697808535177 0.24798154555940022 0.580161476355248 0.15885837372105546 0.20086160473882606 0.6402800215401184 0.25301204819277107 0.19104991394148021 0.5559380378657487</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="emotional_support_decisions_incl_care"/>
+          <Variable name="family_members"/>
+          <Variable name="acquaintances"/>
+        </Variables>
+        <Values>0.7395348837209302 0.15968992248062017 0.08527131782945736 0.010852713178294573 0.004651162790697674 0.30120481927710846 0.5662650602409639 0.03614457831325301 0.08433734939759036 0.012048192771084338 0.1724137931034483 0.2413793103448276 0.2413793103448276 0.3103448275862069 0.034482758620689655 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.7037037037037037 0.18518518518518517 0.15878787878787878 0.5498989898989899 0.2298989898989899 0.05858585858585859 0.0028282828282828283 0.17015262860373093 0.3035613340870548 0.3657433578292821 0.14075749010740532 0.01978518937252685 0.05145413870246085 0.19015659955257272 0.2751677852348993 0.3512304250559284 0.1319910514541387 0.015544041450777202 0.11917098445595854 0.22279792746113988 0.27461139896373055 0.36787564766839376 0.08078199926226484 0.2320177056436739 0.47768351161932865 0.17963850977499077 0.029878273699741793 0.0672686230248307 0.12686230248306998 0.3507900677200903 0.3562076749435666 0.09887133182844243 0.023096663815226688 0.06757912745936698 0.2557741659538067 0.34473909324208724 0.3088109495295124 0.030303030303030304 0.05169340463458111 0.13368983957219252 0.2549019607843137 0.5294117647058824 0.07274180655475619 0.12709832134292565 0.34932054356514786 0.3349320543565148 0.11590727418065548 0.038619556285949055 0.09778142974527526 0.23746918652423993 0.3722267871815941 0.25390304026294164 0.01643489254108723 0.07458912768647281 0.14032869785082175 0.28445006321112515 0.48419721871049304 0.008183306055646482 0.03764320785597381 0.13911620294599017 0.18821603927986907 0.6268412438625205 0.033218785796105384 0.09965635738831616 0.22336769759450173 0.33791523482245134 0.30584192439862545 0.04748982360922659 0.05834464043419267 0.17503392130257803 0.2537313432835821 0.4654002713704206 0.004026845637583893 0.036241610738255034 0.10067114093959731 0.2295302013422819 0.6295302013422819 0.01971830985915493 0.04225352112676056 0.07042253521126761 0.11549295774647887 0.752112676056338</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+          <Variable name="emotional_support_decisions_incl_care"/>
+          <Variable name="caregivers"/>
+        </Variables>
+        <Values>0.5662650602409639 0.27710843373493976 0.08433734939759036 0.03614457831325301 0.03614457831325301 0.6795252225519288 0.27002967359050445 0.03857566765578635 0.002967359050445104 0.008902077151335312 0.8478409869773817 0.10897875257025359 0.033584647018505824 0.00616860863605209 0.003427004797806717 0.12033195020746888 0.3278008298755187 0.45228215767634855 0.06224066390041494 0.03734439834024896 0.16823687752355315 0.6096904441453567 0.18707940780619112 0.02288021534320323 0.012113055181695828 0.24936479128856626 0.6392014519056262 0.08892921960072596 0.020689655172413793 0.0018148820326678765 0.0674373795761079 0.1791907514450867 0.45664739884393063 0.22928709055876687 0.0674373795761079 0.07507507507507508 0.26926926926926925 0.4994994994994995 0.13313313313313313 0.023023023023023025 0.1468011680382267 0.2965224316432174 0.4876559596495885 0.06026015396867534 0.00876028670029201 0.02835538752362949 0.054820415879017016 0.22873345935727787 0.504725897920605 0.1833648393194707 0.03360370799536501 0.12630359212050984 0.2514484356894554 0.4716106604866744 0.11703360370799537 0.09251389342922524 0.15658711997384767 0.2873488067996077 0.41222621771820855 0.05132396207911082 0.02158273381294964 0.030215827338129497 0.09640287769784173 0.1539568345323741 0.697841726618705 0.03195266272189349 0.0650887573964497 0.10059171597633136 0.21420118343195266 0.5881656804733728 0.04935064935064935 0.07235621521335807 0.14137291280148423 0.2504638218923933 0.48645640074211505</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="good_plus_relationship_total_incl_care"/>
+          <Variable name="emotional_support_decisions_incl_care"/>
+          <Variable name="family_members"/>
+          <Variable name="acquaintances"/>
+        </Variables>
+        <Values>0.8645833333333334 0.11875 0.014583333333333334 0.0020833333333333333 0.10714285714285714 0.6785714285714286 0.10714285714285714 0.10714285714285714 0.375 0.125 0.125 0.375 0.25 0.25 0.25 0.25 0.07323232323232323 0.6893939393939394 0.17929292929292928 0.05808080808080808 0.049342105263157895 0.10197368421052631 0.3848684210526316 0.46381578947368424 0.038461538461538464 0.038461538461538464 0.038461538461538464 0.8846153846153846 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.5 0.03153153153153153 0.05855855855855856 0.6261261261261262 0.28378378378378377 0.006578947368421052 0.006578947368421052 0.03289473684210526 0.9539473684210527 0.1 0.03333333333333333 0.16666666666666666 0.7 0.05 0.05 0.05 0.85 0.05319148936170213 0.010638297872340425 0.05319148936170213 0.8829787234042553 0.02 0.02 0.06 0.9 0.0625 0.0625 0.0625 0.8125 0.125 0.125 0.125 0.625 0.15625 0.03125 0.03125 0.78125 0.13157894736842105 0.02631578947368421 0.02631578947368421 0.8157894736842105 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.5 0.041666666666666664 0.041666666666666664 0.041666666666666664 0.875 0.08490566037735849 0.7452830188679245 0.10377358490566038 0.0660377358490566 0.02 0.5 0.34 0.14 0.1 0.1 0.1 0.7 0.25 0.25 0.25 0.25 0.01686217008797654 0.6898826979472141 0.2221407624633431 0.07111436950146628 0.005555555555555556 0.11296296296296296 0.4351851851851852 0.4462962962962963 0.011363636363636364 0.011363636363636364 0.10227272727272728 0.875 0.038461538461538464 0.038461538461538464 0.038461538461538464 0.8846153846153846 0.007911392405063292 0.08386075949367089 0.5332278481012658 0.375 0.0035211267605633804 0.01056338028169014 0.13732394366197184 0.8485915492957746 0.012195121951219513 0.012195121951219513 0.012195121951219513 0.9634146341463414 0.03125 0.03125 0.03125 0.90625 0.018518518518518517 0.006172839506172839 0.21604938271604937 0.7592592592592593 0.00819672131147541 0.00819672131147541 0.00819672131147541 0.9754098360655737 0.016129032258064516 0.016129032258064516 0.016129032258064516 0.9516129032258065 0.038461538461538464 0.038461538461538464 0.038461538461538464 0.8846153846153846 0.011111111111111112 0.011111111111111112 0.05555555555555555 0.9222222222222223 0.021739130434782608 0.021739130434782608 0.021739130434782608 0.9347826086956522 0.1 0.03333333333333333 0.03333333333333333 0.8333333333333334 0.020833333333333332 0.020833333333333332 0.020833333333333332 0.9375 0.017241379310344827 0.017241379310344827 0.43103448275862066 0.5344827586206896 0.16666666666666666 0.16666666666666666 0.5 0.16666666666666666 0.1 0.1 0.1 0.7 0.25 0.25 0.25 0.25 0.005244755244755245 0.07167832167832168 0.5611888111888111 0.3618881118881119 0.004615384615384616 0.010769230769230769 0.34615384615384615 0.6384615384615384 0.007936507936507936 0.023809523809523808 0.10317460317460317 0.8650793650793651 0.021739130434782608 0.021739130434782608 0.021739130434782608 0.9347826086956522 7.704160246533128E-4 0.025423728813559324 0.41987673343605547 0.5539291217257319 0.001282051282051282 0.011538461538461539 0.07564102564102564 0.9115384615384615 0.0033112582781456954 0.009933774834437087 0.016556291390728478 0.9701986754966887 0.01282051282051282 0.01282051282051282 0.01282051282051282 0.9615384615384616 0.006818181818181818 0.0022727272727272726 0.075 0.9159090909090909 0.003424657534246575 0.010273972602739725 0.030821917808219176 0.9554794520547946 0.008771929824561403 0.02631578947368421 0.02631578947368421 0.9385964912280702 0.011363636363636364 0.011363636363636364 0.011363636363636364 0.9659090909090909 0.005050505050505051 0.015151515151515152 0.005050505050505051 0.9747474747474747 0.022727272727272728 0.007575757575757576 0.007575757575757576 0.9621212121212122 0.01282051282051282 0.01282051282051282 0.01282051282051282 0.9615384615384616 0.01282051282051282 0.01282051282051282 0.01282051282051282 0.9615384615384616 0.1 0.1 0.1 0.7 0.1 0.1 0.1 0.7 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.75 0.045454545454545456 0.045454545454545456 0.045454545454545456 0.8636363636363636 0.006756756756756757 0.006756756756756757 0.0472972972972973 0.9391891891891891 0.003968253968253968 0.011904761904761904 0.03571428571428571 0.9484126984126984 0.00625 0.00625 0.00625 0.98125 0.017857142857142856 0.017857142857142856 0.017857142857142856 0.9464285714285714 0.006122448979591836 0.006122448979591836 0.03469387755102041 0.9530612244897959 0.0012626262626262627 0.0012626262626262627 0.006313131313131313 0.9911616161616161 0.007389162561576354 0.012315270935960592 0.012315270935960592 0.9679802955665024 0.02054794520547945 0.00684931506849315 0.00684931506849315 0.9657534246575342 0.002369668246445498 0.002369668246445498 0.011848341232227487 0.9834123222748815 0.0021929824561403508 0.0021929824561403508 0.010964912280701754 0.9846491228070176 0.0043859649122807015 0.0043859649122807015 0.0043859649122807015 0.9868421052631579 0.00847457627118644 0.00847457627118644 0.00847457627118644 0.9745762711864406 0.003355704697986577 0.010067114093959731 0.010067114093959731 0.9765100671140939 0.005263157894736842 0.005263157894736842 0.005263157894736842 0.9842105263157894 0.005747126436781609 0.005747126436781609 0.005747126436781609 0.9827586206896551 0.007936507936507936 0.007936507936507936 0.007936507936507936 0.9761904761904762 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.5 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.125 0.125 0.125 0.625 0.1 0.1 0.1 0.7 0.02631578947368421 0.02631578947368421 0.02631578947368421 0.9210526315789473 0.016129032258064516 0.016129032258064516 0.016129032258064516 0.9516129032258065 0.013513513513513514 0.013513513513513514 0.013513513513513514 0.9594594594594594 0.011904761904761904 0.011904761904761904 0.011904761904761904 0.9642857142857143 0.0045045045045045045 0.0045045045045045045 0.0045045045045045045 0.9864864864864865 0.0027472527472527475 0.0027472527472527475 0.0027472527472527475 0.9917582417582418 0.0033333333333333335 0.0033333333333333335 0.0033333333333333335 0.99 0.006756756756756757 0.006756756756756757 0.006756756756756757 0.9797297297297297 0.003205128205128205 0.003205128205128205 0.003205128205128205 0.9903846153846154 0.0025906735751295338 0.0025906735751295338 0.0025906735751295338 0.9922279792746114 0.0025906735751295338 0.0025906735751295338 0.0025906735751295338 0.9922279792746114 0.003703703703703704 0.003703703703703704 0.003703703703703704 0.9888888888888889 0.002890173410404624 0.002890173410404624 0.002890173410404624 0.9913294797687862 0.01059322033898305 0.00211864406779661 0.00211864406779661 0.9851694915254238 0.0012437810945273632 0.0037313432835820895 0.0012437810945273632 0.9937810945273632</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="informational_support_incl_care"/>
+          <Variable name="emotional_support_decisions_incl_care"/>
+          <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+          <Variable name="good_plus_relationship_total_incl_care"/>
+        </Variables>
+        <Values>0.023655913978494623 0.0064516129032258064 0.002150537634408602 0.010752688172043012 0.956989247311828 0.4461538461538462 0.04 0.003076923076923077 0.003076923076923077 0.5076923076923077 0.3151750972762646 0.36964980544747084 0.027237354085603113 0.0038910505836575876 0.2840466926070039 0.18012422360248448 0.18012422360248448 0.22981366459627328 0.06418219461697723 0.34575569358178054 0.3684210526315789 0.05263157894736842 0.05263157894736842 0.05263157894736842 0.47368421052631576 0.3972602739726027 0.0410958904109589 0.0136986301369863 0.0136986301369863 0.5342465753424658 0.5189873417721519 0.13924050632911392 0.012658227848101266 0.012658227848101266 0.31645569620253167 0.31092436974789917 0.2605042016806723 0.07563025210084033 0.058823529411764705 0.29411764705882354 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.2 0.2 0.2 0.2 0.2 0.2 0.12 0.04 0.04 0.6 0.5102040816326531 0.22448979591836735 0.061224489795918366 0.061224489795918366 0.14285714285714285 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.3333333333333333 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.09090909090909091 0.45454545454545453 0.09090909090909091 0.09090909090909091 0.2727272727272727 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.23076923076923078 0.07692307692307693 0.07692307692307693 0.07692307692307693 0.5384615384615384 0.17647058823529413 0.17647058823529413 0.058823529411764705 0.058823529411764705 0.5294117647058824 0.5102040816326531 0.012244897959183673 0.004081632653061225 0.004081632653061225 0.46938775510204084 0.4585152838427948 0.14410480349344978 0.021834061135371178 0.004366812227074236 0.37117903930131 0.3405994550408719 0.28065395095367845 0.08446866485013624 0.013623978201634877 0.28065395095367845 0.696969696969697 0.030303030303030304 0.030303030303030304 0.030303030303030304 0.21212121212121213 0.8633818589025756 0.007838745800671893 0.0011198208286674132 0.0011198208286674132 0.1265397536394177 0.6518883415435139 0.26108374384236455 0.0016420361247947454 0.0016420361247947454 0.08374384236453201 0.46064516129032257 0.2954838709677419 0.11225806451612903 0.03741935483870968 0.09419354838709677 0.2 0.2 0.2 0.2 0.2 0.6774193548387096 0.22580645161290322 0.03225806451612903 0.03225806451612903 0.03225806451612903 0.48427672955974843 0.42138364779874216 0.018867924528301886 0.006289308176100629 0.06918238993710692 0.4222222222222222 0.3396825396825397 0.1492063492063492 0.015873015873015872 0.07301587301587302 0.2 0.2 0.2 0.2 0.2 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.23595505617977527 0.4157303370786517 0.16853932584269662 0.07865168539325842 0.10112359550561797 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.28 0.2 0.2 0.12 0.2 0.2 0.2 0.2 0.2 0.2727272727272727 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.45454545454545453 0.26256983240223464 0.25139664804469275 0.00558659217877095 0.00558659217877095 0.4748603351955307 0.41030927835051545 0.27010309278350514 0.08041237113402062 0.026804123711340205 0.21237113402061855 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.40350877192982454 0.5087719298245614 0.017543859649122806 0.017543859649122806 0.05263157894736842 0.4935400516795866 0.4315245478036176 0.007751937984496124 0.002583979328165375 0.06459948320413436 0.29952153110047847 0.44880382775119615 0.15023923444976076 0.023923444976076555 0.07751196172248803 0.5555555555555556 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.3488372093023256 0.5348837209302325 0.06976744186046512 0.023255813953488372 0.023255813953488372 0.21545319465081725 0.7295690936106983 0.019316493313521546 0.0014858841010401188 0.03417533432392273 0.1646112600536193 0.6032171581769437 0.16568364611260053 0.026273458445040216 0.040214477211796246 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.45454545454545453 0.09090909090909091 0.2727272727272727 0.09090909090909091 0.09090909090909091 0.1416490486257928 0.42071881606765327 0.3657505285412262 0.052854122621564484 0.019027484143763214 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.16129032258064516 0.3548387096774194 0.20430107526881722 0.24731182795698925 0.03225806451612903 0.2 0.2 0.2 0.2 0.2 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.1753846153846154 0.2553846153846154 0.23692307692307693 0.052307692307692305 0.28 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.4117647058823529 0.17647058823529413 0.29411764705882354 0.058823529411764705 0.058823529411764705 0.24297520661157024 0.3256198347107438 0.31239669421487604 0.047933884297520664 0.07107438016528926 0.1111111111111111 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.3333333333333333 0.09090909090909091 0.2727272727272727 0.09090909090909091 0.09090909090909091 0.45454545454545453 0.4117647058823529 0.4117647058823529 0.058823529411764705 0.058823529411764705 0.058823529411764705 0.11445279866332497 0.3868003341687552 0.38011695906432746 0.08939014202172096 0.029239766081871343 0.2 0.2 0.2 0.2 0.2 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.037037037037037035 0.18518518518518517 0.7037037037037037 0.037037037037037035 0.037037037037037035 0.05070569785676947 0.20125457396759017 0.6393099843178254 0.09984317825405123 0.008886565603763722 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.0700280112044818 0.1484593837535014 0.4957983193277311 0.2773109243697479 0.008403361344537815 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.14124293785310735 0.20903954802259886 0.12994350282485875 0.1977401129943503 0.3220338983050847 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.21611721611721613 0.21611721611721613 0.28205128205128205 0.2600732600732601 0.02564102564102564 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.07344632768361582 0.1902071563088512 0.2994350282485876 0.4124293785310734 0.02448210922787194 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.032191069574247146 0.12980269989615784 0.37487019730010385 0.4434060228452752 0.01973001038421599 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.03355119825708061 0.07450980392156863 0.17124183006535948 0.7132897603485838 0.007407407407407408</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="physical_contact"/>
+          <Variable name="good_plus_relationship_total_incl_care"/>
+          <Variable name="family_members"/>
+          <Variable name="acquaintances"/>
+        </Variables>
+        <Values>0.9766899766899767 0.002331002331002331 0.002331002331002331 0.002331002331002331 0.011655011655011656 0.002331002331002331 0.002331002331002331 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.288135593220339 0.05084745762711865 0.01694915254237288 0.01694915254237288 0.5932203389830508 0.01694915254237288 0.01694915254237288 0.28 0.04 0.04 0.04 0.12 0.36 0.12 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2631578947368421 0.05263157894736842 0.15789473684210525 0.05263157894736842 0.15789473684210525 0.2631578947368421 0.05263157894736842 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.09090909090909091 0.09090909090909091 0.2727272727272727 0.09090909090909091 0.09090909090909091 0.2727272727272727 0.09090909090909091 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.06666666666666667 0.06666666666666667 0.2 0.2 0.2 0.06666666666666667 0.2 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2727272727272727 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.2727272727272727 0.23076923076923078 0.07692307692307693 0.23076923076923078 0.23076923076923078 0.07692307692307693 0.07692307692307693 0.07692307692307693 0.07692307692307693 0.23076923076923078 0.07692307692307693 0.38461538461538464 0.07692307692307693 0.07692307692307693 0.07692307692307693 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.5886524822695035 0.0070921985815602835 0.0070921985815602835 0.0070921985815602835 0.3049645390070922 0.02127659574468085 0.06382978723404255 0.3469387755102041 0.061224489795918366 0.02040816326530612 0.02040816326530612 0.30612244897959184 0.02040816326530612 0.22448979591836735 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.22795869737887212 0.011914217633042097 7.942811755361397E-4 7.942811755361397E-4 0.5202541699761716 0.015091342335186657 0.22319301032565528 0.12380952380952381 0.06666666666666667 0.009523809523809525 0.009523809523809525 0.37142857142857144 0.06666666666666667 0.3523809523809524 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.21904761904761905 0.08571428571428572 0.009523809523809525 0.009523809523809525 0.18095238095238095 0.3523809523809524 0.14285714285714285 0.29411764705882354 0.17647058823529413 0.058823529411764705 0.058823529411764705 0.058823529411764705 0.058823529411764705 0.29411764705882354 0.07692307692307693 0.23076923076923078 0.23076923076923078 0.07692307692307693 0.07692307692307693 0.07692307692307693 0.23076923076923078 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.09090909090909091 0.45454545454545453 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.3617021276595745 0.14893617021276595 0.02127659574468085 0.02127659574468085 0.10638297872340426 0.23404255319148937 0.10638297872340426 0.18518518518518517 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.25925925925925924 0.25925925925925924 0.18518518518518517 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2765957446808511 0.08936170212765958 0.0014184397163120568 0.0014184397163120568 0.23120567375886525 0.16595744680851063 0.23404255319148937 0.18505942275042445 0.14091680814940577 0.001697792869269949 0.001697792869269949 0.18505942275042445 0.266553480475382 0.21901528013582344 0.037037037037037035 0.4074074074074074 0.037037037037037035 0.037037037037037035 0.1111111111111111 0.3333333333333333 0.037037037037037035 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2026897214217099 0.18539865513928913 0.004803073967339097 9.606147934678194E-4 0.1873198847262248 0.2929875120076849 0.12584053794428435 0.24324324324324326 0.27927927927927926 0.009009009009009009 0.009009009009009009 0.06306306306306306 0.2972972972972973 0.0990990990990991 0.2631578947368421 0.05263157894736842 0.15789473684210525 0.05263157894736842 0.2631578947368421 0.15789473684210525 0.05263157894736842 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.13580246913580246 0.30864197530864196 0.037037037037037035 0.012345679012345678 0.16049382716049382 0.08641975308641975 0.25925925925925924 0.14285714285714285 0.3333333333333333 0.047619047619047616 0.047619047619047616 0.23809523809523808 0.047619047619047616 0.14285714285714285 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.07692307692307693 0.07692307692307693 0.23076923076923078 0.07692307692307693 0.23076923076923078 0.23076923076923078 0.07692307692307693 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.4117647058823529 0.21568627450980393 0.058823529411764705 0.0196078431372549 0.09803921568627451 0.13725490196078433 0.058823529411764705 0.23809523809523808 0.23809523809523808 0.14285714285714285 0.047619047619047616 0.047619047619047616 0.23809523809523808 0.047619047619047616 0.034482758620689655 0.3103448275862069 0.2413793103448276 0.034482758620689655 0.034482758620689655 0.2413793103448276 0.10344827586206896 0.10344827586206896 0.3793103448275862 0.1724137931034483 0.10344827586206896 0.034482758620689655 0.10344827586206896 0.10344827586206896 0.2631578947368421 0.25473684210526315 0.04 0.002105263157894737 0.14105263157894737 0.14526315789473684 0.15368421052631578 0.1668219944082013 0.31593662628145386 0.0754892823858341 0.0065237651444548 0.13513513513513514 0.13513513513513514 0.16495806150978565 0.14285714285714285 0.2927400468384075 0.20374707259953162 0.02576112412177986 0.13348946135831383 0.09601873536299765 0.1053864168618267 0.08717948717948718 0.1794871794871795 0.2717948717948718 0.16923076923076924 0.1282051282051282 0.046153846153846156 0.11794871794871795 0.21351179094964945 0.3511790949649458 0.08604206500956023 0.014659018483110261 0.1408540471637986 0.11153601019757807 0.08221797323135756 0.1355206847360913 0.33808844507845937 0.1849738468854018 0.01378982406086543 0.12315739419876368 0.10699001426533523 0.09747979077508322 0.13141862489120976 0.2584856396866841 0.2793733681462141 0.05308964316797215 0.12097476066144473 0.06875543951261967 0.08790252393385553 0.11942959001782531 0.2014260249554367 0.26916221033868093 0.20499108734402852 0.08377896613190731 0.06951871657754011 0.05169340463458111 0.17164816396242527 0.304867634500427 0.1870196413321947 0.033304867634500426 0.14602903501280956 0.08625106746370624 0.07087959009393681 0.12219451371571072 0.228595178719867 0.2817955112219451 0.0739817123857024 0.1255195344970906 0.0889443059019119 0.07896924355777224 0.10266159695817491 0.20152091254752852 0.25475285171102663 0.18631178707224336 0.10266159695817491 0.07731305449936629 0.07477820025348543 0.0929853181076672 0.20717781402936378 0.200652528548124 0.29200652528548127 0.10603588907014681 0.053833605220228384 0.04730831973898858 0.12659698025551683 0.16608594657375145 0.3124274099883856 0.14285714285714285 0.10569105691056911 0.056910569105691054 0.08943089430894309 0.08049113233287858 0.17598908594815826 0.2605729877216917 0.23601637107776263 0.1077762619372442 0.05593451568894952 0.08321964529331514 0.044534412955465584 0.14979757085020243 0.21997300944669365 0.3792172739541161 0.07422402159244265 0.06612685560053981 0.06612685560053981 0.06291079812206572 0.09859154929577464 0.20751173708920187 0.4253521126760563 0.0835680751173709 0.059154929577464786 0.06291079812206572</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="support_do_fun_things_incl_care"/>
+          <Variable name="emotional_support_decisions_incl_care"/>
+          <Variable name="good_plus_relationship_total_incl_care"/>
+          <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+        </Variables>
+        <Values>0.9655913978494624 0.010752688172043012 0.01935483870967742 0.002150537634408602 0.002150537634408602 0.3684210526315789 0.3684210526315789 0.05263157894736842 0.15789473684210525 0.05263157894736842 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.3333333333333333 0.3333333333333333 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.2 0.2 0.2 0.2 0.2 0.6246153846153846 0.36615384615384616 0.003076923076923077 0.003076923076923077 0.003076923076923077 0.4520547945205479 0.5068493150684932 0.0136986301369863 0.0136986301369863 0.0136986301369863 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.5642023346303502 0.19066147859922178 0.23735408560311283 0.0038910505836575876 0.0038910505836575876 0.31645569620253167 0.569620253164557 0.08860759493670886 0.012658227848101266 0.012658227848101266 0.28 0.36 0.28 0.04 0.04 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.453416149068323 0.10144927536231885 0.19254658385093168 0.14699792960662525 0.10559006211180125 0.21008403361344538 0.24369747899159663 0.29411764705882354 0.19327731092436976 0.058823529411764705 0.3469387755102041 0.2653061224489796 0.22448979591836735 0.10204081632653061 0.061224489795918366 0.09090909090909091 0.09090909090909091 0.2727272727272727 0.45454545454545453 0.09090909090909091 0.23076923076923078 0.38461538461538464 0.23076923076923078 0.07692307692307693 0.07692307692307693 0.6470588235294118 0.058823529411764705 0.17647058823529413 0.058823529411764705 0.058823529411764705 0.21212121212121213 0.5757575757575758 0.09090909090909091 0.030303030303030304 0.09090909090909091 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.46122448979591835 0.49387755102040815 0.036734693877551024 0.004081632653061225 0.004081632653061225 0.10414333706606943 0.8768197088465846 0.0167973124300112 0.0011198208286674132 0.0011198208286674132 0.0967741935483871 0.4838709677419355 0.3548387096774194 0.03225806451612903 0.03225806451612903 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.388646288209607 0.4672489082969432 0.13537117903930132 0.004366812227074236 0.004366812227074236 0.08374384236453201 0.5336617405582923 0.3793103448275862 0.0016420361247947454 0.0016420361247947454 0.05660377358490566 0.4968553459119497 0.4339622641509434 0.006289308176100629 0.006289308176100629 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.1880108991825613 0.27520435967302453 0.3079019073569482 0.14986376021798364 0.07901907356948229 0.05290322580645161 0.28 0.38064516129032255 0.20774193548387096 0.07870967741935483 0.08571428571428572 0.2126984126984127 0.42857142857142855 0.19365079365079366 0.07936507936507936 0.10112359550561797 0.21348314606741572 0.16853932584269662 0.4606741573033708 0.056179775280898875 0.04 0.2 0.44 0.2 0.12 0.2 0.2 0.2 0.2 0.2 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.3333333333333333 0.1111111111111111 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.2 0.2 0.2 0.2 0.2 0.2727272727272727 0.45454545454545453 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.017543859649122806 0.6140350877192983 0.3333333333333333 0.017543859649122806 0.017543859649122806 0.023255813953488372 0.3488372093023256 0.5813953488372093 0.023255813953488372 0.023255813953488372 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.3854748603351955 0.26256983240223464 0.3407821229050279 0.00558659217877095 0.00558659217877095 0.059431524547803614 0.4263565891472868 0.5038759689922481 0.007751937984496124 0.002583979328165375 0.02526002971768202 0.2659732540861813 0.7028231797919762 0.004457652303120356 0.0014858841010401188 0.09090909090909091 0.45454545454545453 0.2727272727272727 0.09090909090909091 0.09090909090909091 0.2 0.2 0.2 0.2 0.2 0.16288659793814433 0.18762886597938144 0.36082474226804123 0.19175257731958764 0.09690721649484536 0.044976076555023926 0.20956937799043063 0.4277511961722488 0.24210526315789474 0.07559808612440191 0.01769436997319035 0.12815013404825737 0.5249329758713137 0.23967828418230563 0.08954423592493298 0.019027484143763214 0.12050739957716702 0.3953488372093023 0.3023255813953488 0.16279069767441862 0.03225806451612903 0.0967741935483871 0.13978494623655913 0.2903225806451613 0.44086021505376344 0.2 0.2 0.2 0.2 0.2 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.1111111111111111 0.1111111111111111 0.1111111111111111 0.5555555555555556 0.1111111111111111 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.2727272727272727 0.2727272727272727 0.2727272727272727 0.09090909090909091 0.09090909090909091 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.17647058823529413 0.4117647058823529 0.17647058823529413 0.17647058823529413 0.058823529411764705 0.058823529411764705 0.4117647058823529 0.29411764705882354 0.17647058823529413 0.058823529411764705 0.037037037037037035 0.1111111111111111 0.4074074074074074 0.4074074074074074 0.037037037037037035 0.2 0.2 0.2 0.2 0.2 0.21846153846153846 0.15692307692307692 0.20615384615384616 0.3046153846153846 0.11384615384615385 0.04462809917355372 0.14710743801652892 0.2628099173553719 0.4049586776859504 0.14049586776859505 0.017543859649122806 0.0810359231411863 0.2882205513784461 0.4569757727652464 0.15622389306599832 0.00575013068478829 0.06534239414532149 0.1897543125980136 0.5535807631991636 0.18557239937271303 0.008403361344537815 0.0196078431372549 0.15966386554621848 0.4173669467787115 0.3949579831932773 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.14285714285714285 0.14285714285714285 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.24293785310734464 0.15254237288135594 0.07344632768361582 0.1977401129943503 0.3333333333333333 0.02564102564102564 0.07692307692307693 0.15018315018315018 0.27472527472527475 0.4725274725274725 0.009416195856873822 0.02824858757062147 0.11864406779661017 0.2693032015065913 0.5743879472693032 0.003115264797507788 0.013499480789200415 0.08411214953271028 0.3063343717549325 0.592938733125649 0.002178649237472767 0.01786492374727669 0.044880174291938996 0.15642701525054467 0.7786492374727669</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="social_loneliness"/>
+          <Variable name="lonelinessBinary"/>
+          <Variable name="support_do_fun_things_incl_care"/>
+        </Variables>
+        <Values>0.9990138067061144 9.861932938856016E-4 0.9995024875621891 4.975124378109452E-4 0.9996788696210661 3.211303789338471E-4 0.9996940024479805 3.059975520195838E-4 0.9997051886792453 2.9481132075471697E-4 0.24128440366972478 0.7587155963302752 0.22914285714285715 0.7708571428571429 0.38964435146443516 0.6103556485355649 0.5070546737213404 0.4929453262786596 0.6270588235294118 0.3729411764705882</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="emotional_loneliness"/>
+          <Variable name="lonelinessBinary"/>
+          <Variable name="social_loneliness"/>
+        </Variables>
+        <Values>0.9999218139171228 7.818608287724784E-5 0.5 0.5 0.25258552108194116 0.7474144789180589 0.4973908918406072 0.5026091081593927</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.6553084648493543 0.3446915351506456</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="friends"/>
+          <Variable name="support_do_fun_things_incl_care"/>
+          <Variable name="good_plus_relationship_total_incl_care"/>
+          <Variable name="family_members"/>
+        </Variables>
+        <Values>0.9881516587677726 0.0071090047393364926 0.002369668246445498 0.002369668246445498 0.7380952380952381 0.21428571428571427 0.023809523809523808 0.023809523809523808 0.5 0.3 0.1 0.1 0.625 0.125 0.125 0.125 0.3 0.3 0.1 0.3 0.6785714285714286 0.27380952380952384 0.03571428571428571 0.011904761904761904 0.7285714285714285 0.26571428571428574 0.002857142857142857 0.002857142857142857 0.6818181818181818 0.13636363636363635 0.13636363636363635 0.045454545454545456 0.25 0.25 0.25 0.25 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.22727272727272727 0.5 0.22727272727272727 0.045454545454545456 0.31140350877192985 0.6622807017543859 0.021929824561403508 0.0043859649122807015 0.7267441860465116 0.22674418604651161 0.040697674418604654 0.005813953488372093 0.7222222222222222 0.16666666666666666 0.05555555555555555 0.05555555555555555 0.625 0.125 0.125 0.125 0.16666666666666666 0.2777777777777778 0.2777777777777778 0.2777777777777778 0.05963302752293578 0.6284403669724771 0.26146788990825687 0.05045871559633028 0.14873417721518986 0.4208860759493671 0.30063291139240506 0.12974683544303797 0.2357142857142857 0.39285714285714285 0.20714285714285716 0.16428571428571428 0.2804878048780488 0.2073170731707317 0.15853658536585366 0.35365853658536583 0.1 0.7 0.1 0.1 0.75 0.17857142857142858 0.03571428571428571 0.03571428571428571 0.25 0.25 0.25 0.25 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.5 0.16666666666666666 0.5 0.16666666666666666 0.16666666666666666 0.2604166666666667 0.6979166666666666 0.03125 0.010416666666666666 0.7735655737704918 0.2182377049180328 0.007172131147540984 0.0010245901639344263 0.796875 0.140625 0.046875 0.015625 0.16666666666666666 0.5 0.16666666666666666 0.16666666666666666 0.25 0.25 0.25 0.25 0.20833333333333334 0.4583333333333333 0.2916666666666667 0.041666666666666664 0.22380952380952382 0.734920634920635 0.03968253968253968 0.0015873015873015873 0.7248520710059172 0.257396449704142 0.014792899408284023 0.0029585798816568047 0.6388888888888888 0.25 0.027777777777777776 0.08333333333333333 0.16666666666666666 0.16666666666666666 0.5 0.16666666666666666 0.05555555555555555 0.2777777777777778 0.5 0.16666666666666666 0.11422413793103449 0.5452586206896551 0.2478448275862069 0.09267241379310345 0.1805111821086262 0.5 0.21884984025559107 0.10063897763578275 0.29819277108433734 0.3644578313253012 0.21987951807228914 0.11746987951807229 0.29012345679012347 0.30246913580246915 0.22839506172839505 0.17901234567901234 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.1 0.7 0.1 0.1 0.7 0.1 0.1 0.1 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.375 0.375 0.125 0.125 0.07894736842105263 0.6578947368421053 0.23684210526315788 0.02631578947368421 0.575 0.225 0.175 0.025 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.375 0.125 0.375 0.125 0.2692307692307692 0.34615384615384615 0.34615384615384615 0.038461538461538464 0.08744394618834081 0.773542600896861 0.1367713004484305 0.002242152466367713 0.6692546583850931 0.29037267080745344 0.03881987577639751 0.0015527950310559005 0.6304347826086957 0.2826086956521739 0.06521739130434782 0.021739130434782608 0.25 0.25 0.25 0.25 0.11904761904761904 0.07142857142857142 0.5476190476190477 0.2619047619047619 0.056962025316455694 0.4240506329113924 0.3886075949367089 0.13037974683544304 0.10373216245883644 0.5296377607025247 0.2892425905598244 0.07738748627881449 0.3 0.34556962025316457 0.2468354430379747 0.10759493670886076 0.23743016759776536 0.30446927374301674 0.2709497206703911 0.1871508379888268 0.25 0.25 0.25 0.25 0.16666666666666666 0.16666666666666666 0.5 0.16666666666666666 0.125 0.125 0.625 0.125 0.25 0.25 0.25 0.25 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.08333333333333333 0.25 0.25 0.4166666666666667 0.08333333333333333 0.25 0.25 0.4166666666666667 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.25 0.25 0.25 0.25 0.03333333333333333 0.23333333333333334 0.23333333333333334 0.5 0.021484375 0.197265625 0.361328125 0.419921875 0.02454337899543379 0.24600456621004566 0.4960045662100457 0.2334474885844749 0.07890855457227139 0.32669616519174044 0.38421828908554573 0.21017699115044247 0.16037735849056603 0.3005390835579515 0.3113207547169811 0.22776280323450135 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.16666666666666666 0.16666666666666666 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.5 0.1 0.1 0.5 0.3 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.07142857142857142 0.07142857142857142 0.07142857142857142 0.7857142857142857 0.0056179775280898875 0.05056179775280899 0.19662921348314608 0.7471910112359551 0.01048951048951049 0.0641025641025641 0.20163170163170163 0.7237762237762237 0.011304347826086957 0.06521739130434782 0.2791304347826087 0.6443478260869565 0.02978515625 0.08251953125 0.24755859375 0.64013671875</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="GEZONDHEID_NU_CBS"/>
+          <Variable name="caregivers"/>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>0.0041981528127623844 0.07136859781696053 0.08816120906801007 0.34676742233417296 0.489504617968094 0.017421602787456445 0.14750290360046459 0.059233449477351915 0.41927990708478513 0.35656213704994194 0.00125997480050399 0.023099538009239817 0.17093658126837463 0.22805543889122218 0.5766484670306594 0.0050323508267433505 0.055355859094176854 0.07260963335729691 0.3644859813084112 0.5025161754133717 3.2499187520311994E-4 0.007041490629400932 0.2837179070523237 0.11840537319900336 0.5905102372440689 0.0011138338159946536 0.03096458008465137 0.16373357095121407 0.24214747159723768 0.5620405435509022</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="geslacht_totaal"/>
+          <Variable name="emotional_support_decisions_incl_care"/>
+          <Variable name="friends"/>
+        </Variables>
+        <Values>0.6801980198019802 0.3198019801980198 0.5955631399317406 0.4044368600682594 0.5056818181818182 0.4943181818181818 0.55 0.45 0.633125 0.366875 0.5 0.5 0.46304347826086956 0.5369565217391304 0.5303030303030303 0.4696969696969697 0.5708263069139966 0.4291736930860034 0.42340425531914894 0.5765957446808511 0.40824915824915825 0.5917508417508418 0.44223826714801445 0.5577617328519856 0.49 0.51 0.3714511041009464 0.6285488958990536 0.32598870056497176 0.6740112994350282 0.3282097649186257 0.6717902350813744 0.5 0.5 0.3984375 0.6015625 0.32608695652173914 0.6739130434782609 0.30249244712990936 0.6975075528700906</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="emotional_loneliness"/>
+        </Variables>
+        <Values>0.34162210912839014 0.29150293113444564 0.16472331379243704 0.08587257617728532 0.11627906976744186 0.37565608597850536 0.3111722069482629 0.13471632091977007 0.09672581854536366 0.08172956760809798</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+          <Variable name="Greenspace.r1000m_all"/>
+        </Variables>
+        <Values>0.006023211400029382 0.8830615542823564 0.11091523431761421 0.00329232368740253 0.7452781147114885 0.251429561601109 0.0016144656118824668 0.6002583144979012 0.3981272198902163 0.0017431725740848344 0.9593259732713538 0.0389308541545613 0.0023441162681669013 0.350210970464135 0.647444913267698</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Huishoudgrootte"/>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="lonelinessBinary"/>
+        </Variables>
+        <Values>2.3435669088352472E-4 0.3808296226857277 0.6189360206233888 0.0027526543452615023 0.45969327565867085 0.5375540699960676 2.644802962179318E-4 0.2859032002115842 0.7138323194921978 0.002508780732563974 0.37079779227295534 0.6266934269944807 4.657661853749418E-4 0.2510479739170936 0.7484862598975315 0.001049317943336831 0.3389296956977964 0.6600209863588667 0.0027397260273972603 0.6493150684931507 0.34794520547945207 0.0047694753577106515 0.7233704292527822 0.2718600953895072 6.609385327164573E-4 0.25974884335756776 0.7395902181097158 0.0016051364365971107 0.29052969502407705 0.7078651685393258</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Huurcoporatie"/>
+          <Variable name="Huishoudgrootte"/>
+          <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+        </Variables>
+        <Values>0.25 0.25 0.25 0.25 0.6875 0.0625 0.0625 0.1875 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.5576923076923077 0.057692307692307696 0.28846153846153844 0.09615384615384616 0.8259450171821305 0.07336769759450172 0.04965635738831615 0.051030927835051546 0.9011887072808321 0.058692421991084695 0.021545319465081723 0.018573551263001486 0.875 0.041666666666666664 0.041666666666666664 0.041666666666666664 0.9623569794050343 0.02780320366132723 0.008810068649885584 0.0010297482837528604 0.9760022586109542 0.020045172219085264 0.0036702428006775835 2.82326369282891E-4</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="lbm"/>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="Huishoudgrootte"/>
+          <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+        </Variables>
+        <Values>0.5 0.5 0.375 0.625 0.5 0.5 0.5 0.5 0.6799526440410418 0.32004735595895817 0.6623931623931624 0.33760683760683763 0.9285714285714286 0.07142857142857142 0.8033966609096143 0.19660333909038571 0.8683206106870229 0.1316793893129771 0.5 0.5 0.75 0.25 0.75 0.25 0.21428571428571427 0.7857142857142857 0.656558533145275 0.343441466854725 0.7270408163265306 0.2729591836734694 0.875 0.125 0.8817614424410541 0.11823855755894591 0.8594339622641509 0.14056603773584905 0.5 0.5 0.5 0.5 0.5 0.5 0.8333333333333334 0.16666666666666666 0.943579766536965 0.05642023346303502 0.9219653179190751 0.07803468208092486 0.5 0.5 0.9873887240356083 0.012611275964391691 0.9584269662921349 0.04157303370786517 0.5 0.5 0.8333333333333334 0.16666666666666666 0.5 0.5 0.25 0.75 0.7619469026548673 0.23805309734513275 0.4166666666666667 0.5833333333333334 0.5 0.5 0.7057692307692308 0.29423076923076924 0.7941176470588235 0.20588235294117646 0.5 0.5 0.5 0.5 0.5 0.5 0.75 0.25 0.8826086956521739 0.11739130434782609 0.9796511627906976 0.020348837209302327 0.75 0.25 0.975 0.025 0.9990384615384615 9.615384615384616E-4</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="LID_CLUBS"/>
+          <Variable name="acquaintances"/>
+          <Variable name="geslacht_totaal"/>
+          <Variable name="social_loneliness"/>
+        </Variables>
+        <Values>0.49528985507246376 0.5047101449275362 0.6138535031847133 0.3861464968152866 0.6177884615384616 0.38221153846153844 0.6702970297029703 0.3297029702970297 0.42152704135737007 0.5784729586426299 0.5485436893203883 0.45145631067961167 0.5590083798882681 0.4409916201117318 0.5770440251572327 0.4229559748427673 0.31387665198237885 0.6861233480176211 0.4409090909090909 0.5590909090909091 0.4682628062360802 0.5317371937639198 0.4375 0.5625 0.27216748768472904 0.7278325123152709 0.4270833333333333 0.5729166666666666 0.38824383164005805 0.611756168359942 0.4090909090909091 0.5909090909090909</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Nederlandseachtergond"/>
+          <Variable name="lbm"/>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="Huishoudgrootte"/>
+        </Variables>
+        <Values>0.125 0.125 0.125 0.125 0.375 0.125 0.08386075949367089 0.3190928270042194 0.016350210970464137 0.2209915611814346 0.2674050632911392 0.09229957805907173 0.011342734518700184 0.3362967504598406 0.04935622317596566 0.417841814837523 0.1345800122624157 0.050582464745554875 0.1 0.3 0.1 0.1 0.3 0.1 0.0220949263502455 0.35433715220949263 0.05155482815057283 0.3265139116202946 0.18248772504091654 0.0630114566284779 0.004907621247113164 0.3432448036951501 0.08978060046189376 0.41945727482678985 0.10710161662817552 0.0355080831408776 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.0332512315270936 0.3830049261083744 0.07266009852216748 0.33374384236453203 0.13669950738916256 0.04064039408866995 0.007769652650822669 0.2783363802559415 0.13208409506398539 0.496800731261426 0.06444241316270567 0.02056672760511883 0.3 0.1 0.1 0.1 0.3 0.1 0.18977272727272726 0.23295454545454544 0.017045454545454544 0.09886363636363636 0.27386363636363636 0.1875 0.07788944723618091 0.25879396984924624 0.05778894472361809 0.3793969849246231 0.16331658291457288 0.06281407035175879 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.023809523809523808 0.3058608058608059 0.08974358974358974 0.48534798534798534 0.07142857142857142 0.023809523809523808 0.0032216494845360823 0.22100515463917525 0.13466494845360824 0.5908505154639175 0.03672680412371134 0.013530927835051547 0.1 0.1 0.1 0.1 0.5 0.1 0.1685022026431718 0.20374449339207049 0.018722466960352423 0.053964757709251104 0.30947136563876654 0.24559471365638766 0.18121693121693122 0.2552910052910053 0.03835978835978836 0.14682539682539683 0.24206349206349206 0.13624338624338625 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.1299342105263158 0.2582236842105263 0.004934210526315789 0.06414473684210527 0.32730263157894735 0.21546052631578946 0.13562753036437247 0.2408906882591093 0.018218623481781375 0.15587044534412955 0.2894736842105263 0.15991902834008098 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.25 0.18333333333333332 0.05 0.2833333333333333 0.11666666666666667 0.11666666666666667 0.25862068965517243 0.1896551724137931 0.017241379310344827 0.05172413793103448 0.25862068965517243 0.22413793103448276 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.19256756756756757 0.24662162162162163 0.016891891891891893 0.0777027027027027 0.28040540540540543 0.1858108108108108 0.09146341463414634 0.2621951219512195 0.03048780487804878 0.20121951219512196 0.21341463414634146 0.20121951219512196 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.23684210526315788 0.2894736842105263 0.07894736842105263 0.23684210526315788 0.13157894736842105 0.02631578947368421 0.05555555555555555 0.05555555555555555 0.05555555555555555 0.5 0.05555555555555555 0.2777777777777778</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="network_size_care"/>
+          <Variable name="good_plus_relationship_total_incl_care"/>
+          <Variable name="support_do_fun_things_incl_care"/>
+          <Variable name="acquaintances"/>
+        </Variables>
+        <Values>0.9632034632034632 0.006493506493506494 0.01948051948051948 0.006493506493506494 0.0021645021645021645 0.0021645021645021645 0.15 0.05 0.35 0.15 0.15 0.15 0.125 0.125 0.125 0.125 0.375 0.125 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.7941176470588235 0.029411764705882353 0.029411764705882353 0.029411764705882353 0.08823529411764706 0.029411764705882353 0.08333333333333333 0.25 0.4166666666666667 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.08333333333333333 0.08333333333333333 0.5833333333333334 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.5833333333333334 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.125 0.125 0.375 0.125 0.125 0.125 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.5833333333333334 0.08333333333333333 0.08333333333333333 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.125 0.125 0.125 0.125 0.375 0.125 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.125 0.375 0.125 0.125 0.125 0.125 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.08333333333333333 0.4166666666666667 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.25 0.125 0.375 0.125 0.125 0.125 0.125 0.8645320197044335 0.0024630541871921183 0.11083743842364532 0.017241379310344827 0.0024630541871921183 0.0024630541871921183 0.46 0.02 0.34 0.14 0.02 0.02 0.125 0.125 0.125 0.125 0.375 0.125 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.885576923076923 9.615384615384616E-4 0.10865384615384616 0.0028846153846153848 9.615384615384616E-4 9.615384615384616E-4 0.5212765957446809 0.010638297872340425 0.3723404255319149 0.07446808510638298 0.010638297872340425 0.010638297872340425 0.1 0.1 0.3 0.1 0.3 0.1 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.016666666666666666 0.016666666666666666 0.85 0.08333333333333333 0.016666666666666666 0.016666666666666666 0.038461538461538464 0.038461538461538464 0.6538461538461539 0.11538461538461539 0.11538461538461539 0.038461538461538464 0.1 0.3 0.1 0.1 0.3 0.1 0.125 0.125 0.125 0.125 0.125 0.375 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.0036231884057971015 0.018115942028985508 0.9311594202898551 0.03985507246376811 0.0036231884057971015 0.0036231884057971015 0.006329113924050633 0.006329113924050633 0.9177215189873418 0.056962025316455694 0.006329113924050633 0.006329113924050633 0.08333333333333333 0.08333333333333333 0.08333333333333333 0.4166666666666667 0.25 0.08333333333333333 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.0014705882352941176 0.007352941176470588 0.9485294117647058 0.039705882352941174 0.0014705882352941176 0.0014705882352941176 0.0029940119760479044 0.0029940119760479044 0.8712574850299402 0.11077844311377245 0.008982035928143712 0.0029940119760479044 0.05555555555555555 0.05555555555555555 0.5 0.2777777777777778 0.05555555555555555 0.05555555555555555 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.0011086474501108647 0.0011086474501108647 0.9323725055432373 0.06097560975609756 0.0033259423503325942 0.0011086474501108647 0.004098360655737705 0.004098360655737705 0.7336065573770492 0.2336065573770492 0.020491803278688523 0.004098360655737705 0.05555555555555555 0.05555555555555555 0.3888888888888889 0.2777777777777778 0.16666666666666666 0.05555555555555555 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.05555555555555555 0.05555555555555555 0.05555555555555555 0.6111111111111112 0.16666666666666666 0.05555555555555555 0.125 0.125 0.125 0.125 0.375 0.125 0.1 0.1 0.1 0.3 0.3 0.1 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.0045045045045045045 0.05855855855855856 0.23873873873873874 0.527027027027027 0.16666666666666666 0.0045045045045045045 0.0025380710659898475 0.08375634517766498 0.20558375634517767 0.42385786802030456 0.2817258883248731 0.0025380710659898475 0.01020408163265306 0.2755102040816326 0.01020408163265306 0.25510204081632654 0.41836734693877553 0.030612244897959183 0.015625 0.421875 0.015625 0.078125 0.203125 0.265625 0.0018587360594795538 0.046468401486988845 0.2843866171003718 0.49256505576208176 0.1691449814126394 0.0055762081784386614 0.001440922190201729 0.08789625360230548 0.15994236311239193 0.45677233429394815 0.2896253602305475 0.004322766570605188 0.0036231884057971015 0.3007246376811594 0.03985507246376811 0.25 0.39492753623188404 0.010869565217391304 0.01020408163265306 0.45918367346938777 0.01020408163265306 0.05102040816326531 0.29591836734693877 0.17346938775510204 6.983240223463687E-4 0.03282122905027933 0.3023743016759777 0.49511173184357543 0.16410614525139663 0.004888268156424581 6.459948320413437E-4 0.08462532299741603 0.11950904392764858 0.44896640826873385 0.3430232558139535 0.003229974160206718 0.0016891891891891893 0.24155405405405406 0.018581081081081082 0.23141891891891891 0.4983108108108108 0.008445945945945946 0.004273504273504274 0.5427350427350427 0.004273504273504274 0.021367521367521368 0.2606837606837607 0.16666666666666666 7.530120481927711E-4 0.09412650602409639 7.530120481927711E-4 0.4631024096385542 0.43900602409638556 0.002259036144578313 6.127450980392157E-4 0.15625 6.127450980392157E-4 0.2493872549019608 0.5863970588235294 0.006740196078431373 0.0010615711252653928 0.39384288747346075 0.0010615711252653928 0.07112526539278131 0.5127388535031847 0.020169851380042462 0.0020242914979757085 0.6538461538461539 0.0020242914979757085 0.006072874493927126 0.13157894736842105 0.20445344129554655 0.0016611295681063123 0.5498338870431894 0.0016611295681063123 0.0016611295681063123 0.38704318936877075 0.05813953488372093 0.0011627906976744186 0.6151162790697674 0.0011627906976744186 0.0011627906976744186 0.28488372093023256 0.09651162790697675 8.183306055646482E-4 0.7013093289689034 8.183306055646482E-4 8.183306055646482E-4 0.12356792144026187 0.17266775777414076 6.377551020408163E-4 0.33864795918367346 6.377551020408163E-4 6.377551020408163E-4 0.018494897959183673 0.6409438775510204</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="OPLEIDINGSNIVEAU"/>
+          <Variable name="emotional_support_decisions_incl_care"/>
+          <Variable name="GEZONDHEID_NU_CBS"/>
+        </Variables>
+        <Values>0.375 0.375 0.125 0.125 0.17567567567567569 0.25675675675675674 0.5540540540540541 0.013513513513513514 0.4396984924623116 0.3492462311557789 0.17839195979899497 0.032663316582914576 0.19430051813471502 0.3549222797927461 0.4430051813471503 0.007772020725388601 0.28388998035363455 0.3487229862475442 0.3526522593320236 0.014734774066797643 0.07142857142857142 0.21428571428571427 0.6428571428571429 0.07142857142857142 0.19014084507042253 0.3873239436619718 0.4014084507042254 0.02112676056338028 0.4532710280373832 0.35669781931464173 0.16666666666666666 0.02336448598130841 0.2067099567099567 0.3582251082251082 0.4231601731601732 0.011904761904761904 0.31206726013847674 0.38229475766567755 0.291295746785361 0.014342235410484669 0.35714285714285715 0.21428571428571427 0.21428571428571427 0.21428571428571427 0.25949367088607594 0.37341772151898733 0.33544303797468356 0.03164556962025317 0.48694779116465864 0.31626506024096385 0.1536144578313253 0.04317269076305221 0.2970890410958904 0.3672945205479452 0.3159246575342466 0.019691780821917807 0.4045362220717671 0.35646580907244413 0.21834800270819227 0.02064996614759648 0.1 0.5 0.3 0.1 0.4056603773584906 0.25471698113207547 0.3113207547169811 0.02830188679245283 0.625 0.26816239316239315 0.08653846153846154 0.0202991452991453 0.3599537037037037 0.3645833333333333 0.2534722222222222 0.02199074074074074 0.4633858267716535 0.3484251968503937 0.16023622047244093 0.02795275590551181 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.4024390243902439 0.3780487804878049 0.18292682926829268 0.036585365853658534 0.6405660377358491 0.2783018867924528 0.05377358490566038 0.027358490566037737 0.3890532544378698 0.42159763313609466 0.1760355029585799 0.013313609467455622 0.5558774834437086 0.30753311258278143 0.11299668874172185 0.02359271523178808</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="phone_internet_video_call_contact"/>
+          <Variable name="network_size_care"/>
+          <Variable name="physical_contact"/>
+        </Variables>
+        <Values>0.001256281407035176 0.031407035175879394 0.00628140703517588 0.9610552763819096 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.0013404825737265416 0.020107238605898123 0.0013404825737265416 0.9772117962466488 0.25 0.25 0.25 0.25 0.0035460992907801418 0.0035460992907801418 0.0035460992907801418 0.9893617021276596 0.033854166666666664 0.1796875 0.12239583333333333 0.6640625 0.02 0.09733333333333333 0.03866666666666667 0.844 0.0048449612403100775 0.03972868217054264 0.02616279069767442 0.9292635658914729 0.01193058568329718 0.0227765726681128 0.02928416485900217 0.9360086767895879 0.08604651162790698 0.14186046511627906 0.12790697674418605 0.6441860465116279 0.029801324503311258 0.08940397350993377 0.08940397350993377 0.7913907284768212 0.04421768707482993 0.15306122448979592 0.05782312925170068 0.7448979591836735 0.0012345679012345679 0.0728395061728395 0.03580246913580247 0.8901234567901235 0.001392757660167131 0.004178272980501393 0.001392757660167131 0.9930362116991643 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.004098360655737705 0.050546448087431695 0.036885245901639344 0.9084699453551912 0.0012106537530266344 0.015738498789346248 0.00847457627118644 0.9745762711864406 0.0015723270440251573 0.04874213836477988 0.007861635220125786 0.9418238993710691 0.018731988472622477 0.14265129682997119 0.059077809798270896 0.7795389048991355 0.0021645021645021645 0.023809523809523808 0.018037518037518036 0.9559884559884559 0.0025 0.0075 0.0025 0.9875 0.25 0.25 0.25 0.25 0.01440329218106996 0.09259259259259259 0.09670781893004116 0.7962962962962963 0.006521739130434782 0.03695652173913044 0.02391304347826087 0.9326086956521739 0.011363636363636364 0.075 0.038636363636363635 0.875 0.0265625 0.0921875 0.0796875 0.8015625 0.011206896551724138 0.05086206896551724 0.026724137931034484 0.9112068965517242 0.002354788069073783 0.022762951334379906 0.00706436420722135 0.9678178963893249 0.005555555555555556 0.005555555555555556 0.005555555555555556 0.9833333333333333 0.016483516483516484 0.1043956043956044 0.08974358974358974 0.7893772893772893 0.008522727272727272 0.09943181818181818 0.036931818181818184 0.8551136363636364 0.01282051282051282 0.09487179487179487 0.08974358974358974 0.8025641025641026 0.17424242424242425 0.2196969696969697 0.12878787878787878 0.4772727272727273 0.03888888888888889 0.11666666666666667 0.15 0.6944444444444444 0.03793103448275862 0.06551724137931035 0.06551724137931035 0.8310344827586207 0.010447761194029851 0.05522388059701493 0.022388059701492536 0.9119402985074627 0.13076923076923078 0.1 0.13076923076923078 0.6384615384615384 0.17045454545454544 0.14772727272727273 0.07954545454545454 0.6022727272727273 0.13541666666666666 0.11458333333333333 0.19791666666666666 0.5520833333333334</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="practical_support_incl_care"/>
+          <Variable name="emotional_support_talk_about_my_health_incl_care"/>
+          <Variable name="family_members"/>
+        </Variables>
+        <Values>0.9529837251356239 0.04159132007233273 0.0018083182640144665 0.0018083182640144665 0.0018083182640144665 0.7101214574898785 0.25668016194331983 0.029959514170040485 0.0024291497975708503 8.097165991902834E-4 0.6405163853028798 0.29890764647467727 0.0506454816285998 0.00893743793445879 9.930486593843098E-4 0.6155606407322655 0.2814645308924485 0.08009153318077804 0.020594965675057208 0.002288329519450801 0.5959595959595959 0.24579124579124578 0.11784511784511785 0.037037037037037035 0.003367003367003367 0.4326241134751773 0.5035460992907801 0.04964539007092199 0.0070921985815602835 0.0070921985815602835 0.3171442447790189 0.6318601262748907 0.04808159300631375 0.0014570179698882952 0.0014570179698882952 0.22160148975791433 0.585350713842334 0.17690875232774675 0.015518311607697082 6.207324643078833E-4 0.21815519765739386 0.4992679355783309 0.25329428989751096 0.027818448023426062 0.0014641288433382138 0.22048997772828507 0.4521158129175947 0.26948775055679286 0.0467706013363029 0.011135857461024499 0.47368421052631576 0.3684210526315789 0.12280701754385964 0.017543859649122806 0.017543859649122806 0.2299168975069252 0.5992613111726686 0.15974145891043398 0.010156971375807941 9.233610341643582E-4 0.17107093184979139 0.47426981919332406 0.3286972647195178 0.021789522484932777 0.004172461752433936 0.1243680485338726 0.4539939332659252 0.3609706774519717 0.05156723963599596 0.00910010111223458 0.12643678160919541 0.3924466338259442 0.3333333333333333 0.11986863711001643 0.027914614121510674 0.18518518518518517 0.4074074074074074 0.25925925925925924 0.1111111111111111 0.037037037037037035 0.1345646437994723 0.5461741424802111 0.25065963060686014 0.06596306068601583 0.002638522427440633 0.11932255581216321 0.4780600461893764 0.31947652040030794 0.07621247113163972 0.006928406466512702 0.07849133537206932 0.38837920489296635 0.40468909276248727 0.12130479102956167 0.007135575942915392 0.07098381070983811 0.36737235367372356 0.35242839352428396 0.19053549190535493 0.0186799501867995 0.45454545454545453 0.09090909090909091 0.09090909090909091 0.09090909090909091 0.2727272727272727 0.11278195488721804 0.44360902255639095 0.3233082706766917 0.06766917293233082 0.05263157894736842 0.10391822827938671 0.35604770017035775 0.3833049403747871 0.10051107325383304 0.056218057921635436 0.07261146496815286 0.3375796178343949 0.3630573248407643 0.16178343949044585 0.06496815286624204 0.049723756906077346 0.2580899763220205 0.3733228097868982 0.2091554853985793 0.10970797158642462</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="RELATIE"/>
+          <Variable name="emotional_loneliness"/>
+          <Variable name="Huishoudgrootte"/>
+          <Variable name="OPLEIDINGSNIVEAU"/>
+        </Variables>
+        <Values>0.5 0.5 0.5 0.5 0.75 0.25 0.5 0.5 0.19163602941176472 0.8083639705882353 0.21282633371169127 0.7871736662883088 0.2603423680456491 0.739657631954351 0.6272727272727273 0.37272727272727274 0.08520276100086281 0.9147972389991372 0.10136286201022146 0.8986371379897785 0.12429057888762769 0.8757094211123723 0.5 0.5 0.5 0.5 0.8333333333333334 0.16666666666666666 0.8333333333333334 0.16666666666666666 0.5 0.5 0.4743150684931507 0.5256849315068494 0.4522184300341297 0.5477815699658704 0.5130597014925373 0.4869402985074627 0.5606060606060606 0.4393939393939394 0.2531486146095718 0.7468513853904282 0.2895981087470449 0.710401891252955 0.25992063492063494 0.7400793650793651 0.5113636363636364 0.48863636363636365</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Restaurantdichtstbijzijnde"/>
+          <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="Huishoudgrootte"/>
+        </Variables>
+        <Values>0.3333333333333333 0.3333333333333333 0.3333333333333333 0.0967741935483871 0.7419354838709677 0.16129032258064516 0.06666666666666667 0.8666666666666667 0.06666666666666667 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.2 0.7333333333333333 0.06666666666666667 0.1111111111111111 0.5555555555555556 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.14285714285714285 0.7142857142857143 0.14285714285714285 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.2 0.6 0.2 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.2 0.6 0.2 0.2 0.6 0.2 0.1111111111111111 0.7777777777777778 0.1111111111111111 0.05562130177514793 0.8808678500986193 0.06351084812623274 0.00776978417266187 0.8946762589928058 0.09755395683453237 0.2 0.6 0.2 0.02466525722339676 0.8421423537702607 0.1331923890063425 0.007279029462738302 0.8620450606585789 0.13067590987868286 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.005825242718446602 0.829126213592233 0.1650485436893204 0.005189028910303929 0.8265381764269829 0.1682727946627131 0.14285714285714285 0.7142857142857143 0.14285714285714285 0.10698496905393456 0.8903625110521662 0.002652519893899204 0.0019193857965451055 0.9769673704414588 0.02111324376199616 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.047619047619047616 0.8095238095238095 0.14285714285714285 0.013435700575815739 0.8080614203454894 0.1785028790786948 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.01276595744680851 0.8553191489361702 0.13191489361702127 0.0019047619047619048 0.638095238095238 0.36 0.2 0.2 0.6 0.017811704834605598 0.5928753180661578 0.3893129770992366 0.002827521206409048 0.6343072573044298 0.36286522148916117 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.03170028818443804 0.4697406340057637 0.49855907780979825 0.001122334455667789 0.622895622895623 0.3759820426487093 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.24324324324324326 0.5135135135135135 0.24324324324324326 0.02857142857142857 0.6 0.37142857142857144 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.002898550724637681 0.6347826086956522 0.36231884057971014 0.012487992315081652 0.5350624399615754 0.45244956772334294</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="same_sex"/>
+          <Variable name="good_plus_relationship_total_incl_care"/>
+          <Variable name="friends"/>
+          <Variable name="family_members"/>
+        </Variables>
+        <Values>0.002380952380952381 0.9976190476190476 0.7884615384615384 0.21153846153846154 0.4166666666666667 0.5833333333333334 0.16666666666666666 0.8333333333333334 0.5 0.5 0.7 0.3 0.35 0.65 0.25 0.75 0.5 0.5 0.5 0.5 0.5 0.5 0.25 0.75 0.125 0.875 0.5 0.5 0.16666666666666666 0.8333333333333334 0.5 0.5 0.5 0.5 0.5 0.5 0.16666666666666666 0.8333333333333334 0.5 0.5 0.34523809523809523 0.6547619047619048 0.7282608695652174 0.2717391304347826 0.125 0.875 0.25 0.75 0.16666666666666666 0.8333333333333334 0.29347826086956524 0.7065217391304348 0.14242424242424243 0.8575757575757575 0.35 0.65 0.25 0.75 0.5 0.5 0.16666666666666666 0.8333333333333334 0.0625 0.9375 0.08333333333333333 0.9166666666666666 0.5 0.5 0.25 0.75 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.1875 0.8125 0.26 0.74 0.13125 0.86875 0.015151515151515152 0.9848484848484849 0.16666666666666666 0.8333333333333334 0.1 0.9 0.07604166666666666 0.9239583333333333 0.028662420382165606 0.9713375796178344 0.041666666666666664 0.9583333333333334 0.5 0.5 0.15 0.85 0.03260869565217391 0.967391304347826 0.07894736842105263 0.9210526315789473 0.25 0.75 0.25 0.75 0.5 0.5 0.16666666666666666 0.8333333333333334 0.16666666666666666 0.8333333333333334 0.25 0.75 0.5 0.5 0.125 0.875 0.058333333333333334 0.9416666666666667 0.052763819095477386 0.9472361809045227 0.03497942386831276 0.9650205761316872 0.015060240963855422 0.9849397590361446 0.05555555555555555 0.9444444444444444 0.056490384615384616 0.9435096153846154 0.011087645195353749 0.9889123548046462 0.00933609958506224 0.9906639004149378 0.005319148936170213 0.9946808510638298 0.07142857142857142 0.9285714285714286 0.015804597701149427 0.9841954022988506 0.0027808676307007787 0.9972191323692993 0.002640845070422535 0.9973591549295775 0.007936507936507936 0.9920634920634921 0.023809523809523808 0.9761904761904762 0.0099601593625498 0.9900398406374502 0.00550314465408805 0.9944968553459119 0.004273504273504274 0.9957264957264957 0.003121098626716604 0.9968789013732834</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Supermarktdichtstbijzijnde"/>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+          <Variable name="Restaurantdichtstbijzijnde"/>
+        </Variables>
+        <Values>0.2 0.6 0.2 0.13513513513513514 0.8378378378378378 0.02702702702702703 0.14285714285714285 0.7142857142857143 0.14285714285714285 0.07692307692307693 0.9171597633136095 0.005917159763313609 0.005047672462142457 0.9386801271265657 0.05627220041129183 0.005988023952095809 0.6047904191616766 0.38922155688622756 0.2 0.6 0.2 0.00186219739292365 0.8435754189944135 0.15456238361266295 0.004524886877828055 0.502262443438914 0.49321266968325794 0.2 0.6 0.2 0.5294117647058824 0.4117647058823529 0.058823529411764705 0.2 0.6 0.2 0.017543859649122806 0.9649122807017544 0.017543859649122806 0.0018995929443690637 0.8599728629579376 0.13812754409769334 0.001763668430335097 0.6931216931216931 0.30511463844797176 0.09090909090909091 0.8181818181818182 0.09090909090909091 0.0011025358324145535 0.6692392502756339 0.3296582138919515 0.0018484288354898336 0.34935304990757854 0.6487985212569316 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.14285714285714285 0.7142857142857143 0.14285714285714285 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.09090909090909091 0.8181818181818182 0.09090909090909091 0.004536616979909268 0.8885288399222294 0.10693454309786131 0.003194888178913738 0.48242811501597443 0.5143769968051118 0.07692307692307693 0.07692307692307693 0.8461538461538461 0.0013908205841446453 0.41863699582753827 0.5799721835883171 0.0019646365422396855 0.1237721021611002 0.8742632612966601 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.2 0.6 0.2 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.07317073170731707 0.9186991869918699 0.008130081300813009 0.009861932938856016 0.9855358316896778 0.0046022353714661405 0.06666666666666667 0.8666666666666667 0.06666666666666667 0.09090909090909091 0.8181818181818182 0.09090909090909091 0.024390243902439025 0.6097560975609756 0.36585365853658536 0.043478260869565216 0.043478260869565216 0.9130434782608695 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.14285714285714285 0.7142857142857143 0.14285714285714285 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.15789473684210525 0.2631578947368421 0.5789473684210527 0.0180623973727422 0.5665024630541872 0.4154351395730706 0.007874015748031496 0.08661417322834646 0.905511811023622 0.06666666666666667 0.3333333333333333 0.6 0.001287001287001287 0.10167310167310167 0.8970398970398971 0.0016750418760469012 0.0016750418760469012 0.9966499162479062</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Treinstationdichtstbijzijnde"/>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="Restaurantdichtstbijzijnde"/>
+          <Variable name="Huisartspraktijkdichtstbijzijnde"/>
+        </Variables>
+        <Values>0.2 0.2 0.6 0.005917159763313609 0.4437869822485207 0.5502958579881657 0.2 0.2 0.6 0.02702702702702703 0.2972972972972973 0.6756756756756757 1.869508319312021E-4 0.14638250140213124 0.8534305477659375 0.00186219739292365 0.10986964618249534 0.888268156424581 0.14285714285714285 0.14285714285714285 0.7142857142857143 0.001996007984031936 0.06187624750499002 0.936127744510978 0.004524886877828055 0.004524886877828055 0.9909502262443439 0.2 0.6 0.2 0.017543859649122806 0.40350877192982454 0.5789473684210527 0.09090909090909091 0.09090909090909091 0.8181818181818182 0.058823529411764705 0.17647058823529413 0.7647058823529411 0.0035278154681139757 0.21682496607869742 0.7796472184531886 0.0011025358324145535 0.06504961411245866 0.9338478500551268 0.2 0.2 0.6 0.001763668430335097 0.04409171075837742 0.9541446208112875 0.0018484288354898336 0.08317929759704251 0.9149722735674677 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.09090909090909091 0.2727272727272727 0.6363636363636364 0.07692307692307693 0.07692307692307693 0.8461538461538461 0.14285714285714285 0.14285714285714285 0.7142857142857143 6.480881399870382E-4 0.19377835385612444 0.8055735580038885 0.0013908205841446453 0.03477051460361613 0.9638386648122392 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.003194888178913738 0.009584664536741214 0.987220447284345 0.0019646365422396855 0.17092337917485265 0.8271119842829077 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.024390243902439025 0.3333333333333333 0.6422764227642277 0.45454545454545453 0.45454545454545453 0.09090909090909091 0.2 0.6 0.2 6.574621959237344E-4 0.36752136752136755 0.6318211702827088 0.024390243902439025 0.4634146341463415 0.5121951219512195 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.06666666666666667 0.06666666666666667 0.8666666666666667 0.043478260869565216 0.043478260869565216 0.9130434782608695 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.05263157894736842 0.05263157894736842 0.8947368421052632 0.06666666666666667 0.06666666666666667 0.8666666666666667 0.14285714285714285 0.14285714285714285 0.7142857142857143 0.0016420361247947454 0.08045977011494253 0.9178981937602627 0.001287001287001287 0.01673101673101673 0.9819819819819819 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.007874015748031496 0.007874015748031496 0.984251968503937 0.0016750418760469012 0.09547738693467336 0.9028475711892797</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="urbanization_cat"/>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="Nederlandseachtergond"/>
+          <Variable name="Restaurantdichtstbijzijnde"/>
+        </Variables>
+        <Values>0.023809523809523808 0.7857142857142857 0.023809523809523808 0.16666666666666666 0.017857142857142856 0.7525510204081632 0.04336734693877551 0.18622448979591838 0.016666666666666666 0.8166666666666667 0.08333333333333333 0.08333333333333333 0.038461538461538464 0.8076923076923077 0.038461538461538464 0.11538461538461539 0.0062146892655367235 0.6096045197740113 0.10338983050847457 0.2807909604519774 0.003424657534246575 0.571917808219178 0.11986301369863013 0.3047945205479452 0.25 0.25 0.25 0.25 0.0048543689320388345 0.5097087378640777 0.23786407766990292 0.24757281553398058 0.027777777777777776 0.5277777777777778 0.08333333333333333 0.3611111111111111 0.045454545454545456 0.4090909090909091 0.5 0.045454545454545456 0.023428571428571427 0.4737142857142857 0.24971428571428572 0.25314285714285717 0.0056179775280898875 0.601123595505618 0.17415730337078653 0.21910112359550563 0.015151515151515152 0.4090909090909091 0.10606060606060606 0.4696969696969697 0.007317073170731708 0.6447154471544716 0.03983739837398374 0.308130081300813 0.0078125 0.7109375 0.0703125 0.2109375 0.029411764705882353 0.6176470588235294 0.029411764705882353 0.3235294117647059 0.00847457627118644 0.7135593220338983 0.0288135593220339 0.24915254237288137 0.02 0.5 0.02 0.46 0.05555555555555555 0.05555555555555555 0.05555555555555555 0.8333333333333334 0.007042253521126761 0.33098591549295775 0.07746478873239436 0.5845070422535211 0.02631578947368421 0.5526315789473685 0.07894736842105263 0.34210526315789475 0.03571428571428571 0.39285714285714285 0.5357142857142857 0.03571428571428571 0.01597222222222222 0.26875 0.37430555555555556 0.34097222222222223 0.04772727272727273 0.375 0.075 0.5022727272727273 0.375 0.125 0.375 0.125 0.07941176470588235 0.14411764705882352 0.5970588235294118 0.17941176470588235 0.2826086956521739 0.2391304347826087 0.10869565217391304 0.3695652173913043 0.07142857142857142 0.07142857142857142 0.7857142857142857 0.07142857142857142 0.030946601941747573 0.1862864077669903 0.6013349514563107 0.18143203883495146 0.28343949044585987 0.23248407643312102 0.06050955414012739 0.42356687898089174 0.07142857142857142 0.21428571428571427 0.6428571428571429 0.07142857142857142 0.006868131868131868 0.37225274725274726 0.24862637362637363 0.37225274725274726 0.03431372549019608 0.4166666666666667 0.05392156862745098 0.4950980392156863 0.16666666666666666 0.16666666666666666 0.5 0.16666666666666666 0.003067484662576687 0.3282208588957055 0.29141104294478526 0.3773006134969325 0.011627906976744186 0.5930232558139535 0.08139534883720931 0.313953488372093 0.25 0.25 0.25 0.25 0.05172413793103448 0.017241379310344827 0.22413793103448276 0.7068965517241379 0.15 0.25 0.05 0.55 0.0625 0.4375 0.3125 0.1875 0.3062130177514793 0.013313609467455622 0.5488165680473372 0.13165680473372782 0.5077519379844961 0.08139534883720931 0.1821705426356589 0.22868217054263565 0.625 0.125 0.125 0.125 0.6007194244604317 0.025179856115107913 0.36330935251798563 0.01079136690647482 0.7972972972972973 0.06756756756756757 0.04054054054054054 0.0945945945945946 0.16666666666666666 0.16666666666666666 0.5 0.16666666666666666 0.4293032786885246 0.02151639344262295 0.492827868852459 0.05635245901639344 0.7945544554455446 0.022277227722772276 0.11138613861386139 0.07178217821782178 0.25 0.25 0.25 0.25 0.17889908256880735 0.04128440366972477 0.5825688073394495 0.19724770642201836 0.38333333333333336 0.05 0.18333333333333332 0.38333333333333336 0.25 0.25 0.25 0.25 0.19230769230769232 0.08974358974358974 0.47435897435897434 0.24358974358974358 0.375 0.041666666666666664 0.125 0.4583333333333333 0.08928571428571429 0.875 0.017857142857142856 0.017857142857142856 0.004807692307692308 0.9375 0.014423076923076924 0.04326923076923077 0.0625 0.8125 0.0625 0.0625 0.029411764705882353 0.9117647058823529 0.029411764705882353 0.029411764705882353 0.01282051282051282 0.8435897435897436 0.028205128205128206 0.11538461538461539 0.125 0.625 0.125 0.125 0.25 0.25 0.25 0.25 0.020833333333333332 0.7291666666666666 0.10416666666666667 0.14583333333333334 0.25 0.25 0.25 0.25 0.0625 0.5625 0.1875 0.1875 0.017985611510791366 0.8597122302158273 0.025179856115107913 0.09712230215827339 0.125 0.625 0.125 0.125 0.05555555555555555 0.8333333333333334 0.05555555555555555 0.05555555555555555 0.0024875621890547263 0.8681592039800995 0.02736318407960199 0.10199004975124377 0.07142857142857142 0.7857142857142857 0.07142857142857142 0.07142857142857142 0.041666666666666664 0.875 0.041666666666666664 0.041666666666666664 0.01953125 0.85546875 0.01953125 0.10546875 0.16666666666666666 0.5 0.16666666666666666 0.16666666666666666 0.25 0.25 0.25 0.25 0.8636363636363636 0.045454545454545456 0.045454545454545456 0.045454545454545456 0.3 0.1 0.1 0.5 0.625 0.125 0.125 0.125 0.8387978142076503 0.00819672131147541 0.11202185792349727 0.040983606557377046 0.5064102564102564 0.057692307692307696 0.4166666666666667 0.019230769230769232 0.5 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.9050632911392406 0.006329113924050633 0.06962025316455696 0.0189873417721519 0.5377358490566038 0.009433962264150943 0.44339622641509435 0.009433962264150943 0.75 0.05 0.15 0.05 0.8138020833333334 0.00390625 0.17057291666666666 0.01171875 0.6357142857142857 0.02619047619047619 0.32142857142857145 0.016666666666666666 0.5 0.1 0.3 0.1 0.6833333333333333 0.016666666666666666 0.21666666666666667 0.08333333333333333 0.375 0.025 0.375 0.225 0.25 0.25 0.25 0.25 0.8529411764705882 0.029411764705882353 0.08823529411764706 0.029411764705882353 0.3 0.1 0.1 0.5</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="Walkability.WI7c_1719_500z"/>
+          <Variable name="urbanization_cat"/>
+          <Variable name="Greenspace.r1000m_all"/>
+          <Variable name="Treinstationdichtstbijzijnde"/>
+        </Variables>
+        <Values>0.25 0.25 0.25 0.25 0.1 0.3 0.1 0.5 0.07575757575757576 0.10606060606060606 0.5303030303030303 0.2878787878787879 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.3888888888888889 0.021367521367521368 0.5854700854700855 0.004273504273504274 0.25 0.25 0.25 0.25 0.2866666666666667 0.006666666666666667 0.7 0.006666666666666667 0.19823434991974317 0.013643659711075442 0.7792937399678973 0.00882825040128411 0.25 0.25 0.25 0.25 0.1 0.1 0.1 0.7 0.07142857142857142 0.07142857142857142 0.07142857142857142 0.7857142857142857 0.25 0.25 0.25 0.25 0.08333333333333333 0.016666666666666666 0.8833333333333333 0.016666666666666666 0.16343669250645995 0.025193798449612403 0.8107235142118863 6.459948320413437E-4 0.25 0.25 0.25 0.25 0.11478599221789883 0.2509727626459144 0.0019455252918287938 0.632295719844358 0.1241591928251121 0.351177130044843 0.03615470852017937 0.4885089686098655 0.07142857142857142 0.5 0.07142857142857142 0.35714285714285715 0.15566037735849056 0.37264150943396224 0.0330188679245283 0.4386792452830189 0.24779411764705883 0.40808823529411764 0.08014705882352942 0.2639705882352941 0.25 0.25 0.25 0.25 0.25 0.08333333333333333 0.4166666666666667 0.25 0.2840909090909091 0.17045454545454544 0.48863636363636365 0.056818181818181816 0.1 0.1 0.1 0.7 0.03993055555555555 0.1579861111111111 0.001736111111111111 0.8003472222222222 0.12899786780383796 0.21002132196162046 0.009594882729211088 0.6513859275053305 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.2692307692307692 0.038461538461538464 0.6538461538461539 0.038461538461538464 0.25 0.25 0.25 0.25 0.0763888888888889 0.020833333333333332 0.8541666666666666 0.04861111111111111 0.6008522727272727 0.21164772727272727 0.1747159090909091 0.01278409090909091 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.5 0.40301003344481606 0.41304347826086957 0.07190635451505016 0.11204013377926421 0.5169934640522876 0.13660130718954247 0.3366013071895425 0.00980392156862745 0.25 0.25 0.25 0.25 0.40551181102362205 0.42913385826771655 0.04330708661417323 0.1220472440944882 0.3248987854251012 0.039473684210526314 0.618421052631579 0.01720647773279352 0.25 0.25 0.25 0.25 0.21428571428571427 0.07142857142857142 0.07142857142857142 0.6428571428571429 0.21875 0.40625 0.03125 0.34375 0.25 0.25 0.25 0.25 0.328125 0.328125 0.296875 0.046875 0.0375 0.0125 0.9475 0.0025 0.25 0.25 0.25 0.25 0.23509933774834438 0.5132450331125827 0.016556291390728478 0.23509933774834438 0.21924083769633507 0.41034031413612565 0.06871727748691099 0.30170157068062825 0.25 0.25 0.25 0.25 0.29605263157894735 0.3223684210526316 0.17763157894736842 0.20394736842105263 0.31625441696113077 0.3916372202591284 0.07832744405182568 0.2137809187279152 0.25 0.25 0.25 0.25 0.08333333333333333 0.75 0.08333333333333333 0.08333333333333333 0.4175531914893617 0.31648936170212766 0.2047872340425532 0.061170212765957445 0.25 0.25 0.25 0.25 0.02631578947368421 0.23684210526315788 0.02631578947368421 0.7105263157894737 0.4180327868852459 0.1557377049180328 0.13934426229508196 0.28688524590163933 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.375 0.08928571428571429 0.5178571428571429 0.017857142857142856</Values>
+      </Potential>
+      <Potential role="conditionalProbability" type="Table">
+        <Variables>
+          <Variable name="C_PHQ9_TOTAL"/>
+          <Variable name="GEZONDHEID_NU_CBS"/>
+          <Variable name="emotional_loneliness"/>
+        </Variables>
+        <Values>0.29411764705882354 0.29411764705882354 0.17647058823529413 0.17647058823529413 0.058823529411764705 0.04 0.04 0.52 0.2 0.2 0.20577617328519857 0.35018050541516244 0.30685920577617326 0.08303249097472924 0.05415162454873646 0.03272727272727273 0.24363636363636362 0.3090909090909091 0.22181818181818183 0.19272727272727272 0.9254693191370131 0.05407677220509947 0.015970860184925748 0.004202857943401513 2.801905295601009E-4 0.6203090507726269 0.24503311258278146 0.08609271523178808 0.037527593818984545 0.011037527593818985 0.5422303473491773 0.33308957952468005 0.0983546617915905 0.018647166361974405 0.007678244972577696 0.22545168892380205 0.3904163393558523 0.24273369992144542 0.10761979575805185 0.03377847604084839 0.8323085522638345 0.13627724986025713 0.02515371716042482 0.005030743432084964 0.0012297372833985467 0.48471177944862154 0.3233082706766917 0.11478696741854637 0.058646616541353384 0.018546365914786967</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0"/>
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0"/>
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost"/>
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>
