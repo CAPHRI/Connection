@@ -1,0 +1,65 @@
+FilteredClassifier using weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 173,242,178,222,22,42,154
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R173,242,178,222,22,42,154'
+
+@attribute Treinstationdichtstbijzijnde {0,0-1,>1}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.2060604-28.6620007,28.6620007-36.9880104,<=20.2060604,>36.9880104}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute emotional_loneliness {False,True}
+@attribute social_loneliness {False,True}
+
+@data
+
+
+Classifier Model
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                         Class
+Variable                                            not lonely
+==============================================================
+Treinstationdichtstbijzijnde=0                          11.457
+Treinstationdichtstbijzijnde=0-1                        0.0034
+Treinstationdichtstbijzijnde=>1                        -0.0829
+urbanization_cat=four                                   0.1482
+urbanization_cat=one                                   -0.2168
+urbanization_cat=three                                  0.0563
+urbanization_cat=two                                    0.1149
+Walkability.WI7c_1719_500z=20.2060604-28.6620007       -0.0107
+Walkability.WI7c_1719_500z=28.6620007-36.9880104        0.0209
+Walkability.WI7c_1719_500z=<=20.2060604                 0.0769
+Walkability.WI7c_1719_500z=>36.9880104                 -0.0897
+C_PHQ9_TOTAL=Geen tot minimale depressie                0.5263
+C_PHQ9_TOTAL=Milde depressie                           -0.3612
+C_PHQ9_TOTAL=Matige depressie                          -0.4217
+C_PHQ9_TOTAL=Matig ernstige depressie                   -0.881
+C_PHQ9_TOTAL=Ernstige depressie                        -0.6504
+emotional_loneliness=True                             -23.0088
+social_loneliness=True                                -28.5696
+Intercept                                               2.8301
+
+
+Odds Ratios...
+                                                         Class
+Variable                                            not lonely
+==============================================================
+Treinstationdichtstbijzijnde=0                      94565.4556
+Treinstationdichtstbijzijnde=0-1                        1.0034
+Treinstationdichtstbijzijnde=>1                         0.9204
+urbanization_cat=four                                   1.1597
+urbanization_cat=one                                    0.8051
+urbanization_cat=three                                   1.058
+urbanization_cat=two                                    1.1218
+Walkability.WI7c_1719_500z=20.2060604-28.6620007        0.9894
+Walkability.WI7c_1719_500z=28.6620007-36.9880104        1.0211
+Walkability.WI7c_1719_500z=<=20.2060604                 1.0799
+Walkability.WI7c_1719_500z=>36.9880104                  0.9142
+C_PHQ9_TOTAL=Geen tot minimale depressie                1.6926
+C_PHQ9_TOTAL=Milde depressie                            0.6969
+C_PHQ9_TOTAL=Matige depressie                           0.6559
+C_PHQ9_TOTAL=Matig ernstige depressie                   0.4144
+C_PHQ9_TOTAL=Ernstige depressie                         0.5218
+emotional_loneliness=True                                    0
+social_loneliness=True                                       0

@@ -7,12 +7,11 @@ import weka.WekaClassifier;
 import weka.classifiers.bayes.BayesNet;
 import weka.classifiers.bayes.net.search.fixed.FromFile;
 import weka.classifiers.bayes.net.search.local.K2;
-import weka.classifiers.meta.FilteredClassifier;
 
 import java.util.List;
 
-import static bayes.util.PrintingPress.printBIF;
-import static weka.WekaUtil.createFilteredClassifier;
+import static bayes.util.PrintingPress.printString;
+
 
 public class BNClassifier extends WekaClassifier {
     private int parents;
@@ -50,7 +49,7 @@ public class BNClassifier extends WekaClassifier {
             network.setSearchAlgorithm(k2);
         } else {
             String temp = "temp.xml";
-            printBIF(BifMapper.toBIF(nodes), temp);
+            printString(BifMapper.toBIF(nodes), temp);
             network = new BayesNet();
             FromFile search = new FromFile();
             search.setBIFFile(temp);

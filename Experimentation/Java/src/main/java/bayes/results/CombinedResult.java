@@ -16,6 +16,7 @@ public class CombinedResult {
     private boolean dag;
     private int maxParents;
     private String diggity;
+    private String model;
 
     public String getDiggity() {
         return diggity;
@@ -110,4 +111,11 @@ public class CombinedResult {
         return s;
     }
 
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getModel(){
+        return model;
+    }
 }

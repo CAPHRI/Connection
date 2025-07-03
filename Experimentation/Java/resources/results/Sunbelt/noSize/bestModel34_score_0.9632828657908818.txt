@@ -1,0 +1,278 @@
+FilteredClassifier using weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 44,242,46-47,53,63,57,241,64,68,70-71,74,82,84,98,102,120,128,130,137-139,142,166-167,173,178,222,22,42,154
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R44,242,46-47,53,63,57,241,64,68,70-71,74,82,84,98,102,120,128,130,137-139,142,166-167,173,178,222,22,42,154'
+
+@attribute emotional_support_talk_about_my_health_incl_care {0,1-2,3-5,6-9,>9}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute extra_members {0,1,>1}
+@attribute family_members {0,1-2,3-4,5-6,>7}
+@attribute friends {0,1-2,3-4,>4}
+@attribute GEZONDHEID_NU_CBS {five,four,one,three,two}
+@attribute geslacht_totaal {Man,Vrouw}
+@attribute good_plus_relationship_total_incl_care {0,1-2,3-4,>5}
+@attribute Greenspace.r1000m_all {51-60,61-70,71-80,<=50,>80}
+@attribute Huisartspraktijkdichtstbijzijnde {0,0-1,>1}
+@attribute Huishoudgrootte {1,2,>2}
+@attribute Huurcoporatie {0-10,10-20,20-40,>40}
+@attribute informational_support_incl_care {1-2,3-5,6-9,>9,zero}
+@attribute lbm {'klasse 4','klasse 3'}
+@attribute LID_CLUBS {False,True}
+@attribute Nederlandseachtergond {0-50,eighty,hundred,ninety,seventy,sixty}
+@attribute network_size_care {1-2,13-20,3-5,6-8,9-12,>21}
+@attribute OPLEIDINGSNIVEAU {'Onderwijsniveau 3','Onderwijsniveau 2','Onderwijsniveau 1','Ik volg momenteel een opleiding'}
+@attribute phone_internet_video_call_contact {>2,one,two,zero}
+@attribute physical_contact {0,4-6,7-10,>10,one,three,two}
+@attribute practical_support_incl_care {0,1-2,3-5,6-9,>9}
+@attribute RELATIE {false,true}
+@attribute Restaurantdichtstbijzijnde {0,0-1,>1}
+@attribute same_sex {0,1-2}
+@attribute Supermarktdichtstbijzijnde {0,0-1,>1}
+@attribute support_do_fun_things_incl_care {0,1-2,3-5,6-9,>9}
+@attribute Treinstationdichtstbijzijnde {0,0-1,>1}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.2060604-28.6620007,28.6620007-36.9880104,<=20.2060604,>36.9880104}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute emotional_loneliness {False,True}
+@attribute social_loneliness {False,True}
+
+@data
+
+
+Classifier Model
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                             Class
+Variable                                                not lonely
+==================================================================
+emotional_support_talk_about_my_health_incl_care=0          0.1981
+emotional_support_talk_about_my_health_incl_care=1-2        0.0364
+emotional_support_talk_about_my_health_incl_care=3-5       -0.1846
+emotional_support_talk_about_my_health_incl_care=6-9       -0.0213
+emotional_support_talk_about_my_health_incl_care=>9         0.0136
+extra_members=0                                            -0.0269
+extra_members=1                                              0.128
+extra_members=>1                                           -0.0679
+family_members=0                                              1.11
+family_members=1-2                                          -0.244
+family_members=3-4                                         -0.1102
+family_members=5-6                                          0.0631
+family_members=>7                                           0.1296
+friends=0                                                  -0.1938
+friends=1-2                                                -0.0188
+friends=3-4                                                 0.0917
+friends=>4                                                  0.1085
+GEZONDHEID_NU_CBS=five                                     -1.1145
+GEZONDHEID_NU_CBS=four                                     -0.1527
+GEZONDHEID_NU_CBS=one                                       0.2001
+GEZONDHEID_NU_CBS=three                                    -0.1345
+GEZONDHEID_NU_CBS=two                                      -0.0196
+geslacht_totaal=Vrouw                                       0.2263
+good_plus_relationship_total_incl_care=0                    -1.264
+good_plus_relationship_total_incl_care=1-2                 -0.6668
+good_plus_relationship_total_incl_care=3-4                   0.149
+good_plus_relationship_total_incl_care=>5                   0.3686
+Greenspace.r1000m_all=51-60                                -0.0464
+Greenspace.r1000m_all=61-70                                 0.0675
+Greenspace.r1000m_all=71-80                                -0.2132
+Greenspace.r1000m_all=<=50                                  0.0051
+Greenspace.r1000m_all=>80                                    0.252
+Huisartspraktijkdichtstbijzijnde=0                           -0.93
+Huisartspraktijkdichtstbijzijnde=0-1                        0.0504
+Huisartspraktijkdichtstbijzijnde=>1                        -0.0337
+Huishoudgrootte=1                                          -3.0068
+Huishoudgrootte=2                                          -0.1039
+Huishoudgrootte=>2                                          0.1131
+Huurcoporatie=0-10                                          0.1031
+Huurcoporatie=10-20                                        -0.1551
+Huurcoporatie=20-40                                        -0.1742
+Huurcoporatie=>40                                           0.1341
+informational_support_incl_care=1-2                        -0.2318
+informational_support_incl_care=3-5                        -0.1692
+informational_support_incl_care=6-9                         0.0922
+informational_support_incl_care=>9                          0.2846
+informational_support_incl_care=zero                        0.2214
+lbm=klasse 3                                               -0.0289
+LID_CLUBS=True                                             -0.0664
+Nederlandseachtergond=0-50                                 -0.5756
+Nederlandseachtergond=eighty                                0.1588
+Nederlandseachtergond=hundred                               0.3976
+Nederlandseachtergond=ninety                                0.0395
+Nederlandseachtergond=seventy                               -0.294
+Nederlandseachtergond=sixty                                 0.0292
+network_size_care=1-2                                       1.1838
+network_size_care=13-20                                    -0.7386
+network_size_care=3-5                                       0.4788
+network_size_care=6-8                                       0.1315
+network_size_care=9-12                                     -0.1205
+network_size_care=>21                                      -0.6864
+OPLEIDINGSNIVEAU=Onderwijsniveau 3                          0.1131
+OPLEIDINGSNIVEAU=Onderwijsniveau 2                         -0.0287
+OPLEIDINGSNIVEAU=Onderwijsniveau 1                          -0.076
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding           -0.3956
+phone_internet_video_call_contact=>2                        0.5589
+phone_internet_video_call_contact=one                       -0.074
+phone_internet_video_call_contact=two                      -0.1362
+phone_internet_video_call_contact=zero                      0.0179
+physical_contact=0                                          0.1552
+physical_contact=4-6                                       -0.0899
+physical_contact=7-10                                       0.1571
+physical_contact=>10                                        0.3345
+physical_contact=one                                       -0.3122
+physical_contact=three                                     -0.1634
+physical_contact=two                                         0.011
+practical_support_incl_care=0                              -0.2377
+practical_support_incl_care=1-2                             0.0004
+practical_support_incl_care=3-5                             0.0419
+practical_support_incl_care=6-9                             0.4841
+practical_support_incl_care=>9                              0.8522
+RELATIE=true                                                0.0792
+Restaurantdichtstbijzijnde=0                                0.1815
+Restaurantdichtstbijzijnde=0-1                             -0.0117
+Restaurantdichtstbijzijnde=>1                              -0.0131
+same_sex=1-2                                               -0.3462
+Supermarktdichtstbijzijnde=0                                0.0913
+Supermarktdichtstbijzijnde=0-1                              0.0469
+Supermarktdichtstbijzijnde=>1                                -0.05
+support_do_fun_things_incl_care=0                          -0.4314
+support_do_fun_things_incl_care=1-2                         -0.201
+support_do_fun_things_incl_care=3-5                        -0.1605
+support_do_fun_things_incl_care=6-9                         0.2469
+support_do_fun_things_incl_care=>9                          0.3544
+Treinstationdichtstbijzijnde=0                             11.0095
+Treinstationdichtstbijzijnde=0-1                            0.0151
+Treinstationdichtstbijzijnde=>1                            -0.0915
+urbanization_cat=four                                       0.0778
+urbanization_cat=one                                       -0.1749
+urbanization_cat=three                                     -0.0051
+urbanization_cat=two                                        0.1813
+Walkability.WI7c_1719_500z=20.2060604-28.6620007           -0.0419
+Walkability.WI7c_1719_500z=28.6620007-36.9880104            0.0407
+Walkability.WI7c_1719_500z=<=20.2060604                     0.0346
+Walkability.WI7c_1719_500z=>36.9880104                     -0.0346
+C_PHQ9_TOTAL=Geen tot minimale depressie                    0.4721
+C_PHQ9_TOTAL=Milde depressie                               -0.3407
+C_PHQ9_TOTAL=Matige depressie                              -0.3958
+C_PHQ9_TOTAL=Matig ernstige depressie                      -0.7104
+C_PHQ9_TOTAL=Ernstige depressie                            -0.3857
+emotional_loneliness=True                                 -56.9893
+social_loneliness=True                                    -64.5867
+Intercept                                                   2.8151
+
+
+Odds Ratios...
+                                                             Class
+Variable                                                not lonely
+==================================================================
+emotional_support_talk_about_my_health_incl_care=0           1.219
+emotional_support_talk_about_my_health_incl_care=1-2         1.037
+emotional_support_talk_about_my_health_incl_care=3-5        0.8315
+emotional_support_talk_about_my_health_incl_care=6-9        0.9789
+emotional_support_talk_about_my_health_incl_care=>9         1.0137
+extra_members=0                                             0.9735
+extra_members=1                                             1.1365
+extra_members=>1                                            0.9344
+family_members=0                                            3.0343
+family_members=1-2                                          0.7835
+family_members=3-4                                          0.8957
+family_members=5-6                                          1.0651
+family_members=>7                                           1.1383
+friends=0                                                   0.8238
+friends=1-2                                                 0.9814
+friends=3-4                                                  1.096
+friends=>4                                                  1.1146
+GEZONDHEID_NU_CBS=five                                      0.3281
+GEZONDHEID_NU_CBS=four                                      0.8584
+GEZONDHEID_NU_CBS=one                                       1.2216
+GEZONDHEID_NU_CBS=three                                     0.8742
+GEZONDHEID_NU_CBS=two                                       0.9806
+geslacht_totaal=Vrouw                                        1.254
+good_plus_relationship_total_incl_care=0                    0.2825
+good_plus_relationship_total_incl_care=1-2                  0.5133
+good_plus_relationship_total_incl_care=3-4                  1.1606
+good_plus_relationship_total_incl_care=>5                   1.4457
+Greenspace.r1000m_all=51-60                                 0.9547
+Greenspace.r1000m_all=61-70                                 1.0698
+Greenspace.r1000m_all=71-80                                  0.808
+Greenspace.r1000m_all=<=50                                  1.0051
+Greenspace.r1000m_all=>80                                   1.2866
+Huisartspraktijkdichtstbijzijnde=0                          0.3946
+Huisartspraktijkdichtstbijzijnde=0-1                        1.0517
+Huisartspraktijkdichtstbijzijnde=>1                         0.9669
+Huishoudgrootte=1                                           0.0494
+Huishoudgrootte=2                                           0.9013
+Huishoudgrootte=>2                                          1.1197
+Huurcoporatie=0-10                                          1.1085
+Huurcoporatie=10-20                                         0.8563
+Huurcoporatie=20-40                                         0.8401
+Huurcoporatie=>40                                           1.1435
+informational_support_incl_care=1-2                         0.7931
+informational_support_incl_care=3-5                         0.8443
+informational_support_incl_care=6-9                         1.0966
+informational_support_incl_care=>9                          1.3292
+informational_support_incl_care=zero                        1.2478
+lbm=klasse 3                                                0.9715
+LID_CLUBS=True                                              0.9358
+Nederlandseachtergond=0-50                                  0.5624
+Nederlandseachtergond=eighty                                1.1721
+Nederlandseachtergond=hundred                               1.4882
+Nederlandseachtergond=ninety                                1.0403
+Nederlandseachtergond=seventy                               0.7452
+Nederlandseachtergond=sixty                                 1.0297
+network_size_care=1-2                                       3.2669
+network_size_care=13-20                                     0.4778
+network_size_care=3-5                                       1.6142
+network_size_care=6-8                                       1.1406
+network_size_care=9-12                                      0.8865
+network_size_care=>21                                       0.5034
+OPLEIDINGSNIVEAU=Onderwijsniveau 3                          1.1197
+OPLEIDINGSNIVEAU=Onderwijsniveau 2                          0.9717
+OPLEIDINGSNIVEAU=Onderwijsniveau 1                          0.9268
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding            0.6733
+phone_internet_video_call_contact=>2                        1.7487
+phone_internet_video_call_contact=one                       0.9287
+phone_internet_video_call_contact=two                       0.8726
+phone_internet_video_call_contact=zero                      1.0181
+physical_contact=0                                          1.1678
+physical_contact=4-6                                         0.914
+physical_contact=7-10                                       1.1701
+physical_contact=>10                                        1.3972
+physical_contact=one                                        0.7318
+physical_contact=three                                      0.8493
+physical_contact=two                                         1.011
+practical_support_incl_care=0                               0.7885
+practical_support_incl_care=1-2                             1.0004
+practical_support_incl_care=3-5                             1.0427
+practical_support_incl_care=6-9                             1.6227
+practical_support_incl_care=>9                              2.3449
+RELATIE=true                                                1.0824
+Restaurantdichtstbijzijnde=0                                 1.199
+Restaurantdichtstbijzijnde=0-1                              0.9884
+Restaurantdichtstbijzijnde=>1                                0.987
+same_sex=1-2                                                0.7074
+Supermarktdichtstbijzijnde=0                                1.0956
+Supermarktdichtstbijzijnde=0-1                              1.0481
+Supermarktdichtstbijzijnde=>1                               0.9513
+support_do_fun_things_incl_care=0                           0.6496
+support_do_fun_things_incl_care=1-2                         0.8179
+support_do_fun_things_incl_care=3-5                         0.8517
+support_do_fun_things_incl_care=6-9                           1.28
+support_do_fun_things_incl_care=>9                          1.4253
+Treinstationdichtstbijzijnde=0                          60443.7832
+Treinstationdichtstbijzijnde=0-1                            1.0152
+Treinstationdichtstbijzijnde=>1                             0.9125
+urbanization_cat=four                                        1.081
+urbanization_cat=one                                        0.8395
+urbanization_cat=three                                       0.995
+urbanization_cat=two                                        1.1988
+Walkability.WI7c_1719_500z=20.2060604-28.6620007            0.9589
+Walkability.WI7c_1719_500z=28.6620007-36.9880104            1.0415
+Walkability.WI7c_1719_500z=<=20.2060604                     1.0352
+Walkability.WI7c_1719_500z=>36.9880104                       0.966
+C_PHQ9_TOTAL=Geen tot minimale depressie                    1.6034
+C_PHQ9_TOTAL=Milde depressie                                0.7112
+C_PHQ9_TOTAL=Matige depressie                               0.6731
+C_PHQ9_TOTAL=Matig ernstige depressie                       0.4914
+C_PHQ9_TOTAL=Ernstige depressie                               0.68
+emotional_loneliness=True                                        0
+social_loneliness=True                                           0

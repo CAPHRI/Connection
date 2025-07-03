@@ -1,0 +1,83 @@
+FilteredClassifier using weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 166,242,167,173,178,222,22,42,154
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R166,242,167,173,178,222,22,42,154'
+
+@attribute Supermarktdichtstbijzijnde {0,0-1,>1}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute support_do_fun_things_incl_care {0,1-2,3-5,6-9,>9}
+@attribute Treinstationdichtstbijzijnde {0,0-1,>1}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.2060604-28.6620007,28.6620007-36.9880104,<=20.2060604,>36.9880104}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute emotional_loneliness {False,True}
+@attribute social_loneliness {False,True}
+
+@data
+
+
+Classifier Model
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                         Class
+Variable                                            not lonely
+==============================================================
+Supermarktdichtstbijzijnde=0                           -0.1447
+Supermarktdichtstbijzijnde=0-1                          0.0243
+Supermarktdichtstbijzijnde=>1                          -0.0208
+support_do_fun_things_incl_care=0                       -0.347
+support_do_fun_things_incl_care=1-2                    -0.3152
+support_do_fun_things_incl_care=3-5                    -0.1906
+support_do_fun_things_incl_care=6-9                     0.2991
+support_do_fun_things_incl_care=>9                      0.3912
+Treinstationdichtstbijzijnde=0                         10.9286
+Treinstationdichtstbijzijnde=0-1                       -0.0067
+Treinstationdichtstbijzijnde=>1                        -0.0692
+urbanization_cat=four                                   0.1498
+urbanization_cat=one                                   -0.2163
+urbanization_cat=three                                  0.0395
+urbanization_cat=two                                     0.131
+Walkability.WI7c_1719_500z=20.2060604-28.6620007       -0.0146
+Walkability.WI7c_1719_500z=28.6620007-36.9880104        0.0335
+Walkability.WI7c_1719_500z=<=20.2060604                 0.0793
+Walkability.WI7c_1719_500z=>36.9880104                 -0.1009
+C_PHQ9_TOTAL=Geen tot minimale depressie                0.5199
+C_PHQ9_TOTAL=Milde depressie                           -0.3692
+C_PHQ9_TOTAL=Matige depressie                          -0.3996
+C_PHQ9_TOTAL=Matig ernstige depressie                  -0.8772
+C_PHQ9_TOTAL=Ernstige depressie                        -0.5334
+emotional_loneliness=True                             -23.5239
+social_loneliness=True                                -31.2087
+Intercept                                               2.8038
+
+
+Odds Ratios...
+                                                         Class
+Variable                                            not lonely
+==============================================================
+Supermarktdichtstbijzijnde=0                            0.8653
+Supermarktdichtstbijzijnde=0-1                          1.0246
+Supermarktdichtstbijzijnde=>1                           0.9795
+support_do_fun_things_incl_care=0                       0.7068
+support_do_fun_things_incl_care=1-2                     0.7297
+support_do_fun_things_incl_care=3-5                     0.8265
+support_do_fun_things_incl_care=6-9                     1.3487
+support_do_fun_things_incl_care=>9                      1.4788
+Treinstationdichtstbijzijnde=0                      55750.8007
+Treinstationdichtstbijzijnde=0-1                        0.9933
+Treinstationdichtstbijzijnde=>1                         0.9331
+urbanization_cat=four                                   1.1616
+urbanization_cat=one                                    0.8055
+urbanization_cat=three                                  1.0403
+urbanization_cat=two                                    1.1399
+Walkability.WI7c_1719_500z=20.2060604-28.6620007        0.9855
+Walkability.WI7c_1719_500z=28.6620007-36.9880104        1.0341
+Walkability.WI7c_1719_500z=<=20.2060604                 1.0825
+Walkability.WI7c_1719_500z=>36.9880104                  0.9041
+C_PHQ9_TOTAL=Geen tot minimale depressie                1.6819
+C_PHQ9_TOTAL=Milde depressie                            0.6913
+C_PHQ9_TOTAL=Matige depressie                           0.6706
+C_PHQ9_TOTAL=Matig ernstige depressie                    0.416
+C_PHQ9_TOTAL=Ernstige depressie                         0.5866
+emotional_loneliness=True                                    0
+social_loneliness=True                                       0

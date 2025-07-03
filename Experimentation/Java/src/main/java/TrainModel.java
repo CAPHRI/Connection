@@ -1,82 +1,62 @@
-import bayes.Node;
 import bayes.results.CleanResult;
 import bayes.results.CombinedResult;
-import bayes.util.BifMapper;
 import weka.WekaClassifier;
-import weka.classifiers.BNClassifier;
 import weka.classifiers.Evaluation;
-import weka.classifiers.bayes.BayesNet;
-import weka.classifiers.bayes.net.search.fixed.FromFile;
-import weka.classifiers.bayes.net.search.local.K2;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
-import weka.filters.Filter;
-import weka.filters.unsupervised.attribute.Remove;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
 import static bayes.util.BifMapper.fromWekaBif;
-import static bayes.util.PrintingPress.printBIF;
 import static bayes.util.PrintingPress.sortArrf;
 import static bayes.util.SelectPopulation.testSubPopulation;
 import static weka.WekaUtil.*;
 
 public class TrainModel {
+    private String arff;
+    private List<String> attributesOfInterest;
+    private String target;
+    private List<String> toBeKept;
     private WekaClassifier classifier;
 
-    public TrainModel(WekaClassifier classifier){
+    public TrainModel(String arff, String target, List<String> attributesOfInterest, List<String> toBeKept, WekaClassifier classifier) {
+        this.arff = arff;
+        this.attributesOfInterest = attributesOfInterest;
+        this.target = target;
+        this.toBeKept = toBeKept;
         this.classifier = classifier;
     }
 
-    public static CombinedResult trainModel(String arff, String target, List<String> attributesOfInterest,
-                                            List<Node> nodes, List<String> toBeKept,
-                                            boolean initNaive, int parents)
+    public CombinedResult trainModel(List<String> toBeKept)
             throws Exception {
         Instances data = getInstances(arff, target);
 
-        BNClassifier bn = new BNClassifier(initNaive, parents, nodes);
-        bn.setFiltered(createFilteredClassifier(bn.getClassifier(), data, toBeKept));
-
+        classifier.setFiltered(createFilteredClassifier(classifier.getClassifier(), data, toBeKept));
+        for (int i = 0; i < data.numAttributes(); i++) {
+            if (data.attribute(i).name().equals(target)) {
+                data.setClassIndex(i);
+                break;
+            }
+        }
         try {
-            bn.getFiltered().buildClassifier(data);
+            classifier.getFiltered().buildClassifier(data);
         } catch (Exception e) {
             throw e;
         }
 
-        CombinedResult res = validate(attributesOfInterest, bn.getFiltered(), data);
-
-        res.setGraph(bn.getFiltered().graph());
-        res.setDiggity(fromWekaBif(bn.getFiltered().graph()));
+        CombinedResult res = validate(attributesOfInterest, classifier.getFiltered(), data);
         return res;
     }
 
-    public static Map<Double, CombinedResult> trainModelWithFeatureSelection(String arff, String target, List<String> attributesOfInterest,
-                                                                             List<Node> nodes, List<String> toBeKept,
-                                                                             boolean initNaive, int parents)
-            throws Exception {
-        List<List<String>> featureSelection = makeCombinations(toBeKept, attributesOfInterest);
-        Map<Double, CombinedResult> all = new HashMap<>();
-        for (List<String> list : featureSelection) {
-            CombinedResult res = trainModel(arff, target, attributesOfInterest, nodes, list, initNaive, parents);
-            double score = 0;
-            for (CleanResult x : res.getResults().values()) {
-                score += x.getAuc();
-            }
-            score /= res.getResults().values().size();
-            all.put(score, res);
-        }
-        return all;
-
-    }
-
-    private static List<List<String>> makeCombinations(List<String> attributes, List<String> attributesOfInterest) {
+    public List<List<String>> makeCombinations() {
 
         List<List<String>> lists = new ArrayList<>();
+        List<String> attributes = new ArrayList<>();
+        attributes.addAll(toBeKept);
         attributes.removeAll(attributesOfInterest);
         for (int i = 0; i < attributes.size(); i++) {
             for (List<String> temp : lists) {
@@ -92,7 +72,7 @@ public class TrainModel {
 
     }
 
-    private static Instances getInstances(String arff, String target) throws IOException {
+    private Instances getInstances(String arff, String target) throws IOException {
         Instances data = readData(target, arff);
         ArffSaver s = new ArffSaver();
 
@@ -106,7 +86,7 @@ public class TrainModel {
         return data;
     }
 
-    private static CombinedResult validate(List<String> attributesOfInterest, FilteredClassifier filtered, Instances data)
+    private CombinedResult validate(List<String> attributesOfInterest, FilteredClassifier filtered, Instances data)
             throws Exception {
 
         CombinedResult res = new CombinedResult();
@@ -132,5 +112,9 @@ public class TrainModel {
         }
 
         return res;
+    }
+
+    public WekaClassifier getClassifier() {
+        return classifier;
     }
 }
