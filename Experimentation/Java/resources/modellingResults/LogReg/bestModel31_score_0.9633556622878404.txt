@@ -1,0 +1,140 @@
+FilteredClassifier using weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 120,242,128,130,137-139,142,166-167,173,178,222,22,42,154
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R120,242,128,130,137-139,142,166-167,173,178,222,22,42,154'
+
+@attribute OPLEIDINGSNIVEAU {'Onderwijsniveau 3','Onderwijsniveau 2','Onderwijsniveau 1','Ik volg momenteel een opleiding'}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute phone_internet_video_call_contact {>2,one,two,zero}
+@attribute physical_contact {0,4-6,7-10,>10,one,three,two}
+@attribute practical_support_incl_care {0,1-2,3-5,6-9,>9}
+@attribute RELATIE {false,true}
+@attribute Restaurantdichtstbijzijnde {0,0-1,>1}
+@attribute same_sex {0,1-2}
+@attribute Supermarktdichtstbijzijnde {0,0-1,>1}
+@attribute support_do_fun_things_incl_care {0,1-2,3-5,6-9,>9}
+@attribute Treinstationdichtstbijzijnde {0,0-1,>1}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.2060604-28.6620007,28.6620007-36.9880104,<=20.2060604,>36.9880104}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute emotional_loneliness {False,True}
+@attribute social_loneliness {False,True}
+
+@data
+
+
+Classifier Model
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                           Class
+Variable                                              not lonely
+================================================================
+OPLEIDINGSNIVEAU=Onderwijsniveau 3                        0.1408
+OPLEIDINGSNIVEAU=Onderwijsniveau 2                       -0.0229
+OPLEIDINGSNIVEAU=Onderwijsniveau 1                       -0.1317
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding          -0.331
+phone_internet_video_call_contact=>2                      0.3646
+phone_internet_video_call_contact=one                    -0.1009
+phone_internet_video_call_contact=two                    -0.1465
+phone_internet_video_call_contact=zero                    0.0629
+physical_contact=0                                        0.2886
+physical_contact=4-6                                     -0.0503
+physical_contact=7-10                                     0.0769
+physical_contact=>10                                      0.1741
+physical_contact=one                                     -0.3274
+physical_contact=three                                   -0.1984
+physical_contact=two                                      0.0397
+practical_support_incl_care=0                            -0.1517
+practical_support_incl_care=1-2                          -0.0531
+practical_support_incl_care=3-5                           0.0153
+practical_support_incl_care=6-9                           0.5019
+practical_support_incl_care=>9                            0.8587
+RELATIE=true                                              0.1514
+Restaurantdichtstbijzijnde=0                             -0.0071
+Restaurantdichtstbijzijnde=0-1                            0.0088
+Restaurantdichtstbijzijnde=>1                            -0.0086
+same_sex=1-2                                             -0.1415
+Supermarktdichtstbijzijnde=0                             -0.0346
+Supermarktdichtstbijzijnde=0-1                            0.0318
+Supermarktdichtstbijzijnde=>1                            -0.0313
+support_do_fun_things_incl_care=0                        -0.2303
+support_do_fun_things_incl_care=1-2                      -0.2336
+support_do_fun_things_incl_care=3-5                      -0.1521
+support_do_fun_things_incl_care=6-9                       0.2628
+support_do_fun_things_incl_care=>9                        0.2447
+Treinstationdichtstbijzijnde=0                            13.886
+Treinstationdichtstbijzijnde=0-1                         -0.0087
+Treinstationdichtstbijzijnde=>1                          -0.0879
+urbanization_cat=four                                     0.1448
+urbanization_cat=one                                     -0.2089
+urbanization_cat=three                                    0.0344
+urbanization_cat=two                                      0.1304
+Walkability.WI7c_1719_500z=20.2060604-28.6620007         -0.0157
+Walkability.WI7c_1719_500z=28.6620007-36.9880104          0.0374
+Walkability.WI7c_1719_500z=<=20.2060604                   0.0798
+Walkability.WI7c_1719_500z=>36.9880104                   -0.1042
+C_PHQ9_TOTAL=Geen tot minimale depressie                  0.5194
+C_PHQ9_TOTAL=Milde depressie                             -0.3741
+C_PHQ9_TOTAL=Matige depressie                            -0.4069
+C_PHQ9_TOTAL=Matig ernstige depressie                      -0.81
+C_PHQ9_TOTAL=Ernstige depressie                          -0.5585
+emotional_loneliness=True                               -25.5479
+social_loneliness=True                                  -35.1705
+Intercept                                                 2.8021
+
+
+Odds Ratios...
+                                                           Class
+Variable                                              not lonely
+================================================================
+OPLEIDINGSNIVEAU=Onderwijsniveau 3                        1.1512
+OPLEIDINGSNIVEAU=Onderwijsniveau 2                        0.9774
+OPLEIDINGSNIVEAU=Onderwijsniveau 1                        0.8766
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding          0.7182
+phone_internet_video_call_contact=>2                        1.44
+phone_internet_video_call_contact=one                      0.904
+phone_internet_video_call_contact=two                     0.8637
+phone_internet_video_call_contact=zero                    1.0649
+physical_contact=0                                        1.3345
+physical_contact=4-6                                      0.9509
+physical_contact=7-10                                       1.08
+physical_contact=>10                                      1.1902
+physical_contact=one                                      0.7208
+physical_contact=three                                      0.82
+physical_contact=two                                      1.0405
+practical_support_incl_care=0                             0.8592
+practical_support_incl_care=1-2                           0.9483
+practical_support_incl_care=3-5                           1.0154
+practical_support_incl_care=6-9                           1.6519
+practical_support_incl_care=>9                              2.36
+RELATIE=true                                              1.1635
+Restaurantdichtstbijzijnde=0                              0.9929
+Restaurantdichtstbijzijnde=0-1                            1.0089
+Restaurantdichtstbijzijnde=>1                             0.9914
+same_sex=1-2                                               0.868
+Supermarktdichtstbijzijnde=0                               0.966
+Supermarktdichtstbijzijnde=0-1                            1.0323
+Supermarktdichtstbijzijnde=>1                             0.9692
+support_do_fun_things_incl_care=0                         0.7943
+support_do_fun_things_incl_care=1-2                       0.7917
+support_do_fun_things_incl_care=3-5                       0.8589
+support_do_fun_things_incl_care=6-9                       1.3006
+support_do_fun_things_incl_care=>9                        1.2773
+Treinstationdichtstbijzijnde=0                      1073023.1829
+Treinstationdichtstbijzijnde=0-1                          0.9914
+Treinstationdichtstbijzijnde=>1                           0.9159
+urbanization_cat=four                                     1.1558
+urbanization_cat=one                                      0.8115
+urbanization_cat=three                                     1.035
+urbanization_cat=two                                      1.1393
+Walkability.WI7c_1719_500z=20.2060604-28.6620007          0.9844
+Walkability.WI7c_1719_500z=28.6620007-36.9880104          1.0381
+Walkability.WI7c_1719_500z=<=20.2060604                   1.0831
+Walkability.WI7c_1719_500z=>36.9880104                     0.901
+C_PHQ9_TOTAL=Geen tot minimale depressie                   1.681
+C_PHQ9_TOTAL=Milde depressie                              0.6879
+C_PHQ9_TOTAL=Matige depressie                             0.6657
+C_PHQ9_TOTAL=Matig ernstige depressie                     0.4448
+C_PHQ9_TOTAL=Ernstige depressie                           0.5721
+emotional_loneliness=True                                      0
+social_loneliness=True                                         0

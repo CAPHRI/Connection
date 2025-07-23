@@ -3,10 +3,11 @@ package weka.classifiers;
 import weka.WekaClassifier;
 import weka.classifiers.functions.LinearRegression;
 import weka.classifiers.functions.Logistic;
+import weka.classifiers.meta.ClassificationViaRegression;
 
 
 public class LinRegClassifier extends WekaClassifier {
-    private LinearRegression classifier;
+    private ClassificationViaRegression classifier;
 
     public LinRegClassifier() {
         createClassifier();
@@ -18,12 +19,14 @@ public class LinRegClassifier extends WekaClassifier {
     }
 
     @Override
-    public LinearRegression getClassifier() {
+    public ClassificationViaRegression getClassifier() {
         return classifier;
     }
 
-    private static LinearRegression createLinear() {
-        LinearRegression l = new LinearRegression();
-        return l;
+    private static ClassificationViaRegression createLinear() {
+        ClassificationViaRegression c = new
+                ClassificationViaRegression();
+        c.setClassifier(new LinearRegression());
+        return c;
     }
 }

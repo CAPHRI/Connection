@@ -1,0 +1,33 @@
+FilteredClassifier using weka.classifiers.meta.ClassificationViaRegression -W weka.classifiers.functions.LinearRegression -- -S 0 -R 1.0E-8 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 154,242
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R154,242'
+
+@attribute social_loneliness {False,True}
+@attribute lonelinessBinary {'not lonely',lonely}
+
+@data
+
+
+Classifier Model
+Classification via Regression
+
+Classifier for class with index 0:
+
+
+Linear Regression Model
+
+lonelinessBinary =
+
+      0.8358 * social_loneliness=False +
+      0     
+
+Classifier for class with index 1:
+
+
+Linear Regression Model
+
+lonelinessBinary =
+
+      0.8358 * social_loneliness=True +
+      0.1642

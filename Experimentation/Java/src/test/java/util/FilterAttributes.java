@@ -54,6 +54,22 @@ public class FilterAttributes {
         return toBeKept;
     }
 
+    public static List<String> generateLogRegModel(){
+        List<String> toBeKept = new ArrayList<>();
+        toBeKept.add("lbm");
+        toBeKept.add("OPLEIDINGSNIVEAU");
+        toBeKept.add("age");
+        toBeKept.add("acquaintances");
+        toBeKept.add("caregivers");
+        toBeKept.add("emotional_support_talk_about_my_health_incl_care");
+        toBeKept.add("density");
+        toBeKept.add("C_PHQ9_TOTAL");
+        toBeKept.add("GEZONDHEID_NU_CBS");
+        toBeKept.add("lonelinessBinary");
+
+        return toBeKept;
+    }
+
     public static List<String> generateFirstModel() {
         List<String> toBeKept = new ArrayList<>();
         toBeKept.add("acquaintances");

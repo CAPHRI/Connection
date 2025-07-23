@@ -1,0 +1,57 @@
+FilteredClassifier using weka.classifiers.meta.ClassificationViaRegression -W weka.classifiers.functions.LinearRegression -- -S 0 -R 1.0E-8 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 142,242,166-167,173,178,222,22,42,154
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R142,242,166-167,173,178,222,22,42,154'
+
+@attribute same_sex {0,1-2}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute Supermarktdichtstbijzijnde {0,0-1,>1}
+@attribute support_do_fun_things_incl_care {0,1-2,3-5,6-9,>9}
+@attribute Treinstationdichtstbijzijnde {0,0-1,>1}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.2060604-28.6620007,28.6620007-36.9880104,<=20.2060604,>36.9880104}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute emotional_loneliness {False,True}
+@attribute social_loneliness {False,True}
+
+@data
+
+
+Classifier Model
+Classification via Regression
+
+Classifier for class with index 0:
+
+
+Linear Regression Model
+
+lonelinessBinary =
+
+      0.0163 * same_sex=1-2 +
+      0.0235 * support_do_fun_things_incl_care=6-9,>9 +
+      0.0168 * urbanization_cat=two,three,four +
+     -0.046  * C_PHQ9_TOTAL=Matig ernstige depressie,Matige depressie,Milde depressie,Geen tot minimale depressie +
+     -0.027  * C_PHQ9_TOTAL=Matige depressie,Milde depressie,Geen tot minimale depressie +
+     -0.0262 * C_PHQ9_TOTAL=Milde depressie,Geen tot minimale depressie +
+      0.0291 * C_PHQ9_TOTAL=Geen tot minimale depressie +
+      0.5787 * emotional_loneliness=False +
+      0.6064 * social_loneliness=False +
+     -0.2419
+
+Classifier for class with index 1:
+
+
+Linear Regression Model
+
+lonelinessBinary =
+
+      0.0163 * same_sex=0 +
+      0.0235 * support_do_fun_things_incl_care=3-5,1-2,0 +
+      0.0168 * urbanization_cat=one +
+      0.0291 * C_PHQ9_TOTAL=Milde depressie,Matige depressie,Matig ernstige depressie,Ernstige depressie +
+     -0.0262 * C_PHQ9_TOTAL=Matige depressie,Matig ernstige depressie,Ernstige depressie +
+     -0.027  * C_PHQ9_TOTAL=Matig ernstige depressie,Ernstige depressie +
+     -0.046  * C_PHQ9_TOTAL=Ernstige depressie +
+      0.5787 * emotional_loneliness=True +
+      0.6064 * social_loneliness=True +
+      0.0702

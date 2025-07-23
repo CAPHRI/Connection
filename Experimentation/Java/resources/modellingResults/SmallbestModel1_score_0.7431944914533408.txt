@@ -1,0 +1,102 @@
+FilteredClassifier using weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 82,120,5,2,26,44,34,22,63,242
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R82,120,5,2,26,44,34,22,63,242'
+
+@attribute lbm {'klasse 4','klasse 3'}
+@attribute OPLEIDINGSNIVEAU {'Onderwijsniveau 3','Onderwijsniveau 2','Onderwijsniveau 1','Ik volg momenteel een opleiding'}
+@attribute age {18-30,31-40,41-50,51-60,61-70,71-80,>80}
+@attribute acquaintances {0,1-2,3-4,>4}
+@attribute caregivers {>1,one,zero}
+@attribute emotional_support_talk_about_my_health_incl_care {0,1-2,3-5,6-9,>9}
+@attribute density {False,True}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute GEZONDHEID_NU_CBS {five,four,one,three,two}
+@attribute lonelinessBinary {'not lonely',lonely}
+
+@data
+
+
+Classifier Model
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                             Class
+Variable                                                not lonely
+==================================================================
+lbm=klasse 3                                               -0.1426
+OPLEIDINGSNIVEAU=Onderwijsniveau 3                          0.0879
+OPLEIDINGSNIVEAU=Onderwijsniveau 2                         -0.0255
+OPLEIDINGSNIVEAU=Onderwijsniveau 1                         -0.0709
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding           -0.1769
+age=18-30                                                  -0.0166
+age=31-40                                                   0.0907
+age=41-50                                                   0.0755
+age=51-60                                                   0.0001
+age=61-70                                                   0.0261
+age=71-80                                                  -0.1048
+age=>80                                                    -0.9255
+acquaintances=0                                            -0.1583
+acquaintances=1-2                                           0.0116
+acquaintances=3-4                                           0.1369
+acquaintances=>4                                            0.1572
+caregivers=>1                                               -0.148
+caregivers=one                                             -0.0045
+caregivers=zero                                             0.0697
+emotional_support_talk_about_my_health_incl_care=0         -0.3999
+emotional_support_talk_about_my_health_incl_care=1-2       -0.2145
+emotional_support_talk_about_my_health_incl_care=3-5       -0.0776
+emotional_support_talk_about_my_health_incl_care=6-9        0.3596
+emotional_support_talk_about_my_health_incl_care=>9         0.5057
+density=True                                                0.9757
+C_PHQ9_TOTAL=Geen tot minimale depressie                    0.7649
+C_PHQ9_TOTAL=Milde depressie                               -0.3309
+C_PHQ9_TOTAL=Matige depressie                              -0.8448
+C_PHQ9_TOTAL=Matig ernstige depressie                      -1.6413
+C_PHQ9_TOTAL=Ernstige depressie                            -1.7241
+GEZONDHEID_NU_CBS=five                                     -0.3992
+GEZONDHEID_NU_CBS=four                                     -0.0819
+GEZONDHEID_NU_CBS=one                                       0.3124
+GEZONDHEID_NU_CBS=three                                    -0.2382
+GEZONDHEID_NU_CBS=two                                       -0.038
+Intercept                                                  -0.4148
+
+
+Odds Ratios...
+                                                             Class
+Variable                                                not lonely
+==================================================================
+lbm=klasse 3                                                0.8671
+OPLEIDINGSNIVEAU=Onderwijsniveau 3                          1.0919
+OPLEIDINGSNIVEAU=Onderwijsniveau 2                          0.9748
+OPLEIDINGSNIVEAU=Onderwijsniveau 1                          0.9316
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding            0.8379
+age=18-30                                                   0.9836
+age=31-40                                                    1.095
+age=41-50                                                   1.0785
+age=51-60                                                   1.0001
+age=61-70                                                   1.0264
+age=71-80                                                   0.9005
+age=>80                                                     0.3963
+acquaintances=0                                             0.8536
+acquaintances=1-2                                           1.0116
+acquaintances=3-4                                           1.1468
+acquaintances=>4                                            1.1702
+caregivers=>1                                               0.8624
+caregivers=one                                              0.9955
+caregivers=zero                                             1.0722
+emotional_support_talk_about_my_health_incl_care=0          0.6704
+emotional_support_talk_about_my_health_incl_care=1-2        0.8069
+emotional_support_talk_about_my_health_incl_care=3-5        0.9254
+emotional_support_talk_about_my_health_incl_care=6-9        1.4328
+emotional_support_talk_about_my_health_incl_care=>9         1.6582
+density=True                                                 2.653
+C_PHQ9_TOTAL=Geen tot minimale depressie                    2.1487
+C_PHQ9_TOTAL=Milde depressie                                0.7183
+C_PHQ9_TOTAL=Matige depressie                               0.4296
+C_PHQ9_TOTAL=Matig ernstige depressie                       0.1937
+C_PHQ9_TOTAL=Ernstige depressie                             0.1783
+GEZONDHEID_NU_CBS=five                                      0.6708
+GEZONDHEID_NU_CBS=four                                      0.9213
+GEZONDHEID_NU_CBS=one                                       1.3667
+GEZONDHEID_NU_CBS=three                                     0.7881
+GEZONDHEID_NU_CBS=two                                       0.9627

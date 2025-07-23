@@ -1,0 +1,93 @@
+FilteredClassifier using weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 139,242,142,166-167,173,178,222,22,42,154
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R139,242,142,166-167,173,178,222,22,42,154'
+
+@attribute Restaurantdichtstbijzijnde {0,0-1,>1}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute same_sex {0,1-2}
+@attribute Supermarktdichtstbijzijnde {0,0-1,>1}
+@attribute support_do_fun_things_incl_care {0,1-2,3-5,6-9,>9}
+@attribute Treinstationdichtstbijzijnde {0,0-1,>1}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.2060604-28.6620007,28.6620007-36.9880104,<=20.2060604,>36.9880104}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute emotional_loneliness {False,True}
+@attribute social_loneliness {False,True}
+
+@data
+
+
+Classifier Model
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                           Class
+Variable                                              not lonely
+================================================================
+Restaurantdichtstbijzijnde=0                             -0.0042
+Restaurantdichtstbijzijnde=0-1                            0.0052
+Restaurantdichtstbijzijnde=>1                            -0.0051
+same_sex=1-2                                             -0.0595
+Supermarktdichtstbijzijnde=0                             -0.1442
+Supermarktdichtstbijzijnde=0-1                            0.0223
+Supermarktdichtstbijzijnde=>1                            -0.0188
+support_do_fun_things_incl_care=0                        -0.3522
+support_do_fun_things_incl_care=1-2                      -0.3222
+support_do_fun_things_incl_care=3-5                      -0.1884
+support_do_fun_things_incl_care=6-9                       0.3026
+support_do_fun_things_incl_care=>9                        0.3946
+Treinstationdichtstbijzijnde=0                           15.5186
+Treinstationdichtstbijzijnde=0-1                         -0.0227
+Treinstationdichtstbijzijnde=>1                          -0.0852
+urbanization_cat=four                                     0.1503
+urbanization_cat=one                                      -0.216
+urbanization_cat=three                                    0.0391
+urbanization_cat=two                                      0.1305
+Walkability.WI7c_1719_500z=20.2060604-28.6620007         -0.0141
+Walkability.WI7c_1719_500z=28.6620007-36.9880104          0.0335
+Walkability.WI7c_1719_500z=<=20.2060604                   0.0789
+Walkability.WI7c_1719_500z=>36.9880104                   -0.1011
+C_PHQ9_TOTAL=Geen tot minimale depressie                  0.5196
+C_PHQ9_TOTAL=Milde depressie                             -0.3688
+C_PHQ9_TOTAL=Matige depressie                            -0.4001
+C_PHQ9_TOTAL=Matig ernstige depressie                    -0.8745
+C_PHQ9_TOTAL=Ernstige depressie                          -0.5361
+emotional_loneliness=True                               -23.2229
+social_loneliness=True                                  -36.3985
+Intercept                                                 2.8734
+
+
+Odds Ratios...
+                                                           Class
+Variable                                              not lonely
+================================================================
+Restaurantdichtstbijzijnde=0                              0.9959
+Restaurantdichtstbijzijnde=0-1                            1.0052
+Restaurantdichtstbijzijnde=>1                             0.9949
+same_sex=1-2                                              0.9423
+Supermarktdichtstbijzijnde=0                              0.8657
+Supermarktdichtstbijzijnde=0-1                            1.0226
+Supermarktdichtstbijzijnde=>1                             0.9814
+support_do_fun_things_incl_care=0                         0.7031
+support_do_fun_things_incl_care=1-2                       0.7245
+support_do_fun_things_incl_care=3-5                       0.8283
+support_do_fun_things_incl_care=6-9                       1.3534
+support_do_fun_things_incl_care=>9                        1.4838
+Treinstationdichtstbijzijnde=0                      5490877.0729
+Treinstationdichtstbijzijnde=0-1                          0.9775
+Treinstationdichtstbijzijnde=>1                           0.9183
+urbanization_cat=four                                     1.1622
+urbanization_cat=one                                      0.8058
+urbanization_cat=three                                    1.0399
+urbanization_cat=two                                      1.1394
+Walkability.WI7c_1719_500z=20.2060604-28.6620007           0.986
+Walkability.WI7c_1719_500z=28.6620007-36.9880104          1.0341
+Walkability.WI7c_1719_500z=<=20.2060604                   1.0821
+Walkability.WI7c_1719_500z=>36.9880104                    0.9039
+C_PHQ9_TOTAL=Geen tot minimale depressie                  1.6814
+C_PHQ9_TOTAL=Milde depressie                              0.6916
+C_PHQ9_TOTAL=Matige depressie                             0.6702
+C_PHQ9_TOTAL=Matig ernstige depressie                     0.4171
+C_PHQ9_TOTAL=Ernstige depressie                            0.585
+emotional_loneliness=True                                      0
+social_loneliness=True                                         0

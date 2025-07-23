@@ -15,7 +15,7 @@ class TrainModelTest {
 
     @Test
     public void trainBNFeautureSelectionAndWorstTest() throws Exception {
-        boolean withoutSize = true;
+        boolean withoutSize = false;
         List<String> attributesOfInterest = new ArrayList<>();
         attributesOfInterest.add("acquaintances");
         attributesOfInterest.add("caregivers");
@@ -33,21 +33,22 @@ class TrainModelTest {
         if(withoutSize) {
             selectedNodes.remove("network_size_care");
         }
-
+        boolean applyfeatureselection = true;
         BNClassifier classifier = new BNClassifier(false, 5, null);
         TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
-                generateSunbeltModel(), classifier);
+                generateSunbeltModel(), classifier, applyfeatureselection);
         Map<Double, CombinedResult> res = trainBNModelWithFeatureSelection(trainer);
 
         List<Double> keys = new ArrayList<Double>(res.keySet());
         Collections.sort(keys);
 
         for(int i =0; i < keys.size(); i++) {
-            String path = "resources/results/Sunbelt/";
+            String path = "resources/modellingResults/BN/";
             if(withoutSize){
                 path+="/noSize/";
             }
             System.out.println(keys.get(i));
+            printString(res.get(keys.get(i)).getModel(), path+"bestModel" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
             printString(res.get(keys.get(i)).printGraph(), path+"bestFeature" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+ ".pgmx");
             printString(res.get(keys.get(i)).getDiggity(), path+"bestDiggity" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
             System.out.println("Best \n");
@@ -70,36 +71,39 @@ class TrainModelTest {
 
             res.setGraph(trainer.getClassifier().getFiltered().graph());
             res.setDiggity(fromWekaBif(trainer.getClassifier().getFiltered().graph()));
+            res.setModel(trainer.getClassifier().getFiltered().toString());
         }
         return all;
     }
 
     @Test
     public void trainLogRegFeautureSelectionAndWorstTest() throws Exception {
-        boolean withoutSize = true;
+        boolean withoutSize = false;
         List<String> attributesOfInterest = new ArrayList<>();
         attributesOfInterest.add("lonelinessBinary");
 
         List<String> selectedNodes =  generateSunbeltModel();
+//        selectedNodes = generateLogRegModel();
+
         if(withoutSize) {
             selectedNodes.remove("network_size_care");
         }
-
+        boolean applyfeatureselection = true;
         LogRegClassifier classifier = new LogRegClassifier();
         TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
-                generateSunbeltModel(), classifier);
+                selectedNodes, classifier, applyfeatureselection);
         Map<Double, CombinedResult> res = trainLogRegModelWithFeatureSelection(trainer);
 
         List<Double> keys = new ArrayList<Double>(res.keySet());
         Collections.sort(keys);
 
         for(int i =0; i < keys.size(); i++) {
-            String path = "resources/results/Sunbelt/";
+            String path = "resources/modellingResults/LogReg/";
             if(withoutSize){
                 path+="/noSize/";
             }
             System.out.println(keys.get(i));
-            printString(res.get(keys.get(i)).getModel(), path+"bestModel" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
+            printString(res.get(keys.get(i)).getModel(), path+"2bestModel" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
             System.out.println("Best \n");
             System.out.println(res.get(keys.get(i)));
         }
@@ -125,7 +129,7 @@ class TrainModelTest {
 
     @Test
     public void trainLinRegFeautureSelectionAndWorstTest() throws Exception {
-        boolean withoutSize = true;
+        boolean withoutSize = false;
         List<String> attributesOfInterest = new ArrayList<>();
         attributesOfInterest.add("lonelinessBinary");
 
@@ -133,17 +137,17 @@ class TrainModelTest {
         if(withoutSize) {
             selectedNodes.remove("network_size_care");
         }
-
+        boolean applyfeatureselection = true;
         LinRegClassifier classifier = new LinRegClassifier();
         TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
-                generateSunbeltModel(), classifier);
-        Map<Double, CombinedResult> res = trainLogRegModelWithFeatureSelection(trainer);
+                generateSunbeltModel(), classifier, applyfeatureselection);
+        Map<Double, CombinedResult> res = trainLinRegModelWithFeatureSelection(trainer);
 
         List<Double> keys = new ArrayList<Double>(res.keySet());
         Collections.sort(keys);
 
         for(int i =0; i < keys.size(); i++) {
-            String path = "resources/results/Sunbelt/";
+            String path = "resources/modellingResults/LinReg/";
             if(withoutSize){
                 path+="/noSize/";
             }

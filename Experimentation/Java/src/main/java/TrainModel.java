@@ -22,13 +22,15 @@ public class TrainModel {
     private String target;
     private List<String> toBeKept;
     private WekaClassifier classifier;
+    private boolean applyFeatureSelection;
 
-    public TrainModel(String arff, String target, List<String> attributesOfInterest, List<String> toBeKept, WekaClassifier classifier) {
+    public TrainModel(String arff, String target, List<String> attributesOfInterest, List<String> toBeKept, WekaClassifier classifier, boolean applyFeatureSelection) {
         this.arff = arff;
         this.attributesOfInterest = attributesOfInterest;
         this.target = target;
         this.toBeKept = toBeKept;
         this.classifier = classifier;
+        this.applyFeatureSelection = applyFeatureSelection;
     }
 
     public CombinedResult trainModel(List<String> toBeKept)
@@ -58,16 +60,22 @@ public class TrainModel {
         List<String> attributes = new ArrayList<>();
         attributes.addAll(toBeKept);
         attributes.removeAll(attributesOfInterest);
-        for (int i = 0; i < attributes.size(); i++) {
-            for (List<String> temp : lists) {
-                temp.add(attributes.get(i));
+        if(applyFeatureSelection) {
+            for (int i = 0; i < attributes.size(); i++) {
+                for (List<String> temp : lists) {
+                    temp.add(attributes.get(i));
+                }
+                List<String> list = new ArrayList<>();
+                list.add(attributes.get(i));
+                list.addAll(attributesOfInterest);
+                lists.add(list);
             }
+            lists.add(attributesOfInterest);
+        }else{
             List<String> list = new ArrayList<>();
-            list.add(attributes.get(i));
-            list.addAll(attributesOfInterest);
+            list.addAll(toBeKept);
             lists.add(list);
         }
-        lists.add(attributesOfInterest);
         return lists;
 
     }
@@ -103,9 +111,6 @@ public class TrainModel {
             r.setAuc(eval.weightedAreaUnderROC());
             r.setConfusionMatrix(eval.toMatrixString());
             r.setDetails(eval.toClassDetailsString());
-
-            testSubPopulation(data, filtered);
-
             res.getResults().put(att, r);
 
 
