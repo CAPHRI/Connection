@@ -8,18 +8,24 @@ import selectAttributes
 
 # Clean up nonsense
 data = pandas.read_csv("resources/BL1_en_FU1__GECCO_no_dates.csv", delimiter=";")
+data = pandas.read_csv("resources/Dataset_BL1_sociaal_netwerk_def_2_GECCO_Florian.csv", delimiter=";")
 print(data.shape)
 
 data = cleanup.clean(data)
+# Create finda index
+data = mergeAttributes.createFindaIndex(data);
 
 data = mergeAttributes.mergeNeareness(data)
 data = mergeAttributes.mergeGoodVeryGoodRelationship(data)
+
 
 data = cleanup.convertToString(data)
 
 # Save cleaned file
 data.to_csv("resources/clean/BL1_FU1_GECCO_clean.csv",index=False, sep="," )
 
+# Merge chronic stuff:
+data = mergeAttributes.mergeChronicStuff(data)
 
 # Merge infectious diseases into more mangeable groups
 # data = mergeAttributes.mergeInfectiousDisease(data)

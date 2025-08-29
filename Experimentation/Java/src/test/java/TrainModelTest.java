@@ -14,6 +14,33 @@ import static util.FilterAttributes.*;
 class TrainModelTest {
 
     @Test
+    public void trainBNManuscriptTest() throws Exception {
+        List<String> attributesOfInterest = new ArrayList<>();
+        attributesOfInterest.add("GEZONDHEID_NU_CBS");
+
+        List<String> selectedNodes =  generateManuscriptModel();
+        boolean applyfeatureselection = false;
+        BNClassifier classifier = new BNClassifier(false, 5, null);
+        TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
+                selectedNodes, classifier, applyfeatureselection);
+        Map<Double, CombinedResult> res = trainBNModelWithFeatureSelection(trainer);
+
+        List<Double> keys = new ArrayList<Double>(res.keySet());
+        Collections.sort(keys);
+
+        for(int i =0; i < keys.size(); i++) {
+            String path = "resources/modellingResults/Manuscript/BN/";
+
+            System.out.println(keys.get(i));
+            printString(res.get(keys.get(i)).getModel(), path+"bestModel" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
+            printString(res.get(keys.get(i)).printGraph(), path+"bestFeature" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+ ".pgmx");
+            printString(res.get(keys.get(i)).getDiggity(), path+"bestDiggity" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
+            System.out.println("Best \n");
+            System.out.println(res.get(keys.get(i)));
+        }
+    }
+
+    @Test
     public void trainBNFeautureSelectionAndWorstTest() throws Exception {
         boolean withoutSize = false;
         List<String> attributesOfInterest = new ArrayList<>();

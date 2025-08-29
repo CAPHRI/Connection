@@ -20,6 +20,7 @@ def selectPatternsToBeRemoved():
     toBeRemoved.append("WAZIG_ZIEN_OF_KOKERZICHT_NA_STAAN")
     toBeRemoved.append("LYING")
     toBeRemoved.append("V37")
+    toBeRemoved.append("quality")
     toBeRemoved.append("SNELLE_HARTSLAG_NA_STAAN")
     # Remove sociale_steun, individual questions could be interesting, but not all at once
     # is there no mean score for this?
@@ -205,74 +206,74 @@ def selectAttributesToBeRemoved():
     toBeRemoved.append('emotional_support_total')
     # Remove BMI, we have bmi_cat
     toBeRemoved.append('BMI')
-    # Remove booster variants, we have booster
-    toBeRemoved.append('boostervaccinatie_recoded')
-    toBeRemoved.append('boostervaccinatie')
-    toBeRemoved.append('booster_wil_niet_zeggen')
+    # # Remove booster variants, we have booster
+    # toBeRemoved.append('boostervaccinatie_recoded')
+    # toBeRemoved.append('boostervaccinatie')
+    # toBeRemoved.append('booster_wil_niet_zeggen')
     # Remove check_vac_soort
     toBeRemoved.append('check_vac_soort')
     # Remove excluderen
     toBeRemoved.append('excluderen')
     # Remove F1_DEELNAME_BASELINE
-    toBeRemoved.append('F1_DEELNAME_BASELINE')
+    # toBeRemoved.append('F1_DEELNAME_BASELINE')
     # Remove F1_GEZONDHEID_ALGEMEEN_3MND
-    toBeRemoved.append('F1_GEZONDHEID_ALGEMEEN_3MND')
+    # toBeRemoved.append('F1_GEZONDHEID_ALGEMEEN_3MND')
     # Remove F1_HERSTELD_NU
-    toBeRemoved.append('F1_HERSTELD_NU')
+    # toBeRemoved.append('F1_HERSTELD_NU')
     # Remove F1_leeftijd_60_min_plus
-    toBeRemoved.append('F1_leeftijd_60_min_plus')
+    # toBeRemoved.append('F1_leeftijd_60_min_plus')
     # Remove F1_NIEUWE_OPLEIDING
-    toBeRemoved.append('F1_NIEUWE_OPLEIDING')
+    # toBeRemoved.append('F1_NIEUWE_OPLEIDING')
     # Remove F1_OOIT_COVID_GEHAD
-    toBeRemoved.append('F1_OOIT_COVID_GEHAD')
+    # toBeRemoved.append('F1_OOIT_COVID_GEHAD')
     # Remove F1_pos_test
-    toBeRemoved.append('F1_pos_test')
+    # toBeRemoved.append('F1_pos_test')
     # Remove F1_REFERRER
-    toBeRemoved.append('F1_REFERRER')
+    # toBeRemoved.append('F1_REFERRER')
     # Remove F1_totaal_aantal_pos_tests
-    toBeRemoved.append('F1_totaal_aantal_pos_tests')
+    # toBeRemoved.append('F1_totaal_aantal_pos_tests')
     # Remove F1_TWEEDE_BOOSTER_MERK
-    toBeRemoved.append('F1_TWEEDE_BOOSTER_MERK')
+    # toBeRemoved.append('F1_TWEEDE_BOOSTER_MERK')
     # Remove F1_GEZONDHEID_INFORMATIE_1, we hebben een mean score
-    toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_1')
+    # toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_1')
     # Remove F1_GEZONDHEID_INFORMATIE_2,  we hebben een mean score
-    toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_2')
+    # toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_2')
     # Remove F1_GEZONDHEID_INFORMATIE_3,  we hebben een mean score
-    toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_3')
+    # toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_3')
     # Remove F1_GEZONDHEID_INFORMATIE_4,  we hebben een mean score
-    toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_4')
+    # toBeRemoved.append('F1_GEZONDHEID_INFORMATIE_4')
     # Remove JUISTE_ZORG_KRIJGEN_1,  we hebben een mean score
-    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_1')
+    # toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_1')
     # Remove F1_JUISTE_ZORG_KRIJGEN_2,  we hebben een mean score
-    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_2')
+    # toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_2')
     # Remove F1_JUISTE_ZORG_KRIJGEN_3,  we hebben een mean score
-    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_3')
+    # toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_3')
     # Remove F1_JUISTE_ZORG_KRIJGEN_4,  we hebben een mean score
-    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_4')
+    # toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_4')
     # Remove F1_JUISTE_ZORG_KRIJGEN_5,  we hebben een mean score
-    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_5')
+    # toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_5')
     # Remove F1_JUISTE_ZORG_KRIJGEN_6,  we hebben een mean score
-    toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_6')
+    # toBeRemoved.append('F1_JUISTE_ZORG_KRIJGEN_6')
     # Remove F1_STEUN_VAN_OMGEVING_1,  we hebben een mean score
-    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_1')
+    # toBeRemoved.append('F1_STEUN_VAN_OMGEVING_1')
     # Remove F1_STEUN_VAN_OMGEVING_2,  we hebben een mean score
-    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_2')
+    # toBeRemoved.append('F1_STEUN_VAN_OMGEVING_2')
     # Remove F1_STEUN_VAN_OMGEVING_3,  we hebben een mean score
-    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_3')
+    # toBeRemoved.append('F1_STEUN_VAN_OMGEVING_3')
     # Remove F1_STEUN_VAN_OMGEVING_4,  we hebben een mean score
-    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_4')
-    # Remove F1_STEUN_VAN_OMGEVING_5,  we hebben een mean score
-    toBeRemoved.append('F1_STEUN_VAN_OMGEVING_5')
-    # Remove F1_EERSTE_BOOSTER_MERK
-    toBeRemoved.append('F1_EERSTE_BOOSTER_MERK')
-    # Remove F1_GEZONDHEID_NU_CBS
-    toBeRemoved.append('F1_GEZONDHEID_NU_CBS')
-    # Remove F1_Groep, onduidelijk waar dit voor dient
-    toBeRemoved.append('F1_GROEP')
+    # toBeRemoved.append('F1_STEUN_VAN_OMGEVING_4')
+    # # Remove F1_STEUN_VAN_OMGEVING_5,  we hebben een mean score
+    # toBeRemoved.append('F1_STEUN_VAN_OMGEVING_5')
+    # # Remove F1_EERSTE_BOOSTER_MERK
+    # toBeRemoved.append('F1_EERSTE_BOOSTER_MERK')
+    # # Remove F1_GEZONDHEID_NU_CBS
+    # toBeRemoved.append('F1_GEZONDHEID_NU_CBS')
+    # # Remove F1_Groep, onduidelijk waar dit voor dient
+    # toBeRemoved.append('F1_GROEP')
     # Remove fam
     toBeRemoved.append('fam')
     # Remove filter_$
-    toBeRemoved.append('filter_$')
+    # toBeRemoved.append('filter_$')
     # Remove filter_network
     toBeRemoved.append('filter_network')
     # Remove gedurende2020
@@ -286,17 +287,17 @@ def selectAttributesToBeRemoved():
     # Remove geslacht_leeftijd_juist
     toBeRemoved.append('geslacht_leeftijd_juist')
     # Remove F1_WERK_AFWEZIG
-    toBeRemoved.append('F1_WERK_AFWEZIG')
+    # toBeRemoved.append('F1_WERK_AFWEZIG')
     # Remove GEWICHT, we have bmi
     toBeRemoved.append('GEWICHT')
     # Remove GROEP
-    toBeRemoved.append('GROEP')
+    # toBeRemoved.append('GROEP')
     # Remove HERSTELD_NU
     toBeRemoved.append('HERSTELD_NU')
     # Remove LC_who_totaal
     toBeRemoved.append('LC_who_totaal')
     # Remove only leave leeftijd_totaal
-    toBeRemoved.append('leeftijd')
+    # toBeRemoved.append('leeftijd')
     toBeRemoved.append('leeftijd_60_min_plus')
     toBeRemoved.append('LEEFTIJD_JUIST_2')
     toBeRemoved.append('LEEFTIJDSCAT_2')
@@ -305,7 +306,7 @@ def selectAttributesToBeRemoved():
     toBeRemoved.append('POSITIEF_GETEST')
     toBeRemoved.append('positief_vragenlijst_negatief_CoronIT')
     # Remove REFERRER
-    toBeRemoved.append('REFERRER')
+    # toBeRemoved.append('REFERRER')
     # Remove same_sex_incl_care
     toBeRemoved.append('same_sex_incl_care')
     # Remove sex_network_members
@@ -318,10 +319,10 @@ def selectAttributesToBeRemoved():
     # Remove urbanization we hebben urbanization_cat
     toBeRemoved.append('urbanization')
     # Remove vaccinatie_sinds_vorige_vragenlijst, 'VACCINATIE_SOORT_1', 'VACCINATIE_SOORT_2', 'vaccinatiestatus_gecombineerd_1'
-    toBeRemoved.append('vaccinatie_sinds_vorige_vragenlijst')
+    # toBeRemoved.append('vaccinatie_sinds_vorige_vragenlijst')
     toBeRemoved.append('VACCINATIE_SOORT_1')
     toBeRemoved.append('VACCINATIE_SOORT_2')
-    toBeRemoved.append('vaccinatiestatus_gecombineerd_1')
+    # toBeRemoved.append('vaccinatiestatus_gecombineerd_1')
     # Remove variant
     toBeRemoved.append('variant')
     # Remove VERSCHIL_LEEFTIJDSCAT
@@ -329,7 +330,7 @@ def selectAttributesToBeRemoved():
     # Remove voor1945
     toBeRemoved.append('voor1945')
     # Remove werksector
-    toBeRemoved.append('werksector')
+    # toBeRemoved.append('werksector')
     # Remove WERKSITUATIE
     toBeRemoved.append('WERKSITUATIE_REFINED')
     # Remove ZUURSTOF

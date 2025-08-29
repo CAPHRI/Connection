@@ -7,6 +7,67 @@ import java.util.List;
 
 public class FilterAttributes {
 
+    public static List<String> generateManuscriptModel(){
+        List<String> toBeKept = new ArrayList<>();
+        toBeKept.add("aandoeningen_bewegingsapparaat");
+        toBeKept.add("acquaintances");
+        toBeKept.add("ADL_PERC_OVERALL_IMP");
+        toBeKept.add("age");
+        toBeKept.add("Bibliotheekdichtstbijzijnde");
+        toBeKept.add("BMI_cat");
+        toBeKept.add("Cafedichtstbijzijnde");
+        toBeKept.add("Cafetariadichtstbijzijnde");
+        toBeKept.add("caregivers");
+        toBeKept.add("C_IPAQ_SCORE");
+        toBeKept.add("C_PHQ9_TOTAL");
+        toBeKept.add("C_ROKEN");
+        toBeKept.add("density");
+        toBeKept.add("emotional_support_decisions_incl_care");
+        toBeKept.add("emotional_support_talk_about_my_health_incl_care");
+        toBeKept.add("family_members");
+        toBeKept.add("friends");
+        toBeKept.add("GEZONDHEID_NU_CBS");
+        toBeKept.add("geslacht_totaal");
+        toBeKept.add("good_plus_relationship_total_incl_care");
+        toBeKept.add("Greenspace.r1000m_all");
+        toBeKept.add("hart_en_vaatziekten");
+        toBeKept.add("Herfindahl");
+        toBeKept.add("Huisartspraktijkdichtstbijzijnde");
+        toBeKept.add("Huishoudgrootte");
+        toBeKept.add("Huurcoporatie");
+        toBeKept.add("informational_support_incl_care");
+        toBeKept.add("lbm");
+        toBeKept.add("LID_CLUBS");
+        toBeKept.add("lonelinessBinary");
+        toBeKept.add("luchtwegaandoeningen");
+        toBeKept.add("metabole_aandoeningen");
+        toBeKept.add("Museadichtstbijzijnde");
+        toBeKept.add("Nederlandseachtergond");
+        toBeKept.add("network_size_care");
+        toBeKept.add("nearness_more_than_30_min");
+        toBeKept.add("neurologische_aandoeningen");
+        toBeKept.add("OPLEIDINGSNIVEAU");
+        toBeKept.add("overige_aandoeningen");
+        toBeKept.add("phone_internet_video_call_contact");
+        toBeKept.add("physical_contact");
+        toBeKept.add("pov_p_17");
+        toBeKept.add("practical_support_incl_care");
+        toBeKept.add("psychische_aandoeningen");
+        toBeKept.add("RELATIE");
+        toBeKept.add("Restaurantdichtstbijzijnde");
+        toBeKept.add("same_sex");
+        toBeKept.add("SITTING_HoursPerDay");
+        toBeKept.add("Supermarktdichtstbijzijnde");
+        toBeKept.add("support_do_fun_things_incl_care");
+        toBeKept.add("Treinstationdichtstbijzijnde");
+        toBeKept.add("urbanization_cat");
+        toBeKept.add("Walkability.WI7c_1719_500z");
+
+
+
+        return toBeKept;
+    }
+
     public static List<String> generateSunbeltModel(){
         List<String> toBeKept = new ArrayList<>();
         toBeKept.add("acquaintances");
