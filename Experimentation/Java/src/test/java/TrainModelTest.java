@@ -19,9 +19,9 @@ class TrainModelTest {
         attributesOfInterest.add("GEZONDHEID_NU_CBS");
 
         List<String> selectedNodes =  generateManuscriptModel();
-        boolean applyfeatureselection = false;
+        boolean applyfeatureselection = true;
         BNClassifier classifier = new BNClassifier(false, 5, null);
-        TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
+        TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "GEZONDHEID_NU_CBS", attributesOfInterest,
                 selectedNodes, classifier, applyfeatureselection);
         Map<Double, CombinedResult> res = trainBNModelWithFeatureSelection(trainer);
 

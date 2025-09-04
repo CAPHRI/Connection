@@ -43,8 +43,7 @@ data = preprocessing.removeAttributes(data, toBeRemoved)
 toBeRemoved = selectAttributes.selectRadiusAttributes('dichstbijzijnde', data)
 data = preprocessing.removeAttributesRegExp(data, toBeRemoved)
 
-# Merge binary attributes that could be turned into a single attribute
-data = mergeAttributes.merge(data)
+data["single_person_household"] = data["WOONSITUATIE_A6"]
 
 # Turn aandoening into 2 binary attributes indicating if the individual has any aandoening
 # Then drop aandoeningen

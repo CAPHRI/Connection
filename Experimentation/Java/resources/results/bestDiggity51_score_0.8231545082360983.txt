@@ -1,6 +1,0 @@
-dag{mental_health_conditions
-lonelinessBinary
-social_loneliness
-lonelinessBinary -> mental_health_conditions
-lonelinessBinary -> social_loneliness
-}

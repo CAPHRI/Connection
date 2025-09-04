@@ -8,10 +8,10 @@ import preprocessing
 
 def merge_multiple_columns(df, cols):
     df_replaced = df[cols].replace("?", None)
+    df_replaced = df_replaced.replace("1.0", 1)
 
     # Create a new DataFrame with column names where value is 1
     merged = df_replaced.apply(lambda row: next((col for col in cols if row[col] == 1), "?"), axis=1)
-
     return merged
 
 
@@ -43,12 +43,6 @@ def merge(data):
     #                'F1_AFDELING_ZIEKENHUIS_A7']  # Explicitly define the columns to merge
     # data = mergeBinary(binary_cols, "afdeling_ziekenhuis", data)
     # data = data.drop(columns=binary_cols)
-
-    #  Merge woonsituatie into 1 attribute
-    binary_cols = ['WOONSITUATIE_A1', 'WOONSITUATIE_A2', 'WOONSITUATIE_A3',
-                   'WOONSITUATIE_A4', 'WOONSITUATIE_A5', 'WOONSITUATIE_A6']  # Explicitly define the columns to merge
-    data = mergeBinary(binary_cols, "woonsituatie", data)
-    data = data.drop(columns=binary_cols)
 
     #  Merge f1 woonsituatie into 1 attribute
     # binary_cols = ['F1_WOONSITUATIE_A1', 'F1_WOONSITUATIE_A2', 'F1_WOONSITUATIE_A3',
@@ -157,18 +151,18 @@ def mergeChronicStuff(data):
     # A19 = Ziekte van Parkinson
     # A20 = Multiple sclerose
     data["neurologische_aandoeningen"] = combineBinary(data, ["AANDOENING_A16", "AANDOENING_A17", "AANDOENING_A18",
-                                                               "AANDOENING_A19", "AANDOENING_A20"])
+                                                              "AANDOENING_A19", "AANDOENING_A20"])
     # A12 = Angststoornis
     # A13 = Depressie (stemmingsstoornis)
     # A14 = Overspannenheid, burn-out
     # A15 = Concentratiestoornissen
     data["psychische_aandoeningen"] = combineBinary(data, ["AANDOENING_A12", "AANDOENING_A13", "AANDOENING_A14",
-                                                               "AANDOENING_A15"])
+                                                           "AANDOENING_A15"])
     # A25 = (Situatie na) kanker
     # A26 = Nierziekte
     # A27 = Leverziekte
     # A28 = Contacteczeem
     # A29 = Anders
     data["overige_aandoeningen"] = combineBinary(data, ["AANDOENING_A25", "AANDOENING_A26", "AANDOENING_A27",
-                                                             "AANDOENING_A28", "AANDOENING_A29"])
+                                                        "AANDOENING_A28", "AANDOENING_A29"])
     return data

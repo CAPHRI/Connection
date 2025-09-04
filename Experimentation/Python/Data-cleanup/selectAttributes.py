@@ -18,7 +18,6 @@ def selectPatternsToBeRemoved():
     toBeRemoved.append("RECHTOPSTAAN")
     toBeRemoved.append("ROL_PRAATGROEP")
     toBeRemoved.append("WAZIG_ZIEN_OF_KOKERZICHT_NA_STAAN")
-    toBeRemoved.append("LYING")
     toBeRemoved.append("V37")
     toBeRemoved.append("quality")
     toBeRemoved.append("SNELLE_HARTSLAG_NA_STAAN")

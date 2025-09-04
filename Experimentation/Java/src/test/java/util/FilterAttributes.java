@@ -21,7 +21,6 @@ public class FilterAttributes {
         toBeKept.add("C_IPAQ_SCORE");
         toBeKept.add("C_PHQ9_TOTAL");
         toBeKept.add("C_ROKEN");
-        toBeKept.add("density");
         toBeKept.add("emotional_support_decisions_incl_care");
         toBeKept.add("emotional_support_talk_about_my_health_incl_care");
         toBeKept.add("family_members");
@@ -33,19 +32,20 @@ public class FilterAttributes {
         toBeKept.add("hart_en_vaatziekten");
         toBeKept.add("Herfindahl");
         toBeKept.add("Huisartspraktijkdichtstbijzijnde");
-        toBeKept.add("Huishoudgrootte");
         toBeKept.add("Huurcoporatie");
         toBeKept.add("informational_support_incl_care");
         toBeKept.add("lbm");
         toBeKept.add("LID_CLUBS");
         toBeKept.add("lonelinessBinary");
         toBeKept.add("luchtwegaandoeningen");
+        toBeKept.add("LYING_HoursPerDay");
         toBeKept.add("metabole_aandoeningen");
         toBeKept.add("Museadichtstbijzijnde");
         toBeKept.add("Nederlandseachtergond");
         toBeKept.add("network_size_care");
         toBeKept.add("nearness_more_than_30_min");
         toBeKept.add("neurologische_aandoeningen");
+        toBeKept.add("Nietwestersemigratieachtergrond");
         toBeKept.add("OPLEIDINGSNIVEAU");
         toBeKept.add("overige_aandoeningen");
         toBeKept.add("phone_internet_video_call_contact");
@@ -56,12 +56,14 @@ public class FilterAttributes {
         toBeKept.add("RELATIE");
         toBeKept.add("Restaurantdichtstbijzijnde");
         toBeKept.add("same_sex");
+        toBeKept.add("single_person_household");
         toBeKept.add("SITTING_HoursPerDay");
         toBeKept.add("Supermarktdichtstbijzijnde");
         toBeKept.add("support_do_fun_things_incl_care");
         toBeKept.add("Treinstationdichtstbijzijnde");
         toBeKept.add("urbanization_cat");
         toBeKept.add("Walkability.WI7c_1719_500z");
+        toBeKept.add("Westersemigratieachtergrond");
 
 
 
