@@ -172,8 +172,6 @@ def selectPatternsToBeRemoved():
     toBeRemoved.append("REDEN_PROF_ZORG")
     # Remove everything that contains "ROOK_Product", don't care about the product
     toBeRemoved.append("ROOK_Product")
-    # Remove everything that contains "strain"
-    toBeRemoved.append("strain")
     # Remove everything that contains "welke_clubs", might be interesting in the future, but let's start with just club membership in general
     toBeRemoved.append("welke_clubs")
     # Remove everything that contains "wandelen"

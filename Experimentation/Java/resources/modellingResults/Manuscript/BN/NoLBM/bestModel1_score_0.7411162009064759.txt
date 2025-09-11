@@ -1,0 +1,158 @@
+FilteredClassifier using weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 5 -N -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 592,2-3,5-6,23,25,36-38,32,34-35,61-62,87,93,103,97,591,104,593,589,108,111,114,125,600,594,127,595,182,187,328,590,596,335,345,598,354,356,363-364,597,365-366,369,599,378,439,441,452,459-460,495,503,559,567
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R592,2-3,5-6,23,25,36-38,32,34-35,61-62,87,93,103,97,591,104,593,589,108,111,114,125,600,594,127,595,182,187,328,590,596,335,345,598,354,356,363-364,597,365-366,369,599,378,439,441,452,459-460,495,503,559,567'
+
+@attribute aandoeningen_bewegingsapparaat {False,True}
+@attribute acquaintances {0,1-2,3-4,>4}
+@attribute ADL_PERC_OVERALL_IMP {0.0-0.1,0.1-0.5,<=0.0,>0.5}
+@attribute age {18-30,31-40,41-50,51-60,61-70,71-80,>80}
+@attribute ambivalent_relationship_care numeric
+@attribute Bibliotheekdichtstbijzijnde {0,0-1,>1}
+@attribute BMI_cat numeric
+@attribute Cafedichtstbijzijnde {0,0-1,>1}
+@attribute Cafetariadichtstbijzijnde numeric
+@attribute caregivers {>1,one,zero}
+@attribute C_IPAQ_SCORE numeric
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute C_ROKEN numeric
+@attribute emotional_support_decisions_incl_care {0,1-2,3-5,6-9,>9}
+@attribute emotional_support_talk_about_my_health_incl_care {0,1-2,3-5,6-9,>9}
+@attribute family_members {0,1-2,3-4,5-6,>7}
+@attribute friends {0,1-2,3-4,>4}
+@attribute GEZONDHEID_NU_CBS {five,four,one,three,two}
+@attribute geslacht_totaal {Man,Vrouw}
+@attribute good_plus_relationship_total_incl_care {0,1-2,3-4,>5}
+@attribute Greenspace.r1000m_all {51-60,61-70,71-80,<=50,>80}
+@attribute hart_en_vaatziekten {False,True}
+@attribute Herfindahl numeric
+@attribute Huisartspraktijkdichtstbijzijnde {0,0-1,>1}
+@attribute Huurcoporatie {0-10,10-20,20-40,>40}
+@attribute informational_support_incl_care {1-2,3-5,6-9,>9,zero}
+@attribute LID_CLUBS {False,True}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute luchtwegaandoeningen {False,True}
+@attribute LYING_HoursPerDay numeric
+@attribute metabole_aandoeningen {False,True}
+@attribute Museadichtstbijzijnde {0-1,>1}
+@attribute Nederlandseachtergond {0-50,eighty,hundred,ninety,seventy,sixty}
+@attribute network_size_care {1-2,13-20,3-5,6-8,9-12,>21}
+@attribute nearness_more_than_30_min numeric
+@attribute neurologische_aandoeningen {False,True}
+@attribute Nietwestersemigratieachtergrond {0,20-30,>30,ten}
+@attribute OPLEIDINGSNIVEAU {'Onderwijsniveau 3','Onderwijsniveau 2','Onderwijsniveau 1','Ik volg momenteel een opleiding'}
+@attribute overige_aandoeningen {False,True}
+@attribute phone_internet_video_call_contact {>2,one,two,zero}
+@attribute physical_contact {0,4-6,7-10,>10,one,three,two}
+@attribute pov_p_17 numeric
+@attribute practical_support_incl_care {0,1-2,3-5,6-9,>9}
+@attribute psychische_aandoeningen {False,True}
+@attribute RELATIE {false,true}
+@attribute Restaurantdichtstbijzijnde {0,0-1,>1}
+@attribute same_sex {0,1-2}
+@attribute single_person_household {False,True}
+@attribute SITTING_HoursPerDay numeric
+@attribute strain_critique_incl_care numeric
+@attribute strain_demanding_incl_care numeric
+@attribute strain_taxing_incl_care numeric
+@attribute Supermarktdichtstbijzijnde {0,0-1,>1}
+@attribute support_do_fun_things_incl_care {0,1-2,3-5,6-9,>9}
+@attribute Treinstationdichtstbijzijnde {0,0-1,>1}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.1763401-28.5954094,28.5954094-36.9396706,<=20.1763401,>36.9396706}
+@attribute Westersemigratieachtergrond {0,20-30,>30,ten}
+
+@data
+
+
+Classifier Model
+Bayes Network Classifier
+not using ADTree
+#attributes=58 #classindex=17
+Network structure (nodes followed by parents)
+aandoeningen_bewegingsapparaat(2): GEZONDHEID_NU_CBS 
+acquaintances(4): GEZONDHEID_NU_CBS 
+ADL_PERC_OVERALL_IMP(4): GEZONDHEID_NU_CBS aandoeningen_bewegingsapparaat 
+age(7): GEZONDHEID_NU_CBS aandoeningen_bewegingsapparaat 
+ambivalent_relationship_care(1): 
+Bibliotheekdichtstbijzijnde(3): 
+BMI_cat(3): GEZONDHEID_NU_CBS age 
+Cafedichtstbijzijnde(3): Bibliotheekdichtstbijzijnde 
+Cafetariadichtstbijzijnde(1): 
+caregivers(3): GEZONDHEID_NU_CBS acquaintances aandoeningen_bewegingsapparaat 
+C_IPAQ_SCORE(3): GEZONDHEID_NU_CBS 
+C_PHQ9_TOTAL(5): ADL_PERC_OVERALL_IMP GEZONDHEID_NU_CBS 
+C_ROKEN(2): age GEZONDHEID_NU_CBS 
+emotional_support_decisions_incl_care(5): acquaintances age 
+emotional_support_talk_about_my_health_incl_care(5): emotional_support_decisions_incl_care caregivers 
+family_members(5): emotional_support_decisions_incl_care acquaintances 
+friends(4): emotional_support_decisions_incl_care acquaintances family_members 
+GEZONDHEID_NU_CBS(5): 
+geslacht_totaal(2): emotional_support_decisions_incl_care BMI_cat aandoeningen_bewegingsapparaat 
+good_plus_relationship_total_incl_care(4): emotional_support_decisions_incl_care family_members friends 
+Greenspace.r1000m_all(5): Bibliotheekdichtstbijzijnde Cafedichtstbijzijnde 
+hart_en_vaatziekten(2): age GEZONDHEID_NU_CBS BMI_cat 
+Herfindahl(2): caregivers acquaintances family_members 
+Huisartspraktijkdichtstbijzijnde(3): Greenspace.r1000m_all Cafedichtstbijzijnde Bibliotheekdichtstbijzijnde 
+Huurcoporatie(4): Greenspace.r1000m_all 
+informational_support_incl_care(5): emotional_support_decisions_incl_care emotional_support_talk_about_my_health_incl_care good_plus_relationship_total_incl_care 
+LID_CLUBS(2): acquaintances geslacht_totaal C_ROKEN 
+lonelinessBinary(2): C_PHQ9_TOTAL good_plus_relationship_total_incl_care family_members 
+luchtwegaandoeningen(2): GEZONDHEID_NU_CBS ADL_PERC_OVERALL_IMP 
+LYING_HoursPerDay(5): C_PHQ9_TOTAL ADL_PERC_OVERALL_IMP 
+metabole_aandoeningen(2): BMI_cat hart_en_vaatziekten GEZONDHEID_NU_CBS 
+Museadichtstbijzijnde(2): Greenspace.r1000m_all Bibliotheekdichtstbijzijnde Cafedichtstbijzijnde Huurcoporatie 
+Nederlandseachtergond(6): Greenspace.r1000m_all Huurcoporatie Cafedichtstbijzijnde 
+network_size_care(6): good_plus_relationship_total_incl_care emotional_support_decisions_incl_care acquaintances family_members friends 
+nearness_more_than_30_min(2): network_size_care BMI_cat 
+neurologische_aandoeningen(2): GEZONDHEID_NU_CBS geslacht_totaal aandoeningen_bewegingsapparaat 
+Nietwestersemigratieachtergrond(4): Nederlandseachtergond Huurcoporatie 
+OPLEIDINGSNIVEAU(4): age nearness_more_than_30_min LID_CLUBS 
+overige_aandoeningen(2): GEZONDHEID_NU_CBS caregivers 
+phone_internet_video_call_contact(4): nearness_more_than_30_min acquaintances 
+physical_contact(7): network_size_care phone_internet_video_call_contact caregivers 
+pov_p_17(1): 
+practical_support_incl_care(5): emotional_support_talk_about_my_health_incl_care informational_support_incl_care 
+psychische_aandoeningen(2): C_PHQ9_TOTAL caregivers neurologische_aandoeningen 
+RELATIE(2): age lonelinessBinary geslacht_totaal 
+Restaurantdichtstbijzijnde(3): Huisartspraktijkdichtstbijzijnde Bibliotheekdichtstbijzijnde Cafedichtstbijzijnde Greenspace.r1000m_all Museadichtstbijzijnde 
+same_sex(2): network_size_care friends 
+single_person_household(2): RELATIE age 
+SITTING_HoursPerDay(2): C_IPAQ_SCORE geslacht_totaal 
+strain_critique_incl_care(1): 
+strain_demanding_incl_care(1): 
+strain_taxing_incl_care(1): 
+Supermarktdichtstbijzijnde(3): Greenspace.r1000m_all Huisartspraktijkdichtstbijzijnde Restaurantdichtstbijzijnde Bibliotheekdichtstbijzijnde Cafedichtstbijzijnde 
+support_do_fun_things_incl_care(5): network_size_care emotional_support_talk_about_my_health_incl_care caregivers 
+Treinstationdichtstbijzijnde(3): Museadichtstbijzijnde Bibliotheekdichtstbijzijnde Greenspace.r1000m_all Restaurantdichtstbijzijnde Huisartspraktijkdichtstbijzijnde 
+urbanization_cat(4): Greenspace.r1000m_all Nederlandseachtergond Bibliotheekdichtstbijzijnde Restaurantdichtstbijzijnde Treinstationdichtstbijzijnde 
+Walkability.WI7c_1719_500z(4): urbanization_cat Greenspace.r1000m_all Treinstationdichtstbijzijnde Museadichtstbijzijnde Bibliotheekdichtstbijzijnde 
+Westersemigratieachtergrond(4): Nederlandseachtergond Nietwestersemigratieachtergrond 
+LogScore Bayes: -353964.47190963087
+LogScore BDeu: -484995.07154201454
+LogScore MDL: -443831.1710935854
+LogScore ENTROPY: -364100.7500156097
+LogScore AIC: -381510.75001560984
+
+
+Max parents: 0 initNaive: false DAG: false
+GEZONDHEID_NU_CBS
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,063    0,000    0,500      0,063    0,111      0,176    0,873     0,099     five
+                 0,227    0,010    0,397      0,227    0,289      0,286    0,931     0,289     four
+                 0,351    0,075    0,546      0,351    0,427      0,329    0,807     0,483     one
+                 0,433    0,095    0,541      0,433    0,481      0,368    0,822     0,502     three
+                 0,796    0,550    0,649      0,796    0,715      0,264    0,678     0,697     two
+Weighted Avg.    0,613    0,343    0,598      0,613    0,595      0,299    0,741     0,601     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+    1    7    0    6    2 |    a = five
+    1   60    0  163   40 |    b = four
+    0    3  682   32 1227 |    c = one
+    0   58   22  845 1027 |    d = three
+    0   23  545  517 4240 |    e = two

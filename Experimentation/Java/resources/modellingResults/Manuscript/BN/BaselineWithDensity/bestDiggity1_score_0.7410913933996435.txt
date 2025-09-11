@@ -2,6 +2,7 @@ dag{aandoeningen_bewegingsapparaat
 acquaintances
 ADL_PERC_OVERALL_IMP
 age
+ambivalent_relationship_care
 Bibliotheekdichtstbijzijnde
 BMI_cat
 Cafedichtstbijzijnde
@@ -47,12 +48,16 @@ Restaurantdichtstbijzijnde
 same_sex
 single_person_household
 SITTING_HoursPerDay
+strain_critique_incl_care
+strain_demanding_incl_care
+strain_taxing_incl_care
 Supermarktdichtstbijzijnde
 support_do_fun_things_incl_care
 Treinstationdichtstbijzijnde
 urbanization_cat
 Walkability.WI7c_1719_500z
 Westersemigratieachtergrond
+density
 GEZONDHEID_NU_CBS -> aandoeningen_bewegingsapparaat
 GEZONDHEID_NU_CBS -> acquaintances
 GEZONDHEID_NU_CBS -> ADL_PERC_OVERALL_IMP
@@ -193,4 +198,7 @@ Museadichtstbijzijnde -> Walkability.WI7c_1719_500z
 Bibliotheekdichtstbijzijnde -> Walkability.WI7c_1719_500z
 Nederlandseachtergond -> Westersemigratieachtergrond
 Nietwestersemigratieachtergrond -> Westersemigratieachtergrond
+lonelinessBinary -> density
+friends -> density
+nearness_more_than_30_min -> density
 }

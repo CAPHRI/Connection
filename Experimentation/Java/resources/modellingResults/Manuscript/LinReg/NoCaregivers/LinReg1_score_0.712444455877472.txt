@@ -1,0 +1,383 @@
+FilteredClassifier using weka.classifiers.meta.ClassificationViaRegression -W weka.classifiers.functions.LinearRegression -- -S 0 -R 1.0E-8 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 592,2-3,5-6,23,25,36-37,32,34-35,61-62,87,93,103,97,591,104,593,589,108,111,114,122,125,600,594,127,595,182,187,590,596,335,345,598,354,356,363-364,597,365-366,369,599,378,439,441,452,459-460,495,503,559,567
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.Remove-V-R592,2-3,5-6,23,25,36-37,32,34-35,61-62,87,93,103,97,591,104,593,589,108,111,114,122,125,600,594,127,595,182,187,590,596,335,345,598,354,356,363-364,597,365-366,369,599,378,439,441,452,459-460,495,503,559,567'
+
+@attribute aandoeningen_bewegingsapparaat {False,True}
+@attribute acquaintances {0,1-2,3-4,>4}
+@attribute ADL_PERC_OVERALL_IMP {0.0-0.1,0.1-0.5,<=0.0,>0.5}
+@attribute age {18-30,31-40,41-50,51-60,61-70,71-80,>80}
+@attribute ambivalent_relationship_care numeric
+@attribute Bibliotheekdichtstbijzijnde {0,0-1,>1}
+@attribute BMI_cat numeric
+@attribute Cafedichtstbijzijnde {0,0-1,>1}
+@attribute Cafetariadichtstbijzijnde numeric
+@attribute C_IPAQ_SCORE numeric
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute C_ROKEN numeric
+@attribute emotional_support_decisions_incl_care {0,1-2,3-5,6-9,>9}
+@attribute emotional_support_talk_about_my_health_incl_care {0,1-2,3-5,6-9,>9}
+@attribute family_members {0,1-2,3-4,5-6,>7}
+@attribute friends {0,1-2,3-4,>4}
+@attribute GEZONDHEID_NU_CBS {five,four,one,three,two}
+@attribute geslacht_totaal {Man,Vrouw}
+@attribute good_plus_relationship_total_incl_care {0,1-2,3-4,>5}
+@attribute Greenspace.r1000m_all {51-60,61-70,71-80,<=50,>80}
+@attribute hart_en_vaatziekten {False,True}
+@attribute Herfindahl numeric
+@attribute Huisartspraktijkdichtstbijzijnde {0,0-1,>1}
+@attribute Huurcoporatie {0-10,10-20,20-40,>40}
+@attribute informational_support_incl_care {1-2,3-5,6-9,>9,zero}
+@attribute lbm {'klasse 4','klasse 3'}
+@attribute LID_CLUBS {False,True}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute luchtwegaandoeningen {False,True}
+@attribute LYING_HoursPerDay numeric
+@attribute metabole_aandoeningen {False,True}
+@attribute Museadichtstbijzijnde {0-1,>1}
+@attribute Nederlandseachtergond {0-50,eighty,hundred,ninety,seventy,sixty}
+@attribute nearness_more_than_30_min numeric
+@attribute neurologische_aandoeningen {False,True}
+@attribute Nietwestersemigratieachtergrond {0,20-30,>30,ten}
+@attribute OPLEIDINGSNIVEAU {'Onderwijsniveau 3','Onderwijsniveau 2','Onderwijsniveau 1','Ik volg momenteel een opleiding'}
+@attribute overige_aandoeningen {False,True}
+@attribute phone_internet_video_call_contact {>2,one,two,zero}
+@attribute physical_contact {0,4-6,7-10,>10,one,three,two}
+@attribute pov_p_17 numeric
+@attribute practical_support_incl_care {0,1-2,3-5,6-9,>9}
+@attribute psychische_aandoeningen {False,True}
+@attribute RELATIE {false,true}
+@attribute Restaurantdichtstbijzijnde {0,0-1,>1}
+@attribute same_sex {0,1-2}
+@attribute single_person_household {False,True}
+@attribute SITTING_HoursPerDay numeric
+@attribute strain_critique_incl_care numeric
+@attribute strain_demanding_incl_care numeric
+@attribute strain_taxing_incl_care numeric
+@attribute Supermarktdichtstbijzijnde {0,0-1,>1}
+@attribute support_do_fun_things_incl_care {0,1-2,3-5,6-9,>9}
+@attribute Treinstationdichtstbijzijnde {0,0-1,>1}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.1763401-28.5954094,28.5954094-36.9396706,<=20.1763401,>36.9396706}
+@attribute Westersemigratieachtergrond {0,20-30,>30,ten}
+
+@data
+
+
+Classifier Model
+Classification via Regression
+
+Classifier for class with index 0:
+
+
+Linear Regression Model
+
+GEZONDHEID_NU_CBS =
+
+      0.0026 * acquaintances=0 +
+     -0.0017 * ADL_PERC_OVERALL_IMP=0.1-0.5,>0.5 +
+      0.0031 * ADL_PERC_OVERALL_IMP=>0.5 +
+      0.0023 * age=51-60,>80 +
+      0.0009 * ambivalent_relationship_care +
+     -0.0012 * BMI_cat +
+      0.0054 * Cafedichtstbijzijnde=0 +
+     -0.0016 * C_IPAQ_SCORE +
+      0.0082 * C_PHQ9_TOTAL=Matige depressie,Matig ernstige depressie,Ernstige depressie +
+      0.0092 * C_PHQ9_TOTAL=Ernstige depressie +
+      0.0016 * C_ROKEN +
+      0.0014 * emotional_support_decisions_incl_care=3-5,1-2,0 +
+      0.0024 * emotional_support_talk_about_my_health_incl_care=1-2,3-5,>9,6-9 +
+      0.0022 * emotional_support_talk_about_my_health_incl_care=>9,6-9 +
+      0.0046 * good_plus_relationship_total_incl_care=>5,1-2 +
+     -0.0049 * good_plus_relationship_total_incl_care=1-2 +
+      0.0021 * Greenspace.r1000m_all=>80,<=50,51-60 +
+      0.032  * Huisartspraktijkdichtstbijzijnde=0 +
+      0.0035 * informational_support_incl_care=1-2 +
+      0.0036 * luchtwegaandoeningen=True +
+      0.0004 * LYING_HoursPerDay +
+      0.0023 * Museadichtstbijzijnde=>1 +
+     -0.0003 * nearness_more_than_30_min +
+      0.0036 * neurologische_aandoeningen=True +
+      0.0387 * Nietwestersemigratieachtergrond=>30 +
+      0.0028 * overige_aandoeningen=True +
+      0.0022 * physical_contact=>10,0,one,two,three +
+     -0.0032 * physical_contact=0,one,two,three +
+      0.0028 * physical_contact=one,two,three +
+      0.0019 * RELATIE=false +
+      0.0017 * Restaurantdichtstbijzijnde=0-1 +
+      0.0032 * single_person_household=True +
+     -0.0013 * strain_critique_incl_care +
+      0.0051 * support_do_fun_things_incl_care=0 +
+     -0.0017 * Walkability.WI7c_1719_500z=>36.9396706,20.1763401-28.5954094,28.5954094-36.9396706 +
+      0.0018 * Walkability.WI7c_1719_500z=20.1763401-28.5954094,28.5954094-36.9396706 +
+     -0.0131
+
+Classifier for class with index 1:
+
+
+Linear Regression Model
+
+GEZONDHEID_NU_CBS =
+
+      0.0238 * aandoeningen_bewegingsapparaat=True +
+      0.0159 * acquaintances=0 +
+     -0.0049 * ADL_PERC_OVERALL_IMP=0.0-0.1,0.1-0.5,>0.5 +
+     -0.0056 * ADL_PERC_OVERALL_IMP=0.1-0.5,>0.5 +
+      0.0432 * ADL_PERC_OVERALL_IMP=>0.5 +
+      0.0069 * age=51-60,61-70,71-80,41-50,>80 +
+      0.0816 * Bibliotheekdichtstbijzijnde=0 +
+     -0.0099 * C_IPAQ_SCORE +
+      0.0133 * C_PHQ9_TOTAL=Milde depressie,Matige depressie,Matig ernstige depressie,Ernstige depressie +
+      0.0634 * C_PHQ9_TOTAL=Matige depressie,Matig ernstige depressie,Ernstige depressie +
+      0.0327 * C_PHQ9_TOTAL=Matig ernstige depressie,Ernstige depressie +
+      0.1691 * C_PHQ9_TOTAL=Ernstige depressie +
+      0.006  * emotional_support_decisions_incl_care=1-2,0 +
+      0.011  * emotional_support_talk_about_my_health_incl_care=>9,3-5,6-9 +
+      0.0084 * family_members=1-2,0 +
+      0.0351 * family_members=0 +
+      0.0056 * friends=3-4,0 +
+      0.0154 * friends=0 +
+     -0.0105 * good_plus_relationship_total_incl_care=3-4,1-2,0 +
+      0.0345 * good_plus_relationship_total_incl_care=0 +
+      0.0092 * hart_en_vaatziekten=True +
+     -0.0429 * Herfindahl +
+      0.0092 * Huisartspraktijkdichtstbijzijnde=>1,0 +
+      0.0116 * informational_support_incl_care=zero +
+      0.0459 * luchtwegaandoeningen=True +
+      0.0019 * LYING_HoursPerDay +
+      0.0491 * metabole_aandoeningen=True +
+      0.0096 * Nederlandseachtergond=hundred,eighty,0-50,sixty,seventy +
+     -0.0098 * Nederlandseachtergond=eighty,0-50,sixty,seventy +
+     -0.0096 * Nederlandseachtergond=0-50,sixty,seventy +
+      0.0112 * Nederlandseachtergond=sixty,seventy +
+      0.0096 * Nederlandseachtergond=seventy +
+      0.0671 * neurologische_aandoeningen=True +
+      0.0245 * Nietwestersemigratieachtergrond=20-30,>30 +
+      0.0218 * overige_aandoeningen=True +
+     -0.0072 * physical_contact=4-6,0,three,one,two +
+      0.0106 * physical_contact=three,one,two +
+     -0.0092 * physical_contact=one,two +
+      0.0119 * physical_contact=two +
+      0.007  * practical_support_incl_care=3-5 +
+      0.0285 * psychische_aandoeningen=True +
+      0.0107 * same_sex=0 +
+      0.0024 * SITTING_HoursPerDay +
+     -0.0035 * strain_critique_incl_care +
+     -0.0046 * strain_demanding_incl_care +
+      0.0059 * support_do_fun_things_incl_care=>9,3-5,1-2,0 +
+      0.0128 * support_do_fun_things_incl_care=0 +
+      0.0098 * Treinstationdichtstbijzijnde=0-1 +
+      0.0097 * urbanization_cat=two,one +
+     -0.0085 * Walkability.WI7c_1719_500z=28.5954094-36.9396706,>36.9396706 +
+      0.0442 * Westersemigratieachtergrond=>30 +
+     -0.0361
+
+Classifier for class with index 2:
+
+
+Linear Regression Model
+
+GEZONDHEID_NU_CBS =
+
+      0.0711 * aandoeningen_bewegingsapparaat=False +
+     -0.0319 * ADL_PERC_OVERALL_IMP=0.1-0.5,0.0-0.1,<=0.0 +
+      0.1614 * ADL_PERC_OVERALL_IMP=<=0.0 +
+      0.0223 * age=51-60,41-50,31-40,18-30 +
+      0.0205 * age=31-40,18-30 +
+      0.0265 * age=18-30 +
+     -0.0051 * ambivalent_relationship_care +
+      0.1649 * Bibliotheekdichtstbijzijnde=0-1,>1 +
+      0.0164 * Bibliotheekdichtstbijzijnde=>1 +
+     -0.0629 * BMI_cat +
+      0.0468 * Cafedichtstbijzijnde=0-1,>1 +
+     -0.0169 * Cafedichtstbijzijnde=>1 +
+      0.035  * C_IPAQ_SCORE +
+     -0.0321 * C_PHQ9_TOTAL=Milde depressie,Geen tot minimale depressie +
+      0.0679 * C_PHQ9_TOTAL=Geen tot minimale depressie +
+     -0.0358 * C_ROKEN +
+      0.0265 * emotional_support_decisions_incl_care=>9 +
+     -0.0357 * emotional_support_talk_about_my_health_incl_care=>9,1-2,6-9,0 +
+      0.046  * emotional_support_talk_about_my_health_incl_care=1-2,6-9,0 +
+     -0.0169 * family_members=>7,5-6 +
+      0.017  * family_members=5-6 +
+      0.0782 * good_plus_relationship_total_incl_care=0,3-4,>5 +
+     -0.0497 * good_plus_relationship_total_incl_care=3-4,>5 +
+      0.0188 * Greenspace.r1000m_all=71-80,>80,<=50 +
+      0.0806 * hart_en_vaatziekten=False +
+      0.0453 * Herfindahl +
+      0.0142 * Huisartspraktijkdichtstbijzijnde=>1,0 +
+      0.053  * Huurcoporatie=20-40 +
+      0.0161 * LID_CLUBS=True +
+      0.0439 * lonelinessBinary=not lonely +
+      0.0677 * luchtwegaandoeningen=False +
+      0.0426 * metabole_aandoeningen=False +
+      0.0262 * Museadichtstbijzijnde=0-1 +
+      0.0142 * Nederlandseachtergond=sixty,ninety,0-50,hundred +
+     -0.0256 * Nederlandseachtergond=ninety,0-50,hundred +
+      0.0297 * Nederlandseachtergond=0-50,hundred +
+     -0.0247 * Nederlandseachtergond=hundred +
+      0.0078 * nearness_more_than_30_min +
+      0.0563 * neurologische_aandoeningen=False +
+      0.0833 * Nietwestersemigratieachtergrond=20-30,ten,>30 +
+      0.0274 * OPLEIDINGSNIVEAU=Onderwijsniveau 3,Ik volg momenteel een opleiding +
+     -0.0563 * OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding +
+      0.0996 * overige_aandoeningen=False +
+     -0.0269 * phone_internet_video_call_contact=two,one,>2 +
+      0.0368 * phone_internet_video_call_contact=one,>2 +
+      0.0141 * physical_contact=4-6,0,7-10,>10 +
+      0.025  * physical_contact=>10 +
+     -0.0025 * pov_p_17 +
+      0.0191 * practical_support_incl_care=0,>9 +
+      0.047  * practical_support_incl_care=>9 +
+      0.0342 * psychische_aandoeningen=False +
+      0.0026 * SITTING_HoursPerDay +
+      0.0108 * strain_demanding_incl_care +
+      0.0288 * urbanization_cat=two,one,four +
+     -0.0291 * urbanization_cat=four +
+     -0.5997
+
+Classifier for class with index 3:
+
+
+Linear Regression Model
+
+GEZONDHEID_NU_CBS =
+
+      0.0944 * aandoeningen_bewegingsapparaat=True +
+      0.0337 * acquaintances=0 +
+      0.0221 * ADL_PERC_OVERALL_IMP=0.0-0.1,0.1-0.5,>0.5 +
+      0.1309 * ADL_PERC_OVERALL_IMP=0.1-0.5,>0.5 +
+      0.0271 * ADL_PERC_OVERALL_IMP=>0.5 +
+      0.0169 * age=51-60,61-70,71-80,>80 +
+      0.0173 * age=61-70,71-80,>80 +
+      0.0807 * age=>80 +
+      0.0132 * Bibliotheekdichtstbijzijnde=0-1,0 +
+      0.0355 * BMI_cat +
+      0.0159 * Cafetariadichtstbijzijnde +
+     -0.0182 * C_IPAQ_SCORE +
+      0.1283 * C_PHQ9_TOTAL=Milde depressie,Matig ernstige depressie,Matige depressie +
+     -0.0643 * C_PHQ9_TOTAL=Matig ernstige depressie,Matige depressie +
+      0.0668 * C_PHQ9_TOTAL=Matige depressie +
+      0.0141 * C_ROKEN +
+      0.0304 * emotional_support_decisions_incl_care=0,3-5,1-2 +
+     -0.0189 * emotional_support_decisions_incl_care=3-5,1-2 +
+      0.0495 * emotional_support_talk_about_my_health_incl_care=6-9,>9,1-2,3-5 +
+      0.017  * emotional_support_talk_about_my_health_incl_care=>9,1-2,3-5 +
+     -0.0189 * emotional_support_talk_about_my_health_incl_care=1-2,3-5 +
+      0.0201 * family_members=>7,3-4,1-2,0 +
+     -0.0274 * family_members=3-4,1-2,0 +
+      0.0528 * family_members=0 +
+      0.0313 * friends=0 +
+      0.0218 * good_plus_relationship_total_incl_care=3-4,0 +
+      0.022  * Greenspace.r1000m_all=71-80,>80,61-70,51-60 +
+      0.0828 * hart_en_vaatziekten=True +
+     -0.1162 * Herfindahl +
+      0.0281 * informational_support_incl_care=6-9,zero,3-5,1-2 +
+      0.0294 * lbm=klasse 3 +
+      0.028  * LID_CLUBS=False +
+      0.0317 * lonelinessBinary=lonely +
+      0.0776 * luchtwegaandoeningen=True +
+      0.0924 * metabole_aandoeningen=True +
+     -0.0258 * Nederlandseachtergond=seventy,eighty,0-50,sixty +
+      0.0202 * Nederlandseachtergond=eighty,0-50,sixty +
+      0.0917 * Nietwestersemigratieachtergrond=ten,20-30,0 +
+      0.0176 * OPLEIDINGSNIVEAU=Onderwijsniveau 2,Onderwijsniveau 1 +
+      0.0188 * OPLEIDINGSNIVEAU=Onderwijsniveau 1 +
+      0.089  * overige_aandoeningen=True +
+     -0.0256 * physical_contact=two,0,4-6,three,one +
+      0.0333 * physical_contact=0,4-6,three,one +
+      0.0143 * practical_support_incl_care=>9,1-2,3-5,6-9 +
+     -0.0176 * practical_support_incl_care=1-2,3-5,6-9 +
+      0.0199 * practical_support_incl_care=3-5,6-9 +
+      0.0301 * psychische_aandoeningen=True +
+      0.0214 * Restaurantdichtstbijzijnde=0,0-1 +
+     -0.0235 * single_person_household=True +
+      0.0115 * strain_critique_incl_care +
+      0.0183 * support_do_fun_things_incl_care=6-9,3-5,0,1-2 +
+      0.0144 * support_do_fun_things_incl_care=0,1-2 +
+      0.0257 * support_do_fun_things_incl_care=1-2 +
+     -0.0252 * urbanization_cat=one,three,two +
+      0.0163 * urbanization_cat=three,two +
+     -0.0165 * urbanization_cat=two +
+      0.0141 * Walkability.WI7c_1719_500z=>36.9396706,28.5954094-36.9396706 +
+     -0.2996
+
+Classifier for class with index 4:
+
+
+Linear Regression Model
+
+GEZONDHEID_NU_CBS =
+
+      0.0488 * aandoeningen_bewegingsapparaat=False +
+      0.0602 * acquaintances=1-2,>4,3-4 +
+      0.1096 * ADL_PERC_OVERALL_IMP=0.1-0.5,<=0.0,0.0-0.1 +
+     -0.0228 * ADL_PERC_OVERALL_IMP=<=0.0,0.0-0.1 +
+      0.1372 * ADL_PERC_OVERALL_IMP=0.0-0.1 +
+      0.0762 * age=18-30,51-60,61-70,41-50,31-40,71-80 +
+      0.0079 * ambivalent_relationship_care +
+      0.0277 * BMI_cat +
+      0.0627 * Cafedichtstbijzijnde=0 +
+      0.1067 * C_PHQ9_TOTAL=Milde depressie,Geen tot minimale depressie +
+      0.0751 * C_PHQ9_TOTAL=Geen tot minimale depressie +
+      0.0195 * C_ROKEN +
+      0.0308 * emotional_support_decisions_incl_care=3-5,6-9,>9 +
+     -0.0237 * emotional_support_decisions_incl_care=>9 +
+      0.0159 * emotional_support_talk_about_my_health_incl_care=1-2,>9,0 +
+      0.0307 * emotional_support_talk_about_my_health_incl_care=0 +
+      0.0911 * family_members=1-2,3-4,>7,5-6 +
+      0.0439 * friends=>4,1-2,3-4 +
+      0.137  * good_plus_relationship_total_incl_care=3-4,1-2,>5 +
+      0.0518 * good_plus_relationship_total_incl_care=1-2,>5 +
+     -0.0305 * good_plus_relationship_total_incl_care=>5 +
+      0.116  * Herfindahl +
+      0.0189 * Huisartspraktijkdichtstbijzijnde=0-1 +
+      0.063  * Huurcoporatie=0-10,10-20,>40 +
+      0.032  * informational_support_incl_care=>9 +
+     -0.0183 * lonelinessBinary=not lonely +
+      0.0589 * luchtwegaandoeningen=False +
+      0.1045 * metabole_aandoeningen=False +
+      0.0321 * Nederlandseachtergond=seventy,eighty,hundred,ninety +
+     -0.0087 * nearness_more_than_30_min +
+      0.0345 * OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding,Onderwijsniveau 3,Onderwijsniveau 2 +
+     -0.0264 * OPLEIDINGSNIVEAU=Onderwijsniveau 3,Onderwijsniveau 2 +
+      0.0337 * phone_internet_video_call_contact=two,>2 +
+     -0.0218 * physical_contact=>10,two,7-10 +
+      0.0531 * physical_contact=two,7-10 +
+     -0.035  * physical_contact=7-10 +
+      0.019  * practical_support_incl_care=1-2 +
+      0.0288 * psychische_aandoeningen=False +
+      0.0259 * Restaurantdichtstbijzijnde=>1 +
+     -0.0041 * SITTING_HoursPerDay +
+     -0.0112 * strain_critique_incl_care +
+     -0.0166 * strain_demanding_incl_care +
+      0.0205 * Supermarktdichtstbijzijnde=0-1,0 +
+      0.0225 * support_do_fun_things_incl_care=6-9,3-5,>9 +
+      0.0152 * support_do_fun_things_incl_care=3-5,>9 +
+      0.2528 * Treinstationdichtstbijzijnde=0 +
+      0.0188 * urbanization_cat=three +
+     -0.5943
+
+
+
+Max parents: 0 initNaive: false DAG: false
+GEZONDHEID_NU_CBS
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,847     0,017     five
+                 0,030    0,002    0,308      0,030    0,055      0,089    0,916     0,272     four
+                 0,037    0,010    0,480      0,037    0,069      0,086    0,804     0,473     one
+                 0,347    0,076    0,541      0,347    0,423      0,324    0,824     0,502     three
+                 0,921    0,759    0,607      0,921    0,732      0,225    0,627     0,663     two
+Weighted Avg.    0,596    0,443    0,558      0,596    0,513      0,213    0,712     0,579     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+    0    0    0   13    3 |    a = five
+    0    8    0  193   63 |    b = four
+    0    0   72   26 1846 |    c = one
+    0   11    7  678 1256 |    d = three
+    0    7   71  344 4903 |    e = two

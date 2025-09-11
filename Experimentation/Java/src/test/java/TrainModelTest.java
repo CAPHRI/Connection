@@ -18,68 +18,44 @@ class TrainModelTest {
         List<String> attributesOfInterest = new ArrayList<>();
         attributesOfInterest.add("GEZONDHEID_NU_CBS");
 
-        List<String> selectedNodes =  generateManuscriptModel();
-        boolean applyfeatureselection = true;
-        BNClassifier classifier = new BNClassifier(false, 5, null);
-        TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "GEZONDHEID_NU_CBS", attributesOfInterest,
-                selectedNodes, classifier, applyfeatureselection);
-        Map<Double, CombinedResult> res = trainBNModelWithFeatureSelection(trainer);
+        Map<String, List<String>> selectedNodes = new HashMap<>();
+        selectedNodes.put("Baseline", generateManuscriptModelBaseline());
+        List<String> withDensity = generateManuscriptModelBaseline();
+        withDensity.add("density");
+        selectedNodes.put("BaselineWithDensity", withDensity);
+        selectedNodes.put("BeperktNetwerk", generateManuscriptModelBeperktNetwerk());
+        selectedNodes.put("GeenAandoeningen", generateManuscriptModelGeenAandoeningen());
+        selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
+        selectedNodes.put("NoDemographics", generateManuscriptModelNoDemographics());
+        selectedNodes.put("NoLBM", generateManuscriptModelNoLBM());
+        List<String> noDemoNoLBM = generateManuscriptModelNoDemographics();
+        noDemoNoLBM.remove("lbm");
+        selectedNodes.put("NoDemoNoLBM", noDemoNoLBM);
 
-        List<Double> keys = new ArrayList<Double>(res.keySet());
-        Collections.sort(keys);
+        boolean applyfeatureselection = false;
+        for(String k: selectedNodes.keySet()) {
+            BNClassifier classifier = new BNClassifier(false, 5, null);
+            TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "GEZONDHEID_NU_CBS", attributesOfInterest,
+                    selectedNodes.get(k), classifier, applyfeatureselection);
+            Map<Double, CombinedResult> res = trainBNModelWithFeatureSelection(trainer);
 
-        for(int i =0; i < keys.size(); i++) {
-            String path = "resources/modellingResults/Manuscript/BN/";
+            List<Double> keys = new ArrayList<Double>(res.keySet());
+            Collections.sort(keys);
 
-            System.out.println(keys.get(i));
-            printString(res.get(keys.get(i)).getModel(), path+"bestModel" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
-            printString(res.get(keys.get(i)).printGraph(), path+"bestFeature" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+ ".pgmx");
-            printString(res.get(keys.get(i)).getDiggity(), path+"bestDiggity" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
-            System.out.println("Best \n");
-            System.out.println(res.get(keys.get(i)));
-        }
-    }
+            for (int i = 0; i < keys.size(); i++) {
+                String path = "resources/modellingResults/Manuscript/BN/";
+                if (applyfeatureselection) {
+                    path += "featureselection/";
+                }
+                path+=k+"/";
 
-    @Test
-    public void trainBNFeautureSelectionAndWorstTest() throws Exception {
-        boolean withoutSize = false;
-        List<String> attributesOfInterest = new ArrayList<>();
-        attributesOfInterest.add("acquaintances");
-        attributesOfInterest.add("caregivers");
-        attributesOfInterest.add("emotional_support_decisions_incl_care");
-        attributesOfInterest.add("emotional_support_talk_about_my_health_incl_care");
-        attributesOfInterest.add("good_plus_relationship_total_incl_care");
-        attributesOfInterest.add("informational_support_incl_care");
-        attributesOfInterest.add("physical_contact");
-        attributesOfInterest.add("support_do_fun_things_incl_care");
-        attributesOfInterest.add("social_loneliness");
-        attributesOfInterest.add("emotional_loneliness");
-        attributesOfInterest.add("lonelinessBinary");
-
-        List<String> selectedNodes =  generateSunbeltModel();
-        if(withoutSize) {
-            selectedNodes.remove("network_size_care");
-        }
-        boolean applyfeatureselection = true;
-        BNClassifier classifier = new BNClassifier(false, 5, null);
-        TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
-                generateSunbeltModel(), classifier, applyfeatureselection);
-        Map<Double, CombinedResult> res = trainBNModelWithFeatureSelection(trainer);
-
-        List<Double> keys = new ArrayList<Double>(res.keySet());
-        Collections.sort(keys);
-
-        for(int i =0; i < keys.size(); i++) {
-            String path = "resources/modellingResults/BN/";
-            if(withoutSize){
-                path+="/noSize/";
+                System.out.println(keys.get(i));
+                printString(res.get(keys.get(i)).getModel()+ "\n\n" + res.get(keys.get(i)), path + "bestModel" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+                printString(res.get(keys.get(i)).printGraph(), path + "bestFeature" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".pgmx");
+                printString(res.get(keys.get(i)).getDiggity(), path + "bestDiggity" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+                System.out.println( k + "\n");
+                System.out.println(res.get(keys.get(i)));
             }
-            System.out.println(keys.get(i));
-            printString(res.get(keys.get(i)).getModel(), path+"bestModel" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
-            printString(res.get(keys.get(i)).printGraph(), path+"bestFeature" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+ ".pgmx");
-            printString(res.get(keys.get(i)).getDiggity(), path+"bestDiggity" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
-            System.out.println("Best \n");
-            System.out.println(res.get(keys.get(i)));
         }
     }
 
@@ -107,32 +83,41 @@ class TrainModelTest {
     public void trainLogRegFeautureSelectionAndWorstTest() throws Exception {
         boolean withoutSize = false;
         List<String> attributesOfInterest = new ArrayList<>();
-        attributesOfInterest.add("lonelinessBinary");
+        attributesOfInterest.add("GEZONDHEID_NU_CBS");
 
-        List<String> selectedNodes =  generateSunbeltModel();
-//        selectedNodes = generateLogRegModel();
+        Map<String, List<String>> selectedNodes = new HashMap<>();
+        selectedNodes.put("Baseline", generateManuscriptModelBaseline());
+        List<String> withDensity = generateManuscriptModelBaseline();
+        withDensity.add("density");
+        selectedNodes.put("BaselineWithDensity", withDensity);
+        selectedNodes.put("BeperktNetwerk", generateManuscriptModelBeperktNetwerk());
+        selectedNodes.put("GeenAandoeningen", generateManuscriptModelGeenAandoeningen());
+        selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
+        selectedNodes.put("NoDemographics", generateManuscriptModelNoDemographics());
+        selectedNodes.put("NoLBM", generateManuscriptModelNoLBM());
+        List<String> noDemoNoLBM = generateManuscriptModelNoDemographics();
+        noDemoNoLBM.remove("lbm");
+        selectedNodes.put("NoDemoNoLBM", noDemoNoLBM);
 
-        if(withoutSize) {
-            selectedNodes.remove("network_size_care");
-        }
-        boolean applyfeatureselection = true;
-        LogRegClassifier classifier = new LogRegClassifier();
-        TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
-                selectedNodes, classifier, applyfeatureselection);
-        Map<Double, CombinedResult> res = trainLogRegModelWithFeatureSelection(trainer);
+        boolean applyfeatureselection = false;
+        for(String k: selectedNodes.keySet()) {
+            LogRegClassifier classifier = new LogRegClassifier();
+            TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
+                    selectedNodes.get(k), classifier, applyfeatureselection);
+            Map<Double, CombinedResult> res = trainLogRegModelWithFeatureSelection(trainer);
 
-        List<Double> keys = new ArrayList<Double>(res.keySet());
-        Collections.sort(keys);
+            List<Double> keys = new ArrayList<Double>(res.keySet());
+            Collections.sort(keys);
 
-        for(int i =0; i < keys.size(); i++) {
-            String path = "resources/modellingResults/LogReg/";
-            if(withoutSize){
-                path+="/noSize/";
+            for (int i = 0; i < keys.size(); i++) {
+                String path = "resources/modellingResults/Manuscript/LogReg/";
+
+                path+=k+"/";
+                System.out.println(keys.get(i));
+                printString(res.get(keys.get(i)).getModel() + "\n\n" + res.get(keys.get(i)), path + "logreg" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+                System.out.println( k + "\n");
+                System.out.println(res.get(keys.get(i)));
             }
-            System.out.println(keys.get(i));
-            printString(res.get(keys.get(i)).getModel(), path+"2bestModel" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
-            System.out.println("Best \n");
-            System.out.println(res.get(keys.get(i)));
         }
     }
 
@@ -156,32 +141,41 @@ class TrainModelTest {
 
     @Test
     public void trainLinRegFeautureSelectionAndWorstTest() throws Exception {
-        boolean withoutSize = false;
         List<String> attributesOfInterest = new ArrayList<>();
-        attributesOfInterest.add("lonelinessBinary");
+        attributesOfInterest.add("GEZONDHEID_NU_CBS");
 
-        List<String> selectedNodes =  generateSunbeltModel();
-        if(withoutSize) {
-            selectedNodes.remove("network_size_care");
-        }
-        boolean applyfeatureselection = true;
-        LinRegClassifier classifier = new LinRegClassifier();
-        TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
-                generateSunbeltModel(), classifier, applyfeatureselection);
-        Map<Double, CombinedResult> res = trainLinRegModelWithFeatureSelection(trainer);
+        Map<String, List<String>> selectedNodes = new HashMap<>();
+        selectedNodes.put("Baseline", generateManuscriptModelBaseline());
+        List<String> withDensity = generateManuscriptModelBaseline();
+        withDensity.add("density");
+        selectedNodes.put("BaselineWithDensity", withDensity);
+        selectedNodes.put("BeperktNetwerk", generateManuscriptModelBeperktNetwerk());
+        selectedNodes.put("GeenAandoeningen", generateManuscriptModelGeenAandoeningen());
+        selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
+        selectedNodes.put("NoDemographics", generateManuscriptModelNoDemographics());
+        selectedNodes.put("NoLBM", generateManuscriptModelNoLBM());
+        List<String> noDemoNoLBM = generateManuscriptModelNoDemographics();
+        noDemoNoLBM.remove("lbm");
+        selectedNodes.put("NoDemoNoLBM", noDemoNoLBM);
 
-        List<Double> keys = new ArrayList<Double>(res.keySet());
-        Collections.sort(keys);
+        boolean applyfeatureselection = false;
+        for(String k: selectedNodes.keySet()) {
+            LinRegClassifier classifier = new LinRegClassifier();
+            TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
+                    selectedNodes.get(k), classifier, applyfeatureselection);
+            Map<Double, CombinedResult> res = trainLinRegModelWithFeatureSelection(trainer);
 
-        for(int i =0; i < keys.size(); i++) {
-            String path = "resources/modellingResults/LinReg/";
-            if(withoutSize){
-                path+="/noSize/";
+            List<Double> keys = new ArrayList<Double>(res.keySet());
+            Collections.sort(keys);
+
+            for (int i = 0; i < keys.size(); i++) {
+                String path = "resources/modellingResults/Manuscript/LinReg/";
+                path+=k+"/";
+                System.out.println(keys.get(i));
+                printString(res.get(keys.get(i)).getModel() + "\n\n" + res.get(keys.get(i)), path + "LinReg" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+                System.out.println( k + "\n");
+                System.out.println(res.get(keys.get(i)));
             }
-            System.out.println(keys.get(i));
-            printString(res.get(keys.get(i)).getModel(), path+"bestModel" + ((keys.size()-i)) + "_score_"+ res.get(keys.get(i)).getAverageAUC()+".txt");
-            System.out.println("Best \n");
-            System.out.println(res.get(keys.get(i)));
         }
     }
 
