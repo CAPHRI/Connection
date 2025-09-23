@@ -5,9 +5,13 @@ def discretize(data):
     data = discretizeNetworkSize(data)
     data = discretizeAcquaintances(data)
     data = discretizeAge(data)
+    data= discretizeBMI(data)
+    data = discretize_C_Roken(data)
+    data = discretize_C_IPAQ_SCORE(data)
     data = discretizeDichstbijzijnde(data, "Bibliotheek")
     data = discretizeDichstbijzijnde(data, "Bioscoop")
     data = discretizeDichstbijzijnde(data, "Cafe")
+    data = discretizeDichstbijzijnde(data, "Cafetaria")
     data = discretizeCaregivers(data)
     data = discretizeDifficult_relationship_total_incl_care(data)
     data = discretizeEmotional_support_decisions_incl_care(data)
@@ -22,6 +26,7 @@ def discretize(data):
     data = discretizeLBM(data)
     data = discretizeNearness_house(data)
     data = discretizeNearness_less_than_15_min(data)
+    data = discretizeNearness_more_than_30_min(data)
     data = discretizeNearness_walking_distance(data)
     data = discretizeNederlandseachtergrond(data)
     data = discretizeNietwestersemigratieachtergrond(data)
@@ -53,10 +58,165 @@ def discretize(data):
     data = discretizePHQ9_TOTAL(data)
     data = discretizeLonelinessBinary(data)
     data = discretizeLoneliness(data)
-    data = discretizeSame_sex(data)
+    data = discretizeSex_network_members(data)
     data = discretizeSame_age(data)
+    data = discretizeStrain_critique_incl_care(data)
+    data = discretizeStrain_demanding_incl_care(data)
+    data = discretizeStrain_taxing_incl_care(data)
+    data = quarterize(data, "Herfindahl")
+    data = discretizeLYING_HoursPerDay(data)
+    data = quarterize(data, "pov_p_17")
+    data = discretizeSITTING_HoursPerDay(data)
+    print(data["strain_critique_incl_care"].unique())
+
     return data
 
+def discretizeSITTING_HoursPerDay  (data):
+    data["SITTING_HoursPerDay"] = data["SITTING_HoursPerDay"].map(
+        discretize_SITTING_HoursPerDay)
+    return data
+
+def discretize_SITTING_HoursPerDay(value):
+    if value == "?":
+        return value
+    elif float(value) <= 4:
+        return "low (<=4)"
+    elif float(value) <= 6:
+        return "medium (4-6)"
+    else:
+        return "high (>6)"
+
+def discretizeLYING_HoursPerDay  (data):
+    data["LYING_HoursPerDay"] = data["LYING_HoursPerDay"].map(
+        discretize_LYING_HoursPerDay)
+    return data
+
+def discretize_LYING_HoursPerDay(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "zero"
+    elif float(value) <= 2:
+        return "1-2"
+    else:
+        return ">2"
+
+def discretizeAmbivalent_relationship_care  (data):
+    data["ambivalent_relationship_care"] = data["ambivalent_relationship_care"].map(
+        discretize_ambivalent_relationship_care)
+    return data
+
+def discretize_ambivalent_relationship_care(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "Zero"
+    elif float(value) <= 1:
+        return "1"
+    elif float(value) <= 2:
+        return "2"
+    elif float(value) <= 4:
+        return "3-4"
+    else:
+        return ">=5"
+
+def discretizeStrain_taxing_incl_care  (data):
+    data["strain_taxing_incl_care"] = data["strain_taxing_incl_care"].map(
+        discretize_strain_taxing_incl_care)
+    return data
+
+def discretize_strain_taxing_incl_care(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "Zero"
+    elif float(value) <= 1:
+        return "1"
+    elif float(value) <= 2:
+        return "2"
+    else:
+        return ">2"
+
+def discretizeStrain_demanding_incl_care  (data):
+    data["strain_demanding_incl_care"] = data["strain_demanding_incl_care"].map(
+        discretize_strain_demanding_incl_care)
+    return data
+
+def discretize_strain_demanding_incl_care(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "Zero"
+    elif float(value) <= 1:
+        return "1"
+    elif float(value) <= 2:
+        return "2"
+    else:
+        return ">2"
+
+def discretizeStrain_critique_incl_care  (data):
+    data["strain_critique_incl_care"] = data["strain_critique_incl_care"].map(
+        discretize_strain_critique_incl_care)
+    return data
+
+def discretize_strain_critique_incl_care(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "Zero"
+    elif float(value) <= 1:
+        return "1"
+    elif float(value) <= 2:
+        return "2"
+    else:
+        return ">2"
+
+def discretize_C_IPAQ_SCORE  (data):
+    data["C_IPAQ_SCORE"] = data["C_IPAQ_SCORE"].map(
+        discretize_c_IPAQ_SCORE)
+    return data
+
+def discretize_c_IPAQ_SCORE(value):
+    if value == "?":
+        return value
+    elif float(value) <= 1:
+        return "inactive"
+    elif float(value) <= 2:
+        return "minimally active"
+    else:
+        return "hepa active"
+
+def discretize_C_Roken  (data):
+    data["C_ROKEN"] = data["C_ROKEN"].map(
+        discretize_c_roken)
+    return data
+
+def discretize_c_roken(value):
+    if value == "?":
+        return value
+    elif float(value) <= 1:
+        return "never smoker"
+    elif float(value) <= 2:
+        return "former smoker"
+    else:
+        return "current smoker"
+
+def discretizeBMI  (data):
+    data["BMI_cat"] = data["BMI_cat"].map(
+        discretize_BMI)
+    return data
+
+def discretize_BMI(value):
+    if value == "?":
+        return value
+    elif float(value) <= 1:
+        return "=<18"
+    elif float(value) <= 2:
+        return "18-25"
+    elif float(value) <= 3:
+        return "=25-30"
+    else:
+        return ">30"
 
 def discretizeSame_age  (data):
     data["same_age"] = data["same_age"].map(
@@ -64,11 +224,13 @@ def discretizeSame_age  (data):
     return data
 
 
+
+
 def discretize_same_age(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 5:
@@ -76,8 +238,8 @@ def discretize_same_age(value):
     else:
         return ">5"
 
-def discretizeSame_sex  (data):
-    data["same_sex"] = data["same_sex"].map(
+def discretizeSex_network_members  (data):
+    data["sex_network_members_incl_care"] = data["sex_network_members_incl_care"].map(
         discretize_same_sex)
     return data
 
@@ -86,7 +248,7 @@ def discretize_same_sex(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 5:
@@ -200,7 +362,7 @@ def discretize_Good_plus_relationship_total_incl_care(value):
     if value == "?":
         return value
     elif float(value) == 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 4:
@@ -281,7 +443,7 @@ def discretize_Westersemigratieachtergrond(value):
     if value == "?":
         return value
     elif float(value) == 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 10:
         return "ten"
     elif float(value) <= 30:
@@ -337,7 +499,7 @@ def discretize_support_give_care_incl_care(value):
     if value == "?":
         return value
     elif float(value) == 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 1:
         return "one"
     elif float(value) <= 2:
@@ -356,7 +518,7 @@ def discretize_support_do_fun_things_incl_care(value):
     if value == "?":
         return value
     elif float(value) == 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 5:
@@ -391,7 +553,7 @@ def discretize_practical_support_incl_care(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 5:
@@ -436,7 +598,7 @@ def discretize_physical_contact(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 1:
         return "one"
     elif float(value) <= 2:
@@ -507,7 +669,7 @@ def discretize_Nietwestersemigratieachtergrond(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 10:
         return "ten"
     elif float(value) <= 30:
@@ -549,16 +711,34 @@ def discretize_nearness_walking_distance(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 1:
         return "one"
     elif float(value) <= 2:
         return "two"
-    elif float(value) <= 3 - 4:
+    elif float(value) <= 4:
         return "3-4"
     else:
         return ">4"
 
+def discretizeNearness_more_than_30_min(data):
+    data["nearness_more_than_30_min"] = data["nearness_more_than_30_min"].map(discretize_nearness_more_than_30_min)
+    return data
+
+
+def discretize_nearness_more_than_30_min(value):
+    if value == "?":
+        return value
+    elif float(value) <= 0:
+        return "Zero"
+    elif float(value) <= 1:
+        return "one"
+    elif float(value) <= 2:
+        return "two"
+    elif float(value) <= 4:
+        return "3-4"
+    else:
+        return ">4"
 
 def discretizeNearness_less_than_15_min(data):
     data["nearness_less_than_15_min"] = data["nearness_less_than_15_min"].map(discretize_nearness_less_than_15_min)
@@ -569,7 +749,7 @@ def discretize_nearness_less_than_15_min(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 1:
         return "one"
     elif float(value) <= 2:
@@ -589,7 +769,7 @@ def discretize_nearness_house(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 1:
         return "one"
     elif float(value) <= 2:
@@ -674,7 +854,7 @@ def discretize_Huishoudgrootte(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 1:
         return "1"
     elif float(value) <= 2:
@@ -712,7 +892,7 @@ def discretize_friends(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 4:
@@ -730,7 +910,7 @@ def discretize_family_members(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 4:
@@ -750,7 +930,7 @@ def discretize_extra_members(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 1:
         return "1"
     else:
@@ -768,7 +948,7 @@ def discretize_emotional_support_talk_about_my_health_incl_care(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 5:
@@ -789,7 +969,7 @@ def discretize_emotional_support_decisions_incl_care(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 5:
@@ -842,7 +1022,7 @@ def discretize_dichstbijzijnde(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 1:
         return "0-1"
     else:
@@ -904,7 +1084,7 @@ def discretize_acquaintances(value):
     if value == "?":
         return value
     elif float(value) <= 0:
-        return "0"
+        return "Zero"
     elif float(value) <= 2:
         return "1-2"
     elif float(value) <= 4:

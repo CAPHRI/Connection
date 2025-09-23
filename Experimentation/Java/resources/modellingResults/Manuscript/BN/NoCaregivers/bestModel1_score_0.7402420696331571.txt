@@ -1,0 +1,156 @@
+FilteredClassifier using weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 5 -N -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 592,2-3,5-6,23,25,36-37,32,34-35,61-62,87,93,103,97,591,104,593,589,108,111,114,122,125,600,594,127,595,182,187,590,596,335,345,598,354,356,363-364,597,365-366,377,599,378,439,441,452,459-460,495,503,559,567
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.StringToNominal-Rfirst-last-weka.filters.unsupervised.attribute.Remove-V-R592,2-3,5-6,23,25,36-37,32,34-35,61-62,87,93,103,97,591,104,593,589,108,111,114,122,125,600,594,127,595,182,187,590,596,335,345,598,354,356,363-364,597,365-366,377,599,378,439,441,452,459-460,495,503,559,567'
+
+@attribute aandoeningen_bewegingsapparaat {False,True}
+@attribute acquaintances {1-2,3-4,>4,Zero}
+@attribute ADL_PERC_OVERALL_IMP {0.0-0.1,0.1-0.5,<=0.0,>0.5}
+@attribute age {18-30,31-40,41-50,51-60,61-70,71-80,>80}
+@attribute ambivalent_relationship_care numeric
+@attribute Bibliotheekdichtstbijzijnde {0-1,>1,Zero}
+@attribute BMI_cat {18-25,=25-30,=<18,>30}
+@attribute Cafedichtstbijzijnde {0-1,>1,Zero}
+@attribute Cafetariadichtstbijzijnde {0-1,>1,Zero}
+@attribute C_IPAQ_SCORE {inactive,'hepa active','minimally active'}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute C_ROKEN {'never smoker','former smoker','current smoker'}
+@attribute emotional_support_decisions_incl_care {1-2,3-5,6-9,>9,Zero}
+@attribute emotional_support_talk_about_my_health_incl_care {1-2,3-5,6-9,>9,Zero}
+@attribute family_members {1-2,3-4,5-6,>7,Zero}
+@attribute friends {1-2,3-4,>4,Zero}
+@attribute GEZONDHEID_NU_CBS {five,four,one,three,two}
+@attribute geslacht_totaal {Man,Vrouw}
+@attribute good_plus_relationship_total_incl_care {1-2,3-4,>5,Zero}
+@attribute Greenspace.r1000m_all {51-60,61-70,71-80,<=50,>80}
+@attribute hart_en_vaatziekten {False,True}
+@attribute Herfindahl {0.32879818594104265-0.39100346020761223,0.39100346020761223-0.5384615384615381,<=0.32879818594104265,>0.5384615384615381}
+@attribute Huisartspraktijkdichtstbijzijnde {0-1,>1,Zero}
+@attribute Huurcoporatie {0-10,10-20,20-40,>40}
+@attribute informational_support_incl_care {1-2,3-5,6-9,>9,zero}
+@attribute lbm {'klasse 4','klasse 3'}
+@attribute LID_CLUBS {False,True}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute luchtwegaandoeningen {False,True}
+@attribute LYING_HoursPerDay {1-2,>2,zero}
+@attribute metabole_aandoeningen {False,True}
+@attribute Museadichtstbijzijnde {0-1,>1}
+@attribute Nederlandseachtergond {0-50,eighty,hundred,ninety,seventy,sixty}
+@attribute nearness_more_than_30_min {3-4,>4,Zero,one,two}
+@attribute neurologische_aandoeningen {False,True}
+@attribute Nietwestersemigratieachtergrond {20-30,>30,Zero,ten}
+@attribute OPLEIDINGSNIVEAU {'Onderwijsniveau 3','Onderwijsniveau 2','Onderwijsniveau 1','Ik volg momenteel een opleiding'}
+@attribute overige_aandoeningen {False,True}
+@attribute phone_internet_video_call_contact {>2,one,two,zero}
+@attribute physical_contact {4-6,7-10,>10,Zero,one,three,two}
+@attribute pov_p_17 {10.1999998-10.6999998,10.6999998-11.6999998,<=10.1999998,>11.6999998}
+@attribute practical_support_incl_care {1-2,3-5,6-9,>9,Zero}
+@attribute psychische_aandoeningen {False,True}
+@attribute RELATIE {false,true}
+@attribute Restaurantdichtstbijzijnde {0-1,>1,Zero}
+@attribute sex_network_members_incl_care {1-2,3-5,>5,Zero}
+@attribute single_person_household {False,True}
+@attribute SITTING_HoursPerDay {'medium (4-6)','low (<=4)','high (>6)'}
+@attribute strain_critique_incl_care {1,2,>2,Zero}
+@attribute strain_demanding_incl_care {1,2,>2,Zero}
+@attribute strain_taxing_incl_care {1,2,>2,Zero}
+@attribute Supermarktdichtstbijzijnde {0-1,>1,Zero}
+@attribute support_do_fun_things_incl_care {1-2,3-5,6-9,>9,Zero}
+@attribute Treinstationdichtstbijzijnde {0-1,>1,Zero}
+@attribute urbanization_cat {four,one,three,two}
+@attribute Walkability.WI7c_1719_500z {20.1763401-28.5954094,28.5954094-36.9396706,<=20.1763401,>36.9396706}
+@attribute Westersemigratieachtergrond {20-30,>30,Zero,ten}
+
+@data
+
+
+Classifier Model
+Bayes Network Classifier
+not using ADTree
+#attributes=57 #classindex=16
+Network structure (nodes followed by parents)
+aandoeningen_bewegingsapparaat(2): GEZONDHEID_NU_CBS 
+acquaintances(4): GEZONDHEID_NU_CBS 
+ADL_PERC_OVERALL_IMP(4): GEZONDHEID_NU_CBS aandoeningen_bewegingsapparaat 
+age(7): GEZONDHEID_NU_CBS aandoeningen_bewegingsapparaat 
+ambivalent_relationship_care(1): 
+Bibliotheekdichtstbijzijnde(3): 
+BMI_cat(4): GEZONDHEID_NU_CBS age 
+Cafedichtstbijzijnde(3): Bibliotheekdichtstbijzijnde 
+Cafetariadichtstbijzijnde(3): Cafedichtstbijzijnde Bibliotheekdichtstbijzijnde 
+C_IPAQ_SCORE(3): GEZONDHEID_NU_CBS 
+C_PHQ9_TOTAL(5): ADL_PERC_OVERALL_IMP GEZONDHEID_NU_CBS 
+C_ROKEN(3): age 
+emotional_support_decisions_incl_care(5): acquaintances age 
+emotional_support_talk_about_my_health_incl_care(5): emotional_support_decisions_incl_care acquaintances 
+family_members(5): emotional_support_decisions_incl_care acquaintances 
+friends(4): emotional_support_decisions_incl_care acquaintances family_members 
+GEZONDHEID_NU_CBS(5): 
+geslacht_totaal(2): emotional_support_decisions_incl_care BMI_cat aandoeningen_bewegingsapparaat 
+good_plus_relationship_total_incl_care(4): emotional_support_decisions_incl_care family_members friends 
+Greenspace.r1000m_all(5): Cafetariadichtstbijzijnde Bibliotheekdichtstbijzijnde Cafedichtstbijzijnde 
+hart_en_vaatziekten(2): age GEZONDHEID_NU_CBS 
+Herfindahl(4): acquaintances friends family_members good_plus_relationship_total_incl_care 
+Huisartspraktijkdichtstbijzijnde(3): Cafetariadichtstbijzijnde Greenspace.r1000m_all Cafedichtstbijzijnde Bibliotheekdichtstbijzijnde 
+Huurcoporatie(4): Greenspace.r1000m_all 
+informational_support_incl_care(5): emotional_support_decisions_incl_care emotional_support_talk_about_my_health_incl_care good_plus_relationship_total_incl_care 
+lbm(2): Greenspace.r1000m_all Bibliotheekdichtstbijzijnde 
+LID_CLUBS(2): acquaintances geslacht_totaal C_ROKEN 
+lonelinessBinary(2): C_PHQ9_TOTAL good_plus_relationship_total_incl_care family_members 
+luchtwegaandoeningen(2): GEZONDHEID_NU_CBS ADL_PERC_OVERALL_IMP 
+LYING_HoursPerDay(3): C_PHQ9_TOTAL ADL_PERC_OVERALL_IMP 
+metabole_aandoeningen(2): BMI_cat hart_en_vaatziekten GEZONDHEID_NU_CBS 
+Museadichtstbijzijnde(2): Greenspace.r1000m_all Bibliotheekdichtstbijzijnde lbm Cafetariadichtstbijzijnde Huurcoporatie 
+Nederlandseachtergond(6): lbm Greenspace.r1000m_all Huurcoporatie Cafedichtstbijzijnde Museadichtstbijzijnde 
+nearness_more_than_30_min(5): friends acquaintances good_plus_relationship_total_incl_care 
+neurologische_aandoeningen(2): GEZONDHEID_NU_CBS geslacht_totaal aandoeningen_bewegingsapparaat 
+Nietwestersemigratieachtergrond(4): Nederlandseachtergond Huurcoporatie 
+OPLEIDINGSNIVEAU(4): age nearness_more_than_30_min 
+overige_aandoeningen(2): GEZONDHEID_NU_CBS hart_en_vaatziekten 
+phone_internet_video_call_contact(4): nearness_more_than_30_min 
+physical_contact(7): good_plus_relationship_total_incl_care family_members acquaintances phone_internet_video_call_contact 
+pov_p_17(4): Greenspace.r1000m_all Nederlandseachtergond 
+practical_support_incl_care(5): emotional_support_talk_about_my_health_incl_care informational_support_incl_care 
+psychische_aandoeningen(2): C_PHQ9_TOTAL ADL_PERC_OVERALL_IMP neurologische_aandoeningen 
+RELATIE(2): age lonelinessBinary geslacht_totaal lbm 
+Restaurantdichtstbijzijnde(3): Cafetariadichtstbijzijnde Bibliotheekdichtstbijzijnde Huisartspraktijkdichtstbijzijnde Museadichtstbijzijnde Cafedichtstbijzijnde 
+sex_network_members_incl_care(4): good_plus_relationship_total_incl_care friends acquaintances family_members 
+single_person_household(2): RELATIE age lbm 
+SITTING_HoursPerDay(3): C_IPAQ_SCORE OPLEIDINGSNIVEAU 
+strain_critique_incl_care(4): sex_network_members_incl_care lonelinessBinary 
+strain_demanding_incl_care(4): strain_critique_incl_care sex_network_members_incl_care 
+strain_taxing_incl_care(4): emotional_support_decisions_incl_care lonelinessBinary strain_demanding_incl_care 
+Supermarktdichtstbijzijnde(3): Greenspace.r1000m_all Huisartspraktijkdichtstbijzijnde Restaurantdichtstbijzijnde Bibliotheekdichtstbijzijnde Cafetariadichtstbijzijnde 
+support_do_fun_things_incl_care(5): emotional_support_decisions_incl_care sex_network_members_incl_care emotional_support_talk_about_my_health_incl_care good_plus_relationship_total_incl_care 
+Treinstationdichtstbijzijnde(3): Museadichtstbijzijnde Bibliotheekdichtstbijzijnde Greenspace.r1000m_all pov_p_17 Restaurantdichtstbijzijnde 
+urbanization_cat(4): Greenspace.r1000m_all Nederlandseachtergond Bibliotheekdichtstbijzijnde Restaurantdichtstbijzijnde Treinstationdichtstbijzijnde 
+Walkability.WI7c_1719_500z(4): urbanization_cat Greenspace.r1000m_all Treinstationdichtstbijzijnde Museadichtstbijzijnde Bibliotheekdichtstbijzijnde 
+Westersemigratieachtergrond(4): Nederlandseachtergond Nietwestersemigratieachtergrond 
+LogScore Bayes: -394030.65594001254
+LogScore BDeu: -499390.5964889132
+LogScore MDL: -473266.050988533
+LogScore ENTROPY: -401036.97567309043
+LogScore AIC: -416808.97567309026
+
+
+Max parents: 0 initNaive: false DAG: false
+GEZONDHEID_NU_CBS
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,000    0,000    0,000      0,000    0,000      -0,000   0,853     0,042     five
+                 0,186    0,007    0,422      0,186    0,258      0,267    0,925     0,290     four
+                 0,349    0,074    0,549      0,349    0,426      0,330    0,808     0,478     one
+                 0,413    0,088    0,549      0,413    0,471      0,364    0,822     0,501     three
+                 0,807    0,571    0,643      0,807    0,715      0,256    0,676     0,698     two
+Weighted Avg.    0,613    0,354    0,597      0,613    0,592      0,293    0,740     0,600     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+    0    5    0    9    2 |    a = five
+    1   49    0  152   62 |    b = four
+    0    2  678   24 1240 |    c = one
+    0   44   20  806 1082 |    d = three
+    0   16  538  476 4295 |    e = two

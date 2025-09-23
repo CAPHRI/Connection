@@ -2,9 +2,13 @@ import bayes.results.CleanResult;
 import bayes.results.CombinedResult;
 import weka.WekaClassifier;
 import weka.classifiers.Evaluation;
+import weka.classifiers.LinRegClassifier;
+import weka.classifiers.LogRegClassifier;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
+import weka.filters.Filter;
+import weka.filters.unsupervised.attribute.StringToNominal;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -36,6 +40,16 @@ public class TrainModel {
     public CombinedResult trainModel(List<String> toBeKept)
             throws Exception {
         Instances data = getInstances(arff, target);
+
+        if(classifier instanceof LogRegClassifier || classifier instanceof LinRegClassifier){
+            for(int i = 0; i < data.numAttributes(); i++){
+                for(int j = 0; j < data.numInstances(); j++){
+                    if(data.get(j).isMissing(i)){
+                        toBeKept.remove(data.attribute(i).name());
+                    }
+                }
+            }
+        }
 
         classifier.setFiltered(createFilteredClassifier(classifier.getClassifier(), data, toBeKept));
         for (int i = 0; i < data.numAttributes(); i++) {
@@ -80,8 +94,17 @@ public class TrainModel {
 
     }
 
-    private Instances getInstances(String arff, String target) throws IOException {
+    private Instances getInstances(String arff, String target) throws Exception {
         Instances data = readData(target, arff);
+        StringToNominal filter = new StringToNominal();
+
+        // Apply to all string attributes (e.g., 1-last)
+        filter.setAttributeRange("first-last");
+        filter.setInputFormat(data);
+
+        // Apply filter
+        data = Filter.useFilter(data, filter);
+
         ArffSaver s = new ArffSaver();
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("resources/results/temp.arff"));

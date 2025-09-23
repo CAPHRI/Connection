@@ -1,0 +1,371 @@
+FilteredClassifier using weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4 on data filtered through weka.filters.unsupervised.attribute.Remove -V -R 592,2-3,5-6,25,38,32,34-35,61-62,87,93,103,97,591,593,589,114,125,600,594,127,595,328,590,596,345,598,354,356,364,597,365,377,599,378,439,441,452,460,503,47
+
+Filtered Header
+@relation 'BL1_FU1_cleaned-weka.filters.unsupervised.attribute.StringToNominal-Rfirst-last-weka.filters.unsupervised.attribute.Remove-V-R592,2-3,5-6,25,38,32,34-35,61-62,87,93,103,97,591,593,589,114,125,600,594,127,595,328,590,596,345,598,354,356,364,597,365,377,599,378,439,441,452,460,503,47'
+
+@attribute aandoeningen_bewegingsapparaat {False,True}
+@attribute acquaintances {1-2,3-4,>4,Zero}
+@attribute ADL_PERC_OVERALL_IMP {0.0-0.1,0.1-0.5,<=0.0,>0.5}
+@attribute age {18-30,31-40,41-50,51-60,61-70,71-80,>80}
+@attribute ambivalent_relationship_care numeric
+@attribute BMI_cat {18-25,=25-30,=<18,>30}
+@attribute caregivers {>1,one,zero}
+@attribute C_IPAQ_SCORE {inactive,'hepa active','minimally active'}
+@attribute C_PHQ9_TOTAL {'Geen tot minimale depressie','Milde depressie','Matige depressie','Matig ernstige depressie','Ernstige depressie'}
+@attribute C_ROKEN {'never smoker','former smoker','current smoker'}
+@attribute emotional_support_decisions_incl_care {1-2,3-5,6-9,>9,Zero}
+@attribute emotional_support_talk_about_my_health_incl_care {1-2,3-5,6-9,>9,Zero}
+@attribute family_members {1-2,3-4,5-6,>7,Zero}
+@attribute friends {1-2,3-4,>4,Zero}
+@attribute GEZONDHEID_NU_CBS {five,four,one,three,two}
+@attribute geslacht_totaal {Man,Vrouw}
+@attribute good_plus_relationship_total_incl_care {1-2,3-4,>5,Zero}
+@attribute hart_en_vaatziekten {False,True}
+@attribute Herfindahl {0.32879818594104265-0.39100346020761223,0.39100346020761223-0.5384615384615381,<=0.32879818594104265,>0.5384615384615381}
+@attribute informational_support_incl_care {1-2,3-5,6-9,>9,zero}
+@attribute LID_CLUBS {False,True}
+@attribute lonelinessBinary {'not lonely',lonely}
+@attribute luchtwegaandoeningen {False,True}
+@attribute LYING_HoursPerDay {1-2,>2,zero}
+@attribute metabole_aandoeningen {False,True}
+@attribute network_size_care {1-2,13-20,3-5,6-8,9-12,>21}
+@attribute nearness_more_than_30_min {3-4,>4,Zero,one,two}
+@attribute neurologische_aandoeningen {False,True}
+@attribute OPLEIDINGSNIVEAU {'Onderwijsniveau 3','Onderwijsniveau 2','Onderwijsniveau 1','Ik volg momenteel een opleiding'}
+@attribute overige_aandoeningen {False,True}
+@attribute phone_internet_video_call_contact {>2,one,two,zero}
+@attribute physical_contact {4-6,7-10,>10,Zero,one,three,two}
+@attribute practical_support_incl_care {1-2,3-5,6-9,>9,Zero}
+@attribute psychische_aandoeningen {False,True}
+@attribute RELATIE {false,true}
+@attribute sex_network_members_incl_care {1-2,3-5,>5,Zero}
+@attribute single_person_household {False,True}
+@attribute SITTING_HoursPerDay {'medium (4-6)','low (<=4)','high (>6)'}
+@attribute strain_critique_incl_care {1,2,>2,Zero}
+@attribute strain_demanding_incl_care {1,2,>2,Zero}
+@attribute strain_taxing_incl_care {1,2,>2,Zero}
+@attribute support_do_fun_things_incl_care {1-2,3-5,6-9,>9,Zero}
+@attribute urbanization_cat {four,one,three,two}
+@attribute density {False,True}
+
+@data
+
+
+Classifier Model
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                                         Class
+Variable                                                                  five                   four                    one                  three
+===================================================================================================================================================
+aandoeningen_bewegingsapparaat=True                                     -2.301                 0.9318                -1.0629                 0.6232
+acquaintances=1-2                                                      -2.2099                 0.0804                 0.0311                -0.0712
+acquaintances=3-4                                                     -23.6906                -0.5556                -0.1042                -0.0861
+acquaintances=>4                                                        -0.313                -0.3447                -0.0852                -0.0414
+acquaintances=Zero                                                     15.8498                 0.4091                 0.0718                 0.1333
+ADL_PERC_OVERALL_IMP=0.0-0.1                                          -12.3717                -0.0779                -0.4036                -0.3745
+ADL_PERC_OVERALL_IMP=0.1-0.5                                           -1.3668                 0.4243                -0.5359                 0.4501
+ADL_PERC_OVERALL_IMP=<=0.0                                              2.0143                -1.4495                 0.5273                -0.6647
+ADL_PERC_OVERALL_IMP=>0.5                                               4.3847                 1.7082                -0.0603                 0.7116
+age=18-30                                                             -10.9474                -0.4857                 0.2403                -0.3436
+age=31-40                                                               2.4508                -0.2517                 0.0997                -0.3038
+age=41-50                                                              -0.3852                 0.2973                 0.0245                -0.0656
+age=51-60                                                                4.788                -0.0333                 0.0039                 0.0157
+age=61-70                                                              -5.8736                 0.1109                -0.1261                 0.2287
+age=71-80                                                               8.6256                 0.1651                -0.1437                 0.1775
+age=>80                                                                 9.9999                 0.0996                 0.0435                 0.6032
+ambivalent_relationship_care                                            0.0572                -0.0407                -0.0395                 0.0079
+BMI_cat=18-25                                                          -0.9638                -0.2586                 0.4378                -0.2502
+BMI_cat==25-30                                                          0.0542                 0.0005                -0.0243                 0.0156
+BMI_cat==<18                                                           24.2379                 1.8116                 0.7546                 0.6772
+BMI_cat=>30                                                             0.3497                 0.2998                -0.6255                 0.3112
+caregivers=>1                                                            10.58                 0.9971                -0.0678                 0.3252
+caregivers=one                                                           2.834                 0.0265                -0.1171                 0.0545
+caregivers=zero                                                        -6.8852                 -0.469                 0.1181                -0.1872
+C_IPAQ_SCORE=inactive                                                  10.4431                 0.5694                -0.3004                 0.2175
+C_IPAQ_SCORE=hepa active                                                1.1114                -0.3642                 0.2334                -0.1346
+C_IPAQ_SCORE=minimally active                                          -7.7006                 0.0998                -0.1033                 0.0327
+C_PHQ9_TOTAL=Geen tot minimale depressie                               -4.3332                -1.0941                 0.2575                -0.4881
+C_PHQ9_TOTAL=Milde depressie                                           -0.6241                 0.4576                -0.2886                  0.329
+C_PHQ9_TOTAL=Matige depressie                                           9.7736                  1.475                 0.0414                 0.5589
+C_PHQ9_TOTAL=Matig ernstige depressie                                   9.2382                 1.6198                 0.1396                 0.3704
+C_PHQ9_TOTAL=Ernstige depressie                                        19.7156                 2.9829                -1.5813                 0.7347
+C_ROKEN=never smoker                                                  -10.1793                -0.0839                 0.1824                -0.0404
+C_ROKEN=former smoker                                                   7.4286                 0.0095                -0.0365                -0.0485
+C_ROKEN=current smoker                                                   8.211                 0.1891                -0.3741                 0.2155
+emotional_support_decisions_incl_care=1-2                               3.1137                 0.5609                -0.0103                 0.1406
+emotional_support_decisions_incl_care=3-5                               -2.072                -0.1388                -0.0528                 0.0028
+emotional_support_decisions_incl_care=6-9                               2.3425                -0.3436                -0.0397                -0.1148
+emotional_support_decisions_incl_care=>9                                0.1249                -0.1558                 0.1063                -0.1072
+emotional_support_decisions_incl_care=Zero                             -7.2868                  0.395                 0.0128                 0.2318
+emotional_support_talk_about_my_health_incl_care=1-2                   -1.6666                -0.5554                 0.0373                 -0.046
+emotional_support_talk_about_my_health_incl_care=3-5                   -4.7706                 0.2194                 -0.006                 0.1044
+emotional_support_talk_about_my_health_incl_care=6-9                    4.5444                  0.522                  0.064                 0.1306
+emotional_support_talk_about_my_health_incl_care=>9                    16.6275                  0.422                -0.2079                 0.2396
+emotional_support_talk_about_my_health_incl_care=Zero                 -11.0874                -0.4797                 0.0754                -0.4422
+family_members=1-2                                                      0.3301                  0.677                 0.0274                 0.0066
+family_members=3-4                                                     -0.5753                -0.1612                 0.0022                -0.1038
+family_members=5-6                                                      2.0681                -0.1955                 0.0161                -0.0192
+family_members=>7                                                      -0.5141                -0.5581                 -0.092                 0.1221
+family_members=Zero                                                   -10.3921                 1.1585                  0.283                 0.4109
+friends=1-2                                                             8.2249                 -0.186                -0.0041                -0.0824
+friends=3-4                                                            -8.4998                 0.1693                -0.0004                 0.0222
+friends=>4                                                             -4.3127                -0.2229                 0.0004                -0.0052
+friends=Zero                                                            3.7915                 0.3161                 0.0057                 0.0935
+geslacht_totaal=Vrouw                                                  -0.6115                -0.2615                -0.0705                  0.006
+good_plus_relationship_total_incl_care=1-2                            -35.4964                 0.1496                -0.2119                 0.1536
+good_plus_relationship_total_incl_care=3-4                              5.1378                  0.092                 0.1294                 0.0862
+good_plus_relationship_total_incl_care=>5                              14.2681                -0.1508                -0.0168                -0.1588
+good_plus_relationship_total_incl_care=Zero                           -47.3591                 0.5864                 0.6472                 0.8422
+hart_en_vaatziekten=True                                               -1.6289                  0.647                -0.9559                 0.5517
+Herfindahl=0.32879818594104265-0.39100346020761223                      1.0671                -0.1169                -0.0452                 0.0654
+Herfindahl=0.39100346020761223-0.5384615384615381                      -6.3089                 0.1406                -0.0691                  0.069
+Herfindahl=<=0.32879818594104265                                        0.2459                -0.1881                 0.0693                  0.028
+Herfindahl=>0.5384615384615381                                          5.0055                 0.1647                 0.0452                -0.1627
+informational_support_incl_care=1-2                                    10.5046                 0.0258                 0.0127                 0.0754
+informational_support_incl_care=3-5                                     0.5155                 0.1236                 0.0184                 0.0522
+informational_support_incl_care=6-9                                    -5.2278                -0.3317                 0.0653                 0.0159
+informational_support_incl_care=>9                                     -7.5026                -0.1586                -0.0842                -0.2375
+informational_support_incl_care=zero                                   -1.4919                 0.5454                -0.0669                 0.0539
+LID_CLUBS=True                                                         -4.0398                -0.2116                 0.0759                -0.2557
+lonelinessBinary=lonely                                                -6.8792                 0.1194                -0.3552                 0.1692
+luchtwegaandoeningen=True                                              14.3721                  1.292                -0.9325                  0.674
+LYING_HoursPerDay=1-2                                                  -5.9738                -0.1605                -0.0909                 0.0639
+LYING_HoursPerDay=>2                                                    1.7319                  0.402                 0.0036                 0.0973
+LYING_HoursPerDay=zero                                                  3.9555                -0.1407                  0.076                -0.1227
+metabole_aandoeningen=True                                              9.5392                 1.3903                -1.2519                 0.7032
+network_size_care=1-2                                                  13.6031                -1.0699                  0.007                -0.2461
+network_size_care=13-20                                                11.9738                 0.3484                 0.1903                -0.1366
+network_size_care=3-5                                                 -21.2979                -0.2295                -0.1089                  0.132
+network_size_care=6-8                                                  -5.2704                -0.0931                -0.0311                 0.1221
+network_size_care=9-12                                                 -1.1556                 0.1144                -0.1639                -0.0064
+network_size_care=>21                                                  19.1867                 0.5914                 0.2541                 0.0092
+nearness_more_than_30_min=3-4                                          -8.3974                -0.2242                 0.0604                -0.1339
+nearness_more_than_30_min=>4                                           -4.3426                  0.293                 0.3205                 0.0645
+nearness_more_than_30_min=Zero                                          12.104                 0.1702                -0.1032                 0.0071
+nearness_more_than_30_min=one                                         -17.2091                 -0.147                -0.1416                -0.0004
+nearness_more_than_30_min=two                                           7.7494                -0.2381                 0.0976                 0.0577
+neurologische_aandoeningen=True                                         5.6708                 1.1737                -0.8368                 0.2768
+OPLEIDINGSNIVEAU=Onderwijsniveau 3                                     -0.7847                -0.0857                 0.1281                -0.1293
+OPLEIDINGSNIVEAU=Onderwijsniveau 2                                      -0.508                 -0.025                 0.0026                 0.0453
+OPLEIDINGSNIVEAU=Onderwijsniveau 1                                     -3.2372                 0.0929                -0.1728                 0.1178
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding                        41.088                 0.5255                 -0.133                 0.0734
+overige_aandoeningen=True                                               9.5699                 1.1369                -0.9138                 0.6943
+phone_internet_video_call_contact=>2                                   10.4231                 0.5736                 -0.061                -0.4408
+phone_internet_video_call_contact=one                                 -18.3388                -0.3911                 0.1308                 0.0261
+phone_internet_video_call_contact=two                                  18.2602                 0.2995                 -0.192                 0.0127
+phone_internet_video_call_contact=zero                                  2.3357                 0.0357                 0.0043                 0.0396
+physical_contact=4-6                                                  -14.8282                -0.0899                 0.0551                  0.083
+physical_contact=7-10                                                  -1.8716                 0.4672                 0.0572                 0.0211
+physical_contact=>10                                                      7.66                -0.7449                 0.0795                -0.0642
+physical_contact=Zero                                                  -6.0986                -0.3711                 0.0139                -0.0271
+physical_contact=one                                                    8.2883                -0.0666                -0.0128                  0.007
+physical_contact=three                                                  9.4948                 0.4428                -0.1067                 0.0992
+physical_contact=two                                                    9.6303                 0.3355                -0.1394                -0.1859
+practical_support_incl_care=1-2                                         2.5935                 -0.022                 -0.009                -0.0915
+practical_support_incl_care=3-5                                        -6.8137                 0.2074                -0.0767                 0.0868
+practical_support_incl_care=6-9                                        -4.5117                 0.0588                  -0.12                 0.2966
+practical_support_incl_care=>9                                        -18.5711                -0.7687                 0.3967                 0.0123
+practical_support_incl_care=Zero                                        5.9496                -0.1246                 0.0883                -0.0509
+psychische_aandoeningen=True                                           -9.9135                  0.179                -0.6996                 0.2053
+RELATIE=true                                                           -15.131                -0.2603                 0.0555                -0.0116
+sex_network_members_incl_care=1-2                                        7.244                -0.4706                 0.0416                -0.1067
+sex_network_members_incl_care=3-5                                      -5.3192                -0.0421                -0.0032                 0.0075
+sex_network_members_incl_care=>5                                       -2.8709                 0.2525                -0.0201                 0.0549
+sex_network_members_incl_care=Zero                                     12.2822                 0.2378                -0.0069                 0.0058
+single_person_household=True                                            2.8783                -0.1485                 0.1083                -0.1829
+SITTING_HoursPerDay=medium (4-6)                                        2.6942                -0.1302                -0.0036                -0.0552
+SITTING_HoursPerDay=low (<=4)                                           2.0615                -0.2796                -0.1022                -0.0096
+SITTING_HoursPerDay=high (>6)                                          -3.7231                 0.3128                 0.0784                 0.0522
+strain_critique_incl_care=1                                           -12.2813                -0.1004                  0.047                 0.1874
+strain_critique_incl_care=2                                             0.4258                 0.0863                -0.1341                 0.0373
+strain_critique_incl_care=>2                                           -4.5755                -0.4677                 0.2049                 0.0103
+strain_critique_incl_care=Zero                                          9.0028                 0.1404                -0.0408                -0.1358
+strain_demanding_incl_care=1                                             2.959                 0.0041                 0.0562                -0.0298
+strain_demanding_incl_care=2                                           15.8152                 0.0242                 0.2549                  0.275
+strain_demanding_incl_care=>2                                         -23.1997                -0.7024                -0.0476                -0.1293
+strain_demanding_incl_care=Zero                                        -3.9136                 0.0448                -0.0942                -0.0267
+strain_taxing_incl_care=1                                               0.5392                 0.3373                 0.0523                 0.2227
+strain_taxing_incl_care=2                                              14.4151                -0.2835                 0.1046                -0.2291
+strain_taxing_incl_care=>2                                             14.1763                -0.3891                -0.2384                -0.2088
+strain_taxing_incl_care=Zero                                           -8.7648                -0.0044                 0.0067                -0.0043
+support_do_fun_things_incl_care=1-2                                    -2.9576                 0.0826                -0.0237                  0.213
+support_do_fun_things_incl_care=3-5                                     4.7525                -0.1125                -0.0039                -0.0883
+support_do_fun_things_incl_care=6-9                                     2.0708                -0.2914                 0.0763                -0.0041
+support_do_fun_things_incl_care=>9                                    -12.2648                 0.2067                -0.0461                -0.1537
+support_do_fun_things_incl_care=Zero                                   16.0922                 0.3048                -0.0128                 0.1344
+urbanization_cat=four                                                   1.1403                 0.1444                  0.012                 0.1207
+urbanization_cat=one                                                    2.8475                 0.0941                 0.0825                -0.0221
+urbanization_cat=three                                                 -5.4063                -0.2152                -0.1376                  0.008
+urbanization_cat=two                                                    0.9692                -0.0173                 0.0251                -0.0787
+density=True                                                           -9.5793                -0.1526                  0.075                -0.1261
+Intercept                                                             -72.7271                -5.2136                -1.3408                -1.1879
+
+
+Odds Ratios...
+                                                                         Class
+Variable                                                                  five                   four                    one                  three
+===================================================================================================================================================
+aandoeningen_bewegingsapparaat=True                                     0.1002                  2.539                 0.3455                 1.8649
+acquaintances=1-2                                                       0.1097                 1.0838                 1.0316                 0.9313
+acquaintances=3-4                                                            0                 0.5737                 0.9011                 0.9175
+acquaintances=>4                                                        0.7313                 0.7084                 0.9184                 0.9594
+acquaintances=Zero                                                7646466.4825                 1.5054                 1.0744                 1.1426
+ADL_PERC_OVERALL_IMP=0.0-0.1                                                 0                  0.925                 0.6679                 0.6876
+ADL_PERC_OVERALL_IMP=0.1-0.5                                            0.2549                 1.5285                 0.5852                 1.5685
+ADL_PERC_OVERALL_IMP=<=0.0                                              7.4954                 0.2347                 1.6943                 0.5144
+ADL_PERC_OVERALL_IMP=>0.5                                              80.2157                 5.5188                 0.9415                 2.0373
+age=18-30                                                                    0                 0.6153                 1.2716                 0.7092
+age=31-40                                                              11.5977                 0.7775                 1.1048                  0.738
+age=41-50                                                               0.6803                 1.3462                 1.0248                 0.9365
+age=51-60                                                             120.0627                 0.9672                 1.0039                 1.0158
+age=61-70                                                               0.0028                 1.1173                 0.8815                  1.257
+age=71-80                                                            5572.2807                 1.1795                 0.8661                 1.1942
+age=>80                                                             22023.6719                 1.1048                 1.0444                 1.8279
+ambivalent_relationship_care                                            1.0588                 0.9601                 0.9613                  1.008
+BMI_cat=18-25                                                           0.3814                 0.7721                 1.5492                 0.7786
+BMI_cat==25-30                                                          1.0557                 1.0005                  0.976                 1.0157
+BMI_cat==<18                                             3.3602647878732834E10                 6.1204                 2.1267                 1.9684
+BMI_cat=>30                                                             1.4186                 1.3497                  0.535                 1.3651
+caregivers=>1                                                       39338.7591                 2.7104                 0.9345                 1.3843
+caregivers=one                                                         17.0133                 1.0269                 0.8895                  1.056
+caregivers=zero                                                          0.001                 0.6256                 1.1254                 0.8292
+C_IPAQ_SCORE=inactive                                               34307.4086                 1.7673                 0.7406                  1.243
+C_IPAQ_SCORE=hepa active                                                3.0386                 0.6948                 1.2629                  0.874
+C_IPAQ_SCORE=minimally active                                           0.0005                  1.105                 0.9019                 1.0332
+C_PHQ9_TOTAL=Geen tot minimale depressie                                0.0131                 0.3349                 1.2937                 0.6138
+C_PHQ9_TOTAL=Milde depressie                                            0.5357                 1.5803                 0.7493                 1.3895
+C_PHQ9_TOTAL=Matige depressie                                       17564.0727                 4.3709                 1.0423                 1.7488
+C_PHQ9_TOTAL=Matig ernstige depressie                               10282.6729                 5.0521                 1.1498                 1.4483
+C_PHQ9_TOTAL=Ernstige depressie                                 365070915.7579                19.7453                 0.2057                 2.0849
+C_ROKEN=never smoker                                                         0                 0.9196                 1.2001                 0.9604
+C_ROKEN=former smoker                                                1683.4125                 1.0095                 0.9642                 0.9527
+C_ROKEN=current smoker                                                3681.224                 1.2081                 0.6879                 1.2405
+emotional_support_decisions_incl_care=1-2                              22.5043                 1.7523                 0.9898                  1.151
+emotional_support_decisions_incl_care=3-5                               0.1259                 0.8704                 0.9485                 1.0028
+emotional_support_decisions_incl_care=6-9                              10.4077                 0.7092                 0.9611                 0.8916
+emotional_support_decisions_incl_care=>9                                 1.133                 0.8558                 1.1122                 0.8983
+emotional_support_decisions_incl_care=Zero                              0.0007                 1.4844                 1.0129                 1.2608
+emotional_support_talk_about_my_health_incl_care=1-2                    0.1889                 0.5739                  1.038                 0.9551
+emotional_support_talk_about_my_health_incl_care=3-5                    0.0085                 1.2453                 0.9941                   1.11
+emotional_support_talk_about_my_health_incl_care=6-9                   94.1061                 1.6853                 1.0661                 1.1395
+emotional_support_talk_about_my_health_incl_care=>9               16643695.145                  1.525                 0.8123                 1.2707
+emotional_support_talk_about_my_health_incl_care=Zero                        0                  0.619                 1.0784                 0.6426
+family_members=1-2                                                      1.3912                  1.968                 1.0278                 1.0066
+family_members=3-4                                                      0.5625                 0.8511                 1.0022                 0.9014
+family_members=5-6                                                      7.9096                 0.8225                 1.0162                  0.981
+family_members=>7                                                        0.598                 0.5723                 0.9121                 1.1299
+family_members=Zero                                                          0                 3.1853                  1.327                 1.5081
+friends=1-2                                                          3732.7734                 0.8303                  0.996                 0.9209
+friends=3-4                                                             0.0002                 1.1845                 0.9996                 1.0225
+friends=>4                                                              0.0134                 0.8002                 1.0004                 0.9948
+friends=Zero                                                           44.3225                 1.3718                 1.0057                  1.098
+geslacht_totaal=Vrouw                                                   0.5426                 0.7699                 0.9319                  1.006
+good_plus_relationship_total_incl_care=1-2                                   0                 1.1613                  0.809                  1.166
+good_plus_relationship_total_incl_care=3-4                             170.349                 1.0964                 1.1381                 1.0901
+good_plus_relationship_total_incl_care=>5                         1572328.2551                   0.86                 0.9834                 0.8532
+good_plus_relationship_total_incl_care=Zero                                  0                 1.7974                 1.9101                 2.3214
+hart_en_vaatziekten=True                                                0.1961                 1.9098                 0.3845                 1.7362
+Herfindahl=0.32879818594104265-0.39100346020761223                      2.9069                 0.8897                 0.9558                 1.0676
+Herfindahl=0.39100346020761223-0.5384615384615381                       0.0018                  1.151                 0.9332                 1.0714
+Herfindahl=<=0.32879818594104265                                        1.2788                 0.8286                 1.0717                 1.0284
+Herfindahl=>0.5384615384615381                                         149.233                  1.179                 1.0462                 0.8498
+informational_support_incl_care=1-2                                  36483.517                 1.0261                 1.0128                 1.0783
+informational_support_incl_care=3-5                                     1.6744                 1.1316                 1.0186                 1.0536
+informational_support_incl_care=6-9                                     0.0054                 0.7177                 1.0674                  1.016
+informational_support_incl_care=>9                                      0.0006                 0.8533                 0.9193                 0.7886
+informational_support_incl_care=zero                                    0.2249                 1.7254                 0.9353                 1.0554
+LID_CLUBS=True                                                          0.0176                 0.8093                 1.0788                 0.7744
+lonelinessBinary=lonely                                                  0.001                 1.1268                  0.701                 1.1844
+luchtwegaandoeningen=True                                         1744679.2394                 3.6401                 0.3936                  1.962
+LYING_HoursPerDay=1-2                                                   0.0025                 0.8517                 0.9131                 1.0659
+LYING_HoursPerDay=>2                                                    5.6514                 1.4948                 1.0036                 1.1022
+LYING_HoursPerDay=zero                                                 52.2202                 0.8688                  1.079                 0.8845
+metabole_aandoeningen=True                                          13893.4893                  4.016                  0.286                 2.0203
+network_size_care=1-2                                              808624.9746                  0.343                  1.007                 0.7818
+network_size_care=13-20                                            158538.5853                 1.4167                 1.2097                 0.8723
+network_size_care=3-5                                                        0                 0.7949                 0.8968                 1.1411
+network_size_care=6-8                                                   0.0051                 0.9111                 0.9693                 1.1298
+network_size_care=9-12                                                  0.3149                 1.1212                 0.8488                 0.9937
+network_size_care=>21                                           215125234.5416                 1.8065                 1.2893                 1.0092
+nearness_more_than_30_min=3-4                                           0.0002                 0.7992                 1.0622                 0.8747
+nearness_more_than_30_min=>4                                             0.013                 1.3404                 1.3779                 1.0667
+nearness_more_than_30_min=Zero                                     180598.7229                 1.1855                  0.902                 1.0071
+nearness_more_than_30_min=one                                                0                 0.8633                  0.868                 0.9996
+nearness_more_than_30_min=two                                        2320.0901                 0.7881                 1.1025                 1.0594
+neurologische_aandoeningen=True                                       290.2721                 3.2339                 0.4331                 1.3189
+OPLEIDINGSNIVEAU=Onderwijsniveau 3                                      0.4563                 0.9179                 1.1367                 0.8787
+OPLEIDINGSNIVEAU=Onderwijsniveau 2                                      0.6017                 0.9753                 1.0027                 1.0463
+OPLEIDINGSNIVEAU=Onderwijsniveau 1                                      0.0393                 1.0974                 0.8413                  1.125
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding            6.9867399682442E17                 1.6913                 0.8755                 1.0762
+overige_aandoeningen=True                                           14326.6519                  3.117                  0.401                 2.0023
+phone_internet_video_call_contact=>2                                33627.0917                 1.7746                 0.9409                 0.6435
+phone_internet_video_call_contact=one                                        0                 0.6763                 1.1398                 1.0265
+phone_internet_video_call_contact=two                            85170082.9268                 1.3492                 0.8253                 1.0128
+phone_internet_video_call_contact=zero                                 10.3367                 1.0364                 1.0043                 1.0404
+physical_contact=4-6                                                         0                 0.9141                 1.0566                 1.0865
+physical_contact=7-10                                                   0.1539                 1.5955                 1.0589                 1.0213
+physical_contact=>10                                                 2121.7639                 0.4748                 1.0827                 0.9379
+physical_contact=Zero                                                   0.0022                   0.69                  1.014                 0.9733
+physical_contact=one                                                 3977.1729                 0.9355                 0.9873                 1.0071
+physical_contact=three                                              13291.0421                  1.557                 0.8988                 1.1043
+physical_contact=two                                                15219.7413                 1.3986                 0.8698                 0.8303
+practical_support_incl_care=1-2                                        13.3762                 0.9783                  0.991                 0.9126
+practical_support_incl_care=3-5                                         0.0011                 1.2305                 0.9262                 1.0907
+practical_support_incl_care=6-9                                          0.011                 1.0605                 0.8869                 1.3453
+practical_support_incl_care=>9                                               0                 0.4636                 1.4869                 1.0124
+practical_support_incl_care=Zero                                      383.6049                 0.8828                 1.0923                 0.9504
+psychische_aandoeningen=True                                                 0                 1.1961                 0.4968                 1.2278
+RELATIE=true                                                                 0                 0.7708                  1.057                 0.9885
+sex_network_members_incl_care=1-2                                     1399.696                 0.6246                 1.0424                 0.8988
+sex_network_members_incl_care=3-5                                       0.0049                 0.9587                 0.9968                 1.0076
+sex_network_members_incl_care=>5                                        0.0566                 1.2873                 0.9801                 1.0565
+sex_network_members_incl_care=Zero                                 215819.5694                 1.2684                 0.9931                 1.0059
+single_person_household=True                                            17.784                  0.862                 1.1144                 0.8328
+SITTING_HoursPerDay=medium (4-6)                                       14.7941                 0.8779                 0.9965                 0.9463
+SITTING_HoursPerDay=low (<=4)                                            7.858                 0.7561                 0.9028                 0.9904
+SITTING_HoursPerDay=high (>6)                                           0.0242                 1.3672                 1.0815                 1.0536
+strain_critique_incl_care=1                                                  0                 0.9045                 1.0481                 1.2061
+strain_critique_incl_care=2                                             1.5308                 1.0902                 0.8745                  1.038
+strain_critique_incl_care=>2                                            0.0103                 0.6264                 1.2274                 1.0104
+strain_critique_incl_care=Zero                                       8125.4378                 1.1508                   0.96                  0.873
+strain_demanding_incl_care=1                                           19.2784                 1.0041                 1.0578                 0.9707
+strain_demanding_incl_care=2                                      7386512.9041                 1.0244                 1.2903                 1.3165
+strain_demanding_incl_care=>2                                                0                 0.4954                 0.9535                 0.8788
+strain_demanding_incl_care=Zero                                           0.02                 1.0458                 0.9101                 0.9736
+strain_taxing_incl_care=1                                               1.7147                 1.4012                 1.0536                 1.2494
+strain_taxing_incl_care=2                                         1821361.3953                 0.7532                 1.1103                 0.7953
+strain_taxing_incl_care=>2                                        1434450.9529                 0.6777                 0.7879                 0.8116
+strain_taxing_incl_care=Zero                                            0.0002                 0.9956                 1.0067                 0.9957
+support_do_fun_things_incl_care=1-2                                     0.0519                 1.0861                 0.9766                 1.2373
+support_do_fun_things_incl_care=3-5                                     115.87                 0.8936                 0.9961                 0.9154
+support_do_fun_things_incl_care=6-9                                      7.931                 0.7472                 1.0793                 0.9959
+support_do_fun_things_incl_care=>9                                           0                 1.2297                 0.9549                 0.8575
+support_do_fun_things_incl_care=Zero                              9744592.7015                 1.3563                 0.9873                 1.1438
+urbanization_cat=four                                                   3.1276                 1.1554                  1.012                 1.1282
+urbanization_cat=one                                                   17.2438                 1.0986                  1.086                 0.9782
+urbanization_cat=three                                                  0.0045                 0.8064                 0.8714                 1.0081
+urbanization_cat=two                                                    2.6358                 0.9829                 1.0254                 0.9243
+density=True                                                            0.0001                 0.8585                 1.0779                 0.8816
+
+
+Max parents: 0 initNaive: false DAG: false
+GEZONDHEID_NU_CBS
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,063    0,004    0,025      0,063    0,036      0,037    0,715     0,014     five
+                 0,189    0,009    0,385      0,189    0,254      0,256    0,915     0,292     four
+                 0,331    0,063    0,573      0,331    0,419      0,334    0,815     0,505     one
+                 0,427    0,087    0,558      0,427    0,484      0,377    0,828     0,523     three
+                 0,818    0,565    0,649      0,818    0,724      0,276    0,683     0,703     two
+Weighted Avg.    0,619    0,348    0,606      0,619    0,598      0,308    0,746     0,613     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+    1    7    0    5    3 |    a = five
+    6   50    1  165   42 |    b = four
+    4    3  643   18 1276 |    c = one
+   14   52   15  834 1037 |    d = three
+   15   18  463  472 4357 |    e = two
