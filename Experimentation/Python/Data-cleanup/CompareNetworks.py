@@ -1,14 +1,13 @@
-f = open("baseline.txt")
+f = open("resources/networks/baseline.txt")
 baseline = f.read()
 
-f = open("updated.txt")
+f = open("resources/networks/NoDemographicsNoLBM.txt")
 updated = f.read()
 
 updated = updated.split("\n")
 baseline = baseline.split("\n")
 removed = list( set(baseline)-set(updated))
 
-paths = removed
 count = 1
 done = False
 # include reverted relations so inverted V's are easy to find by just looking for V's
@@ -20,17 +19,18 @@ for i in removed:
 removed.extend(temp)
 removed = list(set(removed))
 
+paths = []
+candidates = []
+candidates.extend(removed)
 while not done:
     done = True
     temp = []
-    count2 = 0
-    for i in paths:
-        count2+=1
+    for i in removed:
         i_list = i.replace(" ", "").split("->")
         if len(i_list) == 2:
             start = i_list[0]
             end = i_list[1]
-            for j in paths:
+            for j in candidates:
                 path = j.replace(" ", "").split("->")
                 if len(path)-1 == count:
                     # this covers a direct mediation
@@ -49,8 +49,28 @@ while not done:
                                     temp.append( j + "->" + start)
                                     done = False
 
-
-    paths.extend(temp)
+    # de-duplicate paths
+    #  e.g. a -> b -> c == a -> e -> c
+    #  For the sake of removed paths we do not care about this distinction
+    #  And ignoring duplicates speeds up the whole process
+    temp2 = []
+    for x in temp:
+        x_list = x.replace(" ", "").split("->")
+        start_x = x_list[0]
+        end_x = x_list[len(x_list)-1]
+        c = False
+        if len(temp2) >0:
+            for y in temp2:
+                y_list = y.replace(" ", "").split("->")
+                start_y = y_list[0]
+                end_y = y_list[len(y_list) - 1]
+                if ((start_x == start_y) and (end_x == end_y)):
+                    c = True
+        if not c:
+            temp2.append(x)
+    candidates = []
+    candidates.extend(temp2)
+    paths.extend(temp2)
     paths = list(set(paths))
     count+= 1
 
@@ -73,8 +93,6 @@ for i in added:
         collapsed.append(i)
     else:
         j = i.replace(" ", "").split("->")
-        if i == "C_ROKEN -> hart_en_vaatziekten":
-            print()
         if j[1] +" -> " + j[0] in truncated:
             collapsed.append(j[1] +" ->" + j[0])
 
