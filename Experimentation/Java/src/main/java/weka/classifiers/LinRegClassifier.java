@@ -26,6 +26,7 @@ public class LinRegClassifier extends WekaClassifier {
     private static ClassificationViaRegression createLinear() {
         ClassificationViaRegression c = new
                 ClassificationViaRegression();
+
         c.setClassifier(new LinearRegression());
         return c;
     }

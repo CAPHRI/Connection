@@ -1,0 +1,11 @@
+Variable_one;one;Variable_three;three;Variable_four;four;Variable_five;five
+C_ROKEN=never smoker;0,1824;hart_en_vaatziekten=True;0,5921;aandoeningen_bewegingsapparaat=True;0,9974;strain_demanding_incl_care=2;1,9894
+strain_critique_incl_care=>2;0,2112;BMI_cat==<18;0,6661;neurologische_aandoeningen=True;1,0893;luchtwegaandoeningen=True;2,096
+C_IPAQ_SCORE=hepa active;0,2376;aandoeningen_bewegingsapparaat=True;0,6698;overige_aandoeningen=True;1,1334;overige_aandoeningen=True;2,18
+C_PHQ9_TOTAL=Geen tot minimale depressie;0,268;luchtwegaandoeningen=True;0,6964;luchtwegaandoeningen=True;1,3116;age=>80;2,4679
+age=18-30;0,2736;good_plus_relationship_total_incl_care=Zero;0,6968;metabole_aandoeningen=True;1,438;strain_critique_incl_care=Zero;2,7004
+strain_demanding_incl_care=2;0,2883;age=>80;0,7434;C_PHQ9_TOTAL=Matige depressie;1,4866;C_PHQ9_TOTAL=Matige depressie;2,8194
+BMI_cat=18-25;0,4444;overige_aandoeningen=True;0,7445;C_PHQ9_TOTAL=Matig ernstige depressie;1,574;ADL_PERC_OVERALL_IMP=>0,5;2,8239
+ADL_PERC_OVERALL_IMP=<=0,0;0,5373;ADL_PERC_OVERALL_IMP=>0,5;0,7518;BMI_cat==<18;1,6819;BMI_cat==<18;3,7355
+good_plus_relationship_total_incl_care=Zero;0,7742;metabole_aandoeningen=True;0,7573;ADL_PERC_OVERALL_IMP=>0,5;1,7394;C_PHQ9_TOTAL=Ernstige depressie;3,9441
+BMI_cat==<18;0,7762;C_PHQ9_TOTAL=Ernstige depressie;0,7819;C_PHQ9_TOTAL=Ernstige depressie;2,8371;OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;4,7091

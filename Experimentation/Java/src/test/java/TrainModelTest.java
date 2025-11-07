@@ -20,17 +20,17 @@ class TrainModelTest {
 
         Map<String, List<String>> selectedNodes = new HashMap<>();
         selectedNodes.put("Baseline", generateManuscriptModelBaseline());
-        List<String> withDensity = generateManuscriptModelBaseline();
-        withDensity.add("density");
-        selectedNodes.put("BaselineWithDensity", withDensity);
-        selectedNodes.put("BeperktNetwerk", generateManuscriptModelBeperktNetwerk());
-        selectedNodes.put("GeenAandoeningen", generateManuscriptModelGeenAandoeningen());
-        selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
-        selectedNodes.put("NoDemographics", generateManuscriptModelNoDemographics());
-        selectedNodes.put("NoLBM", generateManuscriptModelNoLBM());
-        List<String> noDemoNoLBM = generateManuscriptModelNoDemographics();
-        noDemoNoLBM.remove("lbm");
-        selectedNodes.put("NoDemoNoLBM", noDemoNoLBM);
+//        List<String> withDensity = generateManuscriptModelBaseline();
+//        withDensity.add("density");
+//        selectedNodes.put("BaselineWithDensity", withDensity);
+//        selectedNodes.put("BeperktNetwerk", generateManuscriptModelBeperktNetwerk());
+//        selectedNodes.put("GeenAandoeningen", generateManuscriptModelGeenAandoeningen());
+//        selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
+//        selectedNodes.put("NoDemographics", generateManuscriptModelNoDemographics());
+//        selectedNodes.put("NoLBM", generateManuscriptModelNoLBM());
+//        List<String> noDemoNoLBM = generateManuscriptModelNoDemographics();
+//        noDemoNoLBM.remove("lbm");
+//        selectedNodes.put("NoDemoNoLBM", noDemoNoLBM);
 
         boolean applyfeatureselection = false;
         for(String k: selectedNodes.keySet()) {
@@ -50,9 +50,9 @@ class TrainModelTest {
                 path+=k+"/";
 
                 System.out.println(keys.get(i));
-                printString(res.get(keys.get(i)).getModel()+ "\n\n" + res.get(keys.get(i)), path + "bestModel" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
-                printString(res.get(keys.get(i)).printGraph(), path + "bestFeature" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".pgmx");
-                printString(res.get(keys.get(i)).getDiggity(), path + "bestDiggity" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+//                printString(res.get(keys.get(i)).getModel()+ "\n\n" + res.get(keys.get(i)), path + "bestModel" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+//                printString(res.get(keys.get(i)).printGraph(), path + "bestFeature" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".pgmx");
+//                printString(res.get(keys.get(i)).getDiggity(), path + "bestDiggity" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
                 System.out.println( k + "\n");
                 System.out.println(res.get(keys.get(i)));
             }
@@ -86,15 +86,15 @@ class TrainModelTest {
         attributesOfInterest.add("GEZONDHEID_NU_CBS");
 
         Map<String, List<String>> selectedNodes = new HashMap<>();
-        selectedNodes.put("Baseline", generateManuscriptModelBaseline());
+       selectedNodes.put("Baseline", generateManuscriptModelBaseline());
         List<String> withDensity = generateManuscriptModelBaseline();
         withDensity.add("density");
         selectedNodes.put("BaselineWithDensity", withDensity);
         selectedNodes.put("BeperktNetwerk", generateManuscriptModelBeperktNetwerk());
         selectedNodes.put("GeenAandoeningen", generateManuscriptModelGeenAandoeningen());
-        selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
-        selectedNodes.put("NoDemographics", generateManuscriptModelNoDemographics());
-        selectedNodes.put("NoLBM", generateManuscriptModelNoLBM());
+       selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
+        //selectedNodes.put("NoDemographics", generateManuscriptModelNoDemographics());
+       selectedNodes.put("NoLBM", generateManuscriptModelNoLBM());
         List<String> noDemoNoLBM = generateManuscriptModelNoDemographics();
         noDemoNoLBM.remove("lbm");
         selectedNodes.put("NoDemoNoLBM", noDemoNoLBM);

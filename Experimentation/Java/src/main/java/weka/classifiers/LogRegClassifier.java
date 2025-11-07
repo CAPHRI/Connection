@@ -24,6 +24,7 @@ public class LogRegClassifier extends WekaClassifier {
 
     private static Logistic createLogistic() {
         Logistic l = new Logistic();
+        l.setMaxIts(1000);
         return l;
     }
 }

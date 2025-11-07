@@ -1,0 +1,11 @@
+Variable_one;one;Variable_three;three;Variable_four;four;Variable_five;five
+network_size_care=>21;0,2503;C_PHQ9_TOTAL=Matige depressie;0,5607;overige_aandoeningen=True;1,1417;luchtwegaandoeningen=True;14,8182
+strain_demanding_incl_care=2;0,2551;age=>80;0,5933;neurologische_aandoeningen=True;1,1797;phone_internet_video_call_contact=two;15,1811
+C_PHQ9_TOTAL=Geen tot minimale depressie;0,2582;aandoeningen_bewegingsapparaat=True;0,6239;family_members=Zero;1,1992;acquaintances=Zero;15,2316
+family_members=Zero;0,2671;BMI_cat==<18;0,6656;luchtwegaandoeningen=True;1,2897;emotional_support_talk_about_my_health_incl_care=>9;15,8783
+nearness_more_than_30_min=>4;0,3166;luchtwegaandoeningen=True;0,6728;metabole_aandoeningen=True;1,3895;strain_demanding_incl_care=2;17,0372
+practical_support_incl_care=>9;0,3985;overige_aandoeningen=True;0,6971;C_PHQ9_TOTAL=Matige depressie;1,478;support_do_fun_things_incl_care=Zero;18,6125
+BMI_cat=18-25;0,4363;metabole_aandoeningen=True;0,7005;C_PHQ9_TOTAL=Matig ernstige depressie;1,6215;C_PHQ9_TOTAL=Ernstige depressie;20,6143
+ADL_PERC_OVERALL_IMP=<=0,0;0,5269;ADL_PERC_OVERALL_IMP=>0,5;0,7107;ADL_PERC_OVERALL_IMP=>0,5;1,7075;network_size_care=>21;22,0223
+good_plus_relationship_total_incl_care=Zero;0,641;C_PHQ9_TOTAL=Ernstige depressie;0,7297;BMI_cat==<18;1,7923;BMI_cat==<18;24,1949
+BMI_cat==<18;0,7519;good_plus_relationship_total_incl_care=Zero;0,8567;C_PHQ9_TOTAL=Ernstige depressie;2,9796;OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;42,9435
