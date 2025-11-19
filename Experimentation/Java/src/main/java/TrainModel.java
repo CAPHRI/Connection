@@ -41,8 +41,22 @@ public class TrainModel {
     public CombinedResult trainModel(List<String> toBeKept)
             throws Exception {
         Instances data = getInstances(arff, target);
-
         if(classifier instanceof LogRegClassifier || classifier instanceof LinRegClassifier){
+
+            for(int i = 0; i < data.numAttributes(); i++){
+                double missing = 0;
+                for(int j = 0; j < data.numInstances(); j++){
+                    if(data.get(j).isMissing(i)){
+                        missing++;
+                    }
+                }
+                if(missing / data.numInstances() > 0.1){
+                    //remove records with more than 10% missing values
+                    toBeKept.remove(data.attribute(i).name());
+                }
+            }
+
+
             ReplaceMissingValues filter = new ReplaceMissingValues();
             filter.setInputFormat(data);
             data = Filter.useFilter(data, filter);

@@ -1,7 +1,7 @@
 f = open("resources/networks/baseline.txt")
 baseline = f.read()
 
-f = open("resources/networks/NoDemographicsNoLBM.txt")
+f = open("resources/networks/NoDemographics.txt")
 updated = f.read()
 
 updated = updated.split("\n")

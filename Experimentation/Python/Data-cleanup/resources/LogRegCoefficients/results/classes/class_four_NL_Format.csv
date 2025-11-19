@@ -1,11 +1,11 @@
-Variable_baseline;four_baseline;Variable_beperktNetwerk;four_beperktNetwerk;Variable_geenAandoeningen;four_geenAandoeningen;Variable_noCareGivers;four_noCareGivers;Variable_noDemographics;four_noDemographics;Variable_noDemographicsNoLBM;four_noDemographicsNoLBM;Variable_noLBM;four_noLBM;Variable_withDensity;four_withDensity
-overige_aandoeningen=True;3,132;aandoeningen_bewegingsapparaat=True;0,9974;family_members=1-2;0,6687;neurologische_aandoeningen=True;1,1689;caregivers=>1;1,0172;caregivers=>1;1,0172;overige_aandoeningen=True;1,1417;overige_aandoeningen=True;1,1369
-neurologische_aandoeningen=True;3,2533;neurologische_aandoeningen=True;1,0893;network_size_care=>21;0,687;overige_aandoeningen=True;1,2017;overige_aandoeningen=True;1,1262;overige_aandoeningen=True;1,1262;neurologische_aandoeningen=True;1,1797;family_members=Zero;1,1585
-family_members=Zero;3,3174;overige_aandoeningen=True;1,1334;good_plus_relationship_total_incl_care=Zero;0,8058;family_members=Zero;1,3201;neurologische_aandoeningen=True;1,131;neurologische_aandoeningen=True;1,131;family_members=Zero;1,1992;neurologische_aandoeningen=True;1,1737
-luchtwegaandoeningen=True;3,6318;luchtwegaandoeningen=True;1,3116;family_members=Zero;1,1827;luchtwegaandoeningen=True;1,3328;family_members=Zero;1,2163;family_members=Zero;1,2163;luchtwegaandoeningen=True;1,2897;luchtwegaandoeningen=True;1,292
-metabole_aandoeningen=True;4,0128;metabole_aandoeningen=True;1,438;caregivers=>1;1,26;metabole_aandoeningen=True;1,4403;luchtwegaandoeningen=True;1,2913;luchtwegaandoeningen=True;1,2913;metabole_aandoeningen=True;1,3895;metabole_aandoeningen=True;1,3903
-C_PHQ9_TOTAL=Matige depressie;4,3842;C_PHQ9_TOTAL=Matige depressie;1,4866;C_PHQ9_TOTAL=Matige depressie;1,5584;C_PHQ9_TOTAL=Matige depressie;1,481;C_PHQ9_TOTAL=Matige depressie;1,4362;C_PHQ9_TOTAL=Matige depressie;1,4362;C_PHQ9_TOTAL=Matige depressie;1,478;C_PHQ9_TOTAL=Matige depressie;1,475
-C_PHQ9_TOTAL=Matig ernstige depressie;5,0606;C_PHQ9_TOTAL=Matig ernstige depressie;1,574;C_PHQ9_TOTAL=Matig ernstige depressie;1,7181;C_PHQ9_TOTAL=Matig ernstige depressie;1,6258;metabole_aandoeningen=True;1,5514;metabole_aandoeningen=True;1,5514;C_PHQ9_TOTAL=Matig ernstige depressie;1,6215;C_PHQ9_TOTAL=Matig ernstige depressie;1,6198
-ADL_PERC_OVERALL_IMP=>0,5;5,515;BMI_cat==<18;1,6819;ADL_PERC_OVERALL_IMP=>0,5;1,8006;BMI_cat==<18;1,6811;C_PHQ9_TOTAL=Matig ernstige depressie;1,5833;C_PHQ9_TOTAL=Matig ernstige depressie;1,5833;ADL_PERC_OVERALL_IMP=>0,5;1,7075;ADL_PERC_OVERALL_IMP=>0,5;1,7082
-BMI_cat==<18;6,0034;ADL_PERC_OVERALL_IMP=>0,5;1,7394;BMI_cat==<18;1,8098;ADL_PERC_OVERALL_IMP=>0,5;1,7123;ADL_PERC_OVERALL_IMP=>0,5;1,7076;ADL_PERC_OVERALL_IMP=>0,5;1,7076;BMI_cat==<18;1,7923;BMI_cat==<18;1,8116
-C_PHQ9_TOTAL=Ernstige depressie;19,6797;C_PHQ9_TOTAL=Ernstige depressie;2,8371;C_PHQ9_TOTAL=Ernstige depressie;2,9694;C_PHQ9_TOTAL=Ernstige depressie;3,0009;C_PHQ9_TOTAL=Ernstige depressie;2,8271;C_PHQ9_TOTAL=Ernstige depressie;2,8271;C_PHQ9_TOTAL=Ernstige depressie;2,9796;C_PHQ9_TOTAL=Ernstige depressie;2,9829
+Variable_baseline;four_baseline;Variable_noDemographics;four_noDemographics
+luchtwegaandoeningen=True;1.3369;family_members=Zero;1.2897
+metabole_aandoeningen=True;1.4106;luchtwegaandoeningen=True;1.3321
+C_PHQ9_TOTAL=Matige depressie;1.5381;C_PHQ9_TOTAL=Matige depressie;1.5049
+C_PHQ9_TOTAL=Matig ernstige depressie;1.6793;metabole_aandoeningen=True;1.5603
+ADL_PERC_OVERALL_IMP=>0.5;1.7398;C_PHQ9_TOTAL=Matig ernstige depressie;1.6513
+Treinstationdichtstbijzijnde=0-1;1.7638;ADL_PERC_OVERALL_IMP=>0.5;1.7407
+BMI_cat==<18;2.0959;Treinstationdichtstbijzijnde=>1;2.2581
+C_PHQ9_TOTAL=Ernstige depressie;2.9464;Treinstationdichtstbijzijnde=0-1;2.6731
+Bibliotheekdichtstbijzijnde=Zero;3.4633;C_PHQ9_TOTAL=Ernstige depressie;2.8059
+===================================================================================================================================================;;Bibliotheekdichtstbijzijnde=Zero;3.4022

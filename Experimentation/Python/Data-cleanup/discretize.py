@@ -67,6 +67,7 @@ def discretize(data):
     data = discretizeLYING_HoursPerDay(data)
     data = quarterize(data, "pov_p_17")
     data = discretizeSITTING_HoursPerDay(data)
+    data = discretizeAmbivalent_relationship_care(data)
     print(data["strain_critique_incl_care"].unique())
 
     return data
@@ -104,6 +105,7 @@ def discretize_LYING_HoursPerDay(value):
 def discretizeAmbivalent_relationship_care  (data):
     data["ambivalent_relationship_care"] = data["ambivalent_relationship_care"].map(
         discretize_ambivalent_relationship_care)
+    print(data["ambivalent_relationship_care"])
     return data
 
 def discretize_ambivalent_relationship_care(value):

@@ -125,6 +125,18 @@ public class FilterAttributes {
         return toBeKept;
     }
 
+    public static List<String> generateManuscriptModelBaselineTranslated(){
+        List<String> toBeKept = new ArrayList<>();
+
+        return toBeKept;
+    }
+
+    public static List<String> generateManuscriptModelNoDemographicsTranslated(){
+        List<String> toBeKept = new ArrayList<>();
+
+        return toBeKept;
+    }
+
     public static List<String> generateManuscriptModelGeenAandoeningen(){
         List<String> toBeKept = new ArrayList<>();
         toBeKept.add("acquaintances");

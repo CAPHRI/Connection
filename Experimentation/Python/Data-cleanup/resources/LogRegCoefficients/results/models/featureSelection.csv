@@ -1,0 +1,21 @@
+Variable_one,one,Variable_three,three,Variable_four,four,Variable_five,five
+C_PHQ9_TOTAL=Ernstige depressie,-1.7501,Treinstationdichtstbijzijnde=Zero,-583.5145,Treinstationdichtstbijzijnde=Zero,-50.9069,Intercept,-9.7462
+Intercept,-1.5226,Intercept,-3.166,Intercept,-4.856,ADL_PERC_OVERALL_IMP=0.0-0.1,-9.3261
+metabole_aandoeningen=True,-1.2918,ADL_PERC_OVERALL_IMP=<=0.0,-0.6942,ADL_PERC_OVERALL_IMP=<=0.0,-1.4815,Treinstationdichtstbijzijnde=Zero,-9.1041
+aandoeningen_bewegingsapparaat=True,-1.0533,C_PHQ9_TOTAL=Geen tot minimale depressie,-0.5223,C_PHQ9_TOTAL=Geen tot minimale depressie,-1.1672,caregivers=zero,-0.9618
+hart_en_vaatziekten=True,-0.9709,ADL_PERC_OVERALL_IMP=0.0-0.1,-0.3697,C_IPAQ_SCORE=hepa active,-0.454,C_IPAQ_SCORE=minimally active,-0.9436
+Treinstationdichtstbijzijnde=Zero,-0.9064,BMI_cat=18-25,-0.2472,caregivers=zero,-0.3914,C_PHQ9_TOTAL=Geen tot minimale depressie,-0.8717
+luchtwegaandoeningen=True,-0.8765,caregivers=zero,-0.207,BMI_cat=18-25,-0.2782,Treinstationdichtstbijzijnde=0-1,-0.4739
+psychische_aandoeningen=True,-0.716,OPLEIDINGSNIVEAU=Onderwijsniveau 3,-0.2057,OPLEIDINGSNIVEAU=Onderwijsniveau 3,-0.185,OPLEIDINGSNIVEAU=Onderwijsniveau 3,-0.4585
+BMI_cat=>30,-0.6163,OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding,-0.168,OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding,-0.0912,psychische_aandoeningen=True,-0.3783
+ADL_PERC_OVERALL_IMP=0.1-0.5,-0.5466,C_IPAQ_SCORE=hepa active,-0.1665,OPLEIDINGSNIVEAU=Onderwijsniveau 2,-0.0619,BMI_cat=>30,-0.3677
+Treinstationdichtstbijzijnde=0-1,0.0471,hart_en_vaatziekten=True,0.5808,C_IPAQ_SCORE=inactive,0.7047,OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding,1.1185
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding,0.127,aandoeningen_bewegingsapparaat=True,0.6137,aandoeningen_bewegingsapparaat=True,0.8968,metabole_aandoeningen=True,1.3032
+C_PHQ9_TOTAL=Matig ernstige depressie,0.141,C_PHQ9_TOTAL=Matige depressie,0.6179,caregivers=>1,0.9593,luchtwegaandoeningen=True,1.4368
+caregivers=zero,0.1574,luchtwegaandoeningen=True,0.6377,luchtwegaandoeningen=True,1.1941,C_IPAQ_SCORE=inactive,1.698
+C_IPAQ_SCORE=hepa active,0.2172,BMI_cat==<18,0.6846,metabole_aandoeningen=True,1.4137,caregivers=>1,1.85
+OPLEIDINGSNIVEAU=Onderwijsniveau 3,0.2377,metabole_aandoeningen=True,0.6913,C_PHQ9_TOTAL=Matige depressie,1.5565,C_PHQ9_TOTAL=Matige depressie,2.1681
+C_PHQ9_TOTAL=Geen tot minimale depressie,0.3077,ADL_PERC_OVERALL_IMP=>0.5,0.7425,C_PHQ9_TOTAL=Matig ernstige depressie,1.683,C_PHQ9_TOTAL=Matig ernstige depressie,2.3095
+BMI_cat=18-25,0.4416,C_PHQ9_TOTAL=Ernstige depressie,0.874,ADL_PERC_OVERALL_IMP=>0.5,1.6882,ADL_PERC_OVERALL_IMP=>0.5,2.6601
+ADL_PERC_OVERALL_IMP=<=0.0,0.5703,Treinstationdichtstbijzijnde=0-1,1.8529,BMI_cat==<18,1.8176,BMI_cat==<18,3.1719
+BMI_cat==<18,0.6401,Treinstationdichtstbijzijnde=>1,1.8596,C_PHQ9_TOTAL=Ernstige depressie,3.0146,C_PHQ9_TOTAL=Ernstige depressie,3.5374

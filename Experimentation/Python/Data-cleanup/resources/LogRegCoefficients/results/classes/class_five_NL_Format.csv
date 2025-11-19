@@ -1,11 +1,11 @@
-Variable_baseline;five_baseline;Variable_beperktNetwerk;five_beperktNetwerk;Variable_geenAandoeningen;five_geenAandoeningen;Variable_noCareGivers;five_noCareGivers;Variable_noDemographics;five_noDemographics;Variable_noDemographicsNoLBM;five_noDemographicsNoLBM;Variable_noLBM;five_noLBM;Variable_withDensity;five_withDensity
-luchtwegaandoeningen=True;2725554,1027;strain_demanding_incl_care=2;1,9894;phone_internet_video_call_contact=two;18,3372;physical_contact=three;20,0155;physical_contact=>10;22,3725;physical_contact=>10;22,3725;luchtwegaandoeningen=True;14,8182;strain_taxing_incl_care=2;14,4151
-phone_internet_video_call_contact=two;3917837,2403;luchtwegaandoeningen=True;2,096;caregivers=>1;18,9035;luchtwegaandoeningen=True;20,2575;caregivers=>1;22,592;caregivers=>1;22,592;phone_internet_video_call_contact=two;15,1811;strain_demanding_incl_care=2;15,8152
-acquaintances=Zero;4120843,4971;overige_aandoeningen=True;2,18;network_size_care=13-20;20,4277;phone_internet_video_call_contact=two;21,3257;acquaintances=Zero;24,4982;acquaintances=Zero;24,4982;acquaintances=Zero;15,2316;acquaintances=Zero;15,8498
-emotional_support_talk_about_my_health_incl_care=>9;7867898,8299;age=>80;2,4679;strain_demanding_incl_care=2;21,9788;support_do_fun_things_incl_care=Zero;21,706;C_PHQ9_TOTAL=Matig ernstige depressie;26,1288;C_PHQ9_TOTAL=Matig ernstige depressie;26,1288;emotional_support_talk_about_my_health_incl_care=>9;15,8783;support_do_fun_things_incl_care=Zero;16,0922
-strain_demanding_incl_care=2;25071160,1676;strain_critique_incl_care=Zero;2,7004;C_PHQ9_TOTAL=Ernstige depressie;22,4191;BMI_cat==<18;22,2499;emotional_support_talk_about_my_health_incl_care=>9;27,4048;emotional_support_talk_about_my_health_incl_care=>9;27,4048;strain_demanding_incl_care=2;17,0372;emotional_support_talk_about_my_health_incl_care=>9;16,6275
-support_do_fun_things_incl_care=Zero;121149991,2093;C_PHQ9_TOTAL=Matige depressie;2,8194;emotional_support_talk_about_my_health_incl_care=>9;23,7239;strain_demanding_incl_care=2;25,4595;phone_internet_video_call_contact=two;27,4752;phone_internet_video_call_contact=two;27,4752;support_do_fun_things_incl_care=Zero;18,6125;phone_internet_video_call_contact=two;18,2602
-C_PHQ9_TOTAL=Ernstige depressie;896754742,2607;ADL_PERC_OVERALL_IMP=>0,5;2,8239;support_do_fun_things_incl_care=Zero;24,726;physical_contact=>10;31,2946;C_PHQ9_TOTAL=Matige depressie;28,2994;C_PHQ9_TOTAL=Matige depressie;28,2994;C_PHQ9_TOTAL=Ernstige depressie;20,6143;network_size_care=>21;19,1867
-network_size_care=>21;3665651393,337;BMI_cat==<18;3,7355;BMI_cat==<18;29,8725;C_PHQ9_TOTAL=Ernstige depressie;31,6188;strain_taxing_incl_care=2;32,5268;strain_taxing_incl_care=2;32,5268;network_size_care=>21;22,0223;C_PHQ9_TOTAL=Ernstige depressie;19,7156
-BMI_cat==<18;32187797474,77657;C_PHQ9_TOTAL=Ernstige depressie;3,9441;network_size_care=>21;34,0899;emotional_support_talk_about_my_health_incl_care=>9;33,5196;strain_demanding_incl_care=2;34,5462;strain_demanding_incl_care=2;34,5462;BMI_cat==<18;24,1949;BMI_cat==<18;24,2379
-OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;4,468098881564669e+18;OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;4,7091;OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;42,0673;OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;51,0453;network_size_care=13-20;37,6261;network_size_care=13-20;37,6261;OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;42,9435;OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;41,088
+Variable_baseline;five_baseline;Variable_noDemographics;five_noDemographics
+acquaintances=Zero;20.6517;pov_p_17=10.6999998-11.6999998;25.8634
+neurologische_aandoeningen=True;21.5501;network_size_care=13-20;28.2806
+C_PHQ9_TOTAL=Matige depressie;23.9673;caregivers=>1;28.6666
+Treinstationdichtstbijzijnde=Zero;24.412;C_PHQ9_TOTAL=Matig ernstige depressie;29.7665
+BMI_cat==<18;26.0113;C_PHQ9_TOTAL=Matige depressie;30.637
+C_PHQ9_TOTAL=Ernstige depressie;33.2879;phone_internet_video_call_contact=two;32.6184
+Cafedichtstbijzijnde=Zero;33.4785;C_PHQ9_TOTAL=Ernstige depressie;35.6915
+network_size_care=>21;35.7426;Cafedichtstbijzijnde=Zero;37.4675
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;46.5176;Treinstationdichtstbijzijnde=Zero;49.7719
+===================================================================================================================================================;;Bibliotheekdichtstbijzijnde=Zero;54.0947

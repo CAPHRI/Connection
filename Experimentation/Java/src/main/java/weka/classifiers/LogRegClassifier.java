@@ -7,8 +7,13 @@ import weka.classifiers.functions.Logistic;
 
 public class LogRegClassifier extends WekaClassifier {
     private Logistic classifier;
+    private int iterations =-1;
 
     public LogRegClassifier() {
+        createClassifier();
+    }
+    public LogRegClassifier(int it) {
+        this.iterations = it;
         createClassifier();
     }
 
@@ -22,9 +27,11 @@ public class LogRegClassifier extends WekaClassifier {
         return classifier;
     }
 
-    private static Logistic createLogistic() {
+    private Logistic createLogistic() {
         Logistic l = new Logistic();
-        l.setMaxIts(1000);
+        if(iterations >0) {
+            l.setMaxIts(this.iterations);
+        }
         return l;
     }
 }
