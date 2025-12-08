@@ -166,3 +166,16 @@ def mergeChronicStuff(data):
     data["overige_aandoeningen"] = combineBinary(data, ["AANDOENING_A25", "AANDOENING_A26", "AANDOENING_A27",
                                                         "AANDOENING_A28", "AANDOENING_A29"])
     return data
+
+
+def detectLongCovid(data):
+    # longcovid:
+    # longcovid status: 1 = positive with complaints, 2 = postive without complaints 3 = negative
+    # mnd_sinds_pcr_2: 0 = 3-5 months, 1= 6-12 months, 2= >=12 months, 3= < 3 months
+    print((data["longcovid_status"].astype(str).str.replace('?', '0').astype(float) == 1.0) & (
+                data["mnd_sinds_pcr_2"].astype(str).str.replace('?', '0').astype(float) == 0.0))
+    data["longcovid"] = ((data["longcovid_status"].astype(str).str.replace('?', '0').astype(float) == 1.0) & (
+            (data["mnd_sinds_pcr_2"].astype(str).str.replace('?', '0').astype(float) == 0.0) | (
+            data["mnd_sinds_pcr_2"].astype(str).str.replace('?', '0').astype(float) == 1.0) | (data[
+                "mnd_sinds_pcr_2"].astype(str).str.replace('?', '0').astype(float) == 2.0)))
+    return data
