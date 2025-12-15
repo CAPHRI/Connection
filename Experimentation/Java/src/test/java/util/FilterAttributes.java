@@ -38,6 +38,7 @@ public class FilterAttributes {
         toBeKept.add("lbm");
         toBeKept.add("LID_CLUBS");
         toBeKept.add("lonelinessBinary");
+        toBeKept.add("longcovid");
         toBeKept.add("luchtwegaandoeningen");
         toBeKept.add("LYING_HoursPerDay");
         toBeKept.add("metabole_aandoeningen");
@@ -69,8 +70,6 @@ public class FilterAttributes {
         toBeKept.add("Walkability.WI7c_1719_500z");
         toBeKept.add("Westersemigratieachtergrond");
 
-
-
         return toBeKept;
     }
 
@@ -97,6 +96,7 @@ public class FilterAttributes {
         toBeKept.add("lbm");
         toBeKept.add("LID_CLUBS");
         toBeKept.add("lonelinessBinary");
+        toBeKept.add("longcovid");
         toBeKept.add("luchtwegaandoeningen");
         toBeKept.add("LYING_HoursPerDay");
         toBeKept.add("metabole_aandoeningen");
@@ -166,6 +166,7 @@ public class FilterAttributes {
         toBeKept.add("lbm");
         toBeKept.add("LID_CLUBS");
         toBeKept.add("lonelinessBinary");
+        toBeKept.add("longcovid");
         toBeKept.add("LYING_HoursPerDay");
         toBeKept.add("Museadichtstbijzijnde");
         toBeKept.add("Nederlandseachtergond");
@@ -225,6 +226,7 @@ public class FilterAttributes {
         toBeKept.add("lbm");
         toBeKept.add("LID_CLUBS");
         toBeKept.add("lonelinessBinary");
+        toBeKept.add("longcovid");
         toBeKept.add("luchtwegaandoeningen");
         toBeKept.add("LYING_HoursPerDay");
         toBeKept.add("metabole_aandoeningen");
@@ -286,6 +288,7 @@ public class FilterAttributes {
         toBeKept.add("lbm");
         toBeKept.add("LID_CLUBS");
         toBeKept.add("lonelinessBinary");
+        toBeKept.add("longcovid");
         toBeKept.add("luchtwegaandoeningen");
         toBeKept.add("LYING_HoursPerDay");
         toBeKept.add("metabole_aandoeningen");
@@ -347,6 +350,7 @@ public class FilterAttributes {
         toBeKept.add("informational_support_incl_care");
         toBeKept.add("LID_CLUBS");
         toBeKept.add("lonelinessBinary");
+        toBeKept.add("longcovid");
         toBeKept.add("luchtwegaandoeningen");
         toBeKept.add("LYING_HoursPerDay");
         toBeKept.add("metabole_aandoeningen");

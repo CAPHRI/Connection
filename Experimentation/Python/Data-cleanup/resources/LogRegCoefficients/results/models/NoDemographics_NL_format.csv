@@ -1,21 +1,21 @@
 Variable_one;one;Variable_three;three;Variable_four;four;Variable_five;five
-Bibliotheekdichtstbijzijnde=Zero;-169,3798;Treinstationdichtstbijzijnde=Zero;-159,6161;Treinstationdichtstbijzijnde=Zero;-774,902;Intercept;-187,4159
-metabole_aandoeningen=True;-1,4814;Intercept;-2,0271;Intercept;-8,642;strain_critique_incl_care=>2;-53,1848
-C_PHQ9_TOTAL=Ernstige depressie;-1,4597;pov_p_17=10.6999998-11.6999998;-0,7677;ADL_PERC_OVERALL_IMP=<=0.0;-1,4643;good_plus_relationship_total_incl_care=Zero;-37,9778
-Intercept;-1,4474;ADL_PERC_OVERALL_IMP=<=0.0;-0,6832;network_size_care=1-2;-1,151;ADL_PERC_OVERALL_IMP=0.0-0.1;-33,0669
-aandoeningen_bewegingsapparaat=True;-1,1093;C_PHQ9_TOTAL=Geen tot minimale depressie;-0,452;C_PHQ9_TOTAL=Geen tot minimale depressie;-1,0979;pov_p_17=10.1999998-10.6999998;-30,303
-hart_en_vaatziekten=True;-1,1041;emotional_support_talk_about_my_health_incl_care=Zero;-0,4425;pov_p_17=10.1999998-10.6999998;-0,874;physical_contact=7-10;-28,9549
-luchtwegaandoeningen=True;-0,9695;phone_internet_video_call_contact=>2;-0,4206;strain_demanding_incl_care=>2;-0,8714;network_size_care=3-5;-28,6419
-overige_aandoeningen=True;-0,9092;ADL_PERC_OVERALL_IMP=0.0-0.1;-0,4006;ambivalent_relationship_care=>=5;-0,8513;Nederlandseachtergond=hundred;-28,0013
-neurologische_aandoeningen=True;-0,8069;Cafedichtstbijzijnde=Zero;-0,3934;physical_contact=>10;-0,6824;strain_demanding_incl_care=>2;-26,7075
-psychische_aandoeningen=True;-0,6553;network_size_care=1-2;-0,3261;family_members=>7;-0,6563;network_size_care=1-2;-25,6931
-C_ROKEN=never smoker;0,2383;C_PHQ9_TOTAL=Matige depressie;0,5303;family_members=Zero;1,2897;pov_p_17=10.6999998-11.6999998;25,8634
-C_PHQ9_TOTAL=Geen tot minimale depressie;0,2433;C_PHQ9_TOTAL=Ernstige depressie;0,5843;luchtwegaandoeningen=True;1,3321;network_size_care=13-20;28,2806
-C_IPAQ_SCORE=hepa active;0,2513;aandoeningen_bewegingsapparaat=True;0,6565;C_PHQ9_TOTAL=Matige depressie;1,5049;caregivers=>1;28,6666
-Bibliotheekdichtstbijzijnde=0-1;0,3599;hart_en_vaatziekten=True;0,6934;metabole_aandoeningen=True;1,5603;C_PHQ9_TOTAL=Matig ernstige depressie;29,7665
-nearness_more_than_30_min=>4;0,3965;luchtwegaandoeningen=True;0,6943;C_PHQ9_TOTAL=Matig ernstige depressie;1,6513;C_PHQ9_TOTAL=Matige depressie;30,637
-Huisartspraktijkdichtstbijzijnde=Zero;0,4304;overige_aandoeningen=True;0,7141;ADL_PERC_OVERALL_IMP=>0.5;1,7407;phone_internet_video_call_contact=two;32,6184
-practical_support_incl_care=>9;0,4503;ADL_PERC_OVERALL_IMP=>0.5;0,7356;Treinstationdichtstbijzijnde=>1;2,2581;C_PHQ9_TOTAL=Ernstige depressie;35,6915
-Bibliotheekdichtstbijzijnde=>1;0,4922;good_plus_relationship_total_incl_care=Zero;0,8429;Treinstationdichtstbijzijnde=0-1;2,6731;Cafedichtstbijzijnde=Zero;37,4675
-ADL_PERC_OVERALL_IMP=<=0.0;0,5456;metabole_aandoeningen=True;0,8603;C_PHQ9_TOTAL=Ernstige depressie;2,8059;Treinstationdichtstbijzijnde=Zero;49,7719
-good_plus_relationship_total_incl_care=Zero;0,5473;Bibliotheekdichtstbijzijnde=Zero;0,9633;Bibliotheekdichtstbijzijnde=Zero;3,4022;Bibliotheekdichtstbijzijnde=Zero;54,0947
+Bibliotheekdichtstbijzijnde=Zero;-206,2871;Treinstationdichtstbijzijnde=Zero;-134,8994;Treinstationdichtstbijzijnde=Zero;-611,7967;Intercept;-169,7596
+metabole_aandoeningen=True;-1,467;Intercept;-2,0395;Intercept;-8,1873;strain_critique_incl_care=>2;-56,2502
+Intercept;-1,416;pov_p_17=10.6999998-11.6999998;-0,7379;ADL_PERC_OVERALL_IMP=<=0.0;-1,4223;Treinstationdichtstbijzijnde=Zero;-42,8982
+C_PHQ9_TOTAL=Ernstige depressie;-1,3952;ADL_PERC_OVERALL_IMP=<=0.0;-0,6238;network_size_care=1-2;-1,1494;network_size_care=1-2;-32,8818
+aandoeningen_bewegingsapparaat=True;-1,1238;emotional_support_talk_about_my_health_incl_care=Zero;-0,4275;C_PHQ9_TOTAL=Geen tot minimale depressie;-1,0778;strain_demanding_incl_care=>2;-32,3263
+hart_en_vaatziekten=True;-1,114;C_PHQ9_TOTAL=Geen tot minimale depressie;-0,4229;strain_demanding_incl_care=>2;-0,8908;physical_contact=7-10;-25,9423
+luchtwegaandoeningen=True;-0,9668;phone_internet_video_call_contact=>2;-0,4038;pov_p_17=10.1999998-10.6999998;-0,8526;pov_p_17=10.1999998-10.6999998;-25,6985
+overige_aandoeningen=True;-0,9082;Cafedichtstbijzijnde=Zero;-0,389;ambivalent_relationship_care=>=5;-0,8385;informational_support_incl_care=zero;-23,0447
+neurologische_aandoeningen=True;-0,8033;ADL_PERC_OVERALL_IMP=0.0-0.1;-0,3871;physical_contact=>10;-0,6796;network_size_care=3-5;-22,31
+psychische_aandoeningen=True;-0,6531;network_size_care=1-2;-0,3395;family_members=>7;-0,6659;Greenspace.r1000m_all=71-80;-22,0482
+C_ROKEN=never smoker;0,239;Cafetariadichtstbijzijnde=Zero;0,5398;family_members=Zero;1,2976;acquaintances=Zero;21,5726
+strain_demanding_incl_care=2;0,2427;C_PHQ9_TOTAL=Ernstige depressie;0,5585;luchtwegaandoeningen=True;1,3194;physical_contact=three;21,5931
+C_IPAQ_SCORE=hepa active;0,2564;aandoeningen_bewegingsapparaat=True;0,6705;C_PHQ9_TOTAL=Matige depressie;1,4882;network_size_care=13-20;22,5435
+nearness_more_than_30_min=>4;0,3934;luchtwegaandoeningen=True;0,6775;metabole_aandoeningen=True;1,5589;phone_internet_video_call_contact=two;23,0901
+Huisartspraktijkdichtstbijzijnde=Zero;0,4053;ADL_PERC_OVERALL_IMP=>0.5;0,6825;C_PHQ9_TOTAL=Matig ernstige depressie;1,6474;pov_p_17=10.6999998-11.6999998;23,184
+practical_support_incl_care=>9;0,4295;hart_en_vaatziekten=True;0,6987;ADL_PERC_OVERALL_IMP=>0.5;1,7044;C_PHQ9_TOTAL=Matige depressie;25,2646
+Bibliotheekdichtstbijzijnde=0-1;0,452;overige_aandoeningen=True;0,7194;Treinstationdichtstbijzijnde=>1;1,7422;C_PHQ9_TOTAL=Ernstige depressie;28,0322
+ADL_PERC_OVERALL_IMP=<=0.0;0,4798;good_plus_relationship_total_incl_care=Zero;0,8487;Treinstationdichtstbijzijnde=0-1;2,1512;caregivers=>1;28,5243
+good_plus_relationship_total_incl_care=Zero;0,5309;metabole_aandoeningen=True;0,8617;C_PHQ9_TOTAL=Ernstige depressie;2,7848;Bibliotheekdichtstbijzijnde=Zero;34,2238
+Bibliotheekdichtstbijzijnde=>1;0,5857;Bibliotheekdichtstbijzijnde=Zero;0,9672;Bibliotheekdichtstbijzijnde=Zero;3,3954;Cafedichtstbijzijnde=Zero;35,4747

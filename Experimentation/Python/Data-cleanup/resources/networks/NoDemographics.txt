@@ -50,8 +50,10 @@ C_ROKEN -> LID_CLUBS
 C_PHQ9_TOTAL -> lonelinessBinary
 good_plus_relationship_total_incl_care -> lonelinessBinary
 family_members -> lonelinessBinary
+ADL_PERC_OVERALL_IMP -> longcovid
+C_PHQ9_TOTAL -> longcovid
 GEZONDHEID_NU_CBS -> luchtwegaandoeningen
-ADL_PERC_OVERALL_IMP -> luchtwegaandoeningen
+longcovid -> luchtwegaandoeningen
 C_PHQ9_TOTAL -> LYING_HoursPerDay
 ADL_PERC_OVERALL_IMP -> LYING_HoursPerDay
 GEZONDHEID_NU_CBS -> metabole_aandoeningen

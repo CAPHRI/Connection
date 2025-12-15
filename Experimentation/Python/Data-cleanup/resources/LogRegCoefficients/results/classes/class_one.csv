@@ -1,11 +1,11 @@
 Variable_baseline,one_baseline,Variable_noDemographics,one_noDemographics
-nearness_more_than_30_min=>4,0.2974,C_ROKEN=never smoker,0.2383
-practical_support_incl_care=>9,0.3715,C_PHQ9_TOTAL=Geen tot minimale depressie,0.2433
-Bibliotheekdichtstbijzijnde=0-1,0.4189,C_IPAQ_SCORE=hepa active,0.2513
-BMI_cat=18-25,0.4361,Bibliotheekdichtstbijzijnde=0-1,0.3599
-Huisartspraktijkdichtstbijzijnde=Zero,0.4568,nearness_more_than_30_min=>4,0.3965
-good_plus_relationship_total_incl_care=Zero,0.5183,Huisartspraktijkdichtstbijzijnde=Zero,0.4304
-ADL_PERC_OVERALL_IMP=<=0.0,0.5272,practical_support_incl_care=>9,0.4503
-Bibliotheekdichtstbijzijnde=>1,0.5328,Bibliotheekdichtstbijzijnde=>1,0.4922
-BMI_cat==<18,0.7851,ADL_PERC_OVERALL_IMP=<=0.0,0.5456
-===================================================================================================================================================,,good_plus_relationship_total_incl_care=Zero,0.5473
+strain_demanding_incl_care=2,0.2752,C_ROKEN=never smoker,0.239
+Bibliotheekdichtstbijzijnde=0-1,0.2893,strain_demanding_incl_care=2,0.2427
+nearness_more_than_30_min=>4,0.297,C_IPAQ_SCORE=hepa active,0.2564
+practical_support_incl_care=>9,0.3473,nearness_more_than_30_min=>4,0.3934
+Bibliotheekdichtstbijzijnde=>1,0.4059,Huisartspraktijkdichtstbijzijnde=Zero,0.4053
+Huisartspraktijkdichtstbijzijnde=Zero,0.424,practical_support_incl_care=>9,0.4295
+BMI_cat=18-25,0.4332,Bibliotheekdichtstbijzijnde=0-1,0.452
+ADL_PERC_OVERALL_IMP=<=0.0,0.4607,ADL_PERC_OVERALL_IMP=<=0.0,0.4798
+good_plus_relationship_total_incl_care=Zero,0.4959,good_plus_relationship_total_incl_care=Zero,0.5309
+BMI_cat==<18,0.7714,Bibliotheekdichtstbijzijnde=>1,0.5857

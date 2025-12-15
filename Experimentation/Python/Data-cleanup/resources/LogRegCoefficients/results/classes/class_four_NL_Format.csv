@@ -1,11 +1,11 @@
 Variable_baseline;four_baseline;Variable_noDemographics;four_noDemographics
-luchtwegaandoeningen=True;1.3369;family_members=Zero;1.2897
-metabole_aandoeningen=True;1.4106;luchtwegaandoeningen=True;1.3321
-C_PHQ9_TOTAL=Matige depressie;1.5381;C_PHQ9_TOTAL=Matige depressie;1.5049
-C_PHQ9_TOTAL=Matig ernstige depressie;1.6793;metabole_aandoeningen=True;1.5603
-ADL_PERC_OVERALL_IMP=>0.5;1.7398;C_PHQ9_TOTAL=Matig ernstige depressie;1.6513
-Treinstationdichtstbijzijnde=0-1;1.7638;ADL_PERC_OVERALL_IMP=>0.5;1.7407
-BMI_cat==<18;2.0959;Treinstationdichtstbijzijnde=>1;2.2581
-C_PHQ9_TOTAL=Ernstige depressie;2.9464;Treinstationdichtstbijzijnde=0-1;2.6731
-Bibliotheekdichtstbijzijnde=Zero;3.4633;C_PHQ9_TOTAL=Ernstige depressie;2.8059
-===================================================================================================================================================;;Bibliotheekdichtstbijzijnde=Zero;3.4022
+luchtwegaandoeningen=True;1.3222;family_members=Zero;1.2976
+Treinstationdichtstbijzijnde=>1;1.3318;luchtwegaandoeningen=True;1.3194
+metabole_aandoeningen=True;1.4108;C_PHQ9_TOTAL=Matige depressie;1.4882
+C_PHQ9_TOTAL=Matige depressie;1.5224;metabole_aandoeningen=True;1.5589
+C_PHQ9_TOTAL=Matig ernstige depressie;1.6745;C_PHQ9_TOTAL=Matig ernstige depressie;1.6474
+ADL_PERC_OVERALL_IMP=>0.5;1.704;ADL_PERC_OVERALL_IMP=>0.5;1.7044
+Treinstationdichtstbijzijnde=0-1;1.7589;Treinstationdichtstbijzijnde=>1;1.7422
+BMI_cat==<18;2.13;Treinstationdichtstbijzijnde=0-1;2.1512
+C_PHQ9_TOTAL=Ernstige depressie;2.9303;C_PHQ9_TOTAL=Ernstige depressie;2.7848
+Bibliotheekdichtstbijzijnde=Zero;3.4453;Bibliotheekdichtstbijzijnde=Zero;3.3954

@@ -1,11 +1,11 @@
 Variable_baseline;five_baseline;Variable_noDemographics;five_noDemographics
-acquaintances=Zero;20.6517;pov_p_17=10.6999998-11.6999998;25.8634
-neurologische_aandoeningen=True;21.5501;network_size_care=13-20;28.2806
-C_PHQ9_TOTAL=Matige depressie;23.9673;caregivers=>1;28.6666
-Treinstationdichtstbijzijnde=Zero;24.412;C_PHQ9_TOTAL=Matig ernstige depressie;29.7665
-BMI_cat==<18;26.0113;C_PHQ9_TOTAL=Matige depressie;30.637
-C_PHQ9_TOTAL=Ernstige depressie;33.2879;phone_internet_video_call_contact=two;32.6184
-Cafedichtstbijzijnde=Zero;33.4785;C_PHQ9_TOTAL=Ernstige depressie;35.6915
-network_size_care=>21;35.7426;Cafedichtstbijzijnde=Zero;37.4675
-OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;46.5176;Treinstationdichtstbijzijnde=Zero;49.7719
-===================================================================================================================================================;;Bibliotheekdichtstbijzijnde=Zero;54.0947
+longcovid=True;19.1515;acquaintances=Zero;21.5726
+network_size_care=13-20;19.2181;physical_contact=three;21.5931
+acquaintances=Zero;20.3082;network_size_care=13-20;22.5435
+BMI_cat==<18;21.1267;phone_internet_video_call_contact=two;23.0901
+C_PHQ9_TOTAL=Matige depressie;21.5415;pov_p_17=10.6999998-11.6999998;23.184
+C_PHQ9_TOTAL=Ernstige depressie;25.2327;C_PHQ9_TOTAL=Matige depressie;25.2646
+network_size_care=>21;26.3938;C_PHQ9_TOTAL=Ernstige depressie;28.0322
+Cafedichtstbijzijnde=Zero;28.7521;caregivers=>1;28.5243
+OPLEIDINGSNIVEAU=Ik volg momenteel een opleiding;43.7409;Bibliotheekdichtstbijzijnde=Zero;34.2238
+Bibliotheekdichtstbijzijnde=Zero;50.4265;Cafedichtstbijzijnde=Zero;35.4747

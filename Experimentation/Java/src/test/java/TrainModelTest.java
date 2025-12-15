@@ -50,7 +50,7 @@ class TrainModelTest {
                 path += k + "/";
 
                 System.out.println(keys.get(i));
-                printString(res.get(keys.get(i)).getModel()+ "\n\n" + res.get(keys.get(i)), path + "bestModel" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+                printString(res.get(keys.get(i)).getModel() + "\n\n" + res.get(keys.get(i)), path + "bestModel" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
                 printString(res.get(keys.get(i)).printGraph(), path + "bestFeature" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".pgmx");
                 printString(res.get(keys.get(i)).getDiggity(), path + "bestDiggity" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
                 System.out.println(k + "\n");
@@ -65,7 +65,8 @@ class TrainModelTest {
         attributesOfInterest.add("GEZONDHEID_NU_CBS");
 
         Map<String, List<String>> selectedNodes = new HashMap<>();
-        selectedNodes.put("Baseline", generateManuscriptModelBaselineTranslated());selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
+        selectedNodes.put("Baseline", generateManuscriptModelBaselineTranslated());
+        selectedNodes.put("NoCaregivers", generateManuscriptModelNoCaregivers());
         selectedNodes.put("NoDemographics", generateManuscriptModelNoDemographicsTranslated());
 
         boolean applyfeatureselection = false;
@@ -86,7 +87,7 @@ class TrainModelTest {
                 path += k + "/";
 
                 System.out.println(keys.get(i));
-                printString(res.get(keys.get(i)).getModel()+ "\n\n" + res.get(keys.get(i)), path + "bestModel" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+                printString(res.get(keys.get(i)).getModel() + "\n\n" + res.get(keys.get(i)), path + "bestModel" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
                 printString(res.get(keys.get(i)).printGraph(), path + "bestFeature" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".pgmx");
                 printString(res.get(keys.get(i)).getDiggity(), path + "bestDiggity" + ((keys.size() - i)) + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
                 System.out.println(k + "\n");
@@ -136,25 +137,25 @@ class TrainModelTest {
         selectedNodes.put("NoDemoNoLBM", noDemoNoLBM);
 
         boolean applyfeatureselection = false;
-            for (String k : selectedNodes.keySet()) {
-                LogRegClassifier classifier = new LogRegClassifier(1000);
-                TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
-                        selectedNodes.get(k), classifier, applyfeatureselection);
-                Map<Double, CombinedResult> res = trainLogRegModelWithFeatureSelection(trainer);
+        for (String k : selectedNodes.keySet()) {
+            LogRegClassifier classifier = new LogRegClassifier(1000);
+            TrainModel trainer = new TrainModel("resources/Data/BL1_FU1_cleaned.csv", "lonelinessBinary", attributesOfInterest,
+                    selectedNodes.get(k), classifier, applyfeatureselection);
+            Map<Double, CombinedResult> res = trainLogRegModelWithFeatureSelection(trainer);
 
-                List<Double> keys = new ArrayList<Double>(res.keySet());
-                Collections.sort(keys);
+            List<Double> keys = new ArrayList<Double>(res.keySet());
+            Collections.sort(keys);
 
-                for (int i = 0; i < keys.size(); i++) {
-                    String path = "resources/modellingResults/Manuscript/LogReg/";
+            for (int i = 0; i < keys.size(); i++) {
+                String path = "resources/modellingResults/Manuscript/LogReg/";
 
-                    path += k + "/";
-                    System.out.println(keys.get(i));
-                    printString(res.get(keys.get(i)).getModel() + "\n\n" + res.get(keys.get(i)), path +
-                             "logreg" + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
-                    System.out.println(k + "\n");
-                    System.out.println(res.get(keys.get(i)));
-                }
+                path += k + "/";
+                System.out.println(keys.get(i));
+                printString(res.get(keys.get(i)).getModel() + "\n\n" + res.get(keys.get(i)), path +
+                        "logreg" + "_score_" + res.get(keys.get(i)).getAverageAUC() + ".txt");
+                System.out.println(k + "\n");
+                System.out.println(res.get(keys.get(i)));
+            }
 
         }
     }

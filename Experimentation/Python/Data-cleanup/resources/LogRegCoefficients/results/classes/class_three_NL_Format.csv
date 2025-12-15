@@ -1,11 +1,11 @@
 Variable_baseline;three_baseline;Variable_noDemographics;three_noDemographics
-aandoeningen_bewegingsapparaat=True;0.6272;C_PHQ9_TOTAL=Matige depressie;0.5303
-Treinstationdichtstbijzijnde=0-1;0.6303;C_PHQ9_TOTAL=Ernstige depressie;0.5843
-luchtwegaandoeningen=True;0.6742;aandoeningen_bewegingsapparaat=True;0.6565
-metabole_aandoeningen=True;0.7059;hart_en_vaatziekten=True;0.6934
-overige_aandoeningen=True;0.7106;luchtwegaandoeningen=True;0.6943
-ADL_PERC_OVERALL_IMP=>0.5;0.7159;overige_aandoeningen=True;0.7141
-C_PHQ9_TOTAL=Ernstige depressie;0.7181;ADL_PERC_OVERALL_IMP=>0.5;0.7356
-good_plus_relationship_total_incl_care=Zero;0.8503;good_plus_relationship_total_incl_care=Zero;0.8429
-Bibliotheekdichtstbijzijnde=Zero;0.86;metabole_aandoeningen=True;0.8603
-===================================================================================================================================================;;Bibliotheekdichtstbijzijnde=Zero;0.9633
+BMI_cat==<18;0.6472;Cafetariadichtstbijzijnde=Zero;0.5398
+luchtwegaandoeningen=True;0.6553;C_PHQ9_TOTAL=Ernstige depressie;0.5585
+ADL_PERC_OVERALL_IMP=>0.5;0.665;aandoeningen_bewegingsapparaat=True;0.6705
+Treinstationdichtstbijzijnde=>1;0.6661;luchtwegaandoeningen=True;0.6775
+Treinstationdichtstbijzijnde=0-1;0.6688;ADL_PERC_OVERALL_IMP=>0.5;0.6825
+C_PHQ9_TOTAL=Ernstige depressie;0.697;hart_en_vaatziekten=True;0.6987
+metabole_aandoeningen=True;0.7097;overige_aandoeningen=True;0.7194
+overige_aandoeningen=True;0.7137;good_plus_relationship_total_incl_care=Zero;0.8487
+Bibliotheekdichtstbijzijnde=Zero;0.8484;metabole_aandoeningen=True;0.8617
+good_plus_relationship_total_incl_care=Zero;0.8651;Bibliotheekdichtstbijzijnde=Zero;0.9672
